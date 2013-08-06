@@ -144,6 +144,10 @@
   <profiles>
     <profile>
       <id>oss-release</id>
+      <properties>
+        <!-- tests run in the preparation step of the release -->
+        <skipTests>true</skipTests>
+      </properties>
       <build>
         <plugins>
           <!-- oss requires a javadoc jar. Build one when releasing. -->
