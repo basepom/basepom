@@ -40,22 +40,31 @@
     <dep.commons-io.version>2.4</dep.commons-io.version>
     <dep.commons-lang.version>2.6</dep.commons-lang.version>
     <dep.commons-lang3.version>3.1</dep.commons-lang3.version>
+    <dep.apache-bval.version>0.5</dep.apache-bval.version>
+
+    <dep.javax-inject.version>1</dep.javax-inject.version>
+    <dep.javax-validation.version>1.0.0.GA</dep.javax-validation.version>
+    <dep.javax-servlet.version>3.1.0</dep.javax-servlet.version>
 
     <dep.findbugs-annotations.version>2.0.1</dep.findbugs-annotations.version>
     <dep.guava.version>14.0.1</dep.guava.version>
     <dep.guice.version>3.0</dep.guice.version>
-    <dep.javax-inject.version>1</dep.javax-inject.version>
-    <dep.javax-servlet.version>3.1.0</dep.javax-servlet.version>
     <dep.joda.version>2.2</dep.joda.version>
     <dep.log4j.version>1.2.17</dep.log4j.version>
     <dep.logback.version>1.0.13</dep.logback.version>
     <dep.slf4j.version>1.7.5</dep.slf4j.version>
+    <dep.jersey.version>1.17.1</dep.jersey.version>
+    <dep.jackson.version>2.2.2</dep.jackson.version>
+    <dep.jetty.version>8.1.9.v20130131</dep.jetty.version>
+    <dep.jmxutils.version>1.13</dep.jmxutils.version>
+    <dep.cglib.version>3.0</dep.cglib.version>
 
     <dep.easymock.version>3.2</dep.easymock.version>
     <dep.hamcrest.version>1.3</dep.hamcrest.version>
     <dep.junit.version>4.11</dep.junit.version>
     <dep.objenesis.version>1.3</dep.objenesis.version>
     <dep.testng.version>6.8.5</dep.testng.version>
+    <dep.mockito.version>1.9.5</dep.mockito.version>
   </properties>
 
   <build>
@@ -259,12 +268,155 @@
         <artifactId>javax.servlet-api</artifactId>
         <version>${dep.javax-servlet.version}</version>
       </dependency>
+      <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>${dep.javax-validation.version}</version>
+      </dependency>
 
-      <!-- Joda -->
+      <!-- jersey -->
+      <dependency>
+        <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-core</artifactId>
+        <version>${dep.jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.sun.jersey.contribs</groupId>
+        <artifactId>jersey-guice</artifactId>
+        <version>${dep.jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.sun.jersey.contribs</groupId>
+        <artifactId>jersey-multipart</artifactId>
+        <version>${dep.jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-server</artifactId>
+        <version>${dep.jersey.version}</version>
+      </dependency>
+
+      <!-- jackson -->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${dep.jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${dep.jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${dep.jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-guava</artifactId>
+        <version>${dep.jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-joda</artifactId>
+        <version>${dep.jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-smile</artifactId>
+        <version>${dep.jackson.version}</version>
+      </dependency>
+
+      <dependency>
+	<groupId>com.fasterxml.jackson.module</groupId>
+	<artifactId>jackson-module-mrbean</artifactId>
+	<version>${dep.jackson.version}</version>
+      </dependency>
+
+      <dependency>
+	<groupId>com.fasterxml.jackson.module</groupId>
+	<artifactId>jackson-module-afterburner</artifactId>
+	<version>${dep.jackson.version}</version>
+      </dependency>
+
+      <!-- jetty -->
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-server</artifactId>
+        <version>${dep.jetty.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.eclipse.jetty.orbit</groupId>
+            <artifactId>javax.servlet</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-servlet</artifactId>
+        <version>${dep.jetty.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-util</artifactId>
+        <version>${dep.jetty.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-servlets</artifactId>
+        <version>${dep.jetty.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-security</artifactId>
+        <version>${dep.jetty.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-jmx</artifactId>
+        <version>${dep.jetty.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-http</artifactId>
+        <version>${dep.jetty.version}</version>
+      </dependency>
+
+      <!-- misc stuff -->
+      <dependency>
+        <groupId>org.apache.bval</groupId>
+        <artifactId>bval-jsr303</artifactId>
+        <version>${dep.apache-bval.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.weakref</groupId>
+        <artifactId>jmxutils</artifactId>
+        <version>${dep.jmxutils.version}</version>
+      </dependency>
       <dependency>
         <groupId>joda-time</groupId>
         <artifactId>joda-time</artifactId>
         <version>${dep.joda.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cglib</groupId>
+        <artifactId>cglib-nodep</artifactId>
+        <version>${dep.cglib.version}</version>
       </dependency>
 
       <!-- logging -->
@@ -386,6 +538,7 @@
         <artifactId>junit</artifactId>
         <version>${dep.junit.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
@@ -397,21 +550,31 @@
           </exclusion>
         </exclusions>
       </dependency>
+
       <dependency>
         <groupId>org.easymock</groupId>
         <artifactId>easymock</artifactId>
         <version>${dep.easymock.version}</version>
       </dependency>
+
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${dep.mockito.version}</version>
+      </dependency>
+
       <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-core</artifactId>
         <version>${dep.hamcrest.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-library</artifactId>
         <version>${dep.hamcrest.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.objenesis</groupId>
         <artifactId>objenesis</artifactId>
