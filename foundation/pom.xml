@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -20,7 +20,7 @@
   <groupId>org.basepom</groupId>
   <artifactId>basepom-foundation</artifactId>
   <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1-SNAPSHOT</version>
   <name>basepom-foundation</name>
   <description>Base POM foundation that codifies policy and plugins.</description>
 
@@ -118,7 +118,7 @@
     <dep.plugin.pmd.version>3.0.1</dep.plugin.pmd.version>
     <dep.plugin.scm.version>1.8.1</dep.plugin.scm.version>
     <dep.plugin.site.version>3.3</dep.plugin.site.version>
-    <dep.plugin.surefire.version>2.15</dep.plugin.surefire.version>
+    <dep.plugin.surefire.version>2.16</dep.plugin.surefire.version>
   </properties>
 
   <prerequisites>
@@ -207,6 +207,19 @@
                   </pluginExecutionFilter>
                   <action>
                     <ignore />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <versionRange>[0,)</versionRange>
+                    <goals>
+                      <goal>prepare-agent</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
@@ -607,7 +620,7 @@
               <goal>prepare-agent</goal>
             </goals>
           </execution>
-	</executions>
+        </executions>
       </plugin>
     </plugins>
   </build>
