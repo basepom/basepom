@@ -20,7 +20,7 @@ limitations under the License.
   <groupId>org.basepom</groupId>
   <artifactId>basepom-foundation</artifactId>
   <packaging>pom</packaging>
-  <version>1-SNAPSHOT</version>
+  <version>1</version>
   <name>basepom-foundation</name>
   <description>Base POM foundation that codifies policy and plugins.</description>
 
@@ -40,7 +40,7 @@ limitations under the License.
     <connection>scm:git:git://github.com/basepom/basepom.git</connection>
     <developerConnection>scm:git:git@github.com:basepom/basepom.git</developerConnection>
     <url>https://github.com/basepom/basepom</url>
-    <tag>HEAD</tag>
+    <tag>build-basepom-root-1</tag>
   </scm>
 
   <developers>
@@ -219,7 +219,7 @@ limitations under the License.
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore></ignore>
+                    <ignore />
                   </action>
                 </pluginExecution>
               </pluginExecutions>
