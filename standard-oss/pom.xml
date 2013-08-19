@@ -35,7 +35,7 @@ limitations under the License.
   <parent>
     <groupId>org.basepom</groupId>
     <artifactId>basepom-standard</artifactId>
-    <version>1</version>
+    <version>2-SNAPSHOT</version>
     <relativePath>../standard</relativePath>
   </parent>
 
