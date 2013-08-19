@@ -24,8 +24,17 @@ limitations under the License.
   <packaging>pom</packaging>
   <description>Glue to build the various versions of the basepom</description>
   <url>https://github.com/basepom/basepom/</url>
+  <name>All the base poms in the world.</name>
 
   <inceptionYear>2013</inceptionYear>
+
+  <licenses>
+    <license>
+      <name>Apache License 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <developers>
     <developer>
