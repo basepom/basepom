@@ -1,5 +1,14 @@
 # Changes
 
+## Version 2
+
+* 2013-09-23 - Only run the license plugin on JDK7 (plugin is compiled with JDK7)
+* 2013-09-23 - Upgrade install plugin to 2.5 (from 2.4)
+* 2013-09-23 - Upgrade license plugin to 2.5 (from 2.2)
+* 2013-09-23 - Upgrade Jackson dependency to 2.2.3 (from 2.2.2)
+* 2013-09-23 - Upgrade jetty dependency to 8.1.13.v20130916 (from 8.1.12.v20130726)
+* 2013-09-23 - Upgrade TestNG dependency to 6.8.7 (from 6.8.5)
+
 ## Version 1
 
 * 2013-08-17 - Upgrade surefire plugin to 2.16 (from 2.15)

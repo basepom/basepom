@@ -54,16 +54,16 @@ limitations under the License.
     <dep.logback.version>1.0.13</dep.logback.version>
     <dep.slf4j.version>1.7.5</dep.slf4j.version>
     <dep.jersey.version>1.17.1</dep.jersey.version>
-    <dep.jackson.version>2.2.2</dep.jackson.version>
-    <dep.jetty.version>8.1.12.v20130726</dep.jetty.version>
-    <dep.jmxutils.version>1.13</dep.jmxutils.version>
+    <dep.jackson.version>2.2.3</dep.jackson.version>
+    <dep.jetty.version>8.1.13.v20130916</dep.jetty.version>
+    <dep.jmxutils.version>1.14</dep.jmxutils.version>
     <dep.cglib.version>3.0</dep.cglib.version>
 
     <dep.easymock.version>3.2</dep.easymock.version>
     <dep.hamcrest.version>1.3</dep.hamcrest.version>
     <dep.junit.version>4.11</dep.junit.version>
     <dep.objenesis.version>1.4</dep.objenesis.version>
-    <dep.testng.version>6.8.5</dep.testng.version>
+    <dep.testng.version>6.8.7</dep.testng.version>
     <dep.mockito.version>1.9.5</dep.mockito.version>
   </properties>
 
