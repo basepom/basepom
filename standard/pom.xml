@@ -20,7 +20,7 @@ limitations under the License.
   <parent>
     <groupId>org.basepom</groupId>
     <artifactId>basepom-foundation</artifactId>
-    <version>2-SNAPSHOT</version>
+    <version>2</version>
     <relativePath>../foundation</relativePath>
   </parent>
 
