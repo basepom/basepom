@@ -4,6 +4,8 @@
 
 * 2013-10-27 - (foundation) Fail PMD only on prio 4 or higher.
 * 2013-10-27 - (standard-oss) Ignore all files in src/license for license check.
+* 2013-10-27 - (standard) Do not exclude any files by default from PMD.
+* 2013-10-27 - (standard) enforce braces PMD ruleset.
 
 ## Version 2
 

@@ -202,15 +202,12 @@ limitations under the License.
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
           <configuration>
-            <excludes>
-              <exclude>**/*Bean.java</exclude>
-              <exclude>**/generated/*.java</exclude>
-            </excludes>
             <excludeRoots>
               <excludeRoot>target/generated-sources/stubs</excludeRoot>
             </excludeRoots>
             <rulesets>
               <ruleset>/rulesets/java/basic.xml</ruleset>
+              <ruleset>/rulesets/java/braces.xml</ruleset>
               <ruleset>/rulesets/java/clone.xml</ruleset>
               <ruleset>/rulesets/java/finalizers.xml</ruleset>
             </rulesets>
