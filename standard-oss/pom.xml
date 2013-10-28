@@ -104,7 +104,7 @@
               <exclude>**/*.st</exclude>
               <exclude>**/*.raw</exclude>
               <exclude>**/*.ser</exclude>
-              <exclude>**/src/license/**.txt</exclude>
+              <exclude>**/src/license/**</exclude>
             </excludes>
             <includes>
               <include>src/**</include>
