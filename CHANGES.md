@@ -6,6 +6,14 @@
 * 2013-10-27 - (standard-oss) Ignore all files in src/license for license check.
 * 2013-10-27 - (standard) Do not exclude any files by default from PMD.
 * 2013-10-27 - (standard) enforce braces PMD ruleset.
+* 2013-10-27 - (standard) drop cglib back down to 2.2.2 (from 3.0),
+                          easymock requires 2.2.2
+* 2013-10-27 - (standard) drop javax.servlet back down to 3.0.1 (from 3.1.0),
+                          jetty8 requires 3.0.1
+* 2013-10-27 - (standard) Upgrade objenesis dependency to 2.1 (from 1.4)
+* 2013-10-27 - (standard) Upgrade findbugs-annotations to 2.0.2 (from 2.0.1)
+* 2013-10-27 - (standard) Upgrade guava to 15.0 (from 14.0.1)
+
 
 ## Version 2
 
