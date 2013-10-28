@@ -71,6 +71,9 @@ limitations under the License.
     <!-- define the forkmode for tests. Default is 'once' -->
     <basepom.test.fork-mode>once</basepom.test.fork-mode>
 
+    <!-- define minimum level for pmd to fail the build -->
+    <basepom.pmd.fail-level>4</basepom.pmd.fail-level>
+
     <!-- Controls all the checkers run when building the project.                 -->
     <!-- Can be activated with -Dbasepom.check.skip-all=true on the command line. -->
     <basepom.check.skip-all>false</basepom.check.skip-all>
@@ -441,6 +444,7 @@ limitations under the License.
             <targetJdk>${project.build.targetJdk}</targetJdk>
             <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
             <minimumTokens>100</minimumTokens>
+            <failurePriority>${basepom.pmd.fail-level}</failurePriority>
           </configuration>
         </plugin>
 

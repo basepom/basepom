@@ -1,5 +1,9 @@
 # Changes
 
+## Version 3
+
+* 2013-10-27 - (foundation) Fail PMD only on prio 4 or higher.
+
 ## Version 2
 
 * 2013-09-23 - Only run the license plugin on JDK7 (plugin is compiled with JDK7)
