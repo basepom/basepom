@@ -2,6 +2,8 @@
 
 ## Version 3
 
+* 2013-10-30 - (standard) Upgrade commons-configuration to 1.10 (from 1.7)
+* 2013-10-30 - (standard) Outlaw commons-configuration 1.8 and 1.9
 * 2013-10-30 - (foundation) Use newer surefire test configuration.
 * 2013-10-27 - (foundation) Fail PMD only on prio 4 or higher.
 * 2013-10-27 - (standard-oss) Ignore all files in src/license for license check.

@@ -36,7 +36,7 @@ limitations under the License.
     <dep.commons-beanutils.version>1.8.3</dep.commons-beanutils.version>
     <dep.commons-codec.version>1.8</dep.commons-codec.version>
     <dep.commons-collections.version>3.2.1</dep.commons-collections.version>
-    <dep.commons-configuration.version>1.9</dep.commons-configuration.version>
+    <dep.commons-configuration.version>1.10</dep.commons-configuration.version>
     <dep.commons-io.version>2.4</dep.commons-io.version>
     <dep.commons-lang.version>2.6</dep.commons-lang.version>
     <dep.commons-lang3.version>3.1</dep.commons-lang3.version>
@@ -102,6 +102,8 @@ limitations under the License.
                   <exclude>org.eclipse.jetty.orbit:javax.servlet</exclude>
                   <exclude>org.mortbay.jetty:servlet-api</exclude>
                   <exclude>org.mortbay.jetty:servlet-api-2.5</exclude>
+                  <!-- 1.8 and 1.9 are generified badly -->
+                  <exclude>commons-configuration:commons-configuration:[1.8,1.9]</exclude>
                 </excludes>
                 <includes>
                   <!-- whitelist the well numbered guava releases -->
