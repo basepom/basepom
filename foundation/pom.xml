@@ -68,8 +68,10 @@ limitations under the License.
     <!-- the upstream repository. Default is no. -->
     <basepom.release.push-changes>false</basepom.release.push-changes>
 
-    <!-- define the forkmode for tests. Default is 'once' -->
-    <basepom.test.fork-mode>once</basepom.test.fork-mode>
+    <!-- surefire fork control -->
+    <basepom.test.fork-count>1.0C</basepom.test.fork-count>
+    <basepom.test.reuse-vm>true</basepom.test.reuse-vm>
+    <basepom.test.timeout>30</basepom.test.timeout>
 
     <!-- define minimum level for pmd to fail the build -->
     <basepom.pmd.fail-level>4</basepom.pmd.fail-level>
@@ -343,8 +345,11 @@ limitations under the License.
               <user.timezone>UTC</user.timezone>
               <java.awt.headless>true</java.awt.headless>
             </systemPropertyVariables>
-            <forkMode>${basepom.test.fork-mode}</forkMode>
             <runOrder>random</runOrder>
+            <reuseForks>${basepom.test.reuse-vm}</reuseForks>
+            <forkCount>${basepom.test.fork-count}</forkCount>
+            <forkedProcessTimeoutInSeconds>${basepom.test.timeout}</forkedProcessTimeoutInSeconds>
+            <useManifestOnlyJar>false</useManifestOnlyJar>
           </configuration>
         </plugin>
 
