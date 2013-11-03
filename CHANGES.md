@@ -2,6 +2,7 @@
 
 ## Version 3
 
+* 2013-11-03 - (standard) Add commons-logging 1.1.3 as known dependency.
 * 2013-11-03 - (foundation, standard) Change dep.findbugs-annotations.version
                                       to dep.findbugs.version
 * 2013-11-03 - (foundation) Use explicit findbugs version in plugin, fixes
