@@ -116,6 +116,8 @@ limitations under the License.
     <!-- See http://stackoverflow.com/questions/1012402/maven2-property-that-indicates-the-parent-directory    -->
     <basepom.main.basedir>${project.basedir}</basepom.main.basedir>
 
+    <dep.findbugs.version>2.0.2</dep.findbugs.version>
+
     <!-- Plugin versions used in multiple places -->
     <dep.plugin.findbugs.version>2.5.2</dep.plugin.findbugs.version>
     <dep.plugin.jacoco.version>0.6.3.201306030806</dep.plugin.jacoco.version>
@@ -432,6 +434,13 @@ limitations under the License.
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
           <version>${dep.plugin.findbugs.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>com.google.code.findbugs</groupId>
+              <artifactId>findbugs</artifactId>
+              <version>${dep.findbugs.version}</version>
+            </dependency>
+          </dependencies>
           <configuration>
             <skip>${basepom.check.skip-findbugs}</skip>
             <jvmargs>-Xmx${basepom.build.jvmsize}</jvmargs>

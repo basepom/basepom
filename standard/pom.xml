@@ -46,7 +46,6 @@ limitations under the License.
     <dep.javax-validation.version>1.1.0.Final</dep.javax-validation.version>
     <dep.javax-servlet.version>3.0.1</dep.javax-servlet.version>
 
-    <dep.findbugs-annotations.version>2.0.2</dep.findbugs-annotations.version>
     <dep.guava.version>15.0</dep.guava.version>
     <dep.guice.version>4.0-beta</dep.guice.version>
     <dep.joda.version>2.3</dep.joda.version>
@@ -528,7 +527,7 @@ limitations under the License.
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
-        <version>${dep.findbugs-annotations.version}</version>
+        <version>${dep.findbugs.version}</version>
       </dependency>
 
       <!-- Testing -->
