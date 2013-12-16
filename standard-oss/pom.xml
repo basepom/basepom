@@ -35,6 +35,13 @@
     <!-- License checker for OSS deployments. -->
     <basepom.check.skip-license>${basepom.check.skip-extended}</basepom.check.skip-license>
     <basepom.check.fail-license>${basepom.check.fail-extended}</basepom.check.fail-license>
+
+    <basepom.license.skip-existing>true</basepom.license.skip-existing>
+
+    <!-- Plugin versions -->
+    <dep.plugin.license.version>2.5</dep.plugin.license.version>
+    <dep.plugin.gpg.version>1.4</dep.plugin.gpg.version>
+
   </properties>
 
   <repositories>
@@ -78,10 +85,10 @@
         <plugin>
           <groupId>com.mycila</groupId>
           <artifactId>license-maven-plugin</artifactId>
-          <version>2.5</version>
+          <version>${dep.plugin.license.version}</version>
           <configuration>
             <skip>${basepom.check.skip-license}</skip>
-            <skipExistingHeaders>true</skipExistingHeaders>
+            <skipExistingHeaders>${basepom.license.skip-existing}</skipExistingHeaders>
             <failIfMissing>${basepom.check.fail-license}</failIfMissing>
             <header>${basepom.main.basedir}/src/license/LICENSE-HEADER.txt</header>
             <mapping>
@@ -116,7 +123,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.4</version>
+          <version>${dep.plugin.gpg.version}</version>
           <configuration>
             <useAgent>true</useAgent>
           </configuration>
@@ -126,6 +133,7 @@
   </build>
 
   <profiles>
+    <!-- Plugins that only execute on JDK 7+ go here. -->
     <profile>
       <id>jdk7</id>
       <activation>
@@ -149,6 +157,7 @@
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>oss-release</id>
       <properties>

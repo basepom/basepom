@@ -45,6 +45,7 @@ limitations under the License.
 
     <dep.javax-inject.version>1</dep.javax-inject.version>
     <dep.javax-validation.version>1.1.0.Final</dep.javax-validation.version>
+    <!-- matches jetty 8.1.x -->
     <dep.javax-servlet.version>3.0.1</dep.javax-servlet.version>
 
     <dep.guava.version>15.0</dep.guava.version>
@@ -53,10 +54,12 @@ limitations under the License.
     <dep.log4j.version>1.2.17</dep.log4j.version>
     <dep.logback.version>1.0.13</dep.logback.version>
     <dep.slf4j.version>1.7.5</dep.slf4j.version>
-    <dep.jersey.version>1.17.1</dep.jersey.version>
-    <dep.jackson.version>2.2.3</dep.jackson.version>
-    <dep.jetty.version>8.1.13.v20130916</dep.jetty.version>
+    <dep.jersey.version>1.18</dep.jersey.version>
+    <dep.jackson.version>2.3.0</dep.jackson.version>
+    <dep.jetty.version>8.1.14.v20131031</dep.jetty.version>
     <dep.jmxutils.version>1.14</dep.jmxutils.version>
+
+    <!-- easymock and others depend on version 2.2.2 -->
     <dep.cglib.version>2.2.2</dep.cglib.version>
 
     <dep.easymock.version>3.2</dep.easymock.version>
@@ -208,10 +211,7 @@ limitations under the License.
               <excludeRoot>target/generated-sources/stubs</excludeRoot>
             </excludeRoots>
             <rulesets>
-              <ruleset>/rulesets/java/basic.xml</ruleset>
               <ruleset>/rulesets/java/braces.xml</ruleset>
-              <ruleset>/rulesets/java/clone.xml</ruleset>
-              <ruleset>/rulesets/java/finalizers.xml</ruleset>
             </rulesets>
           </configuration>
         </plugin>
@@ -228,21 +228,25 @@ limitations under the License.
         <artifactId>guice</artifactId>
         <version>${dep.guice.version}</version>
       </dependency>
+
       <dependency>
         <groupId>com.google.inject.extensions</groupId>
         <artifactId>guice-servlet</artifactId>
         <version>${dep.guice.version}</version>
       </dependency>
+
       <dependency>
         <groupId>com.google.inject.extensions</groupId>
         <artifactId>guice-assistedinject</artifactId>
         <version>${dep.guice.version}</version>
       </dependency>
+
       <dependency>
         <groupId>com.google.inject.extensions</groupId>
         <artifactId>guice-multibindings</artifactId>
         <version>${dep.guice.version}</version>
       </dependency>
+
       <dependency>
         <groupId>com.google.inject.extensions</groupId>
         <artifactId>guice-throwingproviders</artifactId>
@@ -262,11 +266,13 @@ limitations under the License.
         <artifactId>javax.inject</artifactId>
         <version>${dep.javax-inject.version}</version>
       </dependency>
+
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
         <version>${dep.javax-servlet.version}</version>
       </dependency>
+
       <dependency>
         <groupId>javax.validation</groupId>
         <artifactId>validation-api</artifactId>
@@ -294,7 +300,19 @@ limitations under the License.
 
       <dependency>
         <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-client</artifactId>
+        <version>${dep.jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-server</artifactId>
+        <version>${dep.jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-servlet</artifactId>
         <version>${dep.jersey.version}</version>
       </dependency>
 
@@ -402,16 +420,19 @@ limitations under the License.
         <artifactId>bval-jsr303</artifactId>
         <version>${dep.apache-bval.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.weakref</groupId>
         <artifactId>jmxutils</artifactId>
         <version>${dep.jmxutils.version}</version>
       </dependency>
+
       <dependency>
         <groupId>joda-time</groupId>
         <artifactId>joda-time</artifactId>
         <version>${dep.joda.version}</version>
       </dependency>
+
       <dependency>
         <groupId>cglib</groupId>
         <artifactId>cglib-nodep</artifactId>
@@ -424,46 +445,55 @@ limitations under the License.
         <artifactId>slf4j-api</artifactId>
         <version>${dep.slf4j.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-jcl</artifactId>
         <version>${dep.slf4j.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-jdk14</artifactId>
         <version>${dep.slf4j.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-log4j12</artifactId>
         <version>${dep.slf4j.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-nop</artifactId>
         <version>${dep.slf4j.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
         <version>${dep.slf4j.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-ext</artifactId>
         <version>${dep.slf4j.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>jcl-over-slf4j</artifactId>
         <version>${dep.slf4j.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>jul-to-slf4j</artifactId>
         <version>${dep.slf4j.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>log4j-over-slf4j</artifactId>
@@ -475,6 +505,7 @@ limitations under the License.
         <artifactId>logback-core</artifactId>
         <version>${dep.logback.version}</version>
       </dependency>
+
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
@@ -493,36 +524,43 @@ limitations under the License.
         <artifactId>commons-logging</artifactId>
         <version>${dep.commons-logging.version}</version>
       </dependency>
+
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
         <version>${dep.commons-lang3.version}</version>
       </dependency>
+
       <dependency>
         <groupId>commons-lang</groupId>
         <artifactId>commons-lang</artifactId>
         <version>${dep.commons-lang.version}</version>
       </dependency>
+
       <dependency>
         <groupId>commons-configuration</groupId>
         <artifactId>commons-configuration</artifactId>
         <version>${dep.commons-configuration.version}</version>
       </dependency>
+
       <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
         <version>${dep.commons-codec.version}</version>
       </dependency>
+
       <dependency>
         <groupId>commons-collections</groupId>
         <artifactId>commons-collections</artifactId>
         <version>${dep.commons-collections.version}</version>
       </dependency>
+
       <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
         <version>${dep.commons-io.version}</version>
       </dependency>
+
       <dependency>
         <groupId>commons-beanutils</groupId>
         <artifactId>commons-beanutils</artifactId>

@@ -2,6 +2,17 @@
 
 ## Version 3
 
+* 2013-12-16 - (standard-oss) Add switch to skip existing license headers.
+* 2013-12-16 - (foundation) Rename basepom.check.skip-jacoco to basepom.check.skip-coverage.
+* 2013-12-16 - (foundation) Upgrade duplicate-finder plugin to 1.0.5 (from 1.0.4)
+* 2013-12-16 - (foundation) Upgrade release plugin to 2.4.2 (from 2.4.1)
+* 2013-12-16 - (foundation) Upgrade install plugin to 2.5.1 (from 2.5)
+* 2013-12-16 - (standard) Upgrade jersey dependency to 1.18 (from 1.17)
+* 2013-12-16 - (standard) Surefire plugin must obey existing argLine.
+* 2013-12-16 - use dep.plugin.<x>.version for all plugins to allow override in child poms.
+* 2013-11-17 - (standard) Add jersey-servlet dependency.
+* 2013-11-17 - (standard) Upgrade jackson dependency to 2.3.0 (from 2.2.3)
+* 2013-11-17 - (standard) Upgrade jetty dependency to 8.1.14.v20131031 (from 8.1.13.v20130916)
 * 2013-11-03 - (standard) Add commons-logging 1.1.3 as known dependency.
 * 2013-11-03 - (foundation, standard) Change dep.findbugs-annotations.version
                                       to dep.findbugs.version
