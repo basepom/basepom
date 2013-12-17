@@ -109,6 +109,10 @@ limitations under the License.
     <basepom.check.fail-findbugs>${basepom.check.fail-extended}</basepom.check.fail-findbugs>
     <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
 
+    <!-- Some plugins can run early ("validate") or late ("verify") -->
+    <basepom.check.phase-duplicate-finder>verify</basepom.check.phase-duplicate-finder>
+    <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
+
     <!-- the current "best" version of maven -->
     <basepom.maven.version>3.0.5</basepom.maven.version>
 
@@ -605,7 +609,7 @@ limitations under the License.
         <executions>
           <execution>
             <id>default</id>
-            <phase>verify</phase>
+            <phase>${basepom.check.phase-dependency-versions-check}</phase>
             <goals>
               <goal>check</goal>
             </goals>
@@ -619,7 +623,7 @@ limitations under the License.
         <executions>
           <execution>
             <id>default</id>
-            <phase>verify</phase>
+            <phase>${basepom.check.phase-duplicate-finder}</phase>
             <goals>
               <goal>check</goal>
             </goals>

@@ -36,6 +36,9 @@
     <basepom.check.skip-license>${basepom.check.skip-extended}</basepom.check.skip-license>
     <basepom.check.fail-license>${basepom.check.fail-extended}</basepom.check.fail-license>
 
+    <!-- Some plugins can run early ("validate") or late ("verify") -->
+    <basepom.check.phase-license>verify</basepom.check.phase-license>
+
     <basepom.license.skip-existing>true</basepom.license.skip-existing>
 
     <!-- Plugin versions -->
@@ -147,7 +150,7 @@
             <executions>
               <execution>
                 <id>default</id>
-                <phase>verify</phase>
+                <phase>${basepom.check.phase-license}</phase>
                 <goals>
                   <goal>check</goal>
                 </goals>
