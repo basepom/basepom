@@ -88,7 +88,7 @@ limitations under the License.
     <basepom.check.skip-enforcer>${basepom.check.skip-basic}</basepom.check.skip-enforcer>
     <basepom.check.skip-dependency>${basepom.check.skip-basic}</basepom.check.skip-dependency>
     <basepom.check.skip-duplicate-finder>${basepom.check.skip-basic}</basepom.check.skip-duplicate-finder>
-    <basepom.check.skip-dependency-version-check>${basepom.check.skip-basic}</basepom.check.skip-dependency-version-check>
+    <basepom.check.skip-dependency-versions-check>${basepom.check.skip-basic}</basepom.check.skip-dependency-versions-check>
 
     <!-- extended checks -->
     <basepom.check.skip-findbugs>${basepom.check.skip-extended}</basepom.check.skip-findbugs>
@@ -103,7 +103,7 @@ limitations under the License.
     <basepom.check.fail-enforcer>${basepom.check.fail-basic}</basepom.check.fail-enforcer>
     <basepom.check.fail-dependency>${basepom.check.fail-basic}</basepom.check.fail-dependency>
     <basepom.check.fail-duplicate-finder>${basepom.check.fail-basic}</basepom.check.fail-duplicate-finder>
-    <basepom.check.fail-dependency-version-check>${basepom.check.fail-basic}</basepom.check.fail-dependency-version-check>
+    <basepom.check.fail-dependency-versions-check>${basepom.check.fail-basic}</basepom.check.fail-dependency-versions-check>
 
     <!-- extended checks -->
     <basepom.check.fail-findbugs>${basepom.check.fail-extended}</basepom.check.fail-findbugs>
@@ -430,9 +430,9 @@ limitations under the License.
           <artifactId>maven-dependency-versions-check-plugin</artifactId>
           <version>${dep.plugin.dependency-versions-check.version}</version>
           <configuration>
-            <skip>${basepom.check.skip-dependency-version-check}</skip>
-            <failBuildInCaseOfConflict>${basepom.check.fail-dependency-version-check}</failBuildInCaseOfConflict>
-            <failOnWarning>${basepom.check.fail-dependency-version-check}</failOnWarning>
+            <skip>${basepom.check.skip-dependency-versions-check}</skip>
+            <failBuildInCaseOfConflict>${basepom.check.fail-dependency-versions-check}</failBuildInCaseOfConflict>
+            <failOnWarning>${basepom.check.fail-dependency-versions-check}</failOnWarning>
           </configuration>
         </plugin>
 
