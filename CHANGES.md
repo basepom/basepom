@@ -2,6 +2,7 @@
 
 ## Version 3
 
+* 2013-12-17 - (foundation) Add phase for jacoco prepare-agent
 * 2013-12-17 - (foundation) Fix long standing typo for dependency-versions-check
 * 2013-12-16 - (standard-oss) Add switch to skip existing license headers.
 * 2013-12-16 - (foundation) Rename basepom.check.skip-jacoco to basepom.check.skip-coverage.

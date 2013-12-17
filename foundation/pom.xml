@@ -661,6 +661,7 @@ limitations under the License.
         <executions>
           <execution>
             <id>default</id>
+            <phase>initialize</phase>
             <goals>
               <goal>prepare-agent</goal>
             </goals>
