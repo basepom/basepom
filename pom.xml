@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+    http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.basepom</groupId>
+    <artifactId>basepom-standard-oss</artifactId>
+    <version>3-SNAPSHOT</version>
+    <relativePath>./standard-oss</relativePath>
+  </parent>
 
-  <groupId>org.basepom</groupId>
   <artifactId>build-basepom-root</artifactId>
-  <version>3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <description>
     All the base poms in the world.
@@ -62,40 +66,10 @@ limitations under the License.
     <tag>HEAD</tag>
   </scm>
 
-  <repositories>
-    <repository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
-  <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </snapshotRepository>
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <name>Nexus Release Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <basepom.plugin.deploy.version>2.8.1</basepom.plugin.deploy.version>
-    <basepom.plugin.gpg.version>1.4</basepom.plugin.gpg.version>
-    <basepom.plugin.install.version>2.5.1</basepom.plugin.install.version>
-    <basepom.plugin.release.version>2.4.2</basepom.plugin.release.version>
+    <basepom.release.push-changes>false</basepom.release.push-changes>
+    <basepom.check.skip-all>true</basepom.check.skip-all>
+    <basepom.check.skip-license>false</basepom.check.skip-license>
   </properties>
 
   <build>
@@ -104,24 +78,15 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>${basepom.plugin.release.version}</version>
           <configuration>
-            <releaseProfiles>oss-release</releaseProfiles>
-            <autoVersionSubmodules>true</autoVersionSubmodules>
-            <mavenExecutorId>forked-path</mavenExecutorId>
-            <pushChanges>false</pushChanges>
-            <localCheckout>true</localCheckout>
-            <preparationGoals>clean install</preparationGoals>
-            <useReleaseProfile>false</useReleaseProfile>
-            <goals>deploy</goals>
             <arguments>-N</arguments>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>${basepom.plugin.deploy.version}</version>
           <configuration>
+            <!-- for deploy-file -->
             <groupId>${project.groupId}</groupId>
             <generatePom>false</generatePom>
             <packaging>pom</packaging>
@@ -133,13 +98,27 @@ limitations under the License.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>${basepom.plugin.install.version}</version>
           <configuration>
+            <!-- for install-file -->
             <groupId>${project.groupId}</groupId>
             <generatePom>false</generatePom>
             <createChecksum>true</createChecksum>
             <packaging>pom</packaging>
             <version>${project.version}</version>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>com.mycila</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <dependencies>
+            <dependency>
+              <groupId>org.basepom</groupId>
+              <artifactId>basepom-policy</artifactId>
+              <version>1-SNAPSHOT</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <header>license/apache-license-header.txt</header>
           </configuration>
         </plugin>
       </plugins>
@@ -188,6 +167,9 @@ limitations under the License.
   </build>
 
   <profiles>
+    <!-- This must be in a default-activated profile so that when doing -->
+    <!-- a release, this profile gets implicitly deactivated (and the   -->
+    <!-- normal release process is used).                               -->
     <profile>
       <id>snapshot-deploy</id>
       <activation>
@@ -246,8 +228,8 @@ limitations under the License.
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-gpg-plugin</artifactId>
-              <version>${basepom.plugin.gpg.version}</version>
               <configuration>
+                <!-- sign-and-deploy-file -->
                 <groupId>${project.groupId}</groupId>
                 <generatePom>false</generatePom>
                 <packaging>pom</packaging>
@@ -255,6 +237,7 @@ limitations under the License.
                 <repositoryId>sonatype-nexus-staging</repositoryId>
                 <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 <updateReleaseInfo>true</updateReleaseInfo>
+                <!-- sign-and-deploy-file -->
               </configuration>
             </plugin>
           </plugins>
