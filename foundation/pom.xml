@@ -126,6 +126,9 @@
     <!-- See http://stackoverflow.com/questions/1012402/maven2-property-that-indicates-the-parent-directory    -->
     <basepom.main.basedir>${project.basedir}</basepom.main.basedir>
 
+    <!-- policy jar for license and checkstyle defaults -->
+    <dep.basepom-policy.version>1</dep.basepom-policy.version>
+
     <dep.findbugs.version>2.0.2</dep.findbugs.version>
     <dep.pmd.version>5.0.5</dep.pmd.version>
     <dep.checkstyle.version>5.6</dep.checkstyle.version>

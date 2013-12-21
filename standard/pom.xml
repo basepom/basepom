@@ -229,7 +229,7 @@
             <dependency>
               <groupId>org.basepom</groupId>
               <artifactId>basepom-policy</artifactId>
-              <version>1-SNAPSHOT</version>
+              <version>${dep.basepom-policy.version}</version>
             </dependency>
           </dependencies>
           <configuration>
