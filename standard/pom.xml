@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.basepom</groupId>
     <artifactId>basepom-foundation</artifactId>
-    <version>3-SNAPSHOT</version>
+    <version>3</version>
     <relativePath>../foundation</relativePath>
   </parent>
 
