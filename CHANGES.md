@@ -2,6 +2,7 @@
 
 ## Version 3
 
+* 2013-12-20 - (foundation, standard) Add checkstyle checker to build.
 * 2013-12-20 - (foundation, standard) Only activate pmd when it is actually configured.
 * 2013-12-19 - (foundation) Use hardcoded version for findbugs jar until they figured out on
                             how to upload the 2.0.3 versions of annotations.

@@ -109,11 +109,15 @@
 
     <!-- extended checks -->
     <basepom.check.fail-findbugs>${basepom.check.fail-extended}</basepom.check.fail-findbugs>
-    <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
+
+    <!-- only enable if actually configured -->
+    <basepom.check.fail-pmd>false</basepom.check.fail-pmd>
+    <basepom.check.fail-checkstyle>false</basepom.check.fail-checkstyle>
 
     <!-- Some plugins can run early ("validate") or late ("verify") -->
     <basepom.check.phase-duplicate-finder>verify</basepom.check.phase-duplicate-finder>
     <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
+    <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
 
     <!-- the current "best" version of maven -->
     <basepom.maven.version>3.0.5</basepom.maven.version>
@@ -124,6 +128,7 @@
 
     <dep.findbugs.version>2.0.2</dep.findbugs.version>
     <dep.pmd.version>5.0.5</dep.pmd.version>
+    <dep.checkstyle.version>5.6</dep.checkstyle.version>
 
     <!-- Plugin versions -->
     <dep.plugin.assembly.version>2.4</dep.plugin.assembly.version>
@@ -141,6 +146,7 @@
     <dep.plugin.jar.version>2.4</dep.plugin.jar.version>
     <dep.plugin.javadoc.version>2.9.1</dep.plugin.javadoc.version>
     <dep.plugin.pmd.version>3.0.1</dep.plugin.pmd.version>
+    <dep.plugin.checkstyle.version>2.11</dep.plugin.checkstyle.version>
     <dep.plugin.release.version>2.4.2</dep.plugin.release.version>
     <dep.plugin.resources.version>2.6</dep.plugin.resources.version>
     <dep.plugin.scm.version>1.8.1</dep.plugin.scm.version>
@@ -498,6 +504,26 @@
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${dep.plugin.checkstyle.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>${dep.checkstyle.version}</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <skip>${basepom.check.skip-checkstyle}</skip>
+            <failOnViolation>${basepom.check.fail-checkstyle}</failOnViolation>
+            <encoding>${project.build.sourceEncoding}</encoding>
+            <consoleOutput>true</consoleOutput>
+            <linkXRef>false</linkXRef>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-shade-plugin</artifactId>
           <version>${dep.plugin.shade.version}</version>
         </plugin>
@@ -655,6 +681,20 @@
           <execution>
             <id>default</id>
             <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>default</id>
+            <phase>${basepom.check.phase-checkstyle}</phase>
             <goals>
               <goal>check</goal>
             </goals>

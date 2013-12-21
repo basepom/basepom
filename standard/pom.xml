@@ -33,8 +33,10 @@
 
   <properties>
     <basepom.check.skip-pmd>${basepom.check.skip-extended}</basepom.check.skip-pmd>
+    <basepom.check.skip-checkstyle>${basepom.check.skip-extended}</basepom.check.skip-checkstyle>
 
     <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
+    <basepom.check.fail-checkstyle>${basepom.check.fail-extended}</basepom.check.fail-checkstyle>
 
     <!-- Dependency versions that should be the same everywhere. -->
     <dep.commons-beanutils.version>1.8.3</dep.commons-beanutils.version>
@@ -219,7 +221,23 @@
             </rulesets>
           </configuration>
         </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <dependencies>
+            <dependency>
+              <groupId>org.basepom</groupId>
+              <artifactId>basepom-policy</artifactId>
+              <version>1-SNAPSHOT</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <configLocation>checkstyle/checkstyle-basepom.xml</configLocation>
+          </configuration>
+        </plugin>
       </plugins>
+
     </pluginManagement>
   </build>
 
