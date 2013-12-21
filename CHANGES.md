@@ -2,6 +2,7 @@
 
 ## Version 3
 
+* 2013-12-20 - (foundation, standard) Only activate pmd when it is actually configured.
 * 2013-12-19 - (foundation) Use hardcoded version for findbugs jar until they figured out on
                             how to upload the 2.0.3 versions of annotations.
 * 2013-12-19 - (foundation) Upgrade jacoco to 0.6.4.201312101107 (from 0.6.3.201306030806)

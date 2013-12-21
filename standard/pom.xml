@@ -32,6 +32,10 @@
   <url>https://github.com/basepom/basepom/standard</url>
 
   <properties>
+    <basepom.check.skip-pmd>${basepom.check.skip-extended}</basepom.check.skip-pmd>
+
+    <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
+
     <!-- Dependency versions that should be the same everywhere. -->
     <dep.commons-beanutils.version>1.8.3</dep.commons-beanutils.version>
     <dep.commons-codec.version>1.8</dep.commons-codec.version>

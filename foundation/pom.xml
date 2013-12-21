@@ -92,8 +92,10 @@
 
     <!-- extended checks -->
     <basepom.check.skip-findbugs>${basepom.check.skip-extended}</basepom.check.skip-findbugs>
-    <basepom.check.skip-pmd>${basepom.check.skip-extended}</basepom.check.skip-pmd>
     <basepom.check.skip-coverage>${basepom.check.skip-extended}</basepom.check.skip-coverage>
+
+    <!-- only enable if actually configured -->
+    <basepom.check.skip-pmd>true</basepom.check.skip-pmd>
 
     <basepom.check.fail-all>true</basepom.check.fail-all>
     <basepom.check.fail-basic>${basepom.check.fail-all}</basepom.check.fail-basic>
