@@ -80,6 +80,7 @@
           <artifactId>maven-release-plugin</artifactId>
           <configuration>
             <arguments>-N</arguments>
+            <tagNameFormat>basepom-@{project.version}</tagNameFormat>
           </configuration>
         </plugin>
         <plugin>
