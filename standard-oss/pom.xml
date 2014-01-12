@@ -18,7 +18,7 @@
   <parent>
     <groupId>org.basepom</groupId>
     <artifactId>basepom-standard</artifactId>
-    <version>4</version>
+    <version>5-SNAPSHOT</version>
     <relativePath>../standard</relativePath>
   </parent>
 
