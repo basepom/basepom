@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
+~   Licensed under the Apache License, Version 2.0 (the "License");
+~   you may not use this file except in compliance with the License.
+~   You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~   Unless required by applicable law or agreed to in writing, software
+~   distributed under the License is distributed on an "AS IS" BASIS,
+~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~   See the License for the specific language governing permissions and
+~   limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -47,20 +45,6 @@
 
   </properties>
 
-  <repositories>
-    <repository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
   <distributionManagement>
     <snapshotRepository>
       <id>sonatype-nexus-snapshots</id>
@@ -89,12 +73,23 @@
           <groupId>com.mycila</groupId>
           <artifactId>license-maven-plugin</artifactId>
           <version>${dep.plugin.license.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.basepom</groupId>
+              <artifactId>basepom-policy</artifactId>
+              <version>${dep.basepom-policy.version}</version>
+            </dependency>
+          </dependencies>
           <configuration>
             <skip>${basepom.check.skip-license}</skip>
             <skipExistingHeaders>${basepom.license.skip-existing}</skipExistingHeaders>
             <failIfMissing>${basepom.check.fail-license}</failIfMissing>
-            <header>${basepom.main.basedir}/src/license/LICENSE-HEADER.txt</header>
+            <header>license/basepom-apache-license-header.txt</header>
+            <headerDefinitions>
+              <headerDefinition>license/xml-prefix.xml</headerDefinition>
+            </headerDefinitions>
             <mapping>
+              <xml>XML_PREFIX</xml>
               <java>SLASHSTAR_STYLE</java>
             </mapping>
             <strictCheck>true</strictCheck>

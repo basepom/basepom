@@ -1,5 +1,18 @@
 # Changes
 
+## Version 4
+
+* 2014-01-12 - (foundation) Remove extensions for site build from foundation pom.
+* 2014-01-12 - (standard-oss) Remove sonatype snapshot repo definition from pom.
+* 2014-01-11 - (foundation) Upgrade scm plugin to 1.9 (from 1.8.1)
+* 2014-01-11 - (standard) Upgrade commons-beanutils dependency to 1.9.1 (from 1.8.3)
+* 2014-01-11 - (standard) Upgrade commons-codec dependency to 1.9 (from 1.8)
+* 2014-01-11 - (standard) Upgrade commons-lang dependency to 3.2.1 (from 3.1)
+* 2014-01-11 - (foundation) Upgrade findbugs to 2.0.3 (from 2.0.2), removed hardcoded plugin
+* 2014-01-11 - (standard) Upgrade jackson dependency to 2.3.1 (from 2.3.0)
+* 2014-01-11 - updated policy jar to version 2.
+* 2014-01-11 - use license file in the policy jar, removing the need the basepom.main.basedir.
+
 ## Version 3
 
 * 2013-12-20 - (foundation, standard) Add checkstyle checker to build.
