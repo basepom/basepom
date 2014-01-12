@@ -18,7 +18,7 @@
   <parent>
     <groupId>org.basepom</groupId>
     <artifactId>basepom-foundation</artifactId>
-    <version>4-SNAPSHOT</version>
+    <version>4</version>
     <relativePath>../foundation</relativePath>
   </parent>
 
