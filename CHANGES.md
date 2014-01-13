@@ -1,5 +1,9 @@
 # Changes
 
+## Version 5
+
+* 2014-01-12 - (foundation) Make release tag name format configurable.
+
 ## Version 4
 
 * 2014-01-12 - (foundation) Remove extensions for site build from foundation pom.

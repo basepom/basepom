@@ -67,6 +67,7 @@
   <properties>
     <basepom.check.skip-all>true</basepom.check.skip-all>
     <basepom.check.skip-license>false</basepom.check.skip-license>
+    <basepom.release.tag-name-format>basepom-@{project.version}</basepom.release.tag-name-format>
   </properties>
 
   <build>

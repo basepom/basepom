@@ -66,6 +66,9 @@
     <!-- the upstream repository. Default is no. -->
     <basepom.release.push-changes>false</basepom.release.push-changes>
 
+    <!-- tag name format, can be overridden by the project to provide different tags. -->
+    <basepom.release.tag-name-format>@{project.artifactId}-@{project.version}</basepom.release.tag-name-format>
+
     <!-- surefire fork control -->
     <basepom.test.fork-count>1.0C</basepom.test.fork-count>
     <basepom.test.reuse-vm>true</basepom.test.reuse-vm>
@@ -373,6 +376,7 @@
             <localCheckout>true</localCheckout>
             <preparationGoals>clean install</preparationGoals>
             <useReleaseProfile>false</useReleaseProfile>
+            <tagNameFormat>${basepom.release.tag-name-format}</tagNameFormat>
             <goals>deploy</goals>
           </configuration>
         </plugin>
