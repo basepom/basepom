@@ -24,10 +24,12 @@
 
   <artifactId>basepom-standard-oss</artifactId>
   <packaging>pom</packaging>
+
+<!--
   <name>basepom-standard-oss</name>
   <description>Same as standard base POM, but also includes packaging and deployment for oss.sonatype.org</description>
-
   <url>https://github.com/basepom/basepom/standard-oss</url>
+-->
 
   <properties>
     <!-- License checker for OSS deployments. -->

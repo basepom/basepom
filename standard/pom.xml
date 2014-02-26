@@ -24,10 +24,12 @@
 
   <artifactId>basepom-standard</artifactId>
   <packaging>pom</packaging>
+
+<!--
   <name>basepom-standard</name>
   <description>Standard base POM for new projects. Does not include any distribution or repository information.</description>
-
   <url>https://github.com/basepom/basepom/standard</url>
+-->
 
   <properties>
     <basepom.check.skip-pmd>${basepom.check.skip-extended}</basepom.check.skip-pmd>
