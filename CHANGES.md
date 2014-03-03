@@ -2,6 +2,23 @@
 
 ## Version 5
 
+* 2014-03-02 - Upgrade license plugin to 2.6 (from 2.5)
+* 2014-03-02 - (foundation) Unhook code coverage from extended checks (fixes
+                            no argLine property bug)
+* 2014-03-02 - (foundation) Upgrade duplicate-finder plugin to 1.0.6 (from 1.0.5)
+* 2014-03-02 - (foundation) Add workaround for MRELEASE-812
+* 2014-03-02 - (standard-oss) Upgrade gpg plugin to 1.5 (from 1.4)
+* 2014-03-02 - (standard) Upgrade jackson dependency to 2.3.2 (from 2.3.1)
+* 2014-03-02 - (standard) Upgrade jersey dependency to 1.18.1 (from 1.18)
+* 2014-03-02 - (standard) Upgrade TestNG dependency to 6.8.8 (from 6.8.7)
+* 2014-03-02 - (standard) Add jackson-dataformat-yaml,
+                          jackson-module-jaxb-annotations,
+                          jackson-jaxrs-json-provider as managed dependencies.
+* 2014-03-02 - (standard) Add jersey-test-framework-core and
+                          jersey-test-framework-inmemory as managed dependencies.
+* 2014-03-02 - (standard) Upgrade slf4j to 1.7.6 (from 1.7.5)
+* 2014-03-02 - (standard) Upgrade logback to 1.1.1 (from 1.0.13)
+* 2014-03-02 - (standard) Upgrade guava to 16.0.1 (from 15.0)
 * 2014-01-12 - (foundation) Make release tag name format configurable.
 
 ## Version 4

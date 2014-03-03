@@ -42,8 +42,8 @@
     <basepom.license.skip-existing>true</basepom.license.skip-existing>
 
     <!-- Plugin versions -->
-    <dep.plugin.license.version>2.5</dep.plugin.license.version>
-    <dep.plugin.gpg.version>1.4</dep.plugin.gpg.version>
+    <dep.plugin.license.version>2.6</dep.plugin.license.version>
+    <dep.plugin.gpg.version>1.5</dep.plugin.gpg.version>
 
   </properties>
 
