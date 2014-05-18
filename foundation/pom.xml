@@ -122,7 +122,7 @@
     <dep.plugin.jacoco.version>0.7.1.201405082137</dep.plugin.jacoco.version>
     <dep.plugin.jar.version>2.4</dep.plugin.jar.version>
     <dep.plugin.javadoc.version>2.9.1</dep.plugin.javadoc.version>
-    <dep.plugin.pmd.version>3.0.1</dep.plugin.pmd.version>
+    <dep.plugin.pmd.version>3.1</dep.plugin.pmd.version>
     <dep.plugin.checkstyle.version>2.11</dep.plugin.checkstyle.version>
     <dep.plugin.release.version>2.4.2</dep.plugin.release.version>
     <dep.plugin.resources.version>2.6</dep.plugin.resources.version>
