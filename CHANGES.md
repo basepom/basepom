@@ -1,5 +1,24 @@
 # Changes
 
+## Version 6
+
+* 2014-06-12 - (standard) Upgrade commons-beanutils dependency to 1.9.2 (from 1.9.1)
+* 2014-06-12 - (standard) Upgrade jetty dependency to 8.1.15.v20140411 (from 8.1.14.v20131031)
+* 2014-06-12 - (standard) Upgrade jmxutils dependency to 1.16 (from 1.14)
+* 2014-06-12 - (standard) Upgrade commons-lang-3 dependency to 3.3.2 (from 3.2.1)
+* 2014-06-12 - (standard) Upgrade guice dependency to 4.0-beta4 (from 4.0-beta)
+* 2014-06-12 - (standard) Upgrade guava dependency to 17.0 (from 16.0.1)
+* 2014-06-12 - (standard) Upgrade jackson dependency to 2.4.0 (from 2.3.2)
+* 2014-06-12 - (standard) Upgrade slf4j dependency to 1.7.7 (from 1.7.6)
+* 2014-06-12 - (standard) Upgrade logback dependency 1.1.2 to  (from 1.1.1)
+* 2014-06-12 - (foundation) Upgrade release plugin to 2.5 (from 2.4.2)
+* 2014-06-12 - (foundation) Upgrade checkstyle plugin to 2.12.1 (from 2.11)
+* 2014-06-12 - (foundation) Upgrade surefire plugin to 2.17 (from 2.16)
+* 2014-06-12 - (foundation) Upgrade shade plugin to 2.3 (from 2.2)
+* 2014-05-17 - (foundation) Upgrade pmd plugin to 3.1 (from 3.0.1)
+* 2014-05-17 - (foundation) Upgrade duplicate-finder plugin to 1.0.7 (from 1.0.6)
+* 2014-05-17 - (foundation) Upgrade jacoco plugin to 0.7.1.201405082137 (from 0.6.4.201312101107)
+
 ## Version 5
 
 * 2014-03-02 - Upgrade license plugin to 2.6 (from 2.5)

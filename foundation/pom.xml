@@ -123,14 +123,14 @@
     <dep.plugin.jar.version>2.4</dep.plugin.jar.version>
     <dep.plugin.javadoc.version>2.9.1</dep.plugin.javadoc.version>
     <dep.plugin.pmd.version>3.1</dep.plugin.pmd.version>
-    <dep.plugin.checkstyle.version>2.11</dep.plugin.checkstyle.version>
-    <dep.plugin.release.version>2.4.2</dep.plugin.release.version>
+    <dep.plugin.checkstyle.version>2.12.1</dep.plugin.checkstyle.version>
+    <dep.plugin.release.version>2.5</dep.plugin.release.version>
     <dep.plugin.resources.version>2.6</dep.plugin.resources.version>
     <dep.plugin.scm.version>1.9</dep.plugin.scm.version>
-    <dep.plugin.shade.version>2.2</dep.plugin.shade.version>
+    <dep.plugin.shade.version>2.3</dep.plugin.shade.version>
     <dep.plugin.site.version>3.3</dep.plugin.site.version>
     <dep.plugin.source.version>2.2.1</dep.plugin.source.version>
-    <dep.plugin.surefire.version>2.16</dep.plugin.surefire.version>
+    <dep.plugin.surefire.version>2.17</dep.plugin.surefire.version>
   </properties>
 
   <prerequisites>
