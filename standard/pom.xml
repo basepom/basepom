@@ -205,6 +205,8 @@
                             <!-- then you are in trouble anyway -->
                             <ignoredResource>log4j\.xml</ignoredResource>
                             <ignoredResource>log4j\.properties</ignoredResource>
+                            <ignoredResource>logback\.xml</ignoredResource>
+                            <ignoredResource>logback\.properties</ignoredResource>
                         </ignoredResources>
                     </configuration>
                 </plugin>

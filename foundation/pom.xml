@@ -389,7 +389,6 @@
                     </configuration>
                 </plugin>
 
-                <!-- Always build a jar with the test classes -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -472,6 +471,7 @@
                         </dependency>
                     </dependencies>
                     <configuration>
+                        <effort>Max</effort>
                         <skip>${basepom.check.skip-findbugs}</skip>
                         <jvmargs>-Xmx${basepom.build.jvmsize}</jvmargs>
                         <failOnError>${basepom.check.fail-findbugs}</failOnError>
@@ -693,6 +693,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <executions>
+                    <!-- Always build a jar with the test classes -->
                     <execution>
                         <id>attach-tests</id>
                         <phase>package</phase>
