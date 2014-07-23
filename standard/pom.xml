@@ -233,8 +233,18 @@
                         <configLocation>checkstyle/checkstyle-basepom.xml</configLocation>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.basepom</groupId>
+                            <artifactId>basepom-policy</artifactId>
+                            <version>${dep.basepom-policy.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
             </plugins>
-
         </pluginManagement>
     </build>
 
