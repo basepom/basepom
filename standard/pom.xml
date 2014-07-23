@@ -633,6 +633,13 @@
                 <version>${dep.findbugs.version}</version>
             </dependency>
 
+            <!-- scala -->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${dep.scala.version}</version>
+            </dependency>
+
             <!-- Testing -->
             <dependency>
                 <groupId>junit</groupId>

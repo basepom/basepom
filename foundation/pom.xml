@@ -118,6 +118,9 @@
         <dep.pmd.version>5.1.2</dep.pmd.version>
         <dep.checkstyle.version>5.7</dep.checkstyle.version>
 
+        <!-- Scala -->
+        <dep.scala.version>2.11.1</dep.scala.version>
+
         <!-- Plugin versions -->
         <dep.plugin.assembly.version>2.4</dep.plugin.assembly.version>
         <dep.plugin.build-helper.version>1.9</dep.plugin.build-helper.version>
@@ -145,6 +148,7 @@
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
         <dep.plugin.git-commit-id.version>2.1.10</dep.plugin.git-commit-id.version>
         <dep.plugin.invoker.version>1.9</dep.plugin.invoker.version>
+        <dep.plugin.scala.version>3.1.6</dep.plugin.scala.version>
     </properties>
 
     <prerequisites>
@@ -621,6 +625,15 @@
                         </pomIncludes>
                     </configuration>
                 </plugin>
+
+                <plugin>
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>scala-maven-plugin</artifactId>
+                    <version>${dep.plugin.scala.version}</version>
+                    <configuration>
+                        <scalaVersion>${dep.scala.version}</scalaVersion>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -859,6 +872,52 @@
                                     <goal>install</goal>
                                     <goal>integration-test</goal>
                                     <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>scala-build</id>
+            <activation>
+                <file>
+                    <exists>${basedir}/src/main/scala</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>net.alchim31.maven</groupId>
+                        <artifactId>scala-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>add-scala-source</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>add-source</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>scala-compile</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>compile</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>scala-test-compile</id>
+                                <phase>test-compile</phase>
+                                <goals>
+                                    <goal>testCompile</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>scala-docs</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>doc</goal>
                                 </goals>
                             </execution>
                         </executions>

@@ -41,6 +41,9 @@
 
         <basepom.license.skip-existing>true</basepom.license.skip-existing>
 
+        <!-- by default, do not build scaladocs for oss releases. -->
+        <basepom.oss.skip-scala-doc>true</basepom.oss.skip-scala-doc>
+
         <!-- Plugin versions -->
         <dep.plugin.license.version>2.6</dep.plugin.license.version>
         <dep.plugin.gpg.version>1.5</dep.plugin.gpg.version>
@@ -176,6 +179,23 @@
                                 <phase>package</phase>
                                 <goals>
                                     <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- if necessary, build a scaladoc jar. Disabled by default. -->
+                    <plugin>
+                        <groupId>net.alchim31.maven</groupId>
+                        <artifactId>scala-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-scaladocs</id>
+                                <phase>package</phase>
+                                <configuration>
+                                    <skip>${basepom.oss.skip-scala-doc}</skip>
+                                </configuration>
+                                <goals>
+                                    <goal>doc-jar</goal>
                                 </goals>
                             </execution>
                         </executions>
