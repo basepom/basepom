@@ -2,6 +2,7 @@
 
 ## Version 6
 
+* 2014-07-22 - (foundation) Add property-helper plugin for build.id generation.
 * 2014-07-22 - (foundation) Add git-commit-id plugin.
 * 2014-07-22 - (smoketest) Add very basic smoke test for jar conflicts.
 * 2014-07-22 - (standard) Add commons-collections 4 as a dependency

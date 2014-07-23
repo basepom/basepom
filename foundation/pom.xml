@@ -135,6 +135,7 @@
         <dep.plugin.site.version>3.4</dep.plugin.site.version>
         <dep.plugin.source.version>2.3</dep.plugin.source.version>
         <dep.plugin.surefire.version>2.17</dep.plugin.surefire.version>
+        <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
         <dep.plugin.git-commit-id.version>2.1.10</dep.plugin.git-commit-id.version>
     </properties>
 
@@ -391,6 +392,11 @@
                                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                                 <addClasspath>false</addClasspath>
                             </manifest>
+                            <manifestEntries>
+                                <X-BasePOM-Build-Id>${basepom.build.id}</X-BasePOM-Build-Id>
+                                <X-BasePOM-Name>${project.name}</X-BasePOM-Name>
+                                <X-BasePOM-Git-Commit-Id>${git.commit.id}</X-BasePOM-Git-Commit-Id>
+                            </manifestEntries>
                             <manifestSections combine.children="append">
                                 <manifestSection>
                                     <name>${project.groupId}:${project.artifactId}</name>
@@ -524,6 +530,12 @@
                 </plugin>
 
                 <plugin>
+                    <groupId>org.basepom.maven</groupId>
+                    <artifactId>property-helper-maven-plugin</artifactId>
+                    <version>${dep.plugin.property-helper.version}</version>
+                </plugin>
+
+                <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
                     <version>${dep.plugin.git-commit-id.version}</version>
@@ -551,6 +563,28 @@
 
         <!-- This is the list of plugins used for the main build. -->
         <plugins>
+            <plugin>
+                <groupId>org.basepom.maven</groupId>
+                <artifactId>property-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>get-build-id</id>
+                        <goals>
+                            <goal>get</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <uuids>
+                                <uuid>
+                                    <id>basepom.build.id</id>
+                                    <export>true</export>
+                                </uuid>
+                            </uuids>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
