@@ -92,6 +92,10 @@
         <basepom.check.fail-pmd>false</basepom.check.fail-pmd>
         <basepom.check.fail-checkstyle>false</basepom.check.fail-checkstyle>
 
+        <!-- git information -->
+        <basepom.git-id.skip>false</basepom.git-id.skip>
+        <basepom.git-id.fail-no-git>false</basepom.git-id.fail-no-git>
+
         <!-- Some plugins can run early ("validate") or late ("verify") -->
         <basepom.check.phase-duplicate-finder>verify</basepom.check.phase-duplicate-finder>
         <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
@@ -131,6 +135,7 @@
         <dep.plugin.site.version>3.4</dep.plugin.site.version>
         <dep.plugin.source.version>2.3</dep.plugin.source.version>
         <dep.plugin.surefire.version>2.17</dep.plugin.surefire.version>
+        <dep.plugin.git-commit-id.version>2.1.10</dep.plugin.git-commit-id.version>
     </properties>
 
     <prerequisites>
@@ -386,6 +391,25 @@
                                 <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                                 <addClasspath>false</addClasspath>
                             </manifest>
+                            <manifestSections combine.children="append">
+                                <manifestSection>
+                                    <name>${project.groupId}:${project.artifactId}</name>
+                                    <manifestEntries>
+                                        <!-- This is actually the time when the build was done -->
+                                        <Build-Time>${git.build.time}</Build-Time>
+                                        <!-- Git specific properties -->
+                                        <Git-Branch>${git.branch}</Git-Branch>
+                                        <Git-Commit-Id>${git.commit.id}</Git-Commit-Id>
+                                        <Git-Commit-Id-Describe>${git.commit.id.describe}</Git-Commit-Id-Describe>
+                                        <Git-Remote-Origin-Url>${git.remote.origin.url}</Git-Remote-Origin-Url>
+                                        <!-- project information -->
+                                        <Project-ArtifactId>${project.artifactId}</Project-ArtifactId>
+                                        <Project-GroupId>${project.groupId}</Project-GroupId>
+                                        <Project-Name>${project.name}</Project-Name>
+                                        <Project-Version>${project.version}</Project-Version>
+                                    </manifestEntries>
+                                </manifestSection>
+                            </manifestSections>
                         </archive>
                     </configuration>
                 </plugin>
@@ -499,11 +523,48 @@
                     <version>${dep.plugin.site.version}</version>
                 </plugin>
 
+                <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>${dep.plugin.git-commit-id.version}</version>
+
+                    <configuration>
+                        <prefix>git</prefix>
+                        <dateFormat>yyyy-MM-dd'T'HH:mm:ssZZ</dateFormat>
+                        <verbose>true</verbose>
+                        <skipPoms>true</skipPoms>
+                        <generateGitPropertiesFile>false</generateGitPropertiesFile>
+                        <failOnNoGitDirectory>${basepom.git-id.fail-no-git}</failOnNoGitDirectory>
+                        <skip>${basepom.git-id.skip}</skip>
+                        <abbrevLength>10</abbrevLength>
+                        <useNativeGit>true</useNativeGit>
+                        <gitDescribe>
+                            <always>false</always>
+                            <abbrev>7</abbrev>
+                            <dirty>-dirty</dirty>
+                            <forceLongFormat>false</forceLongFormat>
+                        </gitDescribe>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
 
         <!-- This is the list of plugins used for the main build. -->
         <plugins>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
