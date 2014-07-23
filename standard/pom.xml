@@ -13,658 +13,658 @@
 ~   limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.basepom</groupId>
-    <artifactId>basepom-foundation</artifactId>
-    <version>6-SNAPSHOT</version>
-    <relativePath>../foundation</relativePath>
-  </parent>
+    <parent>
+        <groupId>org.basepom</groupId>
+        <artifactId>basepom-foundation</artifactId>
+        <version>6-SNAPSHOT</version>
+        <relativePath>../foundation</relativePath>
+    </parent>
 
-  <artifactId>basepom-standard</artifactId>
-  <packaging>pom</packaging>
+    <artifactId>basepom-standard</artifactId>
+    <packaging>pom</packaging>
 
-  <!--
-      <name>basepom-standard</name>
-      <description>Standard base POM for new projects. Does not include any distribution or repository information.</description>
-      <url>https://github.com/basepom/basepom/standard</url>
-  -->
+    <!--
+        <name>basepom-standard</name>
+        <description>Standard base POM for new projects. Does not include any distribution or repository information.</description>
+        <url>https://github.com/basepom/basepom/standard</url>
+    -->
 
-  <properties>
-    <basepom.check.skip-pmd>${basepom.check.skip-extended}</basepom.check.skip-pmd>
-    <basepom.check.skip-checkstyle>${basepom.check.skip-extended}</basepom.check.skip-checkstyle>
+    <properties>
+        <basepom.check.skip-pmd>${basepom.check.skip-extended}</basepom.check.skip-pmd>
+        <basepom.check.skip-checkstyle>${basepom.check.skip-extended}</basepom.check.skip-checkstyle>
 
-    <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
-    <basepom.check.fail-checkstyle>${basepom.check.fail-extended}</basepom.check.fail-checkstyle>
+        <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
+        <basepom.check.fail-checkstyle>${basepom.check.fail-extended}</basepom.check.fail-checkstyle>
 
-    <!-- Dependency versions that should be the same everywhere. -->
-    <dep.commons-beanutils.version>1.9.2</dep.commons-beanutils.version>
-    <dep.commons-codec.version>1.9</dep.commons-codec.version>
-    <dep.commons-collections.version>3.2.1</dep.commons-collections.version>
-    <dep.commons-collections4.version>4.0</dep.commons-collections4.version>
-    <dep.commons-configuration.version>1.10</dep.commons-configuration.version>
-    <dep.commons-io.version>2.4</dep.commons-io.version>
-    <dep.commons-lang.version>2.6</dep.commons-lang.version>
-    <dep.commons-lang3.version>3.3.2</dep.commons-lang3.version>
-    <dep.commons-logging.version>1.2</dep.commons-logging.version>
-    <dep.apache-bval.version>0.5</dep.apache-bval.version>
+        <!-- Dependency versions that should be the same everywhere. -->
+        <dep.commons-beanutils.version>1.9.2</dep.commons-beanutils.version>
+        <dep.commons-codec.version>1.9</dep.commons-codec.version>
+        <dep.commons-collections.version>3.2.1</dep.commons-collections.version>
+        <dep.commons-collections4.version>4.0</dep.commons-collections4.version>
+        <dep.commons-configuration.version>1.10</dep.commons-configuration.version>
+        <dep.commons-io.version>2.4</dep.commons-io.version>
+        <dep.commons-lang.version>2.6</dep.commons-lang.version>
+        <dep.commons-lang3.version>3.3.2</dep.commons-lang3.version>
+        <dep.commons-logging.version>1.2</dep.commons-logging.version>
+        <dep.apache-bval.version>0.5</dep.apache-bval.version>
 
-    <dep.javax-inject.version>1</dep.javax-inject.version>
-    <dep.javax-validation.version>1.1.0.Final</dep.javax-validation.version>
-    <!-- matches jetty 8.1.x -->
-    <dep.javax-servlet.version>3.1.0</dep.javax-servlet.version>
+        <dep.javax-inject.version>1</dep.javax-inject.version>
+        <dep.javax-validation.version>1.1.0.Final</dep.javax-validation.version>
+        <!-- matches jetty 8.1.x -->
+        <dep.javax-servlet.version>3.1.0</dep.javax-servlet.version>
 
-    <dep.guava.version>17.0</dep.guava.version>
-    <dep.guice.version>4.0-beta4</dep.guice.version>
-    <dep.joda.version>2.3</dep.joda.version>
-    <dep.log4j.version>1.2.17</dep.log4j.version>
-    <dep.logback.version>1.1.2</dep.logback.version>
-    <dep.slf4j.version>1.7.7</dep.slf4j.version>
-    <dep.jersey.version>1.18.1</dep.jersey.version>
-    <dep.jackson.version>2.4.1</dep.jackson.version>
-    <dep.jackson.core.version>2.4.1.1</dep.jackson.core.version>
-    <dep.jackson.databind.version>2.4.1.3</dep.jackson.databind.version>
-    <dep.jackson.dataformat-smile.version>2.4.1.1</dep.jackson.dataformat-smile.version>
-    <dep.jetty.version>9.2.1.v20140609</dep.jetty.version>
-    <dep.jmxutils.version>1.18</dep.jmxutils.version>
+        <dep.guava.version>17.0</dep.guava.version>
+        <dep.guice.version>4.0-beta4</dep.guice.version>
+        <dep.joda.version>2.3</dep.joda.version>
+        <dep.log4j.version>1.2.17</dep.log4j.version>
+        <dep.logback.version>1.1.2</dep.logback.version>
+        <dep.slf4j.version>1.7.7</dep.slf4j.version>
+        <dep.jersey.version>1.18.1</dep.jersey.version>
+        <dep.jackson.version>2.4.1</dep.jackson.version>
+        <dep.jackson.core.version>2.4.1.1</dep.jackson.core.version>
+        <dep.jackson.databind.version>2.4.1.3</dep.jackson.databind.version>
+        <dep.jackson.dataformat-smile.version>2.4.1.1</dep.jackson.dataformat-smile.version>
+        <dep.jetty.version>9.2.1.v20140609</dep.jetty.version>
+        <dep.jmxutils.version>1.18</dep.jmxutils.version>
 
-    <dep.hamcrest.version>1.3</dep.hamcrest.version>
-    <dep.junit.version>4.11</dep.junit.version>
-    <dep.objenesis.version>2.1</dep.objenesis.version>
-    <dep.testng.version>6.8.8</dep.testng.version>
-    <dep.mockito.version>1.9.5</dep.mockito.version>
-  </properties>
+        <dep.hamcrest.version>1.3</dep.hamcrest.version>
+        <dep.junit.version>4.11</dep.junit.version>
+        <dep.objenesis.version>2.1</dep.objenesis.version>
+        <dep.testng.version>6.8.8</dep.testng.version>
+        <dep.mockito.version>1.9.5</dep.mockito.version>
+    </properties>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <configuration>
-            <rules>
-              <!-- The following dependencies are hazardous for builds. -->
-              <bannedDependencies>
-                <excludes>
-                  <!-- clashes with commons-logging:commons-logging -->
-                  <exclude>commons-logging:commons-logging-api</exclude>
-                  <!-- clashes with cglib:cglib-nodep -->
-                  <exclude>cglib:cglib</exclude>
-                  <!-- junit repackages hamcrest into its own jar, which is a big no-no.
-                       junit-dep fixes this problem -->
-                  <exclude>junit:junit-dep</exclude>
-                  <exclude>junit:junit:[,4.11)</exclude>
-                  <!-- completely and utterly broken -->
-                  <exclude>org.weakref:jmxutils:(,1.11]</exclude>
-                  <!-- use guava -->
-                  <exclude>com.google.collections:google-collections</exclude>
-                  <!-- but not the badly numbered ones... -->
-                  <exclude>com.google.guava:guava</exclude>
-                  <!-- Clashes with com.google.code.findbugs:annotations and having both jars -->
-                  <!-- as a dependency then clashes with the dependency checker (because it   -->
-                  <!-- is not very good at handling annotations). Use the annotations jar     -->
-                  <!-- instead which has all jsr305 annotations and the additional findbugs   -->
-                  <!-- stuff. -->
-                  <exclude>com.google.code.findbugs:jsr305</exclude>
-                  <!-- Use the official version at javax.servlet:javax.servlet-api -->
-                  <exclude>org.eclipse.jetty.orbit:javax.servlet</exclude>
-                  <exclude>org.mortbay.jetty:servlet-api</exclude>
-                  <exclude>org.mortbay.jetty:servlet-api-2.5</exclude>
-                  <!-- 1.8 and 1.9 are generified badly -->
-                  <exclude>commons-configuration:commons-configuration:[1.8,1.9]</exclude>
-                </excludes>
-                <includes>
-                  <!-- whitelist the well numbered guava releases -->
-                  <include>com.google.guava:guava:[10.0.1,)</include>
-                </includes>
-              </bannedDependencies>
-            </rules>
-          </configuration>
-        </plugin>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <configuration>
+                        <rules>
+                            <!-- The following dependencies are hazardous for builds. -->
+                            <bannedDependencies>
+                                <excludes>
+                                    <!-- clashes with commons-logging:commons-logging -->
+                                    <exclude>commons-logging:commons-logging-api</exclude>
+                                    <!-- clashes with cglib:cglib-nodep -->
+                                    <exclude>cglib:cglib</exclude>
+                                    <!-- junit repackages hamcrest into its own jar, which is a big no-no.
+                                         junit-dep fixes this problem -->
+                                    <exclude>junit:junit-dep</exclude>
+                                    <exclude>junit:junit:[,4.11)</exclude>
+                                    <!-- completely and utterly broken -->
+                                    <exclude>org.weakref:jmxutils:(,1.11]</exclude>
+                                    <!-- use guava -->
+                                    <exclude>com.google.collections:google-collections</exclude>
+                                    <!-- but not the badly numbered ones... -->
+                                    <exclude>com.google.guava:guava</exclude>
+                                    <!-- Clashes with com.google.code.findbugs:annotations and having both jars -->
+                                    <!-- as a dependency then clashes with the dependency checker (because it   -->
+                                    <!-- is not very good at handling annotations). Use the annotations jar     -->
+                                    <!-- instead which has all jsr305 annotations and the additional findbugs   -->
+                                    <!-- stuff. -->
+                                    <exclude>com.google.code.findbugs:jsr305</exclude>
+                                    <!-- Use the official version at javax.servlet:javax.servlet-api -->
+                                    <exclude>org.eclipse.jetty.orbit:javax.servlet</exclude>
+                                    <exclude>org.mortbay.jetty:servlet-api</exclude>
+                                    <exclude>org.mortbay.jetty:servlet-api-2.5</exclude>
+                                    <!-- 1.8 and 1.9 are generified badly -->
+                                    <exclude>commons-configuration:commons-configuration:[1.8,1.9]</exclude>
+                                </excludes>
+                                <includes>
+                                    <!-- whitelist the well numbered guava releases -->
+                                    <include>com.google.guava:guava:[10.0.1,)</include>
+                                </includes>
+                            </bannedDependencies>
+                        </rules>
+                    </configuration>
+                </plugin>
 
-        <plugin>
-          <groupId>com.ning.maven.plugins</groupId>
-          <artifactId>maven-duplicate-finder-plugin</artifactId>
-          <configuration>
-            <exceptions>
-              <!-- Well done, Apache... -->
-              <exception>
-                <conflictingDependencies>
-                  <dependency>
-                    <groupId>commons-beanutils</groupId>
-                    <artifactId>commons-beanutils</artifactId>
-                  </dependency>
-                  <dependency>
-                    <groupId>commons-beanutils</groupId>
-                    <artifactId>commons-beanutils-core</artifactId>
-                  </dependency>
-                  <dependency>
-                    <groupId>commons-collections</groupId>
-                    <artifactId>commons-collections</artifactId>
-                  </dependency>
-                </conflictingDependencies>
-                <classes>
-                  <class>org.apache.commons.collections.ArrayStack</class>
-                  <class>org.apache.commons.collections.Buffer</class>
-                  <class>org.apache.commons.collections.BufferUnderflowException</class>
-                  <class>org.apache.commons.collections.FastHashMap</class>
-                </classes>
-              </exception>
-              <exception>
-                <conflictingDependencies>
-                  <dependency>
-                    <groupId>commons-beanutils</groupId>
-                    <artifactId>commons-beanutils</artifactId>
-                  </dependency>
-                  <dependency>
-                    <groupId>commons-beanutils</groupId>
-                    <artifactId>commons-beanutils-core</artifactId>
-                  </dependency>
-                </conflictingDependencies>
-                <packages>
-                  <package>org.apache.commons.beanutils</package>
-                </packages>
-              </exception>
-              <exception>
-                <conflictingDependencies>
-                  <dependency>
-                    <groupId>com.sun.jersey</groupId>
-                    <artifactId>jersey-core</artifactId>
-                  </dependency>
-                  <dependency>
-                    <groupId>com.sun.jersey</groupId>
-                    <artifactId>jersey-client</artifactId>
-                  </dependency>
-                  <dependency>
-                    <groupId>com.sun.jersey</groupId>
-                    <artifactId>jersey-server</artifactId>
-                  </dependency>
-                </conflictingDependencies>
-                <resources>
-                  <resource>META-INF/jersey-module-version</resource>
-                </resources>
-              </exception>
-            </exceptions>
-            <!-- Ruby is hopeless -->
-            <ignoredDependencies>
-              <dependency>
-                <groupId>org.jruby</groupId>
-                <artifactId>jruby-complete</artifactId>
-              </dependency>
-            </ignoredDependencies>
-            <ignoredResources>
-              <ignoredResource>.*\.html</ignoredResource>
-              <ignoredResource>META-INF/.*</ignoredResource>
-              <ignoredResource>about_files/.*</ignoredResource>
-              <ignoredResource>plugin\.properties</ignoredResource>
-              <ignoredResource>plugin\.xml</ignoredResource>
-              <ignoredResource>.*\.java</ignoredResource>
-              <!-- the log4j config should not be ignored but they are a constant -->
-              <!-- source of annoyance. If you use log4j.properties from the classpath -->
-              <!-- then you are in trouble anyway -->
-              <ignoredResource>log4j\.xml</ignoredResource>
-              <ignoredResource>log4j\.properties</ignoredResource>
-            </ignoredResources>
-          </configuration>
-        </plugin>
+                <plugin>
+                    <groupId>com.ning.maven.plugins</groupId>
+                    <artifactId>maven-duplicate-finder-plugin</artifactId>
+                    <configuration>
+                        <exceptions>
+                            <!-- Well done, Apache... -->
+                            <exception>
+                                <conflictingDependencies>
+                                    <dependency>
+                                        <groupId>commons-beanutils</groupId>
+                                        <artifactId>commons-beanutils</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>commons-beanutils</groupId>
+                                        <artifactId>commons-beanutils-core</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>commons-collections</groupId>
+                                        <artifactId>commons-collections</artifactId>
+                                    </dependency>
+                                </conflictingDependencies>
+                                <classes>
+                                    <class>org.apache.commons.collections.ArrayStack</class>
+                                    <class>org.apache.commons.collections.Buffer</class>
+                                    <class>org.apache.commons.collections.BufferUnderflowException</class>
+                                    <class>org.apache.commons.collections.FastHashMap</class>
+                                </classes>
+                            </exception>
+                            <exception>
+                                <conflictingDependencies>
+                                    <dependency>
+                                        <groupId>commons-beanutils</groupId>
+                                        <artifactId>commons-beanutils</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>commons-beanutils</groupId>
+                                        <artifactId>commons-beanutils-core</artifactId>
+                                    </dependency>
+                                </conflictingDependencies>
+                                <packages>
+                                    <package>org.apache.commons.beanutils</package>
+                                </packages>
+                            </exception>
+                            <exception>
+                                <conflictingDependencies>
+                                    <dependency>
+                                        <groupId>com.sun.jersey</groupId>
+                                        <artifactId>jersey-core</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>com.sun.jersey</groupId>
+                                        <artifactId>jersey-client</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>com.sun.jersey</groupId>
+                                        <artifactId>jersey-server</artifactId>
+                                    </dependency>
+                                </conflictingDependencies>
+                                <resources>
+                                    <resource>META-INF/jersey-module-version</resource>
+                                </resources>
+                            </exception>
+                        </exceptions>
+                        <!-- Ruby is hopeless -->
+                        <ignoredDependencies>
+                            <dependency>
+                                <groupId>org.jruby</groupId>
+                                <artifactId>jruby-complete</artifactId>
+                            </dependency>
+                        </ignoredDependencies>
+                        <ignoredResources>
+                            <ignoredResource>.*\.html</ignoredResource>
+                            <ignoredResource>META-INF/.*</ignoredResource>
+                            <ignoredResource>about_files/.*</ignoredResource>
+                            <ignoredResource>plugin\.properties</ignoredResource>
+                            <ignoredResource>plugin\.xml</ignoredResource>
+                            <ignoredResource>.*\.java</ignoredResource>
+                            <!-- the log4j config should not be ignored but they are a constant -->
+                            <!-- source of annoyance. If you use log4j.properties from the classpath -->
+                            <!-- then you are in trouble anyway -->
+                            <ignoredResource>log4j\.xml</ignoredResource>
+                            <ignoredResource>log4j\.properties</ignoredResource>
+                        </ignoredResources>
+                    </configuration>
+                </plugin>
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-pmd-plugin</artifactId>
-          <configuration>
-            <excludeRoots>
-              <excludeRoot>target/generated-sources/stubs</excludeRoot>
-            </excludeRoots>
-          </configuration>
-        </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <configuration>
+                        <excludeRoots>
+                            <excludeRoot>target/generated-sources/stubs</excludeRoot>
+                        </excludeRoots>
+                    </configuration>
+                </plugin>
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <dependencies>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.basepom</groupId>
+                            <artifactId>basepom-policy</artifactId>
+                            <version>${dep.basepom-policy.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <configLocation>checkstyle/checkstyle-basepom.xml</configLocation>
+                    </configuration>
+                </plugin>
+            </plugins>
+
+        </pluginManagement>
+    </build>
+
+    <!-- The following dependency should be the same everywhere. -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Google Guice -->
             <dependency>
-              <groupId>org.basepom</groupId>
-              <artifactId>basepom-policy</artifactId>
-              <version>${dep.basepom-policy.version}</version>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${dep.guice.version}</version>
             </dependency>
-          </dependencies>
-          <configuration>
-            <configLocation>checkstyle/checkstyle-basepom.xml</configLocation>
-          </configuration>
-        </plugin>
-      </plugins>
-
-    </pluginManagement>
-  </build>
-
-  <!-- The following dependency should be the same everywhere. -->
-  <dependencyManagement>
-    <dependencies>
-      <!-- Google Guice -->
-      <dependency>
-        <groupId>com.google.inject</groupId>
-        <artifactId>guice</artifactId>
-        <version>${dep.guice.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.inject.extensions</groupId>
-        <artifactId>guice-servlet</artifactId>
-        <version>${dep.guice.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.inject.extensions</groupId>
-        <artifactId>guice-assistedinject</artifactId>
-        <version>${dep.guice.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.inject.extensions</groupId>
-        <artifactId>guice-multibindings</artifactId>
-        <version>${dep.guice.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.google.inject.extensions</groupId>
-        <artifactId>guice-throwingproviders</artifactId>
-        <version>${dep.guice.version}</version>
-      </dependency>
-
-      <!-- Java Base libs (aka JDK 2) -->
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${dep.guava.version}</version>
-      </dependency>
-
-      <!-- Java APIs -->
-      <dependency>
-        <groupId>javax.inject</groupId>
-        <artifactId>javax.inject</artifactId>
-        <version>${dep.javax-inject.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>${dep.javax-servlet.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.validation</groupId>
-        <artifactId>validation-api</artifactId>
-        <version>${dep.javax-validation.version}</version>
-      </dependency>
-
-      <!-- jersey -->
-      <dependency>
-        <groupId>com.sun.jersey</groupId>
-        <artifactId>jersey-core</artifactId>
-        <version>${dep.jersey.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.sun.jersey.contribs</groupId>
-        <artifactId>jersey-guice</artifactId>
-        <version>${dep.jersey.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.sun.jersey.contribs</groupId>
-        <artifactId>jersey-multipart</artifactId>
-        <version>${dep.jersey.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.sun.jersey</groupId>
-        <artifactId>jersey-client</artifactId>
-        <version>${dep.jersey.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.sun.jersey</groupId>
-        <artifactId>jersey-server</artifactId>
-        <version>${dep.jersey.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.sun.jersey</groupId>
-        <artifactId>jersey-servlet</artifactId>
-        <version>${dep.jersey.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.sun.jersey.jersey-test-framework</groupId>
-        <artifactId>jersey-test-framework-core</artifactId>
-        <version>${dep.jersey.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.sun.jersey.jersey-test-framework</groupId>
-        <artifactId>jersey-test-framework-inmemory</artifactId>
-        <version>${dep.jersey.version}</version>
-      </dependency>
-
-      <!-- jackson -->
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-annotations</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>${dep.jackson.core.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>${dep.jackson.databind.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.datatype</groupId>
-        <artifactId>jackson-datatype-guava</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.datatype</groupId>
-        <artifactId>jackson-datatype-joda</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.dataformat</groupId>
-        <artifactId>jackson-dataformat-smile</artifactId>
-        <version>${dep.jackson.dataformat-smile.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.dataformat</groupId>
-        <artifactId>jackson-dataformat-yaml</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.module</groupId>
-        <artifactId>jackson-module-mrbean</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.module</groupId>
-        <artifactId>jackson-module-afterburner</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.module</groupId>
-        <artifactId>jackson-module-jaxb-annotations</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.fasterxml.jackson.jaxrs</groupId>
-        <artifactId>jackson-jaxrs-json-provider</artifactId>
-        <version>${dep.jackson.version}</version>
-      </dependency>
-
-      <!-- jetty -->
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-server</artifactId>
-        <version>${dep.jetty.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.eclipse.jetty.orbit</groupId>
-            <artifactId>javax.servlet</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-servlet</artifactId>
-        <version>${dep.jetty.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-util</artifactId>
-        <version>${dep.jetty.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-servlets</artifactId>
-        <version>${dep.jetty.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-security</artifactId>
-        <version>${dep.jetty.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-jmx</artifactId>
-        <version>${dep.jetty.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-http</artifactId>
-        <version>${dep.jetty.version}</version>
-      </dependency>
-
-      <!-- misc stuff -->
-      <dependency>
-        <groupId>org.apache.bval</groupId>
-        <artifactId>bval-jsr303</artifactId>
-        <version>${dep.apache-bval.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.weakref</groupId>
-        <artifactId>jmxutils</artifactId>
-        <version>${dep.jmxutils.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>joda-time</groupId>
-        <artifactId>joda-time</artifactId>
-        <version>${dep.joda.version}</version>
-      </dependency>
-
-      <!-- logging -->
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-jcl</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-jdk14</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-nop</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-simple</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-ext</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>jcl-over-slf4j</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>jul-to-slf4j</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>log4j-over-slf4j</artifactId>
-        <version>${dep.slf4j.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-core</artifactId>
-        <version>${dep.logback.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-classic</artifactId>
-        <version>${dep.logback.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${dep.log4j.version}</version>
-      </dependency>
-
-      <!-- Apache commons components -->
-      <dependency>
-        <groupId>commons-logging</groupId>
-        <artifactId>commons-logging</artifactId>
-        <version>${dep.commons-logging.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-lang3</artifactId>
-        <version>${dep.commons-lang3.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-lang</groupId>
-        <artifactId>commons-lang</artifactId>
-        <version>${dep.commons-lang.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-configuration</groupId>
-        <artifactId>commons-configuration</artifactId>
-        <version>${dep.commons-configuration.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-codec</groupId>
-        <artifactId>commons-codec</artifactId>
-        <version>${dep.commons-codec.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-collections</groupId>
-        <artifactId>commons-collections</artifactId>
-        <version>${dep.commons-collections.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-collections4</artifactId>
-        <version>${dep.commons-collections4.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-io</groupId>
-        <artifactId>commons-io</artifactId>
-        <version>${dep.commons-io.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>commons-beanutils</groupId>
-        <artifactId>commons-beanutils</artifactId>
-        <version>${dep.commons-beanutils.version}</version>
-      </dependency>
-
-      <!-- findbugs -->
-      <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>annotations</artifactId>
-        <version>${dep.findbugs.version}</version>
-      </dependency>
-
-      <!-- Testing -->
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${dep.junit.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>${dep.testng.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <version>${dep.mockito.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-core</artifactId>
-        <version>${dep.hamcrest.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-library</artifactId>
-        <version>${dep.hamcrest.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.objenesis</groupId>
-        <artifactId>objenesis</artifactId>
-        <version>${dep.objenesis.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-servlet</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-assistedinject</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-multibindings</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-throwingproviders</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <!-- Java Base libs (aka JDK 2) -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${dep.guava.version}</version>
+            </dependency>
+
+            <!-- Java APIs -->
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>${dep.javax-inject.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${dep.javax-servlet.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${dep.javax-validation.version}</version>
+            </dependency>
+
+            <!-- jersey -->
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-core</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>jersey-guice</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>jersey-multipart</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-client</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-server</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-servlet</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey.jersey-test-framework</groupId>
+                <artifactId>jersey-test-framework-core</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey.jersey-test-framework</groupId>
+                <artifactId>jersey-test-framework-inmemory</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <!-- jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${dep.jackson.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${dep.jackson.databind.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-guava</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-joda</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-smile</artifactId>
+                <version>${dep.jackson.dataformat-smile.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-yaml</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-mrbean</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-afterburner</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-jaxb-annotations</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-json-provider</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <!-- jetty -->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-server</artifactId>
+                <version>${dep.jetty.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.eclipse.jetty.orbit</groupId>
+                        <artifactId>javax.servlet</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-servlet</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-util</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-servlets</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-security</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-jmx</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-http</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <!-- misc stuff -->
+            <dependency>
+                <groupId>org.apache.bval</groupId>
+                <artifactId>bval-jsr303</artifactId>
+                <version>${dep.apache-bval.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.weakref</groupId>
+                <artifactId>jmxutils</artifactId>
+                <version>${dep.jmxutils.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${dep.joda.version}</version>
+            </dependency>
+
+            <!-- logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jcl</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-jdk14</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-nop</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-ext</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${dep.logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${dep.logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${dep.log4j.version}</version>
+            </dependency>
+
+            <!-- Apache commons components -->
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${dep.commons-logging.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${dep.commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${dep.commons-lang.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-configuration</groupId>
+                <artifactId>commons-configuration</artifactId>
+                <version>${dep.commons-configuration.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${dep.commons-codec.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${dep.commons-collections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${dep.commons-collections4.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${dep.commons-io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${dep.commons-beanutils.version}</version>
+            </dependency>
+
+            <!-- findbugs -->
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${dep.findbugs.version}</version>
+            </dependency>
+
+            <!-- Testing -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${dep.junit.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${dep.testng.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${dep.mockito.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-core</artifactId>
+                <version>${dep.hamcrest.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-library</artifactId>
+                <version>${dep.hamcrest.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis</artifactId>
+                <version>${dep.objenesis.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
