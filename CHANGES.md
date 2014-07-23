@@ -2,6 +2,7 @@
 
 ## Version 6
 
+* 2014-07-22 - (foundation) Add really-executable plugin with profile to shade and create executables
 * 2014-07-22 - (foundation, standard, standard-oss) Add basic scala build and deploy support
 * 2014-07-22 - (foundation) Add invoker (integration testing) support.
 * 2014-07-22 - (foundation) Update shade plugin configuration.
