@@ -55,6 +55,7 @@
     <module>foundation</module>
     <module>standard</module>
     <module>standard-oss</module>
+    <module>smoketest</module>
   </modules>
 
   <scm>

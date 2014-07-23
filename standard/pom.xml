@@ -25,11 +25,11 @@
   <artifactId>basepom-standard</artifactId>
   <packaging>pom</packaging>
 
-<!--
-  <name>basepom-standard</name>
-  <description>Standard base POM for new projects. Does not include any distribution or repository information.</description>
-  <url>https://github.com/basepom/basepom/standard</url>
--->
+  <!--
+      <name>basepom-standard</name>
+      <description>Standard base POM for new projects. Does not include any distribution or repository information.</description>
+      <url>https://github.com/basepom/basepom/standard</url>
+  -->
 
   <properties>
     <basepom.check.skip-pmd>${basepom.check.skip-extended}</basepom.check.skip-pmd>
@@ -42,17 +42,18 @@
     <dep.commons-beanutils.version>1.9.2</dep.commons-beanutils.version>
     <dep.commons-codec.version>1.9</dep.commons-codec.version>
     <dep.commons-collections.version>3.2.1</dep.commons-collections.version>
+    <dep.commons-collections4.version>4.0</dep.commons-collections4.version>
     <dep.commons-configuration.version>1.10</dep.commons-configuration.version>
     <dep.commons-io.version>2.4</dep.commons-io.version>
     <dep.commons-lang.version>2.6</dep.commons-lang.version>
     <dep.commons-lang3.version>3.3.2</dep.commons-lang3.version>
-    <dep.commons-logging.version>1.1.3</dep.commons-logging.version>
+    <dep.commons-logging.version>1.2</dep.commons-logging.version>
     <dep.apache-bval.version>0.5</dep.apache-bval.version>
 
     <dep.javax-inject.version>1</dep.javax-inject.version>
     <dep.javax-validation.version>1.1.0.Final</dep.javax-validation.version>
     <!-- matches jetty 8.1.x -->
-    <dep.javax-servlet.version>3.0.1</dep.javax-servlet.version>
+    <dep.javax-servlet.version>3.1.0</dep.javax-servlet.version>
 
     <dep.guava.version>17.0</dep.guava.version>
     <dep.guice.version>4.0-beta4</dep.guice.version>
@@ -61,14 +62,13 @@
     <dep.logback.version>1.1.2</dep.logback.version>
     <dep.slf4j.version>1.7.7</dep.slf4j.version>
     <dep.jersey.version>1.18.1</dep.jersey.version>
-    <dep.jackson.version>2.4.0</dep.jackson.version>
-    <dep.jetty.version>8.1.15.v20140411</dep.jetty.version>
-    <dep.jmxutils.version>1.16</dep.jmxutils.version>
+    <dep.jackson.version>2.4.1</dep.jackson.version>
+    <dep.jackson.core.version>2.4.1.1</dep.jackson.core.version>
+    <dep.jackson.databind.version>2.4.1.3</dep.jackson.databind.version>
+    <dep.jackson.dataformat-smile.version>2.4.1.1</dep.jackson.dataformat-smile.version>
+    <dep.jetty.version>9.2.1.v20140609</dep.jetty.version>
+    <dep.jmxutils.version>1.18</dep.jmxutils.version>
 
-    <!-- easymock and others depend on version 2.2.2 -->
-    <dep.cglib.version>2.2.2</dep.cglib.version>
-
-    <dep.easymock.version>3.2</dep.easymock.version>
     <dep.hamcrest.version>1.3</dep.hamcrest.version>
     <dep.junit.version>4.11</dep.junit.version>
     <dep.objenesis.version>2.1</dep.objenesis.version>
@@ -357,13 +357,13 @@
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
-        <version>${dep.jackson.version}</version>
+        <version>${dep.jackson.core.version}</version>
       </dependency>
 
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>${dep.jackson.version}</version>
+        <version>${dep.jackson.databind.version}</version>
       </dependency>
 
       <dependency>
@@ -381,13 +381,13 @@
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-smile</artifactId>
-        <version>${dep.jackson.version}</version>
+        <version>${dep.jackson.dataformat-smile.version}</version>
       </dependency>
 
       <dependency>
-          <groupId>com.fasterxml.jackson.dataformat</groupId>
-          <artifactId>jackson-dataformat-yaml</artifactId>
-          <version>${dep.jackson.version}</version>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-yaml</artifactId>
+        <version>${dep.jackson.version}</version>
       </dependency>
 
       <dependency>
@@ -403,15 +403,15 @@
       </dependency>
 
       <dependency>
-          <groupId>com.fasterxml.jackson.module</groupId>
-          <artifactId>jackson-module-jaxb-annotations</artifactId>
-          <version>${dep.jackson.version}</version>
+        <groupId>com.fasterxml.jackson.module</groupId>
+        <artifactId>jackson-module-jaxb-annotations</artifactId>
+        <version>${dep.jackson.version}</version>
       </dependency>
 
       <dependency>
-          <groupId>com.fasterxml.jackson.jaxrs</groupId>
-          <artifactId>jackson-jaxrs-json-provider</artifactId>
-          <version>${dep.jackson.version}</version>
+        <groupId>com.fasterxml.jackson.jaxrs</groupId>
+        <artifactId>jackson-jaxrs-json-provider</artifactId>
+        <version>${dep.jackson.version}</version>
       </dependency>
 
       <!-- jetty -->
@@ -480,12 +480,6 @@
         <groupId>joda-time</groupId>
         <artifactId>joda-time</artifactId>
         <version>${dep.joda.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>cglib</groupId>
-        <artifactId>cglib-nodep</artifactId>
-        <version>${dep.cglib.version}</version>
       </dependency>
 
       <!-- logging -->
@@ -605,6 +599,12 @@
       </dependency>
 
       <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-collections4</artifactId>
+        <version>${dep.commons-collections4.version}</version>
+      </dependency>
+
+      <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
         <version>${dep.commons-io.version}</version>
@@ -640,12 +640,6 @@
             <artifactId>junit</artifactId>
           </exclusion>
         </exclusions>
-      </dependency>
-
-      <dependency>
-        <groupId>org.easymock</groupId>
-        <artifactId>easymock</artifactId>
-        <version>${dep.easymock.version}</version>
       </dependency>
 
       <dependency>
