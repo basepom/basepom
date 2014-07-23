@@ -2,6 +2,7 @@
 
 ## Version 6
 
+* 2014-07-22 - (foundation) Add invoker (integration testing) support.
 * 2014-07-22 - (foundation) Update shade plugin configuration.
 * 2014-07-22 - (foundation) Add property-helper plugin for build.id generation.
 * 2014-07-22 - (foundation) Add git-commit-id plugin.

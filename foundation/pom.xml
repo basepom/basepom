@@ -104,7 +104,11 @@
         <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
 
-        <!-- the current "best" version of maven -->
+        <!-- Invoker (Integration testing) -->
+        <basepom.it.skip>false</basepom.it.skip>
+        <basepom.it.folder>src/it</basepom.it.folder>
+
+        <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.0.5</basepom.maven.version>
 
         <!-- policy jar for license and checkstyle defaults -->
@@ -140,6 +144,7 @@
         <dep.plugin.surefire.version>2.17</dep.plugin.surefire.version>
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
         <dep.plugin.git-commit-id.version>2.1.10</dep.plugin.git-commit-id.version>
+        <dep.plugin.invoker.version>1.9</dep.plugin.invoker.version>
     </properties>
 
     <prerequisites>
@@ -589,6 +594,33 @@
                         </gitDescribe>
                     </configuration>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-invoker-plugin</artifactId>
+                    <version>${dep.plugin.invoker.version}</version>
+                    <configuration>
+                        <skipInvocation>${basepom.it.skip}</skipInvocation>
+                        <skipInstallation>${basepom.it.skip}</skipInstallation>
+                        <debug>true</debug>
+                        <projectsDirectory>${basepom.it.folder}</projectsDirectory>
+                        <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+                        <pomIncludes>
+                            <pomInclude>*/pom.xml</pomInclude>
+                        </pomIncludes>
+                        <preBuildHookScript>setup</preBuildHookScript>
+                        <postBuildHookScript>verify</postBuildHookScript>
+                        <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
+                        <settingsFile>${basepom.it.folder}/settings.xml</settingsFile>
+                        <goals>
+                            <goal>clean</goal>
+                            <goal>package</goal>
+                        </goals>
+                        <pomIncludes>
+                            <pomInclude>*/pom.xml</pomInclude>
+                        </pomIncludes>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -803,4 +835,36 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>integration-testing</id>
+            <activation>
+                <file>
+                    <!-- An integration testing folder exists. -->
+                    <exists>${basedir}/${basepom.it.folder}</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-invoker-plugin</artifactId>
+
+                        <executions>
+                            <execution>
+                                <id>integration-test</id>
+                                <phase>integration-test</phase>
+                                <goals>
+                                    <goal>install</goal>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
