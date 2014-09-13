@@ -2,6 +2,10 @@
 
 ## Version 6
 
+* 2014-09-12 - (foundation) Upgrade deploy plugin to 2.8.2 (from 2.8.1)
+* 2014-09-12 - (foundation) Upgrade install plugin to 2.5.2 (from 2.5.1)
+* 2014-09-12 - (foundation) Upgrade pmd plugin to 3.2 (from 3.1)
+* 2014-09-12 - (foundation) Upgrade plugin to 2.4.1 (from 2.4)
 * 2014-07-22 - (foundation) Add really-executable plugin with profile to shade and create executables
 * 2014-07-22 - (foundation, standard, standard-oss) Add basic scala build and deploy support
 * 2014-07-22 - (foundation) Add invoker (integration testing) support.
