@@ -47,9 +47,13 @@
         <!-- release profiles -->
         <basepom.release.profiles>oss-release</basepom.release.profiles>
 
-        <!-- Plugin versions -->
-        <dep.plugin.license.version>2.6</dep.plugin.license.version>
+        <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
+
+        <!-- tools -->
         <dep.plugin.gpg.version>1.5</dep.plugin.gpg.version>
+
+        <!-- https://github.com/mycila/license-maven-plugin/releases -->
+        <dep.plugin.license.version>2.6</dep.plugin.license.version>
 
     </properties>
 

@@ -2,6 +2,9 @@
 
 ## Version 6
 
+* 2014-09-12 - (foundation) Upgrade build helper plugin to 1.9.1 (from 1.9.0)
+* 2014-09-12 - (foundation) Upgrade findbugs plugin to 3.0.0 (from 2.5.4)
+* 2014-09-12 - (foundation) Upgrade scala plugin to 3.2.0 (from 3.1.6)
 * 2014-09-12 - (foundation) Upgrade deploy plugin to 2.8.2 (from 2.8.1)
 * 2014-09-12 - (foundation) Upgrade install plugin to 2.5.2 (from 2.5.1)
 * 2014-09-12 - (foundation) Upgrade pmd plugin to 3.2 (from 3.1)
