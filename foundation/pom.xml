@@ -119,7 +119,7 @@
         <dep.checkstyle.version>5.7</dep.checkstyle.version>
 
         <!-- Scala -->
-        <dep.scala.version>2.11.1</dep.scala.version>
+        <dep.scala.version>2.11.2</dep.scala.version>
 
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 

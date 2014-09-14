@@ -2,6 +2,12 @@
 
 ## Version 7
 
+* 2014-09-14 - (standard) Upgrade jackson dependency to 2.4.2 (from 2.4.1),
+                          remove special cases for jackson core, databind, dataformat-smile
+* 2014-09-14 - (standard) Upgrade joda-time dependency to 2.4 (from 2.3)
+* 2014-09-14 - (standard) Upgrade guava dependency to 18.0 (from 17.0)
+* 2014-09-14 - (standard) Upgrade jetty dependency to 9.2.3.v20140905 (from 9.2.1.v20140609)
+* 2014-09-14 - (foundation) Upgrade scala dependency to 2.11.2 (from 2.11.1)
 * 2014-09-14 - (foundation) Add java.util.logging formatting to surefire plugin to support better
                             formatting for tests (from facebook-presto).
 * 2014-09-12 - (foundation) Upgrade build helper plugin to 1.9.1 (from 1.9.0)
@@ -30,7 +36,7 @@
 * 2014-07-22 - (standard) Upgrade servlet-api to 3.1.0 (from 3.0.1)
 * 2014-07-22 - (standard) Upgrade jetty to 9.2.1.v20140609 (from 8.1.15.v20140411).
 * 2014-07-22 - (standard) Upgrade commons-logging to 1.2 (from 1.1.3)
-* 2014-07-22 - (standard) Upgrade Upgrade jackson dependency to 2.4.1 (from 2.4.1)
+* 2014-07-22 - (standard) Upgrade jackson dependency to 2.4.1 (from 2.4.0)
 * 2014-07-22 - (standard) Add temporary special cases for jackson core, databind, dataformat-smile
 * 2014-07-22 - (foundation) Upgrade checkstyle to 5.7 (from 5.6)
 * 2014-07-22 - (foundation) Upgrade PMD to 5.1.2 (from 5.1.0)
