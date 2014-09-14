@@ -654,9 +654,6 @@
                             <goal>clean</goal>
                             <goal>package</goal>
                         </goals>
-                        <pomIncludes>
-                            <pomInclude>*/pom.xml</pomInclude>
-                        </pomIncludes>
                     </configuration>
                 </plugin>
 
