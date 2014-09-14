@@ -1,7 +1,9 @@
 # Changes
 
-## Version 6
+## Version 7
 
+* 2014-09-14 - (foundation) Add java.util.logging formatting to surefire plugin to support better
+                            formatting for tests (from facebook-presto).
 * 2014-09-12 - (foundation) Upgrade build helper plugin to 1.9.1 (from 1.9.0)
 * 2014-09-12 - (foundation) Upgrade findbugs plugin to 3.0.0 (from 2.5.4)
 * 2014-09-12 - (foundation) Upgrade scala plugin to 3.2.0 (from 3.1.6)
@@ -9,6 +11,9 @@
 * 2014-09-12 - (foundation) Upgrade install plugin to 2.5.2 (from 2.5.1)
 * 2014-09-12 - (foundation) Upgrade pmd plugin to 3.2 (from 3.1)
 * 2014-09-12 - (foundation) Upgrade plugin to 2.4.1 (from 2.4)
+
+## Version 6
+
 * 2014-07-22 - (foundation) Add really-executable plugin with profile to shade and create executables
 * 2014-07-22 - (foundation, standard, standard-oss) Add basic scala build and deploy support
 * 2014-07-22 - (foundation) Add invoker (integration testing) support.
