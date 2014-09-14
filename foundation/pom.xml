@@ -157,7 +157,7 @@
         <dep.plugin.dependency-versions-check.version>2.0.2</dep.plugin.dependency-versions-check.version>
 
         <!-- https://github.com/ning/maven-duplicate-finder-plugin/releases -->
-        <dep.plugin.duplicate-finder.version>1.0.7</dep.plugin.duplicate-finder.version>
+        <dep.plugin.duplicate-finder.version>1.0.8</dep.plugin.duplicate-finder.version>
 
         <!-- http://mojo.codehaus.org/findbugs-maven-plugin/ -->
         <dep.plugin.findbugs.version>3.0.0</dep.plugin.findbugs.version>

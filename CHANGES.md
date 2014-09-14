@@ -2,6 +2,7 @@
 
 ## Version 7
 
+* 2014-09-14 - (foundation) Upgrade duplicate-finder plugin to 1.0.8 (from 1.0.7)
 * 2014-09-14 - (standard) Upgrade jackson dependency to 2.4.2 (from 2.4.1),
                           remove special cases for jackson core, databind, dataformat-smile
 * 2014-09-14 - (standard) Upgrade joda-time dependency to 2.4 (from 2.3)
