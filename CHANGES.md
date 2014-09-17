@@ -1,5 +1,9 @@
 # Changes
 
+## Version 8
+
+* 2014-09-22 - (standard) Add jackson-jaxrs-base and jackson-datatype-jsr310
+
 ## Version 7
 
 * 2014-09-14 - (foundation) Upgrade duplicate-finder plugin to 1.0.8 (from 1.0.7)
