@@ -116,7 +116,7 @@
 
         <dep.findbugs.version>3.0.0</dep.findbugs.version>
         <dep.pmd.version>5.1.2</dep.pmd.version>
-        <dep.checkstyle.version>5.7</dep.checkstyle.version>
+        <dep.checkstyle.version>6.1</dep.checkstyle.version>
 
         <!-- Scala -->
         <dep.scala.version>2.11.2</dep.scala.version>

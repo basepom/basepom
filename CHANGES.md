@@ -3,6 +3,7 @@
 ## Version 8
 
 * 2014-09-22 - (standard) Add jackson-jaxrs-base and jackson-datatype-jsr310
+* 2014-11-27 - (foundation) Upgrade checkstyle plugin to 6.1 (from 5.7)
 
 ## Version 7
 
