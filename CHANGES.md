@@ -3,6 +3,57 @@
 ## Version 8
 
 * 2014-09-22 - (standard) Add jackson-jaxrs-base and jackson-datatype-jsr310
+* 2014-12-31 - (foundation) Upgrade clean plugin to 2.6.1 (from 2.5)
+* 2014-12-31 - (foundation) Upgrade compiler plugin to 3.2 (from 3.1)
+* 2014-12-31 - (foundation) Upgrade resources plugin to 2.7 (from 2.6)
+* 2014-12-31 - (foundation) Upgrade surefire plugin to 2.18.1 (from 2.17)
+* 2014-12-31 - (foundation) Upgrade source plugin to 2.4 (from 2.3)
+* 2014-12-31 - (foundation) Upgrade checkstyle plugin to 2.13 (from 2.12.1)
+* 2014-12-31 - (foundation) Upgrade javavdoc plugin to 2.10.1 (from 2.9.1)
+* 2014-12-31 - (foundation) Upgrade pmd plugin to 3.3 (from 3.2)
+* 2014-12-31 - (foundation) Upgrade assembly plugin to 2.5.3 (from 2.4.1)
+* 2014-12-31 - (foundation) Upgrade dependency plugin to 2.9 (from 2.8)
+* 2014-12-31 - (foundation) Upgrade release plugin to 2.5.1 (from 2.5)
+* 2014-12-31 - (foundation) Upgrade scm plugin to 1.9.2 (from 1.9)
+* 2014-12-31 - (foundation) Upgrade jacoco plugin to 0.7.2.201409121644 (from 0.7.1.201405082137)
+* 2014-12-31 - (foundation) Upgrade git-commit-id plugin to 2.1.12 (from 2.1.10)
+* 2014-12-31 - (standard-oss) Upgrade license plugin to 2.7 (from 2.6)
+
+* 2014-12-31 - (foundation) Upgrade pmd to 5.2.3 (from 5.1.2)
+* 2014-12-31 - (foundation) Upgrade checkstyle to 6.2 (from 5.7)
+* 2014-12-31 - (foundation) Upgrade scala dependency to 2.11.4 (from 2.11.2)
+* 2014-12-31 - (standard) Upgrade jackson dependency to 2.4.4 (from 2.4.2)
+* 2014-12-31 - (standard) Upgrade guice dependency to 4.0beta5 (from 4.0beta4)
+* 2014-12-31 - (standard) Upgrade jersey dependency to 1.18.3  (from 1.18.1)
+* 2014-12-31 - (standard) Upgrade commons-codec dependency to 1.10 (from 1.9)
+* 2014-12-31 - (standard) Upgrade joda-time dependency to 2.6 (from 2.4)
+* 2014-12-31 - (standard) Upgrade junit dependency to 4.12 (from 4.11)
+* 2014-12-31 - (standard) Upgrade jetty dependency to 9.2.6.v20141205 (from 9.2.3.v20140905)
+* 2014-12-31 - (standard) Upgrade mockito-core dependency to 1.10.19 (from 1.9.5)
+* 2014-12-31 - (standard) Upgrade slf4j dependency to 1.7.9 (from 1.7.7)
+* 2014-12-31 - (standard) Upgrade testng dependency to 6.8.13 (from 6.8.8)
+
+* 2014-12-31 - (foundation) Switched from Ning duplicate-finder plugin to the
+                            basepom plugin.
+                            This is a breaking change and if a POM references
+                            the old ning plugin, artifactId and groupId must be
+                            updated!
+* 2014-12-31 - (foundation) Removed basepom.check.phase-duplicate-finder property, as the
+                            duplicate finder plugin runs on the classpath, it must be run in
+                            verify phase.
+* 2014-12-31 - (standard) Added remaining jackson dependencies::
+                          - datatype: hppc, hibernate3, hibernate4, jdk7, jdk8, json-org, jsr353
+                          - dataformat: avro, cbor, csv, xml
+                          - module: kotlin, parameter-names, paranamer, guice, jsonSchema, scala_2.10, scala_2.11
+                          - jaxrs: cbor, smile, xml
+* 2014-12-31 - (standard) Added remaining guice extension modules:
+                          - grapher, jmx, jndi, persist, spring, struts2, testlib
+* 2014-12-31 - (standard) Added more jersey dependencies:
+                          - jersey: atom
+                          - jersey-contribs: spring, simple-server, scala
+                          - jersey-test-framework: http, external
+* 2014-12-31 - (standard) Added more jetty dependencies:
+                          - io, xml, webapp, jndi, annotations, continuation, client, monitor, http-spi
 
 ## Version 7
 

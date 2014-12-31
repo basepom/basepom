@@ -40,7 +40,7 @@
 
         <!-- Dependency versions that should be the same everywhere. -->
         <dep.commons-beanutils.version>1.9.2</dep.commons-beanutils.version>
-        <dep.commons-codec.version>1.9</dep.commons-codec.version>
+        <dep.commons-codec.version>1.10</dep.commons-codec.version>
         <dep.commons-collections.version>3.2.1</dep.commons-collections.version>
         <dep.commons-collections4.version>4.0</dep.commons-collections4.version>
         <dep.commons-configuration.version>1.10</dep.commons-configuration.version>
@@ -56,21 +56,21 @@
         <dep.javax-servlet.version>3.1.0</dep.javax-servlet.version>
 
         <dep.guava.version>18.0</dep.guava.version>
-        <dep.guice.version>4.0-beta4</dep.guice.version>
-        <dep.joda.version>2.4</dep.joda.version>
+        <dep.guice.version>4.0-beta5</dep.guice.version>
+        <dep.joda.version>2.6</dep.joda.version>
         <dep.log4j.version>1.2.17</dep.log4j.version>
         <dep.logback.version>1.1.2</dep.logback.version>
-        <dep.slf4j.version>1.7.7</dep.slf4j.version>
-        <dep.jersey.version>1.18.1</dep.jersey.version>
-        <dep.jackson.version>2.4.2</dep.jackson.version>
-        <dep.jetty.version>9.2.3.v20140905</dep.jetty.version>
+        <dep.slf4j.version>1.7.9</dep.slf4j.version>
+        <dep.jersey.version>1.18.3</dep.jersey.version>
+        <dep.jackson.version>2.4.4</dep.jackson.version>
+        <dep.jetty.version>9.2.6.v20141205</dep.jetty.version>
         <dep.jmxutils.version>1.18</dep.jmxutils.version>
 
         <dep.hamcrest.version>1.3</dep.hamcrest.version>
-        <dep.junit.version>4.11</dep.junit.version>
+        <dep.junit.version>4.12</dep.junit.version>
         <dep.objenesis.version>2.1</dep.objenesis.version>
-        <dep.testng.version>6.8.8</dep.testng.version>
-        <dep.mockito.version>1.9.5</dep.mockito.version>
+        <dep.testng.version>6.8.13</dep.testng.version>
+        <dep.mockito.version>1.10.19</dep.mockito.version>
     </properties>
 
     <build>
@@ -121,8 +121,8 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>com.ning.maven.plugins</groupId>
-                    <artifactId>maven-duplicate-finder-plugin</artifactId>
+                    <groupId>org.basepom.maven</groupId>
+                    <artifactId>duplicate-finder-maven-plugin</artifactId>
                     <configuration>
                         <exceptions>
                             <!-- Well done, Apache... -->
@@ -163,25 +163,6 @@
                                     <package>org.apache.commons.beanutils</package>
                                 </packages>
                             </exception>
-                            <exception>
-                                <conflictingDependencies>
-                                    <dependency>
-                                        <groupId>com.sun.jersey</groupId>
-                                        <artifactId>jersey-core</artifactId>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>com.sun.jersey</groupId>
-                                        <artifactId>jersey-client</artifactId>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>com.sun.jersey</groupId>
-                                        <artifactId>jersey-server</artifactId>
-                                    </dependency>
-                                </conflictingDependencies>
-                                <resources>
-                                    <resource>META-INF/jersey-module-version</resource>
-                                </resources>
-                            </exception>
                         </exceptions>
                         <!-- Ruby is hopeless -->
                         <ignoredDependencies>
@@ -190,21 +171,20 @@
                                 <artifactId>jruby-complete</artifactId>
                             </dependency>
                         </ignoredDependencies>
-                        <ignoredResources>
-                            <ignoredResource>.*\.html</ignoredResource>
-                            <ignoredResource>META-INF/.*</ignoredResource>
-                            <ignoredResource>about_files/.*</ignoredResource>
-                            <ignoredResource>plugin\.properties</ignoredResource>
-                            <ignoredResource>plugin\.xml</ignoredResource>
-                            <ignoredResource>.*\.java</ignoredResource>
+                        <ignoredResourcePatterns>
+                            <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
+                            <ignoredResourcePattern>about_files/.*</ignoredResourcePattern>
+                            <ignoredResourcePattern>plugin\.properties</ignoredResourcePattern>
+                            <ignoredResourcePattern>plugin\.xml</ignoredResourcePattern>
+                            <ignoredResourcePattern>.*\.java</ignoredResourcePattern>
                             <!-- the log4j config should not be ignored but they are a constant -->
                             <!-- source of annoyance. If you use log4j.properties from the classpath -->
                             <!-- then you are in trouble anyway -->
-                            <ignoredResource>log4j\.xml</ignoredResource>
-                            <ignoredResource>log4j\.properties</ignoredResource>
-                            <ignoredResource>logback\.xml</ignoredResource>
-                            <ignoredResource>logback\.properties</ignoredResource>
-                        </ignoredResources>
+                            <ignoredResourcePattern>log4j\.xml</ignoredResourcePattern>
+                            <ignoredResourcePattern>log4j\.properties</ignoredResourcePattern>
+                            <ignoredResourcePattern>logback\.xml</ignoredResourcePattern>
+                            <ignoredResourcePattern>logback\.properties</ignoredResourcePattern>
+                        </ignoredResourcePatterns>
                     </configuration>
                 </plugin>
 
@@ -259,12 +239,6 @@
 
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
-                <artifactId>guice-servlet</artifactId>
-                <version>${dep.guice.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.google.inject.extensions</groupId>
                 <artifactId>guice-assistedinject</artifactId>
                 <version>${dep.guice.version}</version>
             </dependency>
@@ -272,6 +246,54 @@
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
                 <artifactId>guice-multibindings</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-grapher</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-jmx</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-jndi</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-persist</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-servlet</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-spring</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-struts2</artifactId>
+                <version>${dep.guice.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-testlib</artifactId>
                 <version>${dep.guice.version}</version>
             </dependency>
 
@@ -315,14 +337,14 @@
             </dependency>
 
             <dependency>
-                <groupId>com.sun.jersey.contribs</groupId>
-                <artifactId>jersey-guice</artifactId>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-server</artifactId>
                 <version>${dep.jersey.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.sun.jersey.contribs</groupId>
-                <artifactId>jersey-multipart</artifactId>
+                <groupId>com.sun.jersey</groupId>
+                <artifactId>jersey-servlet</artifactId>
                 <version>${dep.jersey.version}</version>
             </dependency>
 
@@ -334,13 +356,37 @@
 
             <dependency>
                 <groupId>com.sun.jersey</groupId>
-                <artifactId>jersey-server</artifactId>
+                <artifactId>jersey-atom</artifactId>
                 <version>${dep.jersey.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.sun.jersey</groupId>
-                <artifactId>jersey-servlet</artifactId>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>jersey-spring</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>jersey-multipart</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>jersey-simple-server</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>jersey-guice</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey.contribs</groupId>
+                <artifactId>jersey-scala</artifactId>
                 <version>${dep.jersey.version}</version>
             </dependency>
 
@@ -356,7 +402,19 @@
                 <version>${dep.jersey.version}</version>
             </dependency>
 
-            <!-- jackson -->
+            <dependency>
+                <groupId>com.sun.jersey.jersey-test-framework</groupId>
+                <artifactId>jersey-test-framework-http</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.jersey.jersey-test-framework</groupId>
+                <artifactId>jersey-test-framework-external</artifactId>
+                <version>${dep.jersey.version}</version>
+            </dependency>
+
+            <!-- jackson core -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
@@ -375,9 +433,40 @@
                 <version>${dep.jackson.version}</version>
             </dependency>
 
+            <!-- jackson datatype -->
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-guava</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-hppc</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-hibernate3</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-hibernate4</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jdk7</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jdk8</artifactId>
                 <version>${dep.jackson.version}</version>
             </dependency>
 
@@ -389,7 +478,38 @@
 
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-json-org</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr353</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <!-- jackson dataformat -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-avro</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-cbor</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-csv</artifactId>
                 <version>${dep.jackson.version}</version>
             </dependency>
 
@@ -401,13 +521,50 @@
 
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-yaml</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <!-- jackson module -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-kotlin</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-parameter-names</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-paranamer</artifactId>
                 <version>${dep.jackson.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-mrbean</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-guice</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-jsonSchema</artifactId>
                 <version>${dep.jackson.version}</version>
             </dependency>
 
@@ -424,6 +581,31 @@
             </dependency>
 
             <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-scala_2.10</artifactId>
+                <version>${dep.jackson.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.code.findbugs</groupId>
+                        <artifactId>jsr305</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-scala_2.11</artifactId>
+                <version>${dep.jackson.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.code.findbugs</groupId>
+                        <artifactId>jsr305</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- jackson jaxrs -->
+            <dependency>
                 <groupId>com.fasterxml.jackson.jaxrs</groupId>
                 <artifactId>jackson-jaxrs-base</artifactId>
                 <version>${dep.jackson.version}</version>
@@ -431,7 +613,25 @@
 
             <dependency>
                 <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-cbor-provider</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
                 <artifactId>jackson-jaxrs-json-provider</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-smile-provider</artifactId>
+                <version>${dep.jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-xml-provider</artifactId>
                 <version>${dep.jackson.version}</version>
             </dependency>
 
@@ -481,6 +681,60 @@
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-http</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-io</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-xml</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-webapp</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-jndi</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-annotations</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-continuation</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-client</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-monitor</artifactId>
+                <version>${dep.jetty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-http-spi</artifactId>
                 <version>${dep.jetty.version}</version>
             </dependency>
 

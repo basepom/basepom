@@ -74,6 +74,7 @@
 
         <!-- only enable if actually configured -->
         <basepom.check.skip-pmd>true</basepom.check.skip-pmd>
+        <basepom.check.skip-checkstyle>true</basepom.check.skip-checkstyle>
 
         <basepom.check.fail-all>true</basepom.check.fail-all>
         <basepom.check.fail-basic>${basepom.check.fail-all}</basepom.check.fail-basic>
@@ -100,7 +101,6 @@
         <basepom.shaded.main-class />
 
         <!-- Some plugins can run early ("validate") or late ("verify") -->
-        <basepom.check.phase-duplicate-finder>verify</basepom.check.phase-duplicate-finder>
         <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
 
@@ -115,40 +115,40 @@
         <dep.basepom-policy.version>3</dep.basepom-policy.version>
 
         <dep.findbugs.version>3.0.0</dep.findbugs.version>
-        <dep.pmd.version>5.1.2</dep.pmd.version>
-        <dep.checkstyle.version>5.7</dep.checkstyle.version>
+        <dep.pmd.version>5.2.3</dep.pmd.version>
+        <dep.checkstyle.version>6.2</dep.checkstyle.version>
 
         <!-- Scala -->
-        <dep.scala.version>2.11.2</dep.scala.version>
+        <dep.scala.version>2.11.4</dep.scala.version>
 
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
         <!-- core plugins -->
-        <dep.plugin.clean.version>2.5</dep.plugin.clean.version>
-        <dep.plugin.compiler.version>3.1</dep.plugin.compiler.version>
+        <dep.plugin.clean.version>2.6.1</dep.plugin.clean.version>
+        <dep.plugin.compiler.version>3.2</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>2.8.2</dep.plugin.deploy.version>
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
-        <dep.plugin.resources.version>2.6</dep.plugin.resources.version>
+        <dep.plugin.resources.version>2.7</dep.plugin.resources.version>
         <dep.plugin.site.version>3.4</dep.plugin.site.version>
-        <dep.plugin.surefire.version>2.17</dep.plugin.surefire.version>
+        <dep.plugin.surefire.version>2.18.1</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>2.5</dep.plugin.jar.version>
         <dep.plugin.shade.version>2.3</dep.plugin.shade.version>
-        <dep.plugin.source.version>2.3</dep.plugin.source.version>
+        <dep.plugin.source.version>2.4</dep.plugin.source.version>
 
         <!-- reporting -->
-        <dep.plugin.checkstyle.version>2.12.1</dep.plugin.checkstyle.version>
-        <dep.plugin.javadoc.version>2.9.1</dep.plugin.javadoc.version>
-        <dep.plugin.pmd.version>3.2</dep.plugin.pmd.version>
+        <dep.plugin.checkstyle.version>2.13</dep.plugin.checkstyle.version>
+        <dep.plugin.javadoc.version>2.10.1</dep.plugin.javadoc.version>
+        <dep.plugin.pmd.version>3.3</dep.plugin.pmd.version>
 
         <!-- tools -->
-        <dep.plugin.assembly.version>2.4.1</dep.plugin.assembly.version>
-        <dep.plugin.dependency.version>2.8</dep.plugin.dependency.version>
+        <dep.plugin.assembly.version>2.5.3</dep.plugin.assembly.version>
+        <dep.plugin.dependency.version>2.9</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>1.3.1</dep.plugin.enforcer.version>
         <dep.plugin.invoker.version>1.9</dep.plugin.invoker.version>
-        <dep.plugin.release.version>2.5</dep.plugin.release.version>
-        <dep.plugin.scm.version>1.9</dep.plugin.scm.version>
+        <dep.plugin.release.version>2.5.1</dep.plugin.release.version>
+        <dep.plugin.scm.version>1.9.2</dep.plugin.scm.version>
 
         <!-- http://mojo.codehaus.org/build-helper-maven-plugin/ -->
         <dep.plugin.build-helper.version>1.9.1</dep.plugin.build-helper.version>
@@ -156,20 +156,20 @@
         <!-- https://github.com/ning/maven-dependency-versions-check-plugin/releases -->
         <dep.plugin.dependency-versions-check.version>2.0.2</dep.plugin.dependency-versions-check.version>
 
-        <!-- https://github.com/ning/maven-duplicate-finder-plugin/releases -->
-        <dep.plugin.duplicate-finder.version>1.0.8</dep.plugin.duplicate-finder.version>
+        <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
+        <dep.plugin.duplicate-finder.version>1.1.0</dep.plugin.duplicate-finder.version>
 
         <!-- http://mojo.codehaus.org/findbugs-maven-plugin/ -->
         <dep.plugin.findbugs.version>3.0.0</dep.plugin.findbugs.version>
 
         <!-- http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.jacoco%22%20AND%20a%3A%22jacoco-maven-plugin%22 -->
-        <dep.plugin.jacoco.version>0.7.1.201405082137</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.7.2.201409121644</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
 
         <!-- https://github.com/ktoso/maven-git-commit-id-plugin/releases -->
-        <dep.plugin.git-commit-id.version>2.1.10</dep.plugin.git-commit-id.version>
+        <dep.plugin.git-commit-id.version>2.1.12</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/davidB/scala-maven-plugin/releases -->
         <dep.plugin.scala.version>3.2.0</dep.plugin.scala.version>
@@ -224,8 +224,8 @@
                                 </pluginExecution>
                                 <pluginExecution>
                                     <pluginExecutionFilter>
-                                        <groupId>com.ning.maven.plugins</groupId>
-                                        <artifactId>maven-duplicate-finder-plugin</artifactId>
+                                        <groupId>org.basepom.maven</groupId>
+                                        <artifactId>duplicate-finder-maven-plugin</artifactId>
                                         <versionRange>[0,)</versionRange>
                                         <goals>
                                             <goal>check</goal>
@@ -478,8 +478,8 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>com.ning.maven.plugins</groupId>
-                    <artifactId>maven-duplicate-finder-plugin</artifactId>
+                    <groupId>org.basepom.maven</groupId>
+                    <artifactId>duplicate-finder-maven-plugin</artifactId>
                     <version>${dep.plugin.duplicate-finder.version}</version>
                     <configuration>
                         <skip>${basepom.check.skip-duplicate-finder}</skip>
@@ -513,7 +513,22 @@
                     <dependencies>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
-                            <artifactId>pmd</artifactId>
+                            <artifactId>pmd-core</artifactId>
+                            <version>${dep.pmd.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>net.sourceforge.pmd</groupId>
+                            <artifactId>pmd-java</artifactId>
+                            <version>${dep.pmd.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>net.sourceforge.pmd</groupId>
+                            <artifactId>pmd-javascript</artifactId>
+                            <version>${dep.pmd.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>net.sourceforge.pmd</groupId>
+                            <artifactId>pmd-jsp</artifactId>
                             <version>${dep.pmd.version}</version>
                         </dependency>
                     </dependencies>
@@ -811,12 +826,12 @@
             </plugin>
 
             <plugin>
-                <groupId>com.ning.maven.plugins</groupId>
-                <artifactId>maven-duplicate-finder-plugin</artifactId>
+                <groupId>org.basepom.maven</groupId>
+                <artifactId>duplicate-finder-maven-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>default</id>
-                        <phase>${basepom.check.phase-duplicate-finder}</phase>
+                        <phase>verify</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
