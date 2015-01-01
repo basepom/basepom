@@ -1,5 +1,9 @@
 # Changes
 
+## Version 9
+
+* 2014-12-31 - (standard) Add a minimal formatter for jul.SimpleFormatter (suggested by @dain)
+
 ## Version 8
 
 * 2014-09-22 - (standard) Add jackson-jaxrs-base and jackson-datatype-jsr310
