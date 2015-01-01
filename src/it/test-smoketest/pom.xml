@@ -16,13 +16,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.basepom</groupId>
+        <groupId>@project.groupId@</groupId>
         <artifactId>basepom-standard</artifactId>
-        <version>9-SNAPSHOT</version>
-        <relativePath>../standard</relativePath>
+        <version>@project.version@</version>
     </parent>
 
-    <artifactId>basepom-smoketest</artifactId>
+    <artifactId>test-smoketest</artifactId>
     <packaging>jar</packaging>
 
     <description>Very simple smoke test, pull in all dependencies, see if any of the checkers (besides duplicate-finder) complains.</description>
@@ -382,13 +381,11 @@
             <scope>runtime</scope>
         </dependency>
 
-<!-- Only one scala possible...
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-scala_2.10</artifactId>
             <scope>runtime</scope>
         </dependency>
--->
 
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
@@ -431,12 +428,6 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.eclipse.jetty.orbit</groupId>
-                    <artifactId>javax.servlet</artifactId>
-                </exclusion>
-            </exclusions>
             <scope>runtime</scope>
         </dependency>
 
@@ -735,21 +726,20 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
+                <groupId>com.ning.maven.plugins</groupId>
+                <artifactId>maven-dependency-versions-check-plugin</artifactId>
                 <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
+                    <exceptions>
+                        <exception>
+                            <groupId>org.scala-lang</groupId>
+                            <artifactId>scala-reflect</artifactId>
+                            <expectedVersion>2.11.2</expectedVersion>
+                            <resolvedVersion>2.10.4</resolvedVersion>
+                        </exception>
+                    </exceptions>
                 </configuration>
             </plugin>
         </plugins>
