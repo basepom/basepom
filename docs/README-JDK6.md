@@ -99,3 +99,27 @@ following profile to the build, which switches to findbugs 2.5.x.
 This should be considered a temporary workaround. The correct fix is
 to implement cross-compilation using a newer JDK with the JDK6 class
 library as described above.
+
+## maven checkstyle plugin
+
+Starting with release 6.2, checkstyle is JDK7 only. If a project needs
+to build with a JDK6 compiler (not just targetting JDK6 but use JDK6
+to run maven), it is possible to accomodate for this by adding the
+following profile to the build, which switches to checkstyle 6.1.
+
+```xml
+<profile>
+    <id>checkstyle-jdk6</id>
+    <activation>
+        <jdk>[,1.7)</jdk>
+    </activation>
+    <properties>
+        <dep.checkstyle.version>6.1</dep.checkstyle.version>
+    </properties>
+</profile>
+```
+
+This should be considered a temporary workaround. The correct fix is
+to implement cross-compilation using a newer JDK with the JDK6 class
+library as described above.
+
