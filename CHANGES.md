@@ -2,6 +2,7 @@
 
 ## Version 9
 
+* 2015-01-14 - (foundation) basepom-policy 4 with improved Checkstyle exclusions for annotations and generated-sources
 * 2015-01-02 - (standard) Add DependencyConvergence rule to maven-enforcer plugin
 * 2015-01-01 - (smoketest) Move the smoketest to integration testing.
 * 2014-12-31 - (standard) Add a minimal formatter for jul.SimpleFormatter (suggested by @dain)
