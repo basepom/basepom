@@ -112,7 +112,7 @@
         <basepom.maven.version>3.0.5</basepom.maven.version>
 
         <!-- policy jar for license and checkstyle defaults -->
-        <dep.basepom-policy.version>3</dep.basepom-policy.version>
+        <dep.basepom-policy.version>4</dep.basepom-policy.version>
 
         <dep.findbugs.version>3.0.0</dep.findbugs.version>
         <dep.pmd.version>5.2.3</dep.pmd.version>
