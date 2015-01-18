@@ -84,7 +84,6 @@
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <configuration>
                         <rules>
-                            <DependencyConvergence />
                             <!-- The following dependencies are hazardous for builds. -->
                             <bannedDependencies>
                                 <excludes>

@@ -4,7 +4,6 @@
 
 * 2015-01-17 - (foundation, standard) Move dep.basepom-policy.version to standard pom.
 * 2015-01-17 - (standard) Upgrade to basepom-policy 4 to allow checkstyle exclusions for
-* 2015-01-02 - (standard) Add DependencyConvergence rule to maven-enforcer plugin
 * 2015-01-01 - (smoketest) Move the smoketest to integration testing.
 * 2014-12-31 - (standard) Add a minimal formatter for jul.SimpleFormatter (suggested by @dain)
 
