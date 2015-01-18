@@ -221,32 +221,6 @@
                                 </pluginExecution>
                                 <pluginExecution>
                                     <pluginExecutionFilter>
-                                        <groupId>org.basepom.maven</groupId>
-                                        <artifactId>duplicate-finder-maven-plugin</artifactId>
-                                        <versionRange>[0,)</versionRange>
-                                        <goals>
-                                            <goal>check</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>com.ning.maven.plugins</groupId>
-                                        <artifactId>maven-dependency-versions-check-plugin</artifactId>
-                                        <versionRange>[0,)</versionRange>
-                                        <goals>
-                                            <goal>check</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore />
-                                    </action>
-                                </pluginExecution>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
                                         <groupId>org.jacoco</groupId>
                                         <artifactId>jacoco-maven-plugin</artifactId>
                                         <versionRange>[0,)</versionRange>
