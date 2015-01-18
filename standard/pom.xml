@@ -38,6 +38,9 @@
         <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
         <basepom.check.fail-checkstyle>${basepom.check.fail-extended}</basepom.check.fail-checkstyle>
 
+        <!-- policy jar for license and checkstyle defaults -->
+        <dep.basepom-policy.version>4</dep.basepom-policy.version>
+
         <!-- Dependency versions that should be the same everywhere. -->
         <dep.commons-beanutils.version>1.9.2</dep.commons-beanutils.version>
         <dep.commons-codec.version>1.10</dep.commons-codec.version>
