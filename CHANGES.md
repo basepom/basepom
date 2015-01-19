@@ -2,6 +2,10 @@
 
 ## Version 9
 
+* 2014-01-17 - (standard) Upgrade testng dependency to 6.8.17 (from 6.8.13)
+* 2015-01-17 - (standard) Upgrade slf4j dependency to 1.7.10 (from 1.7.9)
+* 2015-01-17 - (standard) Upgrade joda-time dependency to 2.7 (from 2.6)
+* 2015-01-17 - (foundation) Upgrade scala dependency to 2.11.5 (from 2.11.4)
 * 2015-01-17 - (foundation, standard) Move dep.basepom-policy.version to standard pom.
 * 2015-01-17 - (standard) Upgrade to basepom-policy 4 to allow checkstyle exclusions for
 * 2015-01-01 - (smoketest) Move the smoketest to integration testing.
