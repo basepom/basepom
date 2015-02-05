@@ -1,5 +1,9 @@
 # Changes
 
+## Version 10
+
+* 2015-02-05 - (foundation) Upgrade pmd plugin to 3.4 (from 3.3)
+
 ## Version 9
 
 * 2015-01-18 - (standard) Upgrade duplicate-finder plugin to 1.1.1 (from 1.1.0)
