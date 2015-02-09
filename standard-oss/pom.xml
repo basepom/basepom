@@ -53,7 +53,7 @@
         <dep.plugin.gpg.version>1.6</dep.plugin.gpg.version>
 
         <!-- https://github.com/mycila/license-maven-plugin/releases -->
-        <dep.plugin.license.version>2.7</dep.plugin.license.version>
+        <dep.plugin.license.version>2.8</dep.plugin.license.version>
 
     </properties>
 
@@ -103,6 +103,7 @@
                         <mapping>
                             <xml>XML_PREFIX</xml>
                             <java>SLASHSTAR_STYLE</java>
+                            <yaml>SCRIPT_STYLE</yaml>
                         </mapping>
                         <strictCheck>true</strictCheck>
                         <aggregate>true</aggregate>
