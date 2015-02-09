@@ -2,6 +2,9 @@
 
 ## Version 10
 
+* 2015-02-08 - (standard) Upgrade jackson dependency to 2.4.5 (from 2.4.4)
+* 2015-02-08 - (standard) Upgrade jetty dependency to 9.2.7.v20150116 (from 9.2.6.v20141205)
+* 2015-02-08 - (standard) Upgrade testng dependency to 6.8.21 (from 6.8.17)
 * 2015-02-08 - (foundation) Upgrade checkstyle plugin to 2.14 (from 2.13)
 * 2015-02-08 - (foundation) Upgrade pmd plugin to 3.4 (from 3.3)
 * 2015-02-08 - (foundation) Upgrade dependency plugin to 2.10 (from 2.9)
