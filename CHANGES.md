@@ -4,6 +4,7 @@
 
 * 2015-02-08 - (foundation) Upgrade checkstyle plugin to 2.14 (from 2.13)
 * 2015-02-08 - (foundation) Upgrade pmd plugin to 3.4 (from 3.3)
+* 2015-02-08 - (foundation) Upgrade dependency plugin to 2.10 (from 2.9)
 
 ## Version 9
 
