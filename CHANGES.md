@@ -1,5 +1,9 @@
 # Changes
 
+## Version 11
+
+* 2015-02-08 - (foundation) Change git-id default configuration (https://github.com/ktoso/maven-git-commit-id-plugin/issues/156)
+
 ## Version 10
 
 * 2015-02-08 - (standard) Upgrade jackson dependency to 2.4.5 (from 2.4.4)

@@ -96,6 +96,7 @@
         <!-- git information -->
         <basepom.git-id.skip>false</basepom.git-id.skip>
         <basepom.git-id.fail-no-git>false</basepom.git-id.fail-no-git>
+        <basepom.git-id.use-native>false</basepom.git-id.use-native>
 
         <!-- shade plugin -->
         <basepom.shaded.main-class />
@@ -611,12 +612,13 @@
                         <failOnNoGitDirectory>${basepom.git-id.fail-no-git}</failOnNoGitDirectory>
                         <skip>${basepom.git-id.skip}</skip>
                         <abbrevLength>10</abbrevLength>
-                        <useNativeGit>true</useNativeGit>
+                        <useNativeGit>${basepom.git-id.use-native}</useNativeGit>
                         <gitDescribe>
-                            <always>false</always>
+                            <always>true</always>
                             <abbrev>7</abbrev>
                             <dirty>-dirty</dirty>
                             <forceLongFormat>false</forceLongFormat>
+                            <tags>true</tags>
                         </gitDescribe>
                     </configuration>
                 </plugin>
