@@ -135,7 +135,7 @@
         <dep.plugin.source.version>2.4</dep.plugin.source.version>
 
         <!-- reporting -->
-        <dep.plugin.checkstyle.version>2.13</dep.plugin.checkstyle.version>
+        <dep.plugin.checkstyle.version>2.14</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>2.10.1</dep.plugin.javadoc.version>
         <dep.plugin.pmd.version>3.3</dep.plugin.pmd.version>
 

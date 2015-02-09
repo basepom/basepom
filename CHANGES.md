@@ -1,8 +1,12 @@
 # Changes
 
+## Version 10
+
+* 2015-02-08 - (foundation) Upgrade checkstyle plugin to 2.14 (from 2.13)
+
 ## Version 9
 
-* 2015-01-18 - (standard) Upgrade duplicate-finder plugin to 1.1.1 (from 1.1.0)
+* 2015-01-18 - (foundation) Upgrade duplicate-finder plugin to 1.1.1 (from 1.1.0)
 * 2015-01-17 - (standard) Upgrade testng dependency to 6.8.17 (from 6.8.13)
 * 2015-01-17 - (standard) Upgrade slf4j dependency to 1.7.10 (from 1.7.9)
 * 2015-01-17 - (standard) Upgrade joda-time dependency to 2.7 (from 2.6)
