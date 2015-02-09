@@ -101,12 +101,6 @@
                                     <exclude>com.google.collections:google-collections</exclude>
                                     <!-- but not the badly numbered ones... -->
                                     <exclude>com.google.guava:guava</exclude>
-                                    <!-- Clashes with com.google.code.findbugs:annotations and having both jars -->
-                                    <!-- as a dependency then clashes with the dependency checker (because it   -->
-                                    <!-- is not very good at handling annotations). Use the annotations jar     -->
-                                    <!-- instead which has all jsr305 annotations and the additional findbugs   -->
-                                    <!-- stuff. -->
-                                    <exclude>com.google.code.findbugs:jsr305</exclude>
                                     <!-- Use the official version at javax.servlet:javax.servlet-api -->
                                     <exclude>org.eclipse.jetty.orbit:javax.servlet</exclude>
                                     <exclude>org.mortbay.jetty:servlet-api</exclude>
@@ -166,6 +160,21 @@
                                     <package>org.apache.commons.beanutils</package>
                                 </packages>
                             </exception>
+                            <exception>
+                                <conflictingDependencies>
+                                    <dependency>
+                                        <groupId>com.google.code.findbugs</groupId>
+                                        <artifactId>jsr305</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>com.google.code.findbugs</groupId>
+                                        <artifactId>annotations</artifactId>
+                                    </dependency>
+                                </conflictingDependencies>
+                                <packages>
+                                    <package>javax.annotation</package>
+                                </packages>
+                            </exception>
                         </exceptions>
                         <!-- Ruby is hopeless -->
                         <ignoredDependencies>
@@ -198,6 +207,17 @@
                         <excludeRoots>
                             <excludeRoot>target/generated-sources/stubs</excludeRoot>
                         </excludeRoots>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <configuration>
+                        <ignoredDependencies>
+                            <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
+                            <ignoredDependency>com.google.code.findbugs:annotations</ignoredDependency>
+                        </ignoredDependencies>
                     </configuration>
                 </plugin>
 
@@ -597,24 +617,12 @@
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-scala_2.10</artifactId>
                 <version>${dep.jackson.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>com.google.code.findbugs</groupId>
-                        <artifactId>jsr305</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-scala_2.11</artifactId>
                 <version>${dep.jackson.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>com.google.code.findbugs</groupId>
-                        <artifactId>jsr305</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <!-- jackson jaxrs -->
@@ -908,6 +916,12 @@
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>annotations</artifactId>
+                <version>${dep.findbugs.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
                 <version>${dep.findbugs.version}</version>
             </dependency>
 

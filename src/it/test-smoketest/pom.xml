@@ -681,6 +681,12 @@
             <scope>runtime</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- scala -->
         <dependency>
             <groupId>org.scala-lang</groupId>
