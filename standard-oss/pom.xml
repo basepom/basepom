@@ -50,7 +50,7 @@
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
         <!-- tools -->
-        <dep.plugin.gpg.version>1.5</dep.plugin.gpg.version>
+        <dep.plugin.gpg.version>1.6</dep.plugin.gpg.version>
 
         <!-- https://github.com/mycila/license-maven-plugin/releases -->
         <dep.plugin.license.version>2.7</dep.plugin.license.version>

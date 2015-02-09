@@ -6,6 +6,7 @@
 * 2015-02-08 - (foundation) Upgrade pmd plugin to 3.4 (from 3.3)
 * 2015-02-08 - (foundation) Upgrade dependency plugin to 2.10 (from 2.9)
 * 2015-02-08 - (foundation) Upgrade really-executable plugin to 1.4.0 (from 1.3.0)
+* 2015-02-08 - (standard-oss) Upgrade gpg plugin to 1.6 (from 1.5)
 
 ## Version 9
 
