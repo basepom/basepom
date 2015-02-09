@@ -137,7 +137,7 @@
         <!-- reporting -->
         <dep.plugin.checkstyle.version>2.14</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>2.10.1</dep.plugin.javadoc.version>
-        <dep.plugin.pmd.version>3.3</dep.plugin.pmd.version>
+        <dep.plugin.pmd.version>3.4</dep.plugin.pmd.version>
 
         <!-- tools -->
         <dep.plugin.assembly.version>2.5.3</dep.plugin.assembly.version>
