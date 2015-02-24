@@ -105,6 +105,8 @@
                                     <exclude>org.mortbay.jetty:servlet-api-2.5</exclude>
                                     <!-- 1.8 and 1.9 are generified badly -->
                                     <exclude>commons-configuration:commons-configuration:[1.8,1.9]</exclude>
+                                    <!-- Old asm versions break on Java 8 code -->
+                                    <exclude>org.ow2.asm:asm:[,5.0.2)</exclude>
                                 </excludes>
                                 <includes>
                                     <!-- whitelist the well numbered guava releases -->
