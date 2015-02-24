@@ -2,6 +2,8 @@
 
 ## Version 11
 
+* 2015-02-24 - (standard) Ban asm < 5.0.2 which is broken on Java 8
+* 2015-02-24 - (standard) Remove ban of 'cglib', since 'cglib-nodep' uses an old version of ASM which is not Java 8 compatible.
 * 2015-02-08 - (foundation) Change git-id default configuration (https://github.com/ktoso/maven-git-commit-id-plugin/issues/156)
 * 2015-02-08 - (standard-oss) Upgrade license plugin to 2.8 (from 2.7)
 * 2015-02-08 - (standard-oss) Support YAML files for the license plugin
