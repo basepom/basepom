@@ -89,8 +89,6 @@
                                 <excludes>
                                     <!-- clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
-                                    <!-- clashes with cglib:cglib-nodep -->
-                                    <exclude>cglib:cglib</exclude>
                                     <!-- junit repackages hamcrest into its own jar, which is a big no-no.
                                          junit-dep fixes this problem -->
                                     <exclude>junit:junit-dep</exclude>
