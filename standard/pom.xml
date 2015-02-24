@@ -89,8 +89,8 @@
                                 <excludes>
                                     <!-- clashes with commons-logging:commons-logging -->
                                     <exclude>commons-logging:commons-logging-api</exclude>
-                                    <!-- junit repackages hamcrest into its own jar, which is a big no-no.
-                                         junit-dep fixes this problem -->
+                                    <!-- junit < 4.12 repackages hamcrest into its own jar, which is a big no-no.
+                                         junit-dep was a transitional fix, but now junit proper has the fix -->
                                     <exclude>junit:junit-dep</exclude>
                                     <exclude>junit:junit:[,4.11)</exclude>
                                     <!-- completely and utterly broken -->
