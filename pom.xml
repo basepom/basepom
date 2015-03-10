@@ -156,7 +156,7 @@
         <!-- a release, this profile gets implicitly deactivated (and the   -->
         <!-- normal release process is used).                               -->
         <profile>
-            <id>snapshot-deploy</id>
+            <id>basepom.snapshot-deploy</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -205,7 +205,7 @@
             </build>
         </profile>
         <profile>
-            <id>oss-release</id>
+            <id>basepom.oss-release</id>
             <build>
                 <pluginManagement>
                     <plugins>
