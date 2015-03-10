@@ -18,7 +18,7 @@
     <groupId>org.basepom</groupId>
     <artifactId>basepom-foundation</artifactId>
     <packaging>pom</packaging>
-    <version>11-SNAPSHOT</version>
+    <version>11</version>
 
     <!--
         <name>basepom-foundation</name>
@@ -555,7 +555,7 @@
                         </filters>
                         <transformers>
                             <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer" >
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                 <mainClass>${basepom.shaded.main-class}</mainClass>
                             </transformer>
                         </transformers>
