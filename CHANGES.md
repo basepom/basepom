@@ -2,6 +2,7 @@
 
 ## Version 11
 
+* 2015-03-09 - (standard) Add asm < 5.0.2 to banned dependency list (does not work on JDK8).
 * 2015-03-09 - (standard) Remove cglib from the banned dependency list.
 * 2015-03-09 - (standard) Turn off JDK8 javadoc linting. Fixes #3.
 * 2015-03-09 - (foundation) Use standard transformers for foundation shade plugin. Fixes #15.
