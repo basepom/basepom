@@ -2,6 +2,7 @@
 
 ## Version 11
 
+* 2015-03-09 - (foundation) Upgrade git-commit-id plugin to 2.1.13 (from 2.1.12)
 * 2015-03-09 - (standard) Upgrade jersey dependency to 1.19  (from 1.18.3)
 * 2015-03-09 - (standard) Upgrade jetty dependency to 9.2.9.v20150224 (from 9.2.7.v20150116)
 * 2015-03-09 - (foundation) Upgrade scala dependency to 2.11.6  (from 2.11.5)
