@@ -131,7 +131,7 @@
         <dep.plugin.surefire.version>2.18.1</dep.plugin.surefire.version>
 
         <!-- packaging -->
-        <dep.plugin.jar.version>2.5</dep.plugin.jar.version>
+        <dep.plugin.jar.version>2.6</dep.plugin.jar.version>
         <dep.plugin.shade.version>2.3</dep.plugin.shade.version>
         <dep.plugin.source.version>2.4</dep.plugin.source.version>
 
@@ -162,7 +162,7 @@
         <dep.plugin.findbugs.version>3.0.0</dep.plugin.findbugs.version>
 
         <!-- http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.jacoco%22%20AND%20a%3A%22jacoco-maven-plugin%22 -->
-        <dep.plugin.jacoco.version>0.7.2.201409121644</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.7.4.201502262128</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>

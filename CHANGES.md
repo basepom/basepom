@@ -2,6 +2,9 @@
 
 ## Version 11
 
+* 2015-03-09 - (foundation) Upgrade jar plugin to 2.6 (from 2.5)
+* 2015-03-09 - (foundation) Upgrade jacoco plugin to 0.7.4.201502262128 (from 0.7.2.201409121644)
+* 2015-03-09 - (standard-oss) Upgrade license plugin to 2.9 (from 2.8)
 * 2015-03-09 - (standard) Add asm < 5.0.2 to banned dependency list (does not work on JDK8).
 * 2015-03-09 - (standard) Remove cglib from the banned dependency list.
 * 2015-03-09 - (standard) Turn off JDK8 javadoc linting. Fixes #3.
