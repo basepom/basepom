@@ -2,6 +2,7 @@
 
 ## Version 11
 
+* 2015-03-09 - (foundation) Use standard transformers for foundation shade plugin. Fixes #15.
 * 2015-02-08 - (foundation) Change git-id default configuration (https://github.com/ktoso/maven-git-commit-id-plugin/issues/156)
 * 2015-02-08 - (standard-oss) Upgrade license plugin to 2.8 (from 2.7)
 * 2015-02-08 - (standard-oss) Support YAML files for the license plugin
