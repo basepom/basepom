@@ -2,6 +2,9 @@
 
 ## Version 11
 
+* 2015-03-09 - (standard) Upgrade jersey dependency to 1.19  (from 1.18.3)
+* 2015-03-09 - (standard) Upgrade jetty dependency to 9.2.9.v20150224 (from 9.2.7.v20150116)
+* 2015-03-09 - (foundation) Upgrade scala dependency to 2.11.6  (from 2.11.5)
 * 2015-03-09 - (foundation) Upgrade jar plugin to 2.6 (from 2.5)
 * 2015-03-09 - (foundation) Upgrade jacoco plugin to 0.7.4.201502262128 (from 0.7.2.201409121644)
 * 2015-03-09 - (standard-oss) Upgrade license plugin to 2.9 (from 2.8)
