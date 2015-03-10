@@ -45,7 +45,7 @@
         <basepom.oss.skip-scala-doc>true</basepom.oss.skip-scala-doc>
 
         <!-- release profiles -->
-        <basepom.release.profiles>oss-release</basepom.release.profiles>
+        <basepom.release.profiles>basepom.oss-release</basepom.release.profiles>
 
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
@@ -146,7 +146,7 @@
     <profiles>
         <!-- Plugins that only execute on JDK 7+ go here. -->
         <profile>
-            <id>jdk7</id>
+            <id>basepom.jdk7</id>
             <activation>
                 <jdk>[1.7,]</jdk>
             </activation>
@@ -170,7 +170,7 @@
         </profile>
 
         <profile>
-            <id>oss-release</id>
+            <id>basepom.oss-release</id>
             <properties>
                 <!-- tests run in the preparation step of the release -->
                 <skipTests>true</skipTests>

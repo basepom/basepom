@@ -865,7 +865,7 @@
 
     <profiles>
         <profile>
-            <id>integration-testing</id>
+            <id>basepom.integration-testing</id>
             <activation>
                 <file>
                     <!-- An integration testing folder exists. -->
@@ -894,7 +894,7 @@
             </build>
         </profile>
         <profile>
-            <id>scala-build</id>
+            <id>basepom.scala-build</id>
             <activation>
                 <file>
                     <exists>${basedir}/src/main/scala</exists>
@@ -940,7 +940,7 @@
             </build>
         </profile>
         <profile>
-            <id>executable</id>
+            <id>basepom.executable</id>
             <activation>
                 <file>
                     <exists>${basedir}/.build-executable</exists>
@@ -980,5 +980,6 @@
                 </plugins>
             </build>
         </profile>
+        
     </profiles>
 </project>
