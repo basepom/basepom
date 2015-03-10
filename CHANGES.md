@@ -2,6 +2,7 @@
 
 ## Version 11
 
+* 2015-03-09 - (standard) Remove cglib from the banned dependency list.
 * 2015-03-09 - (standard) Turn off JDK8 javadoc linting. Fixes #3.
 * 2015-03-09 - (foundation) Use standard transformers for foundation shade plugin. Fixes #15.
 * 2015-02-08 - (foundation) Change git-id default configuration (https://github.com/ktoso/maven-git-commit-id-plugin/issues/156)
