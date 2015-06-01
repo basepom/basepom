@@ -1,5 +1,10 @@
 # Changes
 
+=======
+## Version 12
+
+* 2015-06-01 - Enforce maven 3.3.3 for basepom build itself and add a .mvn/maven.config file
+
 ## Version 11
 
 * 2015-03-09 - (foundation) Upgrade git-commit-id plugin to 2.1.13 (from 2.1.12)
