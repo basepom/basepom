@@ -1,9 +1,27 @@
 # Changes
 
-=======
 ## Version 12
 
+* 2015-06-16 - (standard-oss) Upgrade license plugin to 2.11 (from 2.9)
+* 2014-06-16 - (foundation) Upgrade checkstyle to 6.7 (from 6.2)
+* 2015-06-16 - (foundation) Upgrade pmd to 5.3.2 (from 5.2.3)
+* 2015-06-16 - (foundation) Upgrade findbugs dependency to 3.0.1 (from 3.0.0)
+* 2015-06-16 - (foundation) Upgrade scala plugin to 3.2.1 (from 3.2.0)
+* 2015-06-16 - (foundation) Upgrade shade plugin to 2.4 (from 2.3)
+* 2015-06-16 - (foundation) Upgrade assembly plugin to 2.5.5 (from 2.5.3)
+* 2015-06-16 - (foundation) Upgrade git-commit-id plugin to 2.1.15 (from 2.1.13)
 * 2015-06-01 - Enforce maven 3.3.3 for basepom build itself and add a .mvn/maven.config file
+* 2015-06-01 - Update various plugin URIs after Codehaus shutdown.
+* 2015-06-01 - (foundation) Upgrade compiler plugin to 3.3 (from 3.2)
+* 2015-06-01 - (foundation) Upgrade checkstyle plugin to 2.15 (from 2.14)
+* 2015-06-01 - (foundation) Upgrade javadoc plugin to 2.10.3 (from 2.10.1)
+* 2015-06-01 - (foundation) Upgrade invoker plugin to 1.10 (from 1.9)
+* 2015-06-01 - (foundation) Upgrade release plugin to 2.5.2 (from 2.5.1)
+* 2015-06-01 - (foundation) Upgrade scm plugin to 1.9.4 (from 1.9.2)
+* 2015-06-01 - (foundation) Upgrade findbugs plugin to 3.0.1 (from 3.0.0)
+* 2015-06-01 - (foundation) Upgrade jacoco  plugin to 0.7.5.201505241946 (from 0.7.4.201502262128)
+* 2015-06-01 - (foundation) Upgrade git-commit-id plugin to 2.1.13 (from 2.1.12)
+* 2015-06-01 - (foundation) Upgrade really-executable-jar plugin to 1.4.1 (from 1.4.0)
 
 ## Version 11
 

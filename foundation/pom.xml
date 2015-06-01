@@ -112,9 +112,11 @@
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.0.5</basepom.maven.version>
 
+        <!-- don't upgrade to 3.0.1, they forgot to upload the various dependent jars again. -->
         <dep.findbugs.version>3.0.0</dep.findbugs.version>
-        <dep.pmd.version>5.2.3</dep.pmd.version>
-        <dep.checkstyle.version>6.2</dep.checkstyle.version>
+
+        <dep.pmd.version>5.3.2</dep.pmd.version>
+        <dep.checkstyle.version>6.7</dep.checkstyle.version>
 
         <!-- Scala -->
         <dep.scala.version>2.11.6</dep.scala.version>
@@ -123,7 +125,7 @@
 
         <!-- core plugins -->
         <dep.plugin.clean.version>2.6.1</dep.plugin.clean.version>
-        <dep.plugin.compiler.version>3.2</dep.plugin.compiler.version>
+        <dep.plugin.compiler.version>3.3</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>2.8.2</dep.plugin.deploy.version>
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
         <dep.plugin.resources.version>2.7</dep.plugin.resources.version>
@@ -132,24 +134,24 @@
 
         <!-- packaging -->
         <dep.plugin.jar.version>2.6</dep.plugin.jar.version>
-        <dep.plugin.shade.version>2.3</dep.plugin.shade.version>
+        <dep.plugin.shade.version>2.4</dep.plugin.shade.version>
         <dep.plugin.source.version>2.4</dep.plugin.source.version>
 
         <!-- reporting -->
-        <dep.plugin.checkstyle.version>2.14</dep.plugin.checkstyle.version>
-        <dep.plugin.javadoc.version>2.10.1</dep.plugin.javadoc.version>
+        <dep.plugin.checkstyle.version>2.15</dep.plugin.checkstyle.version>
+        <dep.plugin.javadoc.version>2.10.3</dep.plugin.javadoc.version>
         <dep.plugin.pmd.version>3.4</dep.plugin.pmd.version>
 
         <!-- tools -->
-        <dep.plugin.assembly.version>2.5.3</dep.plugin.assembly.version>
+        <dep.plugin.assembly.version>2.5.5</dep.plugin.assembly.version>
         <dep.plugin.dependency.version>2.10</dep.plugin.dependency.version>
         <!-- holding at 1.3.1 because of http://jira.codehaus.org/browse/MENFORCER-224 -->
         <dep.plugin.enforcer.version>1.3.1</dep.plugin.enforcer.version>
-        <dep.plugin.invoker.version>1.9</dep.plugin.invoker.version>
-        <dep.plugin.release.version>2.5.1</dep.plugin.release.version>
-        <dep.plugin.scm.version>1.9.2</dep.plugin.scm.version>
+        <dep.plugin.invoker.version>1.10</dep.plugin.invoker.version>
+        <dep.plugin.release.version>2.5.2</dep.plugin.release.version>
+        <dep.plugin.scm.version>1.9.4</dep.plugin.scm.version>
 
-        <!-- http://mojo.codehaus.org/build-helper-maven-plugin/ -->
+        <!-- https://github.com/mojohaus/build-helper-maven-plugin -->
         <dep.plugin.build-helper.version>1.9.1</dep.plugin.build-helper.version>
 
         <!-- https://github.com/ning/maven-dependency-versions-check-plugin/releases -->
@@ -158,23 +160,23 @@
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
         <dep.plugin.duplicate-finder.version>1.1.1</dep.plugin.duplicate-finder.version>
 
-        <!-- http://mojo.codehaus.org/findbugs-maven-plugin/ -->
-        <dep.plugin.findbugs.version>3.0.0</dep.plugin.findbugs.version>
+        <!-- https://github.com/gleclaire/findbugs-maven-plugin -->
+        <dep.plugin.findbugs.version>3.0.1</dep.plugin.findbugs.version>
 
         <!-- http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.jacoco%22%20AND%20a%3A%22jacoco-maven-plugin%22 -->
-        <dep.plugin.jacoco.version>0.7.4.201502262128</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.7.5.201505241946</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
 
         <!-- https://github.com/ktoso/maven-git-commit-id-plugin/releases -->
-        <dep.plugin.git-commit-id.version>2.1.13</dep.plugin.git-commit-id.version>
+        <dep.plugin.git-commit-id.version>2.1.15</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/davidB/scala-maven-plugin/releases -->
-        <dep.plugin.scala.version>3.2.0</dep.plugin.scala.version>
+        <dep.plugin.scala.version>3.2.1</dep.plugin.scala.version>
 
         <!-- https://github.com/brianm/really-executable-jars-maven-plugin/releases -->
-        <dep.plugin.really-executable.version>1.4.0</dep.plugin.really-executable.version>
+        <dep.plugin.really-executable.version>1.4.1</dep.plugin.really-executable.version>
     </properties>
 
     <prerequisites>
@@ -464,13 +466,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <version>${dep.plugin.findbugs.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.google.code.findbugs</groupId>
-                            <artifactId>findbugs</artifactId>
-                            <version>${dep.findbugs.version}</version>
-                        </dependency>
-                    </dependencies>
                     <configuration>
                         <effort>Max</effort>
                         <skip>${basepom.check.skip-findbugs}</skip>
