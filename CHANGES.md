@@ -2,6 +2,14 @@
 
 ## Version 12
 
+* 2015-06-16 - (standard) Upgrade commons-lang3 dependency to 3.4 (from 3.3.2)
+* 2015-06-16 - (standard) Upgrade guice dependency to 4.0 (from 4.0-beta5)
+* 2015-06-16 - (standard) Upgrade joda-time dependency to 2.8.1 (from 2.7)
+* 2015-06-16 - (standard) Upgrade logback dependency to 1.1.3 (from 1.1.2)
+* 2015-06-16 - (standard) Upgrade slf4j dependency to 1.7.12 (from 1.7.10)
+* 2015-06-16 - (standard) Upgrade jackson dependency to 2.4.6 (from 2.4.5)
+* 2015-06-16 - (standard) Upgrade jetty dependency to 9.2.11.v20150529 (from 9.2.9.v20150224)
+* 2015-06-16 - (standard) Upgrade testng dependency to 6.9.4 (from 6.8.21)
 * 2015-06-16 - (standard-oss) Upgrade license plugin to 2.11 (from 2.9)
 * 2014-06-16 - (foundation) Upgrade checkstyle to 6.7 (from 6.2)
 * 2015-06-16 - (foundation) Upgrade pmd to 5.3.2 (from 5.2.3)
