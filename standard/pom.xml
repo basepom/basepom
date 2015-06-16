@@ -17,9 +17,9 @@
 
     <parent>
         <groupId>org.basepom</groupId>
-        <artifactId>basepom-foundation</artifactId>
+        <artifactId>basepom-policy</artifactId>
         <version>12-SNAPSHOT</version>
-        <relativePath>../foundation</relativePath>
+        <relativePath>../policy</relativePath>
     </parent>
 
     <artifactId>basepom-standard</artifactId>
@@ -32,15 +32,6 @@
     -->
 
     <properties>
-        <basepom.check.skip-pmd>${basepom.check.skip-extended}</basepom.check.skip-pmd>
-        <basepom.check.skip-checkstyle>${basepom.check.skip-extended}</basepom.check.skip-checkstyle>
-
-        <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
-        <basepom.check.fail-checkstyle>${basepom.check.fail-extended}</basepom.check.fail-checkstyle>
-
-        <!-- policy jar for license and checkstyle defaults -->
-        <dep.basepom-policy.version>4</dep.basepom-policy.version>
-
         <!-- Dependency versions that should be the same everywhere. -->
         <dep.commons-beanutils.version>1.9.2</dep.commons-beanutils.version>
         <dep.commons-codec.version>1.10</dep.commons-codec.version>
@@ -55,7 +46,7 @@
 
         <dep.javax-inject.version>1</dep.javax-inject.version>
         <dep.javax-validation.version>1.1.0.Final</dep.javax-validation.version>
-        <!-- matches jetty 8.1.x -->
+        <!-- matches jetty 9.2.x -->
         <dep.javax-servlet.version>3.1.0</dep.javax-servlet.version>
 
         <dep.guava.version>18.0</dep.guava.version>
@@ -121,7 +112,7 @@
                     <groupId>org.basepom.maven</groupId>
                     <artifactId>duplicate-finder-maven-plugin</artifactId>
                     <configuration>
-                        <exceptions>
+                        <exceptions combine.children="append">
                             <!-- Well done, Apache... -->
                             <exception>
                                 <conflictingDependencies>
@@ -160,21 +151,6 @@
                                     <package>org.apache.commons.beanutils</package>
                                 </packages>
                             </exception>
-                            <exception>
-                                <conflictingDependencies>
-                                    <dependency>
-                                        <groupId>com.google.code.findbugs</groupId>
-                                        <artifactId>jsr305</artifactId>
-                                    </dependency>
-                                    <dependency>
-                                        <groupId>com.google.code.findbugs</groupId>
-                                        <artifactId>annotations</artifactId>
-                                    </dependency>
-                                </conflictingDependencies>
-                                <packages>
-                                    <package>javax.annotation</package>
-                                </packages>
-                            </exception>
                         </exceptions>
                         <!-- Ruby is hopeless -->
                         <ignoredDependencies>
@@ -183,93 +159,6 @@
                                 <artifactId>jruby-complete</artifactId>
                             </dependency>
                         </ignoredDependencies>
-                        <ignoredResourcePatterns>
-                            <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
-                            <ignoredResourcePattern>about_files/.*</ignoredResourcePattern>
-                            <ignoredResourcePattern>plugin\.properties</ignoredResourcePattern>
-                            <ignoredResourcePattern>plugin\.xml</ignoredResourcePattern>
-                            <ignoredResourcePattern>.*\.java</ignoredResourcePattern>
-                            <!-- the log4j config should not be ignored but they are a constant -->
-                            <!-- source of annoyance. If you use log4j.properties from the classpath -->
-                            <!-- then you are in trouble anyway -->
-                            <ignoredResourcePattern>log4j\.xml</ignoredResourcePattern>
-                            <ignoredResourcePattern>log4j\.properties</ignoredResourcePattern>
-                            <ignoredResourcePattern>logback\.xml</ignoredResourcePattern>
-                            <ignoredResourcePattern>logback\.properties</ignoredResourcePattern>
-                        </ignoredResourcePatterns>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <configuration>
-                        <excludeRoots>
-                            <excludeRoot>target/generated-sources/stubs</excludeRoot>
-                        </excludeRoots>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <configuration>
-                        <ignoredDependencies>
-                            <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
-                            <ignoredDependency>com.google.code.findbugs:annotations</ignoredDependency>
-                        </ignoredDependencies>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.basepom</groupId>
-                            <artifactId>basepom-policy</artifactId>
-                            <version>${dep.basepom-policy.version}</version>
-                        </dependency>
-                    </dependencies>
-                    <configuration>
-                        <configLocation>checkstyle/checkstyle-basepom.xml</configLocation>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-shade-plugin</artifactId>
-                    <configuration>
-                        <transformers>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-                            <!-- replace with <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer" > -->
-                            <!-- once http://jira.codehaus.org/browse/MSHADE-165 is applied to the shade plugin and the plugin is released. -->
-                            <transformer implementation="org.basepom.maven.shade.CollectingManifestResourceTransformer">
-                                <mainClass>${basepom.shaded.main-class}</mainClass>
-                                <collectSections>true</collectSections>
-                                <manifestEntries>
-                                    <X-BasePOM-Build-Id>${basepom.shaded.id}</X-BasePOM-Build-Id>
-                                    <X-BasePOM-Name>${project.name}</X-BasePOM-Name>
-                                    <X-BasePOM-Git-Commit-Id>${git.commit.id}</X-BasePOM-Git-Commit-Id>
-                                </manifestEntries>
-                            </transformer>
-                        </transformers>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.basepom</groupId>
-                            <artifactId>basepom-policy</artifactId>
-                            <version>${dep.basepom-policy.version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <configuration>
-                        <systemPropertyVariables combine.children="append">
-                            <java.util.logging.SimpleFormatter.format>%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n</java.util.logging.SimpleFormatter.format>
-                        </systemPropertyVariables>
                     </configuration>
                 </plugin>
             </plugins>
@@ -992,26 +881,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <profiles>
-        <profile>
-            <id>basepom.jdk8</id>
-            <activation>
-                <jdk>[1.8,)</jdk>
-            </activation>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <configuration>
-                                <additionalparam>-quiet -Xdoclint:none</additionalparam>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-    </profiles>
 </project>

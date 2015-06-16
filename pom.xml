@@ -55,6 +55,8 @@
         <module>foundation</module>
         <module>standard</module>
         <module>standard-oss</module>
+        <module>policy</module>
+        <module>policy-oss</module>
     </modules>
 
     <scm>
@@ -148,6 +150,28 @@
                             <file>${basedir}/standard-oss/pom.xml</file>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>policy</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <artifactId>basepom-policy</artifactId>
+                            <file>${basedir}/policy/pom.xml</file>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>policy-oss</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <configuration>
+                            <artifactId>basepom-policy-oss</artifactId>
+                            <file>${basedir}/policy-oss/pom.xml</file>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
@@ -199,6 +223,28 @@
                                 <configuration>
                                     <artifactId>basepom-standard-oss</artifactId>
                                     <file>${basedir}/standard-oss/pom.xml</file>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>policy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy-file</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactId>basepom-policy</artifactId>
+                                    <file>${basedir}/policy/pom.xml</file>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>policy-oss</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy-file</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactId>basepom-policy-oss</artifactId>
+                                    <file>${basedir}/policy-oss/pom.xml</file>
                                 </configuration>
                             </execution>
                         </executions>
@@ -265,6 +311,28 @@
                                 <configuration>
                                     <artifactId>basepom-standard-oss</artifactId>
                                     <file>${basedir}/standard-oss/pom.xml</file>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>policy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>sign-and-deploy-file</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactId>basepom-policy</artifactId>
+                                    <file>${basedir}/policy/pom.xml</file>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>policy-oss</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>sign-and-deploy-file</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactId>basepom-policy-oss</artifactId>
+                                    <file>${basedir}/policy-oss/pom.xml</file>
                                 </configuration>
                             </execution>
                             <execution>
