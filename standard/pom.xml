@@ -17,9 +17,9 @@
 
     <parent>
         <groupId>org.basepom</groupId>
-        <artifactId>basepom-policy</artifactId>
+        <artifactId>basepom-minimal</artifactId>
         <version>12-SNAPSHOT</version>
-        <relativePath>../policy</relativePath>
+        <relativePath>../minimal</relativePath>
     </parent>
 
     <artifactId>basepom-standard</artifactId>

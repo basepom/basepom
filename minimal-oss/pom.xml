@@ -17,18 +17,18 @@
 
     <parent>
         <groupId>org.basepom</groupId>
-        <artifactId>basepom-policy</artifactId>
+        <artifactId>basepom-minimal</artifactId>
         <version>12-SNAPSHOT</version>
-        <relativePath>../policy</relativePath>
+        <relativePath>../minimal</relativePath>
     </parent>
 
-    <artifactId>basepom-policy-oss</artifactId>
+    <artifactId>basepom-minimal-oss</artifactId>
     <packaging>pom</packaging>
 
     <!--
-        <name>basepom-policy-oss</name>
-        <description>Same as policy base POM, but also includes packaging and deployment for oss.sonatype.org</description>
-        <url>https://github.com/basepom/basepom/policy-oss</url>
+        <name>basepom-minimal-oss</name>
+        <description>Same as minimal base POM, but also includes packaging and deployment for oss.sonatype.org</description>
+        <url>https://github.com/basepom/basepom/minimal-oss</url>
     -->
 
     <properties>

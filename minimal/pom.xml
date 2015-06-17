@@ -22,13 +22,13 @@
         <relativePath>../foundation</relativePath>
     </parent>
 
-    <artifactId>basepom-policy</artifactId>
+    <artifactId>basepom-minimal</artifactId>
     <packaging>pom</packaging>
 
     <!--
-        <name>basepom-policy</name>
-        <description>Base POM for new projects with minimal rules and policy applied. Does not include any dependency, distribution or repository information.</description>
-        <url>https://github.com/basepom/basepom/policy</url>
+        <name>basepom-minimal</name>
+        <description>Base POM for new projects with minimal rules and minimal applied. Does not include any dependency, distribution or repository information.</description>
+        <url>https://github.com/basepom/basepom/minimal</url>
     -->
 
     <properties>
