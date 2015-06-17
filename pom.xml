@@ -17,9 +17,9 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.basepom</groupId>
-        <artifactId>basepom-standard-oss</artifactId>
+        <artifactId>basepom-minimal-oss</artifactId>
         <version>12-SNAPSHOT</version>
-        <relativePath>./standard-oss</relativePath>
+        <relativePath>./minimal-oss</relativePath>
     </parent>
 
     <artifactId>build-basepom-root</artifactId>
@@ -42,6 +42,10 @@
         </license>
     </licenses>
 
+    <modules>
+        <module>it</module>
+    </modules>
+
     <developers>
         <developer>
             <id>hgschmie</id>
@@ -50,14 +54,6 @@
             <timezone>-8</timezone>
         </developer>
     </developers>
-
-    <modules>
-        <module>foundation</module>
-        <module>standard</module>
-        <module>standard-oss</module>
-        <module>minimal</module>
-        <module>minimal-oss</module>
-    </modules>
 
     <scm>
         <connection>scm:git:git://github.com/basepom/basepom.git</connection>
@@ -72,6 +68,7 @@
         <basepom.check.skip-enforcer>false</basepom.check.skip-enforcer>
         <basepom.check.skip-license>false</basepom.check.skip-license>
         <basepom.release.tag-name-format>basepom-@{project.version}</basepom.release.tag-name-format>
+        <basepom.release.profiles>release,oss-release</basepom.release.profiles>
     </properties>
 
     <build>
@@ -253,7 +250,17 @@
             </build>
         </profile>
         <profile>
-            <id>basepom.oss-release</id>
+            <id>release</id>
+            <modules>
+                <module>foundation</module>
+                <module>standard</module>
+                <module>standard-oss</module>
+                <module>minimal</module>
+                <module>minimal-oss</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>oss-release</id>
             <build>
                 <pluginManagement>
                     <plugins>

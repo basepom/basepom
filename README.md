@@ -6,14 +6,12 @@ Documentation is coming. With release 10, basepom is now finally in a shape wher
 
 ## Building and deployment
 
-Install and deploy using -N (enforced by `.mvn/maven.config` file).
+    % mvn clean install
 
-    % mvn -N clean install
-
-    % mvn -N clean deploy
+    % mvn clean deploy
 
 Release using the release plugin:
 
-    % mvn clean release:clean release:prepare release:perform
+    % mvn -Prelease clean release:clean release:prepare release:perform
 
 
