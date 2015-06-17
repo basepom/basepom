@@ -18,7 +18,7 @@
     <parent>
         <groupId>org.basepom</groupId>
         <artifactId>basepom-minimal-oss</artifactId>
-        <version>12-SNAPSHOT</version>
+        <version>12</version>
         <relativePath>./minimal-oss</relativePath>
     </parent>
 
@@ -59,7 +59,7 @@
         <connection>scm:git:git://github.com/basepom/basepom.git</connection>
         <developerConnection>scm:git:git@github.com:basepom/basepom.git</developerConnection>
         <url>https://github.com/basepom/basepom</url>
-        <tag>HEAD</tag>
+        <tag>basepom-12</tag>
     </scm>
 
     <properties>

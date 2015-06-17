@@ -18,7 +18,7 @@
     <parent>
         <groupId>org.basepom</groupId>
         <artifactId>basepom-minimal</artifactId>
-        <version>12-SNAPSHOT</version>
+        <version>12</version>
         <relativePath>../minimal</relativePath>
     </parent>
 
