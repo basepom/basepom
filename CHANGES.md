@@ -1,5 +1,8 @@
 # Changes
 
+## Version 13
+* 2015-08-26 - (foundation) Allow disabling -Werror compiler flag
+
 ## Version 12
 
 * 2015-06-16 - (foundation) Upgrade duplicate-finder plugin to 1.1.2 (from 1.1.1)

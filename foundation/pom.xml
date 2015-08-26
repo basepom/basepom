@@ -37,6 +37,7 @@
 
         <!-- Default jvm size for compiler, tests etc. -->
         <basepom.build.jvmsize>1024m</basepom.build.jvmsize>
+        <basepom.build.werror>-Werror</basepom.build.werror>
 
         <!-- whether a release:perform automatically pushes the created files and tags to -->
         <!-- the upstream repository. Default is no. -->
@@ -315,9 +316,9 @@
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${basepom.build.jvmsize}</maxmem>
                         <showWarnings>true</showWarnings>
-                        <compilerArguments>
-                            <Werror />
-                        </compilerArguments>
+                        <compilerArgs>
+                            <arg>${basepom.build.werror}</arg>
+                        </compilerArgs>
                     </configuration>
                 </plugin>
 
