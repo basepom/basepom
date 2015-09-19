@@ -314,9 +314,6 @@
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${basepom.build.jvmsize}</maxmem>
                         <showWarnings>true</showWarnings>
-                        <compilerArguments>
-                            <Werror />
-                        </compilerArguments>
                     </configuration>
                 </plugin>
 

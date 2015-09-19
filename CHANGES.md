@@ -2,6 +2,16 @@
 
 ## Version 13
 
+* 2015-09-18 - (foundation) Remove -Werror from compiler options. It
+                            was not possible to turn Werror off or
+                            override it which is really inconvenient.
+                            If your projects relied on Werror being
+                            present, re-add it either to your cor-
+                            porate POM or the project POM itself.
+                            Waiting for https://github.com/codehaus-plexus/plexus-compiler/pull/14
+                            to trickle through the maven ecosystem to
+                            allow turning Werror on and off with a
+                            flag.
 * 2015-09-18 - (minimal) Remove JDK8 build profile for javadocs. This
                          clashes with toolchains use and will activate
                          erronously when building with a JDK8 driving
