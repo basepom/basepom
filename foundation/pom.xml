@@ -110,16 +110,16 @@
         <basepom.it.folder>src/it</basepom.it.folder>
 
         <!-- the current "minimal" version of maven -->
-        <basepom.maven.version>3.0.5</basepom.maven.version>
+        <basepom.maven.version>3.3.1</basepom.maven.version>
 
         <!-- don't upgrade to 3.0.1, they forgot to upload the various dependent jars again. -->
         <dep.findbugs.version>3.0.0</dep.findbugs.version>
 
-        <dep.pmd.version>5.3.2</dep.pmd.version>
-        <dep.checkstyle.version>6.7</dep.checkstyle.version>
+        <dep.pmd.version>5.3.4</dep.pmd.version>
+        <dep.checkstyle.version>6.10.1</dep.checkstyle.version>
 
         <!-- Scala -->
-        <dep.scala.version>2.11.6</dep.scala.version>
+        <dep.scala.version>2.11.7</dep.scala.version>
 
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
@@ -134,20 +134,19 @@
 
         <!-- packaging -->
         <dep.plugin.jar.version>2.6</dep.plugin.jar.version>
-        <dep.plugin.shade.version>2.4</dep.plugin.shade.version>
+        <dep.plugin.shade.version>2.4.1</dep.plugin.shade.version>
         <dep.plugin.source.version>2.4</dep.plugin.source.version>
 
         <!-- reporting -->
-        <dep.plugin.checkstyle.version>2.15</dep.plugin.checkstyle.version>
+        <dep.plugin.checkstyle.version>2.16</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>2.10.3</dep.plugin.javadoc.version>
-        <dep.plugin.pmd.version>3.4</dep.plugin.pmd.version>
+        <dep.plugin.pmd.version>3.5</dep.plugin.pmd.version>
 
         <!-- tools -->
         <dep.plugin.assembly.version>2.5.5</dep.plugin.assembly.version>
         <dep.plugin.dependency.version>2.10</dep.plugin.dependency.version>
-        <!-- holding at 1.3.1 because of http://jira.codehaus.org/browse/MENFORCER-224 -->
-        <dep.plugin.enforcer.version>1.3.1</dep.plugin.enforcer.version>
-        <dep.plugin.invoker.version>1.10</dep.plugin.invoker.version>
+        <dep.plugin.enforcer.version>1.4.1</dep.plugin.enforcer.version>
+        <dep.plugin.invoker.version>2.0.0</dep.plugin.invoker.version>
         <dep.plugin.release.version>2.5.2</dep.plugin.release.version>
         <dep.plugin.scm.version>1.9.4</dep.plugin.scm.version>
 
@@ -158,10 +157,10 @@
         <dep.plugin.dependency-versions-check.version>2.0.2</dep.plugin.dependency-versions-check.version>
 
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
-        <dep.plugin.duplicate-finder.version>1.1.2</dep.plugin.duplicate-finder.version>
+        <dep.plugin.duplicate-finder.version>1.2.0</dep.plugin.duplicate-finder.version>
 
         <!-- https://github.com/gleclaire/findbugs-maven-plugin -->
-        <dep.plugin.findbugs.version>3.0.1</dep.plugin.findbugs.version>
+        <dep.plugin.findbugs.version>3.0.2</dep.plugin.findbugs.version>
 
         <!-- http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.jacoco%22%20AND%20a%3A%22jacoco-maven-plugin%22 -->
         <dep.plugin.jacoco.version>0.7.5.201505241946</dep.plugin.jacoco.version>

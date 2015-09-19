@@ -1,5 +1,26 @@
 # Changes
 
+## Version 13
+
+* 2015-09-18 - (minimal) Remove JDK8 build profile for javadocs. This
+                         clashes with toolchains use and will activate
+                         erronously when building with a JDK8 driving
+                         maven and JDK7 building the actual code.
+* 2015-09-18 - (standard-oss) Remove JDK7 profile, no longer needed
+                              with minimal maven == 3.3.1
+* 2015-09-18 - (foundation) Upgrade scala plugin to 3.2.2 (from 3.2.1)
+* 2015-09-18 - (foundation) Upgrade findbugs plugin to 3.0.2 (from 3.0.1)
+* 2015-09-18 - (foundation) Upgrade duplicate-finder plugin to 1.2.0 (from 1.1.2)
+* 2015-09-18 - (foundation) Upgrade enforcer plugin to 1.4.1 (from 1.3.1)
+* 2015-09-18 - (foundation) Upgrade pmd plugin to 3.5 (from 3.4)
+* 2015-09-18 - (foundation) Upgrade checkstyle plugin to 2.16 (from 2.15)
+* 2015-09-18 - (foundation) Upgrade invoker plugin to 2.0.0 (from 1.10)
+* 2015-09-18 - (foundation) Upgrade shade plugin to 2.4.1 (from 2.4)
+* 2015-09-18 - (foundation) Upgrade scala dependency to 2.11.7  (from 2.11.6)
+* 2015-09-18 - (foundation) Upgrade checkstyle to 6.10.1 (from 6.7)
+* 2015-09-18 - (foundation) Upgrade pmd to 5.3.4 (from 5.3.2)
+* 2015-09-18 - (foundation) Change minimal version of Maven to 3.3.1 (JDK 7)
+
 ## Version 12
 
 * 2015-06-16 - (foundation) Upgrade duplicate-finder plugin to 1.1.2 (from 1.1.1)
