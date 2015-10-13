@@ -70,6 +70,7 @@
         <basepom.check.skip-enforcer>${basepom.check.skip-basic}</basepom.check.skip-enforcer>
         <basepom.check.skip-dependency>${basepom.check.skip-basic}</basepom.check.skip-dependency>
         <basepom.check.skip-duplicate-finder>${basepom.check.skip-basic}</basepom.check.skip-duplicate-finder>
+        <basepom.check.skip-dependency-management>${basepom.check.skip-basic}</basepom.check.skip-dependency-management>
         <basepom.check.skip-dependency-versions-check>${basepom.check.skip-basic}</basepom.check.skip-dependency-versions-check>
 
         <!-- extended checks -->
@@ -88,6 +89,7 @@
         <basepom.check.fail-enforcer>${basepom.check.fail-basic}</basepom.check.fail-enforcer>
         <basepom.check.fail-dependency>${basepom.check.fail-basic}</basepom.check.fail-dependency>
         <basepom.check.fail-duplicate-finder>${basepom.check.fail-basic}</basepom.check.fail-duplicate-finder>
+        <basepom.check.fail-dependency-management>${basepom.check.fail-basic}</basepom.check.fail-dependency-management>
         <basepom.check.fail-dependency-versions-check>${basepom.check.fail-basic}</basepom.check.fail-dependency-versions-check>
 
         <!-- extended checks -->
@@ -111,6 +113,7 @@
 
         <!-- Some plugins can run early ("validate") or late ("verify") -->
         <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
+        <basepom.check.phase-dependency-management>verify</basepom.check.phase-dependency-management>
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
 
         <!-- Integration testing -->
@@ -165,6 +168,9 @@
 
         <!-- https://github.com/ning/maven-dependency-versions-check-plugin/releases -->
         <dep.plugin.dependency-versions-check.version>2.0.2</dep.plugin.dependency-versions-check.version>
+
+        <!-- https://github.com/HubSpot/dependency-management-plugin/releases -->
+        <dep.plugin.dependency-management.version>0.3</dep.plugin.dependency-management.version>
 
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
         <dep.plugin.duplicate-finder.version>1.2.1</dep.plugin.duplicate-finder.version>
@@ -476,6 +482,20 @@
                         <skip>${basepom.check.skip-dependency-versions-check}</skip>
                         <failBuildInCaseOfConflict>${basepom.check.fail-dependency-versions-check}</failBuildInCaseOfConflict>
                         <failOnWarning>${basepom.check.fail-dependency-versions-check}</failOnWarning>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.hubspot.maven.plugins</groupId>
+                    <artifactId>dependency-management-plugin</artifactId>
+                    <version>${dep.plugin.dependency-management.version}</version>
+                    <configuration>
+                        <skip>${basepom.check.skip-dependency-management}</skip>
+                        <fail>${basepom.check.fail-dependency-management}</fail>
+                        <requireManagement>
+                            <dependencies>true</dependencies>
+                            <plugins>true</plugins>
+                        </requireManagement>
                     </configuration>
                 </plugin>
 
@@ -810,6 +830,20 @@
                         <phase>${basepom.check.phase-dependency-versions-check}</phase>
                         <goals>
                             <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.hubspot.maven.plugins</groupId>
+                <artifactId>dependency-management-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <phase>${basepom.check.phase-dependency-management}</phase>
+                        <goals>
+                            <goal>analyze</goal>
                         </goals>
                     </execution>
                 </executions>
