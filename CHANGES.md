@@ -1,5 +1,10 @@
 # Changes
 
+##
+
+* 2015-10-27 - (foundation) Make Checkstyle severity configurable, defaults to WARN (#19)
+
+
 ## Version 14
 
 Maintaining a central set of dependencies for a wide variety of
@@ -38,7 +43,6 @@ Sometime in a future release, the 'standard' and 'standard-oss' poms
 * 2015-11-15 - (foundation) Upgrade findbugs plugin to 3.0.3 (from 3.0.2)
 * 2015-11-15 - (foundation) Upgrade git-commit-id plugin to 2.2.0 (from 2.1.15)
 * 2015-11-15 - (foundation) Upgrade scala plugin to 3.2.2 (from 3.2.1)
-
 
 ## Version 13
 
