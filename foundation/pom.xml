@@ -93,6 +93,9 @@
         <basepom.check.fail-pmd>false</basepom.check.fail-pmd>
         <basepom.check.fail-checkstyle>false</basepom.check.fail-checkstyle>
 
+        <!-- checkstyle configuration -->
+        <basepom.check.checkstyle-severity>warning</basepom.check.checkstyle-severity>
+
         <!-- git information -->
         <basepom.git-id.skip>false</basepom.git-id.skip>
         <basepom.git-id.fail-no-git>false</basepom.git-id.fail-no-git>
@@ -521,6 +524,7 @@
                     <configuration>
                         <skip>${basepom.check.skip-checkstyle}</skip>
                         <failOnViolation>${basepom.check.fail-checkstyle}</failOnViolation>
+                        <violationSeverity>${basepom.check.checkstyle-severity}</violationSeverity>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <consoleOutput>true</consoleOutput>
                         <linkXRef>false</linkXRef>
