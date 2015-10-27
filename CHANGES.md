@@ -1,9 +1,12 @@
 # Changes
 
+## Version 14
+
+* 2015-10-27 - (foundation) Add the modernizer-maven-plugin 1.4.0
+                            Not activated by default.
+
 ## Version 13
 
-* 2015-09-19 - (foundation) Add the modernizer-maven-plugin 1.4.0
-                            Not activated by default.
 * 2015-09-18 - (foundation) Remove -Werror from compiler options. It
                             was not possible to turn Werror off or
                             override it which is really inconvenient.
