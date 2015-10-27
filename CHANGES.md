@@ -1,5 +1,9 @@
 # Changes
 
+## Version 14
+
+* 2015-10-27 - (foundation) Make Checkstyle severity configurable, defaults to WARN
+
 ## Version 13
 
 * 2015-09-19 - (foundation) Add the modernizer-maven-plugin 1.4.0
