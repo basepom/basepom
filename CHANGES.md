@@ -1,5 +1,9 @@
 # Changes
 
+## Version 14
+
+* 2015-10-30 - (foundation) git-commit-id-plugin 2.2.0, make verbosity configurable
+
 ## Version 13
 
 * 2015-09-19 - (foundation) Add the modernizer-maven-plugin 1.4.0
