@@ -160,7 +160,7 @@
         <dep.plugin.dependency-versions-check.version>2.0.2</dep.plugin.dependency-versions-check.version>
 
         <!-- https://github.com/HubSpot/dependency-management-plugin/releases -->
-        <dep.plugin.dependency-management.version>0.3</dep.plugin.dependency-management.version>
+        <dep.plugin.dependency-management.version>0.4</dep.plugin.dependency-management.version>
 
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
         <dep.plugin.duplicate-finder.version>1.2.0</dep.plugin.duplicate-finder.version>
@@ -464,6 +464,8 @@
                         <requireManagement>
                             <dependencies>true</dependencies>
                             <plugins>true</plugins>
+                            <allowVersions>false</allowVersions>
+                            <allowExclusions>false</allowExclusions>
                         </requireManagement>
                     </configuration>
                 </plugin>
