@@ -115,8 +115,8 @@
         <!-- don't upgrade to 3.0.1, they forgot to upload the various dependent jars again. -->
         <dep.findbugs.version>3.0.0</dep.findbugs.version>
 
-        <dep.pmd.version>5.3.4</dep.pmd.version>
-        <dep.checkstyle.version>6.10.1</dep.checkstyle.version>
+        <dep.pmd.version>5.4.0</dep.pmd.version>
+        <dep.checkstyle.version>6.12.1</dep.checkstyle.version>
 
         <!-- Scala -->
         <dep.scala.version>2.11.7</dep.scala.version>
@@ -124,55 +124,55 @@
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
         <!-- core plugins -->
-        <dep.plugin.clean.version>2.6.1</dep.plugin.clean.version>
+        <dep.plugin.clean.version>3.0.0</dep.plugin.clean.version>
         <dep.plugin.compiler.version>3.3</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>2.8.2</dep.plugin.deploy.version>
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
         <dep.plugin.resources.version>2.7</dep.plugin.resources.version>
         <dep.plugin.site.version>3.4</dep.plugin.site.version>
-        <dep.plugin.surefire.version>2.18.1</dep.plugin.surefire.version>
+        <dep.plugin.surefire.version>2.19</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>2.6</dep.plugin.jar.version>
-        <dep.plugin.shade.version>2.4.1</dep.plugin.shade.version>
+        <dep.plugin.shade.version>2.4.2</dep.plugin.shade.version>
         <dep.plugin.source.version>2.4</dep.plugin.source.version>
 
         <!-- reporting -->
-        <dep.plugin.checkstyle.version>2.16</dep.plugin.checkstyle.version>
+        <dep.plugin.checkstyle.version>2.17</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>2.10.3</dep.plugin.javadoc.version>
         <dep.plugin.pmd.version>3.5</dep.plugin.pmd.version>
 
         <!-- tools -->
-        <dep.plugin.assembly.version>2.5.5</dep.plugin.assembly.version>
+        <dep.plugin.assembly.version>2.6</dep.plugin.assembly.version>
         <dep.plugin.dependency.version>2.10</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>1.4.1</dep.plugin.enforcer.version>
         <dep.plugin.invoker.version>2.0.0</dep.plugin.invoker.version>
-        <dep.plugin.release.version>2.5.2</dep.plugin.release.version>
+        <dep.plugin.release.version>2.5.3</dep.plugin.release.version>
         <dep.plugin.scm.version>1.9.4</dep.plugin.scm.version>
 
-        <!-- https://github.com/mojohaus/build-helper-maven-plugin -->
+        <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
         <dep.plugin.build-helper.version>1.9.1</dep.plugin.build-helper.version>
 
         <!-- https://github.com/ning/maven-dependency-versions-check-plugin/releases -->
         <dep.plugin.dependency-versions-check.version>2.0.2</dep.plugin.dependency-versions-check.version>
 
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
-        <dep.plugin.duplicate-finder.version>1.2.0</dep.plugin.duplicate-finder.version>
+        <dep.plugin.duplicate-finder.version>1.2.1</dep.plugin.duplicate-finder.version>
 
-        <!-- https://github.com/gleclaire/findbugs-maven-plugin -->
-        <dep.plugin.findbugs.version>3.0.2</dep.plugin.findbugs.version>
+        <!-- https://github.com/gleclaire/findbugs-maven-plugin/releases -->
+        <dep.plugin.findbugs.version>3.0.3</dep.plugin.findbugs.version>
 
-        <!-- http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.jacoco%22%20AND%20a%3A%22jacoco-maven-plugin%22 -->
+        <!-- https://github.com/jacoco/jacoco/releases -->
         <dep.plugin.jacoco.version>0.7.5.201505241946</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
 
         <!-- https://github.com/ktoso/maven-git-commit-id-plugin/releases -->
-        <dep.plugin.git-commit-id.version>2.1.15</dep.plugin.git-commit-id.version>
+        <dep.plugin.git-commit-id.version>2.2.0</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/davidB/scala-maven-plugin/releases -->
-        <dep.plugin.scala.version>3.2.1</dep.plugin.scala.version>
+        <dep.plugin.scala.version>3.2.2</dep.plugin.scala.version>
 
         <!-- https://github.com/brianm/really-executable-jars-maven-plugin/releases -->
         <dep.plugin.really-executable.version>1.4.1</dep.plugin.really-executable.version>

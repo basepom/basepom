@@ -1,5 +1,21 @@
 # Changes
 
+## Version 14
+
+* 2015-11-15 - (foundation) Upgrade pmd to 5.4.0 (from 5.3.4)
+* 2015-11-15 - (foundation) Upgrade checkstyle to 6.12.1 (from 6.10.1)
+* 2015-11-15 - (foundation) Upgrade clean plugin to 3.0.0 (from 2.6.1)
+* 2015-11-15 - (foundation) Upgrade surefire plugin to 2.19 (from 2.18.1)
+* 2015-11-15 - (foundation) Upgrade shade plugin to 2.4.2 (from 2.4.1)
+* 2015-11-15 - (foundation) Upgrade checkstyle plugin to 2.17 (from 2.16)
+* 2015-11-15 - (foundation) Upgrade assembly plugin to 2.6 (from 2.5.5)
+* 2015-11-15 - (foundation) Upgrade release plugin to 2.5.3 (from 2.5.2)
+* 2015-11-15 - (foundation) Upgrade duplicate-finder plugin to 1.2.1 (from 1.2.0)
+* 2015-11-15 - (foundation) Upgrade findbugs plugin to 3.0.3 (from 3.0.2)
+* 2015-11-15 - (foundation) Upgrade git-commit-id plugin to 2.2.0 (from 2.1.15)
+* 2015-11-15 - (foundation) Upgrade scala plugin to 3.2.2 (from 3.2.1)
+
+
 ## Version 13
 
 * 2015-09-19 - (foundation) Add the modernizer-maven-plugin 1.4.0
