@@ -589,7 +589,7 @@
                     <configuration>
                         <prefix>git</prefix>
                         <dateFormat>yyyy-MM-dd'T'HH:mm:ssZZ</dateFormat>
-                        <verbose>true</verbose>
+                        <verbose>false</verbose>
                         <skipPoms>true</skipPoms>
                         <generateGitPropertiesFile>false</generateGitPropertiesFile>
                         <failOnNoGitDirectory>${basepom.git-id.fail-no-git}</failOnNoGitDirectory>
