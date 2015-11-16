@@ -69,8 +69,7 @@
 
         <!-- extended checks -->
         <basepom.check.skip-findbugs>${basepom.check.skip-extended}</basepom.check.skip-findbugs>
-        <!-- remove from extended until a jacoco release, that sets argLine when skipped, is out. -->
-        <basepom.check.skip-coverage>false</basepom.check.skip-coverage>
+        <basepom.check.skip-coverage>${basepom.check.skip-extended}</basepom.check.skip-coverage>
 
         <!-- only enable if actually configured -->
         <basepom.check.skip-pmd>true</basepom.check.skip-pmd>

@@ -2,6 +2,7 @@
 
 ## Version 14
 
+* 2015-11-15 - (foundation) Add coverage back to extended checks (jacoco fixed their bug).
 * 2015-11-15 - (foundation) Change verbosity of the git-id plugin. Fixes #21.
 * 2015-11-15 - (foundation) Upgrade pmd to 5.4.0 (from 5.3.4)
 * 2015-11-15 - (foundation) Upgrade checkstyle to 6.12.1 (from 6.10.1)
