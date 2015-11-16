@@ -2,6 +2,23 @@
 
 ## Version 14
 
+Maintaining a central set of dependencies for a wide variety of
+projects using all different types of dependencies has turned out to
+be a losing proposition. This should be done in an organization pom,
+not in the base project. Therefore, with this release, the 'standard'
+and 'standard-oss' poms are now **DEPRECATED**.
+
+Starting with this release, the dependency versions in the 'standard'
+pom are no longer updated.
+
+Projects using either of those are highly encouraged to move the
+dependency management section in the 'standard' pom to their own
+project (and keep only the dependencies that are actually used) and
+then switch to the 'minimal' or 'minimal-oss' pom.
+
+Sometime in a future release, the 'standard' and 'standard-oss' poms
+**WILL BE REMOVED WITHOUT REPLACEMENT**.
+
 * 2015-11-15 - (foundation) Fix longstanding typo for report encoding (exposed by the
                             failsafe plugin).
 * 2015-11-15 - (foundation) Add failsafe plugin configuration for integration tests.
