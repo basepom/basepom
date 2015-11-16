@@ -2,6 +2,8 @@
 
 ## Version 14
 
+* 2015-11-15 - (foundation) Fix longstanding typo for report encoding (exposed by the
+                            failsafe plugin).
 * 2015-11-15 - (foundation) Add failsafe plugin configuration for integration tests.
 * 2015-11-15 - (foundation) Rename basepom.it.folder to basepom.invoker.folder to make
                             room for adding the failsafe plugin for integration testing.
