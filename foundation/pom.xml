@@ -50,6 +50,11 @@
         <basepom.test.reuse-vm>true</basepom.test.reuse-vm>
         <basepom.test.timeout>30</basepom.test.timeout>
 
+        <!-- failsafe fork control -->
+        <basepom.failsafe.fork-count>1</basepom.failsafe.fork-count>
+        <basepom.failsafe.reuse-vm>false</basepom.failsafe.reuse-vm>
+        <basepom.failsafe.timeout>30</basepom.failsafe.timeout>
+
         <!-- define minimum level for pmd to fail the build -->
         <basepom.pmd.fail-level>4</basepom.pmd.fail-level>
 
@@ -104,9 +109,11 @@
         <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
 
-        <!-- Invoker (Integration testing) -->
+        <!-- Integration testing -->
         <basepom.it.skip>false</basepom.it.skip>
-        <basepom.it.folder>src/it</basepom.it.folder>
+
+        <!-- Invoker plugin for integration testing -->
+        <basepom.invoker.folder>src/it</basepom.invoker.folder>
 
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.3.1</basepom.maven.version>
@@ -126,6 +133,7 @@
         <dep.plugin.clean.version>3.0.0</dep.plugin.clean.version>
         <dep.plugin.compiler.version>3.3</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>2.8.2</dep.plugin.deploy.version>
+        <dep.plugin.failsafe.version>2.19</dep.plugin.failsafe.version>
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
         <dep.plugin.resources.version>2.7</dep.plugin.resources.version>
         <dep.plugin.site.version>3.4</dep.plugin.site.version>
@@ -354,6 +362,27 @@
                         <reuseForks>${basepom.test.reuse-vm}</reuseForks>
                         <forkCount>${basepom.test.fork-count}</forkCount>
                         <forkedProcessTimeoutInSeconds>${basepom.test.timeout}</forkedProcessTimeoutInSeconds>
+                        <useManifestOnlyJar>false</useManifestOnlyJar>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${dep.plugin.failsafe.version}</version>
+                    <configuration>
+                        <skipITs>${basepom.it.skip}</skipITs>
+                        <argLine>${argLine} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
+                        <systemPropertyVariables>
+                            <sun.jnu.encoding>${project.build.sourceEncoding}</sun.jnu.encoding>
+                            <user.timezone>UTC</user.timezone>
+                            <java.awt.headless>true</java.awt.headless>
+                            <java.util.logging.SimpleFormatter.format>%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n</java.util.logging.SimpleFormatter.format>
+                        </systemPropertyVariables>
+                        <runOrder>random</runOrder>
+                        <reuseForks>${basepom.failsafe.reuse-vm}</reuseForks>
+                        <forkCount>${basepom.failsafe.fork-count}</forkCount>
+                        <forkedProcessTimeoutInSeconds>${basepom.failsafe.timeout}</forkedProcessTimeoutInSeconds>
                         <useManifestOnlyJar>false</useManifestOnlyJar>
                     </configuration>
                 </plugin>
@@ -613,7 +642,7 @@
                         <skipInvocation>${basepom.it.skip}</skipInvocation>
                         <skipInstallation>${basepom.it.skip}</skipInstallation>
                         <debug>true</debug>
-                        <projectsDirectory>${basepom.it.folder}</projectsDirectory>
+                        <projectsDirectory>${basepom.invoker.folder}</projectsDirectory>
                         <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                         <pomIncludes>
                             <pomInclude>*/pom.xml</pomInclude>
@@ -621,7 +650,7 @@
                         <preBuildHookScript>setup</preBuildHookScript>
                         <postBuildHookScript>verify</postBuildHookScript>
                         <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
-                        <settingsFile>${basepom.it.folder}/settings.xml</settingsFile>
+                        <settingsFile>${basepom.invoker.folder}/settings.xml</settingsFile>
                         <goals>
                             <goal>clean</goal>
                             <goal>package</goal>
@@ -855,11 +884,11 @@
 
     <profiles>
         <profile>
-            <id>basepom.integration-testing</id>
+            <id>basepom.invoker-integration-testing</id>
             <activation>
                 <file>
-                    <!-- An integration testing folder exists. -->
-                    <exists>${basedir}/${basepom.it.folder}</exists>
+                    <!-- An integration testing folder exists for the invoker plugin. -->
+                    <exists>${basedir}/${basepom.invoker.folder}</exists>
                 </file>
             </activation>
             <build>

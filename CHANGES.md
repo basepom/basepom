@@ -2,6 +2,9 @@
 
 ## Version 14
 
+* 2015-11-15 - (foundation) Add failsafe plugin configuration for integration tests.
+* 2015-11-15 - (foundation) Rename basepom.it.folder to basepom.invoker.folder to make
+                            room for adding the failsafe plugin for integration testing.
 * 2015-11-15 - (foundation) Add coverage back to extended checks (jacoco fixed their bug).
 * 2015-11-15 - (foundation) Change verbosity of the git-id plugin. Fixes #21.
 * 2015-11-15 - (foundation) Upgrade pmd to 5.4.0 (from 5.3.4)
