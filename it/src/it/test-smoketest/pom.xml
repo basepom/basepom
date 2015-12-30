@@ -27,6 +27,7 @@
     <description>Very simple smoke test, pull in all dependencies, see if any of the checkers (besides duplicate-finder) complains.</description>
 
     <properties>
+        <project.build.targetJdk>1.7</project.build.targetJdk>
         <basepom.check.skip-duplicate-finder>true</basepom.check.skip-duplicate-finder>
     </properties>
 

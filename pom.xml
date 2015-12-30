@@ -63,6 +63,7 @@
     </scm>
 
     <properties>
+        <project.build.targetJdk>1.7</project.build.targetJdk>
         <basepom.maven.version>3.3.3</basepom.maven.version>
         <basepom.check.skip-all>true</basepom.check.skip-all>
         <basepom.check.skip-enforcer>false</basepom.check.skip-enforcer>
