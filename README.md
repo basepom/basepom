@@ -10,8 +10,9 @@ Documentation is coming. With release 10, basepom is now finally in a shape wher
 
     % mvn clean deploy
 
-Release using the release plugin:
+## Releasing
 
-    % mvn -Prelease clean release:clean release:prepare release:perform
+Run the release script:
 
+% ./do-release.sh
 
