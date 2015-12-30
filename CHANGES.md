@@ -1,7 +1,13 @@
 # Changes
 
-##
+## Version 15
 
+* 2015-12-30 - (foundation) Upgrade build helper plugin to 1.10 (from 1.9.1)
+* 2015-12-30 - (foundation) Upgrade pmd plugin to 3.6 (from 3.5)
+* 2015-12-30 - (foundation) Upgrade checkstyle to 6.14.1 (from 6.12.1)
+* 2015-12-30 - (foundation) Upgrade pmd to 5.4.1 (from 5.4.0)
+* 2015-12-30 - (foundation) Upgrade findbugs dependency to 3.0.1 (from 3.0.0), the missing
+                            jars have finally shown up...
 * 2015-10-27 - (foundation) Make Checkstyle severity configurable, defaults to WARN (#19)
 
 

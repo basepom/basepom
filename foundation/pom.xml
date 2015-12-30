@@ -121,11 +121,10 @@
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.3.1</basepom.maven.version>
 
-        <!-- don't upgrade to 3.0.1, they forgot to upload the various dependent jars again. -->
-        <dep.findbugs.version>3.0.0</dep.findbugs.version>
+        <dep.findbugs.version>3.0.1</dep.findbugs.version>
 
-        <dep.pmd.version>5.4.0</dep.pmd.version>
-        <dep.checkstyle.version>6.12.1</dep.checkstyle.version>
+        <dep.pmd.version>5.4.1</dep.pmd.version>
+        <dep.checkstyle.version>6.14.1</dep.checkstyle.version>
 
         <!-- Scala -->
         <dep.scala.version>2.11.7</dep.scala.version>
@@ -150,7 +149,7 @@
         <!-- reporting -->
         <dep.plugin.checkstyle.version>2.17</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>2.10.3</dep.plugin.javadoc.version>
-        <dep.plugin.pmd.version>3.5</dep.plugin.pmd.version>
+        <dep.plugin.pmd.version>3.6</dep.plugin.pmd.version>
 
         <!-- tools -->
         <dep.plugin.assembly.version>2.6</dep.plugin.assembly.version>
@@ -161,7 +160,7 @@
         <dep.plugin.scm.version>1.9.4</dep.plugin.scm.version>
 
         <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
-        <dep.plugin.build-helper.version>1.9.1</dep.plugin.build-helper.version>
+        <dep.plugin.build-helper.version>1.10</dep.plugin.build-helper.version>
 
         <!-- https://github.com/ning/maven-dependency-versions-check-plugin/releases -->
         <dep.plugin.dependency-versions-check.version>2.0.2</dep.plugin.dependency-versions-check.version>
