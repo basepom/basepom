@@ -127,28 +127,6 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>standard</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <artifactId>basepom-standard</artifactId>
-                            <file>${basedir}/standard/pom.xml</file>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>standard-oss</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <artifactId>basepom-standard-oss</artifactId>
-                            <file>${basedir}/standard-oss/pom.xml</file>
-                        </configuration>
-                    </execution>
-                    <execution>
                         <id>minimal</id>
                         <phase>install</phase>
                         <goals>
@@ -202,28 +180,6 @@
                                 </configuration>
                             </execution>
                             <execution>
-                                <id>standard</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-standard</artifactId>
-                                    <file>${basedir}/standard/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>standard-oss</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-standard-oss</artifactId>
-                                    <file>${basedir}/standard-oss/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
                                 <id>minimal</id>
                                 <phase>deploy</phase>
                                 <goals>
@@ -254,8 +210,6 @@
             <id>release</id>
             <modules>
                 <module>foundation</module>
-                <module>standard</module>
-                <module>standard-oss</module>
                 <module>minimal</module>
                 <module>minimal-oss</module>
             </modules>
@@ -297,28 +251,6 @@
                                 <configuration>
                                     <artifactId>basepom-foundation</artifactId>
                                     <file>${basedir}/foundation/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>standard</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>sign-and-deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-standard</artifactId>
-                                    <file>${basedir}/standard/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>standard-oss</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>sign-and-deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-standard-oss</artifactId>
-                                    <file>${basedir}/standard-oss/pom.xml</file>
                                 </configuration>
                             </execution>
                             <execution>
