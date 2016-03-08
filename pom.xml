@@ -42,10 +42,6 @@
         </license>
     </licenses>
 
-    <modules>
-        <module>it</module>
-    </modules>
-
     <developers>
         <developer>
             <id>hgschmie</id>
