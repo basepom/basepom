@@ -1,5 +1,18 @@
 # Changes
 
+## Version 16
+
+* 2016-03-18 - (foundation) Upgrade jacoco plugin to 0.7.6.201602180812 (from 0.7.5.201505241946)
+* 2016-03-18 - (foundation) Upgrade source plugin to 3.0.0 (from 2.4)
+* 2016-03-18 - (foundation) Upgrade shade plugin to 2.4.3 (from 2.4.2)
+* 2016-03-18 - (foundation) Upgrade site plugin to 3.5 (from 3.4)
+* 2016-03-18 - (foundation) Upgrade surefire plugin to 2.19.1 (from 2.19)
+* 2016-03-18 - (foundation) Upgrade failsafe plugin to 2.19.1 (from 2.19)
+* 2016-03-18 - (foundation) Upgrade compiler plugin to 3.5.1 (from 3.3)
+* 2015-03-18 - (foundation) Upgrade checkstyle to 6.16.1 (from 6.14.1)
+* 2016-03-18 - Minimum Maven version now 3.3.3
+* 2016-03-07 - Removed the standard and standard-oss POMs
+
 ## Version 15
 
 * 2015-12-30 - (foundation) Upgrade build helper plugin to 1.10 (from 1.9.1)

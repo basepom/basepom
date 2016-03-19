@@ -119,12 +119,12 @@
         <basepom.invoker.folder>src/it</basepom.invoker.folder>
 
         <!-- the current "minimal" version of maven -->
-        <basepom.maven.version>3.3.1</basepom.maven.version>
+        <basepom.maven.version>3.3.3</basepom.maven.version>
 
         <dep.findbugs.version>3.0.1</dep.findbugs.version>
 
         <dep.pmd.version>5.4.1</dep.pmd.version>
-        <dep.checkstyle.version>6.14.1</dep.checkstyle.version>
+        <dep.checkstyle.version>6.16.1</dep.checkstyle.version>
 
         <!-- Scala -->
         <dep.scala.version>2.11.7</dep.scala.version>
@@ -133,18 +133,18 @@
 
         <!-- core plugins -->
         <dep.plugin.clean.version>3.0.0</dep.plugin.clean.version>
-        <dep.plugin.compiler.version>3.3</dep.plugin.compiler.version>
+        <dep.plugin.compiler.version>3.5.1</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>2.8.2</dep.plugin.deploy.version>
-        <dep.plugin.failsafe.version>2.19</dep.plugin.failsafe.version>
+        <dep.plugin.failsafe.version>2.19.1</dep.plugin.failsafe.version>
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
         <dep.plugin.resources.version>2.7</dep.plugin.resources.version>
-        <dep.plugin.site.version>3.4</dep.plugin.site.version>
-        <dep.plugin.surefire.version>2.19</dep.plugin.surefire.version>
+        <dep.plugin.site.version>3.5</dep.plugin.site.version>
+        <dep.plugin.surefire.version>2.19.1</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>2.6</dep.plugin.jar.version>
-        <dep.plugin.shade.version>2.4.2</dep.plugin.shade.version>
-        <dep.plugin.source.version>2.4</dep.plugin.source.version>
+        <dep.plugin.shade.version>2.4.3</dep.plugin.shade.version>
+        <dep.plugin.source.version>3.0.0</dep.plugin.source.version>
 
         <!-- reporting -->
         <dep.plugin.checkstyle.version>2.17</dep.plugin.checkstyle.version>
@@ -172,7 +172,7 @@
         <dep.plugin.findbugs.version>3.0.3</dep.plugin.findbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
-        <dep.plugin.jacoco.version>0.7.5.201505241946</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.7.6.201602180812</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
