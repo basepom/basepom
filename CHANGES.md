@@ -1,5 +1,13 @@
 # Changes
 
+## Version 17
+
+* 2016-04-06 - (minimal) - add an exception for findbugs-annotations vs. jcip-annotations.
+                           Findbugs managed to finally jump the shark by declaring
+                           dependencies on jsr305 and jcip jars *AND* including the same
+                           classes in the jar itself, therefore ensuring that the class
+                           path will always contain duplicates.
+
 ## Version 16
 
 * 2016-03-18 - (foundation) Upgrade jacoco plugin to 0.7.6.201602180812 (from 0.7.5.201505241946)
