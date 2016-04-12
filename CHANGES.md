@@ -2,6 +2,8 @@
 
 ## Version 17
 
+
+* 2016-04-12 - (oss)     - rename the "minimal-oss" pom to just "oss".
 * 2016-04-06 - (minimal) - add an exception for findbugs-annotations vs. jcip-annotations.
                            Findbugs managed to finally jump the shark by declaring
                            dependencies on jsr305 and jcip jars *AND* including the same

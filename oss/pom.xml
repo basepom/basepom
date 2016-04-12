@@ -22,11 +22,11 @@
         <relativePath>../minimal</relativePath>
     </parent>
 
-    <artifactId>basepom-minimal-oss</artifactId>
+    <artifactId>basepom-oss</artifactId>
     <packaging>pom</packaging>
 
     <!--
-        <name>basepom-minimal-oss</name>
+        <name>basepom-oss</name>
         <description>Same as minimal base POM, but also includes packaging and deployment for oss.sonatype.org</description>
         <url>https://github.com/basepom/basepom/minimal-oss</url>
     -->

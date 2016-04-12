@@ -17,9 +17,9 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.basepom</groupId>
-        <artifactId>basepom-minimal-oss</artifactId>
+        <artifactId>basepom-oss</artifactId>
         <version>17-SNAPSHOT</version>
-        <relativePath>./minimal-oss</relativePath>
+        <relativePath>./oss</relativePath>
     </parent>
 
     <artifactId>build-basepom-root</artifactId>
@@ -134,14 +134,14 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>minimal-oss</id>
+                        <id>oss</id>
                         <phase>install</phase>
                         <goals>
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <artifactId>basepom-minimal-oss</artifactId>
-                            <file>${basedir}/minimal-oss/pom.xml</file>
+                            <artifactId>basepom-oss</artifactId>
+                            <file>${basedir}/oss/pom.xml</file>
                         </configuration>
                     </execution>
                 </executions>
@@ -187,14 +187,14 @@
                                 </configuration>
                             </execution>
                             <execution>
-                                <id>minimal-oss</id>
+                                <id>oss</id>
                                 <phase>deploy</phase>
                                 <goals>
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <artifactId>basepom-minimal-oss</artifactId>
-                                    <file>${basedir}/minimal-oss/pom.xml</file>
+                                    <artifactId>basepom-oss</artifactId>
+                                    <file>${basedir}/oss/pom.xml</file>
                                 </configuration>
                             </execution>
                         </executions>
@@ -207,7 +207,7 @@
             <modules>
                 <module>foundation</module>
                 <module>minimal</module>
-                <module>minimal-oss</module>
+                <module>oss</module>
             </modules>
         </profile>
         <profile>
@@ -261,14 +261,14 @@
                                 </configuration>
                             </execution>
                             <execution>
-                                <id>minimal-oss</id>
+                                <id>oss</id>
                                 <phase>deploy</phase>
                                 <goals>
                                     <goal>sign-and-deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <artifactId>basepom-minimal-oss</artifactId>
-                                    <file>${basedir}/minimal-oss/pom.xml</file>
+                                    <artifactId>basepom-oss</artifactId>
+                                    <file>${basedir}/oss/pom.xml</file>
                                 </configuration>
                             </execution>
                             <execution>
