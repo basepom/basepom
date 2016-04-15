@@ -2,7 +2,8 @@
 
 ## Version 17
 
-
+* 2016-04-15 - (foundation) Add 'basepom.git-id.fail-no-info' switch
+* 2016-04-15 - (foundation) Upgrade git-commit-id plugin to 2.2.1 (from 2.2.0)
 * 2016-04-12 - (oss)     - rename the "minimal-oss" pom to just "oss".
 * 2016-04-06 - (minimal) - add an exception for findbugs-annotations vs. jcip-annotations.
                            Findbugs managed to finally jump the shark by declaring
