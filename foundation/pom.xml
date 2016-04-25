@@ -111,6 +111,11 @@
         <!-- shade plugin -->
         <basepom.shaded.main-class />
 
+        <!-- dependency management plugin -->
+        <basepom.dependency-management.dependencies>false</basepom.dependency-management.dependencies>
+        <basepom.dependency-management.plugins>false</basepom.dependency-management.plugins>
+
+
         <!-- Some plugins can run early ("validate") or late ("verify") -->
         <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
         <basepom.check.phase-dependency-management>verify</basepom.check.phase-dependency-management>
@@ -170,7 +175,7 @@
         <dep.plugin.dependency-versions-check.version>2.0.2</dep.plugin.dependency-versions-check.version>
 
         <!-- https://github.com/HubSpot/dependency-management-plugin/releases -->
-        <dep.plugin.dependency-management.version>0.4</dep.plugin.dependency-management.version>
+        <dep.plugin.dependency-management.version>0.7</dep.plugin.dependency-management.version>
 
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
         <dep.plugin.duplicate-finder.version>1.2.1</dep.plugin.duplicate-finder.version>
@@ -487,14 +492,14 @@
 
                 <plugin>
                     <groupId>com.hubspot.maven.plugins</groupId>
-                    <artifactId>dependency-management-plugin</artifactId>
+                    <artifactId>dependency-management-maven-plugin</artifactId>
                     <version>${dep.plugin.dependency-management.version}</version>
                     <configuration>
                         <skip>${basepom.check.skip-dependency-management}</skip>
                         <fail>${basepom.check.fail-dependency-management}</fail>
                         <requireManagement>
-                            <dependencies>true</dependencies>
-                            <plugins>true</plugins>
+                            <dependencies>${basepom.dependency-management.dependencies}</dependencies>
+                            <plugins>${basepom.dependency-management.plugins}</plugins>
                             <allowVersions>false</allowVersions>
                             <allowExclusions>false</allowExclusions>
                         </requireManagement>
@@ -839,7 +844,7 @@
 
             <plugin>
                 <groupId>com.hubspot.maven.plugins</groupId>
-                <artifactId>dependency-management-plugin</artifactId>
+                <artifactId>dependency-management-maven-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>default</id>
