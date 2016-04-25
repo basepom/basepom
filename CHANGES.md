@@ -2,6 +2,12 @@
 
 ## Version 17
 
+* 2016-04-25 - (foundation) Add the dependency-management-plugin 0.7
+                            active by default but not validating plugin
+                            and dependency management. Set the
+                            <basepom.dependency-management.dependencies>
+                            and </basepom.dependency-management.plugins>
+                            switches if needed.
 * 2016-04-15 - (foundation) Add 'basepom.git-id.fail-no-info' switch
 * 2016-04-15 - (foundation) Upgrade git-commit-id plugin to 2.2.1 (from 2.2.0)
 * 2016-04-12 - (oss)     - rename the "minimal-oss" pom to just "oss".
