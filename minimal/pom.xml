@@ -115,6 +115,7 @@
                         <ignoredDependencies>
                             <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
                             <ignoredDependency>com.google.code.findbugs:annotations</ignoredDependency>
+                            <ignoredDependency>net.jcip:jcip-annotations</ignoredDependency>
                         </ignoredDependencies>
                     </configuration>
                 </plugin>
