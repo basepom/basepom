@@ -147,7 +147,7 @@
         <dep.plugin.failsafe.version>2.19.1</dep.plugin.failsafe.version>
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
         <dep.plugin.resources.version>2.7</dep.plugin.resources.version>
-        <dep.plugin.site.version>3.5</dep.plugin.site.version>
+        <dep.plugin.site.version>3.5.1</dep.plugin.site.version>
         <dep.plugin.surefire.version>2.19.1</dep.plugin.surefire.version>
 
         <!-- packaging -->
