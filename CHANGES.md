@@ -2,6 +2,7 @@
 
 ## Version 17
 
+* 2016-04-25 - (foundation) Remove eclipse managed plugin section
 * 2016-04-25 - (foundation) Add the dependency-management-plugin 0.7
                             active by default but not validating plugin
                             and dependency management. Set the
