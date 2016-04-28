@@ -36,7 +36,8 @@
         <!-- Build specific options are prefixed basepom.build. -->
 
         <!-- Default jvm size for compiler, tests etc. -->
-        <basepom.build.jvmsize>1024m</basepom.build.jvmsize>
+        <basepom.build.maxheap-mb>1024</basepom.build.maxheap-mb>
+        <basepom.build.jvmsize>${basepom.build.maxheap-mb}m</basepom.build.jvmsize>
 
         <!-- whether a release:perform automatically pushes the created files and tags to -->
         <!-- the upstream repository. Default is no. -->
@@ -468,7 +469,7 @@
                     <configuration>
                         <effort>Max</effort>
                         <skip>${basepom.check.skip-findbugs}</skip>
-                        <jvmargs>-Xmx${basepom.build.jvmsize}</jvmargs>
+                        <maxHeap>${basepom.build.maxheap-mb}</maxHeap>
                         <failOnError>${basepom.check.fail-findbugs}</failOnError>
                     </configuration>
                 </plugin>

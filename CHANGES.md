@@ -1,5 +1,11 @@
 # Changes
 
+## Version 18
+
+# 2016-04-27 - (foundation) Introduce `basepom.build.maxheap-mb` as numeric equivalent
+                            to `basepom.build.jvmsize`.
+* 2016-04-27 - (foundation) Use `<maxHeap>` instead of `<jvmArgs>` for findbugs.
+
 ## Version 17
 
 * 2016-04-25 - (foundation) Upgrade site plugin to 3.5.1 (from 3.5)
