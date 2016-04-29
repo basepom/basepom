@@ -2,6 +2,8 @@
 
 ## Version 18
 
+# 2016-04-29 - (foundation) Introduce `basepom.test.skip` to skip unit tests. This can
+                            be used in a submodule to skip tests for that specific module.
 # 2016-04-27 - (foundation) Introduce `basepom.build.maxheap-mb` as numeric equivalent
                             to `basepom.build.jvmsize`.
 * 2016-04-27 - (foundation) Use `<maxHeap>` instead of `<jvmArgs>` for findbugs.
