@@ -47,7 +47,7 @@
         <basepom.release.tag-name-format>@{project.artifactId}-@{project.version}</basepom.release.tag-name-format>
 
         <!-- surefire skip tests -->
-        <basepom.test.skip>false</basepom.test.skip>
+        <basepom.test.skip>${skipTests}</basepom.test.skip>
 
         <!-- surefire fork control -->
         <basepom.test.fork-count>1.0C</basepom.test.fork-count>
