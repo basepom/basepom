@@ -2,6 +2,8 @@
 
 ## Version 18
 
+# 2016-04-29 - (foundation) Downgrade pmd to 5.3.6 (from 5.4.1). Maven plugin does not
+                            yet support 5.4.x.
 # 2016-04-29 - (foundation) Introduce `basepom.test.skip` to skip unit tests. This can
                             be used in a submodule to skip tests for that specific module.
 # 2016-04-27 - (foundation) Introduce `basepom.build.maxheap-mb` as numeric equivalent

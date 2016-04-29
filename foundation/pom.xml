@@ -136,7 +136,8 @@
 
         <dep.findbugs.version>3.0.1</dep.findbugs.version>
 
-        <dep.pmd.version>5.4.1</dep.pmd.version>
+        <!-- do not upgrade to 5.4.x until the pmd plugin supports it. -->
+        <dep.pmd.version>5.3.6</dep.pmd.version>
         <dep.checkstyle.version>6.16.1</dep.checkstyle.version>
 
         <!-- Scala -->
