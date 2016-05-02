@@ -172,6 +172,7 @@
         <dep.plugin.invoker.version>2.0.0</dep.plugin.invoker.version>
         <dep.plugin.release.version>2.5.3</dep.plugin.release.version>
         <dep.plugin.scm.version>1.9.4</dep.plugin.scm.version>
+        <dep.plugin.toolchains.version>1.1</dep.plugin.toolchains.version>
 
         <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
         <dep.plugin.build-helper.version>1.10</dep.plugin.build-helper.version>
@@ -569,7 +570,6 @@
                     <version>${dep.plugin.really-executable.version}</version>
                 </plugin>
 
-
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
@@ -648,6 +648,12 @@
                     <configuration>
                         <scalaVersion>${dep.scala.version}</scalaVersion>
                     </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-toolchains-plugin</artifactId>
+                    <version>${dep.plugin.toolchains.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

@@ -40,6 +40,9 @@
 
         <!-- policy jar for license and checkstyle defaults -->
         <dep.basepom-policy.version>4</dep.basepom-policy.version>
+
+        <!-- Toolchain JDK vendor. This matches to a local toolchains.xml file. -->
+        <basepom.toolchain.vendor>oracle</basepom.toolchain.vendor>
     </properties>
 
     <build>
@@ -170,6 +173,19 @@
                         <systemPropertyVariables combine.children="append">
                             <java.util.logging.SimpleFormatter.format>%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n</java.util.logging.SimpleFormatter.format>
                         </systemPropertyVariables>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-toolchains-plugin</artifactId>
+                    <configuration>
+                        <toolchains>
+                            <jdk>
+                                <version>${project.build.targetJdk}</version>
+                                <vendor>${basepom.toolchain.vendor}</vendor>
+                            </jdk>
+                        </toolchains>
                     </configuration>
                 </plugin>
             </plugins>

@@ -1,12 +1,18 @@
 # Changes
 
+## Version 19
+
+* 2016-05-02 - (foundation) Add Maven toolchains plugin at version 1.1.
+* 2016-05-02 - (minimal)    Add basic policy to enforce build JDK for projects.
+
+
 ## Version 18
 
-# 2016-04-29 - (foundation) Downgrade pmd to 5.3.6 (from 5.4.1). Maven plugin does not
+* 2016-04-29 - (foundation) Downgrade pmd to 5.3.6 (from 5.4.1). Maven plugin does not
                             yet support 5.4.x.
-# 2016-04-29 - (foundation) Introduce `basepom.test.skip` to skip unit tests. This can
+* 2016-04-29 - (foundation) Introduce `basepom.test.skip` to skip unit tests. This can
                             be used in a submodule to skip tests for that specific module.
-# 2016-04-27 - (foundation) Introduce `basepom.build.maxheap-mb` as numeric equivalent
+* 2016-04-27 - (foundation) Introduce `basepom.build.maxheap-mb` as numeric equivalent
                             to `basepom.build.jvmsize`.
 * 2016-04-27 - (foundation) Use `<maxHeap>` instead of `<jvmArgs>` for findbugs.
 
