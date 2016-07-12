@@ -126,7 +126,7 @@
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
 
         <!-- Integration testing -->
-        <basepom.it.skip>false</basepom.it.skip>
+        <basepom.it.skip>${skipITs}</basepom.it.skip>
 
         <!-- Invoker plugin for integration testing -->
         <basepom.invoker.folder>src/it</basepom.invoker.folder>
