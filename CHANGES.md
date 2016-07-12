@@ -2,6 +2,7 @@
 
 ## Version 19
 
+* 2016-07-12 - (foundation) Move all system variables for surefire and failsafe into minimal pom.
 * 2016-07-12 - (foundation) Respect command line 'skipITs' setting for integration tests.
 * 2016-05-02 - (foundation) Add Maven toolchains plugin at version 1.1.
 * 2016-05-02 - (minimal)    Add basic policy to enforce build JDK for projects.
