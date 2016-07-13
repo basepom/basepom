@@ -2,6 +2,14 @@
 
 ## Version 19
 
+* 2016-07-12 - (foundation) Upgrade jacoco plugin to 0.7.7.201606060606 (from 0.7.6.201602180812)
+* 2016-07-12 - (foundation) Upgrade findbugs plugin to 3.0.4 (from 3.0.3)
+* 2016-07-12 - (foundation) Upgrade build-helper plugin to 1.11 (from 1.10)
+* 2016-07-12 - (foundation) Upgrade resources plugin to 3.0.1 (from 2.7)
+* 2016-07-12 - (foundation) Upgrade jar plugin to  3.0.2 (from 2.6)
+* 2016-07-12 - (foundation) Upgrade source plugin to 3.0.1 (from 3.0.0)
+* 2016-07-12 - (foundation) Upgrade javadoc plugin to 2.10.4 (from 2.10.3)
+* 2016-07-12 - (foundation) Upgrade scm plugin to 1.9.5 (from 1.9.4)
 * 2016-07-12 - (foundation) Move all system variables for surefire and failsafe into minimal pom.
 * 2016-07-12 - (foundation) Respect command line 'skipITs' setting for integration tests.
 * 2016-05-02 - (foundation) Add Maven toolchains plugin at version 1.1.
