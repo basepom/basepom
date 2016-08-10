@@ -39,7 +39,7 @@
         <basepom.check.fail-checkstyle>${basepom.check.fail-extended}</basepom.check.fail-checkstyle>
 
         <!-- policy jar for license and checkstyle defaults -->
-        <dep.basepom-policy.version>4</dep.basepom-policy.version>
+        <dep.basepom-policy.version>5</dep.basepom-policy.version>
 
         <!-- Toolchain JDK vendor. This matches to a local toolchains.xml file. -->
         <basepom.toolchain.vendor>oracle</basepom.toolchain.vendor>
