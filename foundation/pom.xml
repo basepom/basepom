@@ -54,6 +54,10 @@
         <basepom.test.reuse-vm>true</basepom.test.reuse-vm>
         <basepom.test.timeout>30</basepom.test.timeout>
 
+        <basepom.test.memory>256m</basepom.test.memory>
+
+        <basepom.it.memory>${basepom.test.memory}</basepom.it.memory>
+
         <!-- failsafe fork control -->
         <basepom.failsafe.fork-count>1</basepom.failsafe.fork-count>
         <basepom.failsafe.reuse-vm>false</basepom.failsafe.reuse-vm>
@@ -317,7 +321,7 @@
                     <version>${dep.plugin.surefire.version}</version>
                     <configuration>
                         <skipTests>${basepom.test.skip}</skipTests>
-                        <argLine>${argLine} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
+                        <argLine>${argLine} -Xmx${basepom.test.memory} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
                         <runOrder>random</runOrder>
                         <reuseForks>${basepom.test.reuse-vm}</reuseForks>
                         <forkCount>${basepom.test.fork-count}</forkCount>
@@ -332,7 +336,7 @@
                     <version>${dep.plugin.failsafe.version}</version>
                     <configuration>
                         <skipITs>${basepom.it.skip}</skipITs>
-                        <argLine>${argLine} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
+                        <argLine>${argLine} -Xmx${basepom.it.memory} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
                         <runOrder>random</runOrder>
                         <reuseForks>${basepom.failsafe.reuse-vm}</reuseForks>
                         <forkCount>${basepom.failsafe.fork-count}</forkCount>
