@@ -12,10 +12,10 @@
 * 2016-11-22 - (foundation) Upgrade dependency-versions-check plugin to 2.0.4 (from 2.0.2)
 * 2015-11-22 - (foundation) Upgrade really-executable-jar plugin to 1.5.0 (from 1.4.1)
 * 2016-11-22 - (minimal)    Upgrade basepom-policy to 5 (from 4)
-* 2016-11-22 - (standard-oss) Upgrade license plugin to 3.0 (from 2.11)
+* 2016-11-22 - (oss)        Upgrade license plugin to 3.0 (from 2.11)
 * 2016-11-22 - (foundation) Introduce `basepom.test.memory` and `basepom.it.memory` to set
                             memory used for unit and integration tests (merged #28)
-
+* 2016-11-22 - (oss)        Also exclude `.rst` and `.adoc` from license plugin (merged #26)
 
 ## Version 19
 
