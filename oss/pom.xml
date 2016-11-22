@@ -112,6 +112,8 @@
                         <excludes>
                             <exclude>.*/**</exclude>
                             <exclude>**/*.md</exclude>
+                            <exclude>**/*.rst</exclude>
+                            <exclude>**/*.adoc</exclude>
                             <exclude>**/*.sh</exclude>
                             <exclude>**/*.txt</exclude>
                             <exclude>**/*.thrift</exclude>
