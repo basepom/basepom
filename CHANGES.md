@@ -1,5 +1,20 @@
 # Changes
 
+## Version 20
+
+* 2016-11-22 - (foundation) Upgrade pmd to 5.5.2 (from 5.3.6), plugin now supports 5.5.x
+* 2016-11-22 - (foundation) Upgrade checkstyle to 7.2 (from 6.16.1)
+* 2016-11-22 - (foundation) Upgrade compiler plugin to 3.6.0 (from 3.5.1)
+* 2016-11-22 - (foundation) Upgrade pmd plugin to 3.7 (from 3.6)
+* 2016-11-22 - (foundation) Upgrade site plugin to 3.6 (from 3.5.1)
+* 2016-11-22 - (foundation) Upgrade assembly plugin to 3.0.0 (from 2.6)
+* 2016-11-22 - (foundation) Upgrade build-helper plugin to 1.12 (from 1.11)
+* 2016-11-22 - (foundation) Upgrade dependency-versions-check plugin to 2.0.4 (from 2.0.2)
+* 2015-11-22 - (foundation) Upgrade really-executable-jar plugin to 1.5.0 (from 1.4.1)
+* 2016-11-22 - (minimal)    Upgrade basepom-policy to 5 (from 4)
+* 2016-11-22 - (standard-oss) Upgrade license plugin to 3.0 (from 2.11)
+
+
 ## Version 19
 
 * 2016-07-12 - (foundation) Upgrade jacoco plugin to 0.7.7.201606060606 (from 0.7.6.201602180812)

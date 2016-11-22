@@ -134,11 +134,13 @@
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.3.3</basepom.maven.version>
 
+        <!-- https://github.com/findbugsproject/findbugs -->
         <dep.findbugs.version>3.0.1</dep.findbugs.version>
 
-        <!-- do not upgrade to 5.4.x until the pmd plugin supports it. -->
-        <dep.pmd.version>5.3.6</dep.pmd.version>
-        <dep.checkstyle.version>6.16.1</dep.checkstyle.version>
+        <dep.pmd.version>5.5.2</dep.pmd.version>
+
+        <!-- https://github.com/checkstyle/checkstyle -->
+        <dep.checkstyle.version>7.2</dep.checkstyle.version>
 
         <!-- Scala -->
         <dep.scala.version>2.11.7</dep.scala.version>
@@ -147,12 +149,12 @@
 
         <!-- core plugins -->
         <dep.plugin.clean.version>3.0.0</dep.plugin.clean.version>
-        <dep.plugin.compiler.version>3.5.1</dep.plugin.compiler.version>
+        <dep.plugin.compiler.version>3.6.0</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>2.8.2</dep.plugin.deploy.version>
         <dep.plugin.failsafe.version>2.19.1</dep.plugin.failsafe.version>
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
         <dep.plugin.resources.version>3.0.1</dep.plugin.resources.version>
-        <dep.plugin.site.version>3.5.1</dep.plugin.site.version>
+        <dep.plugin.site.version>3.6</dep.plugin.site.version>
         <dep.plugin.surefire.version>2.19.1</dep.plugin.surefire.version>
 
         <!-- packaging -->
@@ -163,10 +165,10 @@
         <!-- reporting -->
         <dep.plugin.checkstyle.version>2.17</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>2.10.4</dep.plugin.javadoc.version>
-        <dep.plugin.pmd.version>3.6</dep.plugin.pmd.version>
+        <dep.plugin.pmd.version>3.7</dep.plugin.pmd.version>
 
         <!-- tools -->
-        <dep.plugin.assembly.version>2.6</dep.plugin.assembly.version>
+        <dep.plugin.assembly.version>3.0.0</dep.plugin.assembly.version>
         <dep.plugin.dependency.version>2.10</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>1.4.1</dep.plugin.enforcer.version>
         <dep.plugin.invoker.version>2.0.0</dep.plugin.invoker.version>
@@ -175,10 +177,10 @@
         <dep.plugin.toolchains.version>1.1</dep.plugin.toolchains.version>
 
         <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
-        <dep.plugin.build-helper.version>1.11</dep.plugin.build-helper.version>
+        <dep.plugin.build-helper.version>1.12</dep.plugin.build-helper.version>
 
         <!-- https://github.com/ning/maven-dependency-versions-check-plugin/releases -->
-        <dep.plugin.dependency-versions-check.version>2.0.2</dep.plugin.dependency-versions-check.version>
+        <dep.plugin.dependency-versions-check.version>2.0.4</dep.plugin.dependency-versions-check.version>
 
         <!-- https://github.com/HubSpot/dependency-management-plugin/releases -->
         <dep.plugin.dependency-management.version>0.7</dep.plugin.dependency-management.version>
@@ -202,7 +204,7 @@
         <dep.plugin.scala.version>3.2.2</dep.plugin.scala.version>
 
         <!-- https://github.com/brianm/really-executable-jars-maven-plugin/releases -->
-        <dep.plugin.really-executable.version>1.4.1</dep.plugin.really-executable.version>
+        <dep.plugin.really-executable.version>1.5.0</dep.plugin.really-executable.version>
     </properties>
 
     <prerequisites>
