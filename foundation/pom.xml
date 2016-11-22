@@ -143,7 +143,7 @@
         <dep.pmd.version>5.5.2</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle -->
-        <dep.checkstyle.version>7.2</dep.checkstyle.version>
+        <dep.checkstyle.version>6.19</dep.checkstyle.version>
 
         <!-- Scala -->
         <dep.scala.version>2.11.7</dep.scala.version>

@@ -3,7 +3,7 @@
 ## Version 20
 
 * 2016-11-22 - (foundation) Upgrade pmd to 5.5.2 (from 5.3.6), plugin now supports 5.5.x
-* 2016-11-22 - (foundation) Upgrade checkstyle to 7.2 (from 6.16.1)
+* 2016-11-22 - (foundation) Upgrade checkstyle to 6.19 (from 6.16.1)
 * 2016-11-22 - (foundation) Upgrade compiler plugin to 3.6.0 (from 3.5.1)
 * 2016-11-22 - (foundation) Upgrade pmd plugin to 3.7 (from 3.6)
 * 2016-11-22 - (foundation) Upgrade site plugin to 3.6 (from 3.5.1)
