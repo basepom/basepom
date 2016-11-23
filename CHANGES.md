@@ -16,6 +16,8 @@
 * 2016-11-22 - (foundation) Introduce `basepom.test.memory` and `basepom.it.memory` to set
                             memory used for unit and integration tests (merged #28)
 * 2016-11-22 - (oss)        Also exclude `.rst` and `.adoc` from license plugin (merged #26)
+* 2016-11-22 - (foundation) Introduce `basepom.javadoc.skip` (default: true) to allow generation
+                            of javadoc jars during regular build cycle (requested in #25)
 
 ## Version 19
 
