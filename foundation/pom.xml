@@ -46,6 +46,9 @@
         <!-- tag name format, can be overridden by the project to provide different tags. -->
         <basepom.release.tag-name-format>@{project.artifactId}-@{project.version}</basepom.release.tag-name-format>
 
+        <!-- Javadoc generation -->
+        <basepom.javadoc.skip>true</basepom.javadoc.skip>
+
         <!-- surefire skip tests -->
         <basepom.test.skip>${skipTests}</basepom.test.skip>
 
@@ -367,6 +370,7 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>${dep.plugin.javadoc.version}</version>
                     <configuration>
+                        <skip>${basepom.javadoc.skip}</skip>
                         <source>${project.build.targetJdk}</source>
                         <target>${project.build.targetJdk}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
@@ -713,6 +717,20 @@
                         <phase>package</phase>
                         <goals>
                             <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
