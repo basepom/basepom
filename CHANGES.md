@@ -1,5 +1,10 @@
 # Changes
 
+## Version 21
+
+* 2016-12-13 - (foundation) Add integration test support for Jacoco
+* 2016-12-13 - (foundation) Add basepom.check.fail-coverage to skip failure for jacoco:check
+
 ## Version 20
 
 * 2016-11-22 - (foundation) Upgrade pmd to 5.5.2 (from 5.3.6), plugin now supports 5.5.x

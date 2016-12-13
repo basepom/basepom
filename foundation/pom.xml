@@ -110,6 +110,7 @@
 
         <!-- extended checks -->
         <basepom.check.fail-findbugs>${basepom.check.fail-extended}</basepom.check.fail-findbugs>
+        <basepom.check.fail-coverage>${basepom.check.fail-extended}</basepom.check.fail-coverage>
 
         <!-- only enable if actually configured -->
         <basepom.check.fail-pmd>false</basepom.check.fail-pmd>
@@ -573,6 +574,7 @@
                     <version>${dep.plugin.jacoco.version}</version>
                     <configuration>
                         <skip>${basepom.check.skip-coverage}</skip>
+                        <haltOnFailure>${basepom.check.fail-coverage}</haltOnFailure>
                     </configuration>
                 </plugin>
 
@@ -889,6 +891,13 @@
                         <phase>initialize</phase>
                         <goals>
                             <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-it</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>prepare-agent-integration</goal>
                         </goals>
                     </execution>
                 </executions>
