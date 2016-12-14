@@ -144,6 +144,7 @@
         <!-- https://github.com/findbugsproject/findbugs -->
         <dep.findbugs.version>3.0.1</dep.findbugs.version>
 
+        <!-- https://github.com/pmd/pmd/releases -->
         <dep.pmd.version>5.5.2</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle -->
