@@ -149,8 +149,8 @@
         <!-- https://github.com/checkstyle/checkstyle -->
         <dep.checkstyle.version>6.19</dep.checkstyle.version>
 
-        <!-- Scala -->
-        <dep.scala.version>2.11.7</dep.scala.version>
+        <!-- Scala. Leave it at 2.11 for now (https://github.com/davidB/scala-maven-plugin/issues/196) -->
+        <dep.scala.version>2.11.8</dep.scala.version>
 
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 

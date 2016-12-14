@@ -2,6 +2,7 @@
 
 ## Version 21
 
+* 2015-12-13 - (foundation) Upgrade scala dependency to 2.11.8 (from 2.11.7)
 * 2016-12-13 - (foundation) Add integration test support for Jacoco
 * 2016-12-13 - (foundation) Add basepom.check.fail-coverage to skip failure for jacoco:check
 * 2016-12-12 - (foundation) Upgrade resources plugin to 3.0.2 (from 3.0.1)
