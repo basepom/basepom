@@ -167,17 +167,11 @@
             <properties>
                 <!-- tests run in the preparation step of the release -->
                 <skipTests>true</skipTests>
+                    <!-- oss requires a javadoc jar. Build one when releasing. -->
+                <basepom.javadoc.skip>false</basepom.javadoc.skip>
             </properties>
             <build>
                 <plugins>
-                    <!-- oss requires a javadoc jar. Build one when releasing. -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <configuration>
-                            <skip>false</skip>
-                        </configuration>
-                    </plugin>
                     <!-- if necessary, build a scaladoc jar. Disabled by default. -->
                     <plugin>
                         <groupId>net.alchim31.maven</groupId>
