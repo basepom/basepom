@@ -3,6 +3,8 @@
 ## Version 22
 
 * 2016-12-15 - (foundation) Introduce `basepom.executable.name` to make the binary name configurable
+* 2016-12-23 - (foundation) Move manifest transformer into basepom.executable profile to allow
+                            shading without main class.
 
 ## Version 21
 
