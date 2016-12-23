@@ -132,6 +132,8 @@
         <basepom.dependency-management.dependencies>false</basepom.dependency-management.dependencies>
         <basepom.dependency-management.plugins>false</basepom.dependency-management.plugins>
 
+        <!-- executable plugin -->
+        <basepom.executable.name>${project.name}</basepom.executable.name>
 
         <!-- Some plugins can run early ("validate") or late ("verify") -->
         <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
@@ -1014,7 +1016,7 @@
                                 </goals>
                                 <configuration>
                                     <classifier>shaded</classifier>
-                                    <programFile>${project.name}</programFile>
+                                    <programFile>${basepom.executable.name}</programFile>
                                     <attachProgramFile>true</attachProgramFile>
                                 </configuration>
                             </execution>

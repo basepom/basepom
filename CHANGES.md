@@ -1,5 +1,9 @@
 # Changes
 
+## Version 22
+
+* 2016-12-15 - (foundation) Introduce `basepom.executable.name` to make the binary name configurable
+
 ## Version 21
 
 * 2016-12-13 - (foundation) Upgrade jacoco plugin to 0.7.8 (from 0.7.7.201606060606)
