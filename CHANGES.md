@@ -5,6 +5,11 @@
 * 2016-12-15 - (foundation) Introduce `basepom.executable.name` to make the binary name configurable
 * 2016-12-23 - (foundation) Move manifest transformer into basepom.executable profile to allow
                             shading without main class.
+* 2016-12-23 - (foundation) Make javadoc generation part of the checkers:
+                            * use `basepom.check.skip-javadoc` to skip generation,
+                              derives from now obsolete `basepom.javadoc.skip`.
+                            * use `basepom.check.fail-javadoc` to fail on error,
+                              derives from `basepom.check.fail-basic`.
 
 ## Version 21
 

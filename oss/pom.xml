@@ -168,7 +168,7 @@
                 <!-- tests run in the preparation step of the release -->
                 <skipTests>true</skipTests>
                     <!-- oss requires a javadoc jar. Build one when releasing. -->
-                <basepom.javadoc.skip>false</basepom.javadoc.skip>
+                <basepom.check.skip-javadoc>false</basepom.check.skip-javadoc>
             </properties>
             <build>
                 <plugins>

@@ -88,6 +88,7 @@
         <basepom.check.skip-duplicate-finder>${basepom.check.skip-basic}</basepom.check.skip-duplicate-finder>
         <basepom.check.skip-dependency-management>${basepom.check.skip-basic}</basepom.check.skip-dependency-management>
         <basepom.check.skip-dependency-versions-check>${basepom.check.skip-basic}</basepom.check.skip-dependency-versions-check>
+        <basepom.check.skip-javadoc>${basepom.javadoc.skip}</basepom.check.skip-javadoc>
 
         <!-- extended checks -->
         <basepom.check.skip-findbugs>${basepom.check.skip-extended}</basepom.check.skip-findbugs>
@@ -107,6 +108,7 @@
         <basepom.check.fail-duplicate-finder>${basepom.check.fail-basic}</basepom.check.fail-duplicate-finder>
         <basepom.check.fail-dependency-management>${basepom.check.fail-basic}</basepom.check.fail-dependency-management>
         <basepom.check.fail-dependency-versions-check>${basepom.check.fail-basic}</basepom.check.fail-dependency-versions-check>
+        <basepom.check.fail-javadoc>${basepom.check.fail-basic}</basepom.check.fail-javadoc>
 
         <!-- extended checks -->
         <basepom.check.fail-findbugs>${basepom.check.fail-extended}</basepom.check.fail-findbugs>
@@ -374,7 +376,8 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>${dep.plugin.javadoc.version}</version>
                     <configuration>
-                        <skip>${basepom.javadoc.skip}</skip>
+                        <skip>${basepom.check.skip-javadoc}</skip>
+                        <failOnError>${basepom.check.fail-javadoc}</failOnError>
                         <source>${project.build.targetJdk}</source>
                         <target>${project.build.targetJdk}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
