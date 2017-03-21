@@ -161,7 +161,7 @@
 
         <!-- core plugins -->
         <dep.plugin.clean.version>3.0.0</dep.plugin.clean.version>
-        <dep.plugin.compiler.version>3.6.0</dep.plugin.compiler.version>
+        <dep.plugin.compiler.version>3.6.1</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>2.8.2</dep.plugin.deploy.version>
         <dep.plugin.failsafe.version>2.19.1</dep.plugin.failsafe.version>
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
