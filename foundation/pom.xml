@@ -189,7 +189,7 @@
         <dep.plugin.toolchains.version>1.1</dep.plugin.toolchains.version>
 
         <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
-        <dep.plugin.build-helper.version>1.12</dep.plugin.build-helper.version>
+        <dep.plugin.build-helper.version>3.0.0</dep.plugin.build-helper.version>
 
         <!-- https://github.com/ning/maven-dependency-versions-check-plugin/releases -->
         <dep.plugin.dependency-versions-check.version>2.0.4</dep.plugin.dependency-versions-check.version>
@@ -204,13 +204,13 @@
         <dep.plugin.findbugs.version>3.0.4</dep.plugin.findbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
-        <dep.plugin.jacoco.version>0.7.8</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.7.9</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
 
         <!-- https://github.com/ktoso/maven-git-commit-id-plugin/releases -->
-        <dep.plugin.git-commit-id.version>2.2.1</dep.plugin.git-commit-id.version>
+        <dep.plugin.git-commit-id.version>2.2.2</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/davidB/scala-maven-plugin/releases -->
         <dep.plugin.scala.version>3.2.2</dep.plugin.scala.version>

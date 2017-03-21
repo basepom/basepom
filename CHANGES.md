@@ -2,6 +2,9 @@
 
 ## Version 22
 
+* 2017-03-20 - (foundation) Upgrade git-commit-id plugin to 2.2.2 (from 2.2.1)
+* 2017-03-20 - (foundation) Upgrade jacoco plugin to 0.7.9 (from 0.7.8)
+* 2017-03-20 - (foundation) Upgrade build-helper plugin to 3.0.0 (from 1.12)
 * 2017-03-20 - (foundation) Upgrade shade plugin to 3.0.0 (from 2.4.3)
 * 2017-03-20 - (foundation) Upgrade compiler plugin to 3.6.1 (from 3.6.0)
 * 2016-12-15 - (foundation) Introduce `basepom.executable.name` to make the binary name configurable
