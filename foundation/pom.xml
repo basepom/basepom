@@ -1003,7 +1003,7 @@
                                     <goal>shade</goal>
                                 </goals>
                                 <configuration>
-                                    <transformers>
+                                    <transformers combine.children="append">
                                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                             <mainClass>${basepom.shaded.main-class}</mainClass>
                                         </transformer>
