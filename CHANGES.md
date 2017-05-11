@@ -6,6 +6,7 @@
                             replace all transformers (fix from #32)
 * 2017-05-11 - (minimal)    Do not add main class to Collecting transformer, the activated profile
                             will use the ManifestTransformer from the foundation pom
+* 2017-05-11 - (foundation) Actually update shade plugin to 3.0.0 (fixes #33)
 
 ## Version 22
 
