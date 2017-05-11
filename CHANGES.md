@@ -1,7 +1,10 @@
 # Changes
 
 ## Version 23
-
+* 2017-05-11 - (foundation) Upgrade pmd to 5.6.1 (from 5.5.2), plugin 3.8 supports 5.6.1
+* 2017-05-11 - (foundation) Upgrade pmd plugin to 3.8 (from 3.7)
+* 2017-05-11 - (foundation) Upgrade surefire plugin to 2.20 (from 2.19.1)
+* 2017-05-11 - (foundation) Upgrade failsafe plugin to 2.20 (from 2.19.1)
 * 2017-05-11 - (foundation) Add ManifestTransformer when activating executable profile, not
                             replace all transformers (fix from #32)
 * 2017-05-11 - (minimal)    Do not add main class to Collecting transformer, the activated profile
