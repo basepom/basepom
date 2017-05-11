@@ -1,5 +1,12 @@
 # Changes
 
+## Version 23
+
+* 2017-05-11 - (foundation) Add ManifestTransformer when activating executable profile, not
+                            replace all transformers (fix from #32)
+* 2017-05-11 - (minimal)    Do not add main class to Collecting transformer, the activated profile
+                            will use the ManifestTransformer from the foundation pom
+
 ## Version 22
 
 * 2017-03-20 - (foundation) Upgrade git-commit-id plugin to 2.2.2 (from 2.2.1)
