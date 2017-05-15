@@ -106,7 +106,7 @@
                     <artifactId>maven-pmd-plugin</artifactId>
                     <configuration>
                         <excludeRoots>
-                            <excludeRoot>target/generated-sources/stubs</excludeRoot>
+                            <excludeRoot>target/generated-sources</excludeRoot>
                         </excludeRoots>
                     </configuration>
                 </plugin>

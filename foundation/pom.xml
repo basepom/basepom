@@ -517,7 +517,6 @@
                         <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                         <minimumTokens>100</minimumTokens>
                         <failurePriority>${basepom.pmd.fail-level}</failurePriority>
-                        <rulesets />
                     </configuration>
                 </plugin>
 
