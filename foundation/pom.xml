@@ -87,6 +87,7 @@
         <basepom.check.skip-dependency>${basepom.check.skip-basic}</basepom.check.skip-dependency>
         <basepom.check.skip-duplicate-finder>${basepom.check.skip-basic}</basepom.check.skip-duplicate-finder>
         <basepom.check.skip-dependency-management>${basepom.check.skip-basic}</basepom.check.skip-dependency-management>
+        <basepom.check.skip-dependency-scope>${basepom.check.skip-basic}</basepom.check.skip-dependency-scope>
         <basepom.check.skip-dependency-versions-check>${basepom.check.skip-basic}</basepom.check.skip-dependency-versions-check>
         <basepom.check.skip-javadoc>${basepom.javadoc.skip}</basepom.check.skip-javadoc>
 
@@ -107,6 +108,7 @@
         <basepom.check.fail-dependency>${basepom.check.fail-basic}</basepom.check.fail-dependency>
         <basepom.check.fail-duplicate-finder>${basepom.check.fail-basic}</basepom.check.fail-duplicate-finder>
         <basepom.check.fail-dependency-management>${basepom.check.fail-basic}</basepom.check.fail-dependency-management>
+        <basepom.check.fail-dependency-scope>${basepom.check.fail-basic}</basepom.check.fail-dependency-scope>
         <basepom.check.fail-dependency-versions-check>${basepom.check.fail-basic}</basepom.check.fail-dependency-versions-check>
         <basepom.check.fail-javadoc>${basepom.check.fail-basic}</basepom.check.fail-javadoc>
 
@@ -140,6 +142,7 @@
         <!-- Some plugins can run early ("validate") or late ("verify") -->
         <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
         <basepom.check.phase-dependency-management>verify</basepom.check.phase-dependency-management>
+        <basepom.check.phase-dependency-scope>verify</basepom.check.phase-dependency-scope>
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
 
         <!-- the current "minimal" version of maven -->
@@ -196,6 +199,9 @@
 
         <!-- https://github.com/HubSpot/dependency-management-plugin/releases -->
         <dep.plugin.dependency-management.version>0.7</dep.plugin.dependency-management.version>
+
+        <!-- https://github.com/HubSpot/dependency-scope-maven-plugin/releases -->
+        <dep.plugin.dependency-scope.version>0.7</dep.plugin.dependency-scope.version>
 
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
         <dep.plugin.duplicate-finder.version>1.2.1</dep.plugin.duplicate-finder.version>
@@ -459,6 +465,16 @@
                             <allowVersions>false</allowVersions>
                             <allowExclusions>false</allowExclusions>
                         </requireManagement>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.hubspot.maven.plugins</groupId>
+                    <artifactId>dependency-scope-maven-plugin</artifactId>
+                    <version>${dep.plugin.dependency-scope.version}</version>
+                    <configuration>
+                        <skip>${basepom.check.skip-dependency-scope}</skip>
+                        <fail>${basepom.check.fail-dependency-scope}</fail>
                     </configuration>
                 </plugin>
 
@@ -824,6 +840,20 @@
                         <phase>${basepom.check.phase-dependency-management}</phase>
                         <goals>
                             <goal>analyze</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.hubspot.maven.plugins</groupId>
+                <artifactId>dependency-scope-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <phase>${basepom.check.phase-dependency-scope}</phase>
+                        <goals>
+                            <goal>check</goal>
                         </goals>
                     </execution>
                 </executions>
