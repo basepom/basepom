@@ -1,5 +1,10 @@
 # Changes
 
+## Version 24
+
+* 2017-07-06 - (foundation) Upgrade dependency plugin to 3.0.1 (from 2.10)
+* 2017-07-06 - (foundation) Upgrade invoker plugin to 3.0.0 (from 2.0.0)
+
 ## Version 23
 * 2017-05-11 - (foundation) Upgrade pmd to 5.6.1 (from 5.5.2), plugin 3.8 supports 5.6.1
 * 2017-05-11 - (foundation) Upgrade pmd plugin to 3.8 (from 3.7)

@@ -184,9 +184,9 @@
 
         <!-- tools -->
         <dep.plugin.assembly.version>3.0.0</dep.plugin.assembly.version>
-        <dep.plugin.dependency.version>2.10</dep.plugin.dependency.version>
+        <dep.plugin.dependency.version>3.0.1</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>1.4.1</dep.plugin.enforcer.version>
-        <dep.plugin.invoker.version>2.0.0</dep.plugin.invoker.version>
+        <dep.plugin.invoker.version>3.0.0</dep.plugin.invoker.version>
         <dep.plugin.release.version>2.5.3</dep.plugin.release.version>
         <dep.plugin.scm.version>1.9.5</dep.plugin.scm.version>
         <dep.plugin.toolchains.version>1.1</dep.plugin.toolchains.version>
