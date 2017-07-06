@@ -71,6 +71,9 @@
         <basepom.failsafe.reuse-vm>false</basepom.failsafe.reuse-vm>
         <basepom.failsafe.timeout>30</basepom.failsafe.timeout>
 
+        <!-- compiler warnings are treated as errors -->
+        <basepom.compiler.fail-warnings>false</basepom.compiler.fail-warnings>
+
         <!-- define minimum level for pmd to fail the build -->
         <basepom.pmd.fail-level>4</basepom.pmd.fail-level>
 
@@ -301,6 +304,7 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${dep.plugin.compiler.version}</version>
                     <configuration>
+                        <failOnWarning>${basepom.compiler.fail-warnings}</failOnWarning>
                         <source>${project.build.targetJdk}</source>
                         <target>${project.build.targetJdk}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>

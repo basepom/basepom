@@ -2,6 +2,10 @@
 
 ## Version 24
 
+* 2017-07-06 - (foundation) Add `basepom.compiler.fail-warnings` flag (default: false) to fail
+                            compilation on warnings present. This brings back the behavior of
+                            basepom 12 (the required compiler API change made it through the
+                            maven ecosystem).
 * 2017-07-06 - (foundation) Upgrade dependency plugin to 3.0.1 (from 2.10)
 * 2017-07-06 - (foundation) Upgrade invoker plugin to 3.0.0 (from 2.0.0)
 
