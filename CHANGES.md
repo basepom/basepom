@@ -2,6 +2,7 @@
 
 ## Version 24
 
+* 2017-07-06 - (foundation) Add Hubspot dependency-scope-maven-plugin (0.8) (#33)
 * 2017-07-06 - (foundation) Add `basepom.compiler.fail-warnings` flag (default: false) to fail
                             compilation on warnings present. This brings back the behavior of
                             basepom 12 (the required compiler API change made it through the
