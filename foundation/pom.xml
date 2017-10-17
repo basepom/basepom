@@ -140,6 +140,7 @@
         <basepom.dependency-management.plugins>false</basepom.dependency-management.plugins>
 
         <!-- executable plugin -->
+        <basepom.executable.flags />
         <basepom.executable.name>${project.name}</basepom.executable.name>
 
         <!-- Some plugins can run early ("validate") or late ("verify") -->
@@ -1058,6 +1059,7 @@
                                 </goals>
                                 <configuration>
                                     <classifier>shaded</classifier>
+                                    <flags>${basepom.executable.flags}</flags>
                                     <programFile>${basepom.executable.name}</programFile>
                                     <attachProgramFile>true</attachProgramFile>
                                 </configuration>
