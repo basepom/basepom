@@ -1,5 +1,22 @@
 # Changes
 
+## Version 25
+
+* 2017-11-10 - (foundation) Upgrade javadoc plugin to 3.0.0-M1 (from 2.10.4)
+* 2017-11-10 - (foundation) Upgrade enforcer plugin to 3.0.0-M1 (from 1.4.1)
+* 2017-11-10 - (foundation) Upgrade invoker plugin to 3.0.1 (from 3.0.0)
+* 2017-11-10 - (foundation) Upgrade assembly plugin to 3.1.0 (from 3.0.0)
+* 2017-11-10 - (foundation) Upgrade shade plugin to 3.1.0 (from 3.0.0)
+* 2017-11-10 - (foundation) Upgrade compiler plugin to 3.7.0 (from 3.6.1)
+* 2017-11-10 - (foundation) Upgrade failsafe plugin to 2.20.1 (from 2.20)
+* 2017-11-10 - (foundation) Upgrade surefire plugin to 2.20.1 (from 2.20)
+* 2017-11-10 - (foundation) Upgrade dependency plugin to 3.0.2 (from 3.0.1)
+* 2017-11-10 - (foundation) Upgrade scala plugin to 3.3.1 (from 3.2.2)
+* 2017-11-10 - (foundation) Upgrade findbugs plugin to 3.0.5 (from 3.0.4)
+* 2017-11-10 - (foundation) Upgrade git-commit-id plugin to 2.2.3 (from 2.2.2)
+* 2017-11-10 - (foundation) Upgrade pmd to 5.8.1 (from 5.6.1)
+* 2017-11-10 - (foundation) Upgrade checkstyle to 8.4 (from 6.19)
+
 ## Version 24
 
 * 2017-07-06 - (foundation) Add Hubspot dependency-scope-maven-plugin (0.8) (#33)

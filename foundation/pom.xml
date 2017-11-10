@@ -151,14 +151,15 @@
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.3.3</basepom.maven.version>
 
-        <!-- https://github.com/findbugsproject/findbugs -->
+        <!-- findbugs is dead; let's all start watching spotbugs https://spotbugs.github.io/ to see whether -->
+        <!-- they will manage to get an actual 3.1.0 release out. For now, keep at 3.0.1 -->
         <dep.findbugs.version>3.0.1</dep.findbugs.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
         <dep.pmd.version>5.6.1</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle -->
-        <dep.checkstyle.version>6.19</dep.checkstyle.version>
+        <dep.checkstyle.version>8.4</dep.checkstyle.version>
 
         <!-- Scala. Leave it at 2.11 for now (https://github.com/davidB/scala-maven-plugin/issues/196) -->
         <dep.scala.version>2.11.8</dep.scala.version>
@@ -167,29 +168,29 @@
 
         <!-- core plugins -->
         <dep.plugin.clean.version>3.0.0</dep.plugin.clean.version>
-        <dep.plugin.compiler.version>3.6.1</dep.plugin.compiler.version>
+        <dep.plugin.compiler.version>3.7.0</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>2.8.2</dep.plugin.deploy.version>
-        <dep.plugin.failsafe.version>2.20</dep.plugin.failsafe.version>
+        <dep.plugin.failsafe.version>2.20.1</dep.plugin.failsafe.version>
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
         <dep.plugin.resources.version>3.0.2</dep.plugin.resources.version>
         <dep.plugin.site.version>3.6</dep.plugin.site.version>
-        <dep.plugin.surefire.version>2.20</dep.plugin.surefire.version>
+        <dep.plugin.surefire.version>2.20.1</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>3.0.2</dep.plugin.jar.version>
-        <dep.plugin.shade.version>3.0.0</dep.plugin.shade.version>
+        <dep.plugin.shade.version>3.1.0</dep.plugin.shade.version>
         <dep.plugin.source.version>3.0.1</dep.plugin.source.version>
 
         <!-- reporting -->
         <dep.plugin.checkstyle.version>2.17</dep.plugin.checkstyle.version>
-        <dep.plugin.javadoc.version>2.10.4</dep.plugin.javadoc.version>
+        <dep.plugin.javadoc.version>3.0.0-M1</dep.plugin.javadoc.version>
         <dep.plugin.pmd.version>3.8</dep.plugin.pmd.version>
 
         <!-- tools -->
-        <dep.plugin.assembly.version>3.0.0</dep.plugin.assembly.version>
-        <dep.plugin.dependency.version>3.0.1</dep.plugin.dependency.version>
-        <dep.plugin.enforcer.version>1.4.1</dep.plugin.enforcer.version>
-        <dep.plugin.invoker.version>3.0.0</dep.plugin.invoker.version>
+        <dep.plugin.assembly.version>3.1.0</dep.plugin.assembly.version>
+        <dep.plugin.dependency.version>3.0.2</dep.plugin.dependency.version>
+        <dep.plugin.enforcer.version>3.0.0-M1</dep.plugin.enforcer.version>
+        <dep.plugin.invoker.version>3.0.1</dep.plugin.invoker.version>
         <dep.plugin.release.version>2.5.3</dep.plugin.release.version>
         <dep.plugin.scm.version>1.9.5</dep.plugin.scm.version>
         <dep.plugin.toolchains.version>1.1</dep.plugin.toolchains.version>
@@ -210,7 +211,7 @@
         <dep.plugin.duplicate-finder.version>1.2.1</dep.plugin.duplicate-finder.version>
 
         <!-- https://github.com/gleclaire/findbugs-maven-plugin/releases -->
-        <dep.plugin.findbugs.version>3.0.4</dep.plugin.findbugs.version>
+        <dep.plugin.findbugs.version>3.0.5</dep.plugin.findbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
         <dep.plugin.jacoco.version>0.7.9</dep.plugin.jacoco.version>
@@ -222,7 +223,7 @@
         <dep.plugin.git-commit-id.version>2.2.2</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/davidB/scala-maven-plugin/releases -->
-        <dep.plugin.scala.version>3.2.2</dep.plugin.scala.version>
+        <dep.plugin.scala.version>3.3.1</dep.plugin.scala.version>
 
         <!-- https://github.com/brianm/really-executable-jars-maven-plugin/releases -->
         <dep.plugin.really-executable.version>1.5.0</dep.plugin.really-executable.version>
