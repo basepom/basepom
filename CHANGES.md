@@ -17,6 +17,7 @@
 * 2017-11-10 - (foundation) Upgrade pmd to 5.8.1 (from 5.6.1)
 * 2017-11-10 - (foundation) Upgrade checkstyle to 8.4 (from 6.19)
 * 2017-11-10 - (minimal)    use basepom policy 6 for checkstyle 8 compatibility
+* 2017-11-10 - (foundation) Introduce `basepom.executable.flags` to configure flags for binary (merged #35)
 
 ## Version 24
 
