@@ -531,6 +531,7 @@
                     <configuration>
                         <skip>${basepom.check.skip-pmd}</skip>
                         <failOnViolation>${basepom.check.fail-pmd}</failOnViolation>
+                        <printFailingErrors>true</printFailingErrors>
                         <targetJdk>${project.build.targetJdk}</targetJdk>
                         <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                         <minimumTokens>100</minimumTokens>
