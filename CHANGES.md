@@ -1,5 +1,9 @@
 # Changes
 
+## Version 26
+
+* 2018-03-15 - (foundation) upgrade duplicate-finder-plugin to 1.3.0 (from 1.2.1)
+
 ## Version 25
 
 * 2017-11-10 - (foundation) Upgrade javadoc plugin to 3.0.0-M1 (from 2.10.4)
