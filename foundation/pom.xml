@@ -215,7 +215,7 @@
         <dep.plugin.findbugs.version>3.0.5</dep.plugin.findbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
-        <dep.plugin.jacoco.version>0.7.9</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.8.1</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
