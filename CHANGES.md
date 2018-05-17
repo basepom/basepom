@@ -1,5 +1,11 @@
 # Changes
 
+## Version 26
+* 2018-05-17 - (foundation) Upgrade maven-surefire-plugin to 2.21.0 (from 2.20.1)
+                            Add support for JDK 10!
+* 2018-05-17 - (foundation) Upgrade jacoco to 0.8.1 (from 0.7.9)
+                            Add support for JDK 10!
+
 ## Version 25
 
 * 2017-11-10 - (foundation) Upgrade javadoc plugin to 3.0.0-M1 (from 2.10.4)
