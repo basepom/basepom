@@ -175,7 +175,7 @@
         <dep.plugin.install.version>2.5.2</dep.plugin.install.version>
         <dep.plugin.resources.version>3.0.2</dep.plugin.resources.version>
         <dep.plugin.site.version>3.6</dep.plugin.site.version>
-        <dep.plugin.surefire.version>2.20.1</dep.plugin.surefire.version>
+        <dep.plugin.surefire.version>2.21.0</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>3.0.2</dep.plugin.jar.version>
@@ -215,7 +215,7 @@
         <dep.plugin.findbugs.version>3.0.5</dep.plugin.findbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
-        <dep.plugin.jacoco.version>0.7.9</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.8.1</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
