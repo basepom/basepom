@@ -157,7 +157,7 @@
         <dep.findbugs.version>3.0.1</dep.findbugs.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>5.6.1</dep.pmd.version>
+        <dep.pmd.version>5.8.1</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle -->
         <dep.checkstyle.version>8.4</dep.checkstyle.version>
