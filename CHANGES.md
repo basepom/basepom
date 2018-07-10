@@ -1,5 +1,29 @@
 # Changes
 
+## Version 26
+
+* 2018-07-09 - (foundation) Upgrade clean plugin to 3.1.0 (from 3.0.0)
+* 2018-07-09 - (foundation) Upgrade failsafe plugin to 2.22.0 (from 2.20.1)
+* 2018-07-09 - (foundation) Upgrade resources plugin to 3.1.0 (from 3.0.2)
+* 2018-07-09 - (foundation) Upgrade site plugin to 3.7.1 (from 3.6)
+* 2018-07-09 - (foundation) Upgrade surefire plugin to 2.22.0 (from 2.20.1)
+* 2018-07-09 - (foundation) Upgrade jar plugin to 3.1.0 (from 3.0.2)
+* 2018-07-09 - (foundation) Upgrade shade plugin to 3.1.1 (from 3.1.0)
+* 2018-07-09 - (foundation) Upgrade checkstyle plugin to 3.0.0 (from 2.17)
+* 2018-07-09 - (foundation) Upgrade javadoc plugin to 3.0.1 (from 3.0.0-M1)
+* 2018-07-09 - (foundation) Upgrade dependency plugin to 3.1.1 (from 3.0.2)
+* 2018-07-09 - (foundation) Upgrade enforcer plugin to 3.0.0-M2 (from 3.0.0-M1)
+* 2018-07-09 - (foundation) Upgrade invoker plugin to 3.1.0 (from 3.0.1)
+* 2018-07-09 - (foundation) Upgrade scm plugin to 1.10 (from 1.9.5)
+* 2018-07-09 - (foundation) Upgrade dependency-management plugin to 0.11 (from 0.7)
+* 2018-07-09 - (foundation) Upgrade duplicate-finder plugin to 1.3.0 (from 1.2.1)
+* 2018-07-09 - (foundation) Upgrade jacoco plugin to 0.8.1 (from 0.7.9)
+* 2018-07-09 - (foundation) Upgrade git-commit-id plugin to 2.2.4 (from 2.2.3)
+* 2018-07-09 - (foundation) Upgrade scala plugin to 3.4.1 (from 3.3.1)
+* 2018-07-10 - (foundation) Upgrade checkstyle to 8.11 (from 8.4)
+* 2018-07-10 - (foundation) Upgrade scala dependency to 2.11.12 (from 2.11.8)
+* 2018-07-10 - (foundation) Upgrade minimal version of maven to 3.5.0
+
 ## Version 25
 
 * 2017-11-10 - (foundation) Upgrade javadoc plugin to 3.0.0-M1 (from 2.10.4)
