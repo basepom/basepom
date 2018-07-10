@@ -2,6 +2,16 @@
 
 ## Version 26
 
+Starting with version 26, the dead findbugs plugin is removed and
+replaced with spotbugs. This should be a transparent change except
+that the name of the properties to control and skip the plugin changes
+from `findbugs` to `spotbugs`.
+
+* 2018-07-10 - (foundation) Remove findbugs
+* 2018-07-10 - (foundation) Add spotbugs 3.1.5 to replace findbugs
+* 2018-07-10 - (foundation) Upgrade checkstyle to 8.11 (from 8.4)
+* 2018-07-10 - (foundation) Upgrade scala dependency to 2.11.12 (from 2.11.8)
+* 2018-07-10 - (foundation) Upgrade minimal version of maven to 3.5.0
 * 2018-07-09 - (foundation) Upgrade clean plugin to 3.1.0 (from 3.0.0)
 * 2018-07-09 - (foundation) Upgrade failsafe plugin to 2.22.0 (from 2.20.1)
 * 2018-07-09 - (foundation) Upgrade resources plugin to 3.1.0 (from 3.0.2)
@@ -20,9 +30,6 @@
 * 2018-07-09 - (foundation) Upgrade jacoco plugin to 0.8.1 (from 0.7.9)
 * 2018-07-09 - (foundation) Upgrade git-commit-id plugin to 2.2.4 (from 2.2.3)
 * 2018-07-09 - (foundation) Upgrade scala plugin to 3.4.1 (from 3.3.1)
-* 2018-07-10 - (foundation) Upgrade checkstyle to 8.11 (from 8.4)
-* 2018-07-10 - (foundation) Upgrade scala dependency to 2.11.12 (from 2.11.8)
-* 2018-07-10 - (foundation) Upgrade minimal version of maven to 3.5.0
 
 ## Version 25
 

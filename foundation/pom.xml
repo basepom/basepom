@@ -95,7 +95,7 @@
         <basepom.check.skip-javadoc>${basepom.javadoc.skip}</basepom.check.skip-javadoc>
 
         <!-- extended checks -->
-        <basepom.check.skip-findbugs>${basepom.check.skip-extended}</basepom.check.skip-findbugs>
+        <basepom.check.skip-spotbugs>${basepom.check.skip-extended}</basepom.check.skip-spotbugs>
         <basepom.check.skip-coverage>${basepom.check.skip-extended}</basepom.check.skip-coverage>
 
         <!-- only enable if actually configured -->
@@ -116,7 +116,7 @@
         <basepom.check.fail-javadoc>${basepom.check.fail-basic}</basepom.check.fail-javadoc>
 
         <!-- extended checks -->
-        <basepom.check.fail-findbugs>${basepom.check.fail-extended}</basepom.check.fail-findbugs>
+        <basepom.check.fail-spotbugs>${basepom.check.fail-extended}</basepom.check.fail-spotbugs>
         <basepom.check.fail-coverage>${basepom.check.fail-extended}</basepom.check.fail-coverage>
 
         <!-- only enable if actually configured -->
@@ -151,10 +151,6 @@
 
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.5.0</basepom.maven.version>
-
-        <!-- findbugs is dead; let's all start watching spotbugs https://spotbugs.github.io/ to see whether -->
-        <!-- they will manage to get an actual 3.1.0 release out. For now, keep at 3.0.1 -->
-        <dep.findbugs.version>3.0.1</dep.findbugs.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
         <dep.pmd.version>5.8.1</dep.pmd.version>
@@ -212,8 +208,7 @@
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
         <dep.plugin.duplicate-finder.version>1.3.0</dep.plugin.duplicate-finder.version>
 
-        <!-- https://github.com/gleclaire/findbugs-maven-plugin/releases -->
-        <dep.plugin.findbugs.version>3.0.5</dep.plugin.findbugs.version>
+        <dep.plugin.spotbugs.version>3.1.5</dep.plugin.spotbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
         <dep.plugin.jacoco.version>0.8.1</dep.plugin.jacoco.version>
@@ -496,14 +491,14 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>${dep.plugin.findbugs.version}</version>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>${dep.plugin.spotbugs.version}</version>
                     <configuration>
                         <effort>Max</effort>
-                        <skip>${basepom.check.skip-findbugs}</skip>
+                        <skip>${basepom.check.skip-spotbugs}</skip>
                         <maxHeap>${basepom.build.maxheap-mb}</maxHeap>
-                        <failOnError>${basepom.check.fail-findbugs}</failOnError>
+                        <failOnError>${basepom.check.fail-spotbugs}</failOnError>
                     </configuration>
                 </plugin>
 
@@ -881,8 +876,8 @@
             </plugin>
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>default</id>

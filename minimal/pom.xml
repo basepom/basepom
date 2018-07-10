@@ -83,6 +83,25 @@
                                     <package>net.jcip.annotations</package>
                                 </packages>
                             </exception>
+                            <exception>
+                                <conflictingDependencies>
+                                    <dependency>
+                                        <groupId>com.google.code.findbugs</groupId>
+                                        <artifactId>annotations</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>com.google.code.findbugs</groupId>
+                                        <artifactId>findbugs-annotations</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>com.github.spotbugs</groupId>
+                                        <artifactId>spotbugs-annotations</artifactId>
+                                    </dependency>
+                                </conflictingDependencies>
+                                <packages>
+                                    <package>edu.umd.cs.findbugs.annotations</package>
+                                </packages>
+                            </exception>
                         </exceptions>
                         <ignoredResourcePatterns>
                             <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
