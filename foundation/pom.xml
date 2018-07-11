@@ -153,7 +153,7 @@
         <basepom.maven.version>3.5.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>5.8.1</dep.pmd.version>
+        <dep.pmd.version>6.5.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle -->
         <dep.checkstyle.version>8.11</dep.checkstyle.version>
@@ -180,9 +180,7 @@
         <!-- reporting -->
         <dep.plugin.checkstyle.version>3.0.0</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>3.0.1</dep.plugin.javadoc.version>
-        <!-- pmd 3.9 and beyond reorganizes the rules. Keep it at 3.8 for now, but planning -->
-        <!-- to move to 3.10.0 and new rule sets soon. -->
-        <dep.plugin.pmd.version>3.8</dep.plugin.pmd.version>
+        <dep.plugin.pmd.version>3.10.0</dep.plugin.pmd.version>
 
         <!-- tools -->
         <dep.plugin.assembly.version>3.1.0</dep.plugin.assembly.version>
@@ -519,12 +517,7 @@
                         </dependency>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
-                            <artifactId>pmd-javascript</artifactId>
-                            <version>${dep.pmd.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>net.sourceforge.pmd</groupId>
-                            <artifactId>pmd-jsp</artifactId>
+                            <artifactId>pmd-xml</artifactId>
                             <version>${dep.pmd.version}</version>
                         </dependency>
                     </dependencies>
@@ -536,6 +529,7 @@
                         <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                         <minimumTokens>100</minimumTokens>
                         <failurePriority>${basepom.pmd.fail-level}</failurePriority>
+                        <linkXRef>false</linkXRef>
                         <rulesets />
                     </configuration>
                 </plugin>

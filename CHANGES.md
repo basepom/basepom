@@ -7,6 +7,8 @@ replaced with spotbugs. This should be a transparent change except
 that the name of the properties to control and skip the plugin changes
 from `findbugs` to `spotbugs`.
 
+* 2018-07-11 - (foundation) Upgrade PMD to 6.5.0 (from 5.8.1)
+* 2018-07-11 - (foundation) Upgrade pmd plugin to 3.10.0 (from 3.8)
 * 2018-07-10 - (foundation) Remove findbugs
 * 2018-07-10 - (foundation) Add spotbugs 3.1.5 to replace findbugs
 * 2018-07-10 - (foundation) Upgrade checkstyle to 8.11 (from 8.4)
