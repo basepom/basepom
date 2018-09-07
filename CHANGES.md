@@ -1,5 +1,16 @@
 # Changes
 
+## Version 27
+
+* 2018-09-07 - (foundation) Upgrade PMD to 6.7.0 (from 6.5.0)
+* 2018-09-07 - (foundation) Upgrade checkstyle to 8.12 (from 8.11)
+* 2018-09-07 - (foundation) Upgrade compiler plugin to 3.8.0 (from 3.7.0)
+* 2018-09-07 - (foundation) Fix SCM version typo to be correctly 1.10.0
+* 2018-09-07 - (foundation) Upgrade spotbugs plugin to 3.1.6 (from 3.1.5)
+* 2018-09-07 - (foundation) Upgrade jacoco plugin to 0.8.2 (from 0.8.1)
+* 2018-09-07 - (foundation) Upgrade git-commit-id plugin to 2.2.5 (from 2.2.4)
+* 2018-09-07 - (foundation) Upgrade scala plugin to 3.4.2 to (from 3.4.1)
+
 ## Version 26
 
 Starting with version 26, the dead findbugs plugin is removed and
