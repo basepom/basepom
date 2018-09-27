@@ -1,5 +1,10 @@
 # Changes
 
+## Version 28
+
+* 2018-09-26 - (foundation) Separate the spotbugs core and spotbugs plugin
+version properties. They are identical by default.
+
 ## Version 27
 
 * 2018-09-07 - (foundation) Upgrade PMD to 6.7.0 (from 6.5.0)
