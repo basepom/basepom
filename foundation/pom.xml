@@ -147,6 +147,7 @@
         <basepom.check.phase-dependency-versions-check>verify</basepom.check.phase-dependency-versions-check>
         <basepom.check.phase-dependency-management>verify</basepom.check.phase-dependency-management>
         <basepom.check.phase-dependency-scope>verify</basepom.check.phase-dependency-scope>
+        <basepom.check.phase-dependency>verify</basepom.check.phase-dependency>
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
 
         <!-- the current "minimal" version of maven -->
@@ -814,7 +815,7 @@
                 <executions>
                     <execution>
                         <id>default</id>
-                        <phase>verify</phase>
+                        <phase>${basepom.check.phase-dependency}</phase>
                         <goals>
                             <goal>analyze-only</goal>
                             <goal>analyze-duplicate</goal>
