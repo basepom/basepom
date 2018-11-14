@@ -149,6 +149,7 @@
         <basepom.check.phase-dependency-scope>verify</basepom.check.phase-dependency-scope>
         <basepom.check.phase-dependency>verify</basepom.check.phase-dependency>
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
+        <basepom.check.phase-spotbugs>verify</basepom.check.phase-spotbugs>
 
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.5.0</basepom.maven.version>
@@ -887,7 +888,7 @@
                 <executions>
                     <execution>
                         <id>default</id>
-                        <phase>verify</phase>
+                        <phase>${basepom.check.phase-spotbugs}</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
