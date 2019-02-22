@@ -175,7 +175,7 @@
         <dep.plugin.install.version>3.0.0-M1</dep.plugin.install.version>
         <dep.plugin.resources.version>3.1.0</dep.plugin.resources.version>
         <dep.plugin.site.version>3.7.1</dep.plugin.site.version>
-        <dep.plugin.surefire.version>3.0.0.-M3</dep.plugin.surefire.version>
+        <dep.plugin.surefire.version>3.0.0-M3</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>3.1.1</dep.plugin.jar.version>
