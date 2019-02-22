@@ -5,6 +5,24 @@
 * 2018-09-26 - (foundation) Separate the spotbugs core and spotbugs plugin
 version properties. They are identical by default.
 
+* 2019-02-21 - (foundation) Upgrade deploy plugin to 3.0.0-M1 (from 2.8.2)
+* 2019-02-21 - (foundation) Upgrade failsafe plugin to 3.0.0-M3 (from 2.22.0)
+* 2019-02-21 - (foundation) Upgrade install plugin to 3.0.0-M1 (from 2.5.2)
+* 2019-02-21 - (foundation) Upgrade surefire plugin to 3.0.0-M3 (from 2.22.0)
+* 2019-02-21 - (foundation) Upgrade jar plugin to 3.1.1 (from 3.1.0)
+* 2019-02-21 - (foundation) Upgrade shade plugin to 3.2.1 (from 3.1.1)
+* 2019-02-21 - (foundation) Upgrade pmd plugin to 3.11.0 (from 3.10.0)
+* 2019-02-21 - (foundation) Upgrade assembly plugin to 3.1.1 (from 3.1.0)
+* 2019-02-21 - (foundation) Upgrade invoker plugin to 3.2.0 (from 3.1.0)
+* 2019-02-21 - (foundation) Upgrade scm plugin to 1.11.1 (from 1.10.0)
+* 2019-02-21 - (foundation) Upgrade jacoco plugin to 0.8.3 (from 0.8.2)
+* 2019-02-21 - (foundation) Upgrade git-commit-id plugin to 2.2.6 (from 2.2.5)
+* 2019-02-21 - (foundation) Upgrade scala plugin to 3.4.6 (from 3.4.2)
+* 2019-02-21 - (foundation) Upgrade spotbugs and spotbugs plugin to 3.1.11 (from 3.1.6)
+* 2019-02-21 - (foundation) Upgrade PMD to 6.11.0 (from 6.7.0)
+* 2019-02-21 - (foundation) Upgrade Checkstyle to 8.17 (from 8.12)
+
+
 ## Version 27
 
 * 2018-09-07 - (foundation) Upgrade PMD to 6.7.0 (from 6.5.0)
