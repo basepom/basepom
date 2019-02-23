@@ -22,6 +22,7 @@ version properties. They are identical by default.
 * 2019-02-21 - (foundation) Upgrade PMD to 6.11.0 (from 6.7.0)
 * 2019-02-21 - (foundation) Upgrade Checkstyle to 8.17 (from 8.12)
 
+* 2019-02-22 - Updated all execution id's to match `basepom.[optional profile name].<xxx>`
 
 ## Version 27
 
