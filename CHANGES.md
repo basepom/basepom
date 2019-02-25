@@ -23,6 +23,7 @@ version properties. They are identical by default.
 * 2019-02-21 - (foundation) Upgrade Checkstyle to 8.17 (from 8.12)
 
 * 2019-02-22 - Updated all execution id's to match `basepom.[optional profile name].<xxx>`
+* 2019-02-25 - Make dependency analyzer version configurable
 
 ## Version 27
 
