@@ -4,7 +4,7 @@
 
 * 2018-09-26 - (foundation) Separate the spotbugs core and spotbugs plugin
 version properties. They are identical by default.
-
+* 2018-11-02 - (foundation) Make phase for dependency plugin configurable
 * 2019-02-21 - (foundation) Upgrade deploy plugin to 3.0.0-M1 (from 2.8.2)
 * 2019-02-21 - (foundation) Upgrade failsafe plugin to 3.0.0-M3 (from 2.22.0)
 * 2019-02-21 - (foundation) Upgrade install plugin to 3.0.0-M1 (from 2.5.2)
@@ -21,7 +21,6 @@ version properties. They are identical by default.
 * 2019-02-21 - (foundation) Upgrade spotbugs and spotbugs plugin to 3.1.11 (from 3.1.6)
 * 2019-02-21 - (foundation) Upgrade PMD to 6.11.0 (from 6.7.0)
 * 2019-02-21 - (foundation) Upgrade Checkstyle to 8.17 (from 8.12)
-
 * 2019-02-22 - Updated all execution id's to match `basepom.[optional profile name].<xxx>`
 * 2019-02-25 - Make dependency analyzer version configurable
 
