@@ -150,6 +150,11 @@
         <basepom.check.phase-dependency>verify</basepom.check.phase-dependency>
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
 
+        <!-- control install and deploy of artifacts -->
+        <basepom.at-end>false</basepom.at-end>
+        <basepom.at-end.install>${basepom.at-end}</basepom.at-end.install>
+        <basepom.at-end.deploy>${basepom.at-end}</basepom.at-end.deploy>
+
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.5.0</basepom.maven.version>
 
@@ -253,6 +258,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>${dep.plugin.deploy.version}</version>
+                    <configuration>
+                        <deployAtEnd>${basepom.at-end.deploy}</deployAtEnd>
+                    </configuration>
                 </plugin>
 
                 <plugin>
@@ -265,6 +273,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
                     <version>${dep.plugin.install.version}</version>
+                    <configuration>
+                        <installAtEnd>${basepom.at-end.install}</installAtEnd>
+                    </configuration>
                 </plugin>
 
                 <plugin>
