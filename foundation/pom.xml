@@ -149,6 +149,7 @@
         <basepom.check.phase-dependency-scope>verify</basepom.check.phase-dependency-scope>
         <basepom.check.phase-dependency>verify</basepom.check.phase-dependency>
         <basepom.check.phase-checkstyle>verify</basepom.check.phase-checkstyle>
+        <basepom.check.phase-pmd>verify</basepom.check.phase-pmd>
 
         <!-- control install and deploy of artifacts -->
         <basepom.at-end>false</basepom.at-end>
@@ -924,7 +925,7 @@
                 <executions>
                     <execution>
                         <id>basepom.default</id>
-                        <phase>verify</phase>
+                        <phase>${basepom.check.phase-pmd}</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
