@@ -1,5 +1,22 @@
 # Changes
 
+## Version 29
+
+* 2019-06-11 - (foundation) Upgrade compiler plugin to 3.8.1 (from 3.8.0)
+* 2019-06-11 - (foundation) Upgrade jar plugin to 3.1.2 (from 3.1.1)
+* 2019-06-11 - (foundation) Upgrade source plugin to 3.1.0 (from 3.0.1)
+* 2019-06-11 - (foundation) Upgrade checkstyle plugin to 3.1.0 (from 3.0.0)
+* 2019-06-11 - (foundation) Upgrade javadoc plugin to 3.1.0 (from 3.0.1)
+* 2019-06-11 - (foundation) Upgrade pmd plugin to 3.12.0 (from 3.11.0)
+* 2019-06-11 - (foundation) Upgrade scm plugin to 1.11.2 (from 1.11.1)
+* 2019-06-11 - (foundation) Upgrade git-commit-id plugin to 3.0.0 (from 2.2.6)
+* 2019-06-11 - (foundation) Upgrade jacoco plugin to 0.8.4 (from 0.8.3)
+* 2019-06-11 - (foundation) Upgrade pmd plugin to 6.15.0 (from 6.11.0)
+* 2019-06-28 - (foundation) Upgrade toolchains plugin to 3.0.0 (from 1.1)
+* 2019-06-28 - (foundation) Upgrade checkstyle to 8.22 (from 8.17)
+* 2019-06-28 - (foundation) Upgrade spotbugs and spotbugs plugin to 3.1.12 (from 3.1.11)
+* 2019-06-28 - (foundation) Upgrade scala plugin to 4.1.0 (from 3.4.6)
+
 ## Version 28
 
 * 2018-09-26 - (foundation) Separate the spotbugs core and spotbugs plugin
