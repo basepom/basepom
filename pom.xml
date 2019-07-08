@@ -60,6 +60,8 @@
 
     <properties>
         <project.build.targetJdk>1.8</project.build.targetJdk>
+        <basepom.toolchain.vendor>openjdk</basepom.toolchain.vendor>
+
         <basepom.maven.version>3.5.0</basepom.maven.version>
         <basepom.check.skip-all>true</basepom.check.skip-all>
         <basepom.check.skip-enforcer>false</basepom.check.skip-enforcer>
@@ -143,6 +145,18 @@
                             <artifactId>basepom-oss</artifactId>
                             <file>${basedir}/oss/pom.xml</file>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-toolchains-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>toolchain</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
