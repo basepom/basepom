@@ -11,11 +11,11 @@
 * 2019-06-11 - (foundation) Upgrade scm plugin to 1.11.2 (from 1.11.1)
 * 2019-06-11 - (foundation) Upgrade git-commit-id plugin to 3.0.0 (from 2.2.6)
 * 2019-06-11 - (foundation) Upgrade jacoco plugin to 0.8.4 (from 0.8.3)
-* 2019-06-11 - (foundation) Upgrade pmd plugin to 6.15.0 (from 6.11.0)
 * 2019-06-28 - (foundation) Upgrade toolchains plugin to 3.0.0 (from 1.1)
 * 2019-06-28 - (foundation) Upgrade checkstyle to 8.22 (from 8.17)
 * 2019-06-28 - (foundation) Upgrade spotbugs and spotbugs plugin to 3.1.12 (from 3.1.11)
 * 2019-06-28 - (foundation) Upgrade scala plugin to 4.1.0 (from 3.4.6)
+* 2019-07-01 - (foundation) Upgrade pmd to 6.16.0 (from 6.11.0)
 
 ## Version 28
 

@@ -159,7 +159,7 @@
         <basepom.maven.version>3.5.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>6.15.0</dep.pmd.version>
+        <dep.pmd.version>6.16.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
         <dep.checkstyle.version>8.22</dep.checkstyle.version>
