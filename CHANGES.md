@@ -16,6 +16,7 @@
 * 2019-06-28 - (foundation) Upgrade spotbugs and spotbugs plugin to 3.1.12 (from 3.1.11)
 * 2019-06-28 - (foundation) Upgrade scala plugin to 4.1.0 (from 3.4.6)
 * 2019-07-01 - (foundation) Upgrade pmd to 6.16.0 (from 6.11.0)
+* 2019-07-08 - (minimal)    use basepom policy 7 for checkstyle 8.2x compatibility
 
 ## Version 28
 
