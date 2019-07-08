@@ -238,10 +238,6 @@
         <dep.plugin.really-executable.version>1.5.0</dep.plugin.really-executable.version>
     </properties>
 
-    <prerequisites>
-        <maven>${basepom.maven.version}</maven>
-    </prerequisites>
-
     <build>
         <pluginManagement>
             <plugins>
