@@ -1,23 +1,52 @@
 # Changes
 
-## Version 29
+This is the changelog for the basepom project. It follows [Keep a Changelog v1.0.0](http://keepachangelog.com/en/1.0.0/).
 
-* 2019-06-11 - (foundation) Upgrade compiler plugin to 3.8.1 (from 3.8.0)
-* 2019-06-11 - (foundation) Upgrade jar plugin to 3.1.2 (from 3.1.1)
-* 2019-06-11 - (foundation) Upgrade source plugin to 3.1.0 (from 3.0.1)
-* 2019-06-11 - (foundation) Upgrade checkstyle plugin to 3.1.0 (from 3.0.0)
-* 2019-06-11 - (foundation) Upgrade javadoc plugin to 3.1.0 (from 3.0.1)
-* 2019-06-11 - (foundation) Upgrade pmd plugin to 3.12.0 (from 3.11.0)
-* 2019-06-11 - (foundation) Upgrade scm plugin to 1.11.2 (from 1.11.1)
-* 2019-06-11 - (foundation) Upgrade git-commit-id plugin to 3.0.0 (from 2.2.6)
-* 2019-06-11 - (foundation) Upgrade jacoco plugin to 0.8.4 (from 0.8.3)
-* 2019-06-28 - (foundation) Upgrade toolchains plugin to 3.0.0 (from 1.1)
-* 2019-06-28 - (foundation) Upgrade checkstyle to 8.22 (from 8.17)
-* 2019-06-28 - (foundation) Upgrade spotbugs and spotbugs plugin to 3.1.12 (from 3.1.11)
-* 2019-06-28 - (foundation) Upgrade scala plugin to 4.1.0 (from 3.4.6)
-* 2019-07-01 - (foundation) Upgrade pmd to 6.16.0 (from 6.11.0)
-* 2019-07-08 - (minimal)    use basepom policy 7 for checkstyle 8.2x compatibility
-* 2019-07-09 - (foundation) remove prerequisite clause (remove warning with maven 3.6.x)
+Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number which is incremented with every release.
+
+
+## Unreleased
+
+### Added
+
+### Changed
+
+* Changelog now follows [Keep a Changelog v1.0.0](http://keepachangelog.com/en/1.0.0/).
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## Version 29 - 2019-07-09
+
+### Changed
+
+* Bump compiler plugin to 3.8.1 (from 3.8.0)
+* Bump jar plugin to 3.1.2 (from 3.1.1)
+* Bump source plugin to 3.1.0 (from 3.0.1)
+* Bump checkstyle plugin to 3.1.0 (from 3.0.0)
+* Bump javadoc plugin to 3.1.0 (from 3.0.1)
+* Bump pmd plugin to 3.12.0 (from 3.11.0)
+* Bump scm plugin to 1.11.2 (from 1.11.1)
+* Bump git-commit-id plugin to 3.0.0 (from 2.2.6)
+* Bump jacoco plugin to 0.8.4 (from 0.8.3)
+* Bump toolchains plugin to 3.0.0 (from 1.1)
+* Bump checkstyle to 8.22 (from 8.17)
+* Bump spotbugs and spotbugs plugin to 3.1.12 (from 3.1.11)
+* Bump scala plugin to 4.1.0 (from 3.4.6)
+* Bump pmd to 6.16.0 (from 6.11.0)
+
+### Removed
+
+* remove prerequisite clause (remove warning with maven 3.6.x)
+
+### Fixed
+
+* use basepom policy 7 for checkstyle 8.2x compatibility
 
 ## Version 28
 
