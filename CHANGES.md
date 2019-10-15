@@ -11,6 +11,20 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## Version 30 - 2019-10-14
+
+### Added
+
+### Changed
+
 * Changelog now follows [Keep a Changelog v1.0.0](http://keepachangelog.com/en/1.0.0/).
 * Bump PMD to 6.18.0 (from 6.16.0)
 * Bump checkstyle to 8.25.0 (from 8.22.0)
