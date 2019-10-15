@@ -12,6 +12,15 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * Changelog now follows [Keep a Changelog v1.0.0](http://keepachangelog.com/en/1.0.0/).
+* Bump PMD to 6.18.0 (from 6.16.0)
+* Bump checkstyle to 8.25.0 (from 8.22.0)
+* Bump site plugin to 3.8.2 (from 3.7.1)
+* Bump javadoc plugin to 3.1.1 to (from 3.1.0)
+* Bump invoker plugin to 3.2.1 (from 3.2.0)
+* Bump spotbugs plugin to 3.1.12.2 to (from 3.1.12)
+* Bump jacoco plugin to 0.8.5 (from 0.8.4)
+* Bump git-commit-id plugin to 3.0.1 (from 3.0.0)
+* Bump scala plugin to 4.2.0 (from 4.0.2)
 
 ### Deprecated
 
