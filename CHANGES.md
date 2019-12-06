@@ -9,6 +9,18 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Added
 
+* Bump PMD to 6.20.0 (from 6.18.0)
+* Bump checkstyle to 8.27.0 (from 8.25.0)
+* Bump failsafe plugin to 3.0.0-M4 (from 3.0.0-M3)
+* Bump surefire plugin to 3.0.0-M4 (from 3.0.0-M3)
+* Bump jar plugin to 3.2.0 (from 3.1.2)
+* Bump source plugin to 3.2.0 (from 3.1.0)
+* Bump assembly plugin to 3.2.0 (from 3.1.1)
+* Bump enforcer plugin to 3.0.0-M3 (from 3.0.0-M2)
+* Bump duplicate-finder plugin to 1.4.0 (from 1.3.0)
+* Bump git-commit-id plugin to 4.0.0 (from 3.0.1)
+* Bump scala plugin to 4.3.0 (from 4.2.0)
+
 ### Changed
 
 ### Deprecated
