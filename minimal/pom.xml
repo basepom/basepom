@@ -42,7 +42,7 @@
         <dep.basepom-policy.version>7</dep.basepom-policy.version>
 
         <!-- Toolchain JDK vendor. This matches to a local toolchains.xml file. -->
-        <basepom.toolchain.vendor>oracle</basepom.toolchain.vendor>
+        <basepom.toolchain.vendor>openjdk</basepom.toolchain.vendor>
     </properties>
 
     <build>

@@ -23,6 +23,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+* Default JDK vendor for toolchain is now "openjdk" (from "oracle")
+
 ### Deprecated
 
 ### Removed
