@@ -18,7 +18,7 @@
     <groupId>org.basepom</groupId>
     <artifactId>basepom-foundation</artifactId>
     <packaging>pom</packaging>
-    <version>32-SNAPSHOT</version>
+    <version>32</version>
 
     <!--
         <name>basepom-foundation</name>
