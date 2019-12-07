@@ -6,8 +6,16 @@ cache:
 
 matrix:
   include:
-    - jdk: openjdk8
+    - jdk: openjdk9
+    - jdk: openjdk10
     - jdk: openjdk11
+    - jdk: openjdk12
+    - jdk: openjdk13
+    - jdk: oraclejdk9
+    - jdk: oraclejdk10
+    - jdk: oraclejdk11
+    - jdk: oraclejdk12
+    - jdk: oraclejdk13
 
 sudo: false
 
