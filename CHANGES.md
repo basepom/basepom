@@ -9,6 +9,24 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+
+
+## Version 31 - 2019-12-06
+
+* IMPORTANT! THIS IS THE LAST BASEPOM RELEASE THAT SUPPORTS JDK 8 AS THE BUILD JDK! STARTING WITH VERSION 31, THE BUILD JDK MUST BE JDK9+ (THE TARGET JDK CAN STILL BE 7, 8 OR BETTER). WITH JDK 11 BEING THE DEFAULT LTS FOR ALMOST 15 MONTHS, SUPPORTING JDK 8 IS NO LONGER A PRIORITY! * 
+
+### Added
+
 * Bump PMD to 6.20.0 (from 6.18.0)
 * Bump checkstyle to 8.27.0 (from 8.25.0)
 * Bump failsafe plugin to 3.0.0-M4 (from 3.0.0-M3)
@@ -25,17 +43,9 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Default JDK vendor for toolchain is now "openjdk" (from "oracle")
 
-### Deprecated
 
-### Removed
-
-### Fixed
-
-### Security
 
 ## Version 30 - 2019-10-14
-
-### Added
 
 ### Changed
 
@@ -50,13 +60,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump git-commit-id plugin to 3.0.1 (from 3.0.0)
 * Bump scala plugin to 4.2.0 (from 4.0.2)
 
-### Deprecated
 
-### Removed
-
-### Fixed
-
-### Security
 
 ## Version 29 - 2019-07-09
 
@@ -84,6 +88,10 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Fixed
 
 * use basepom policy 7 for checkstyle 8.2x compatibility
+
+
+# Old (pre Version 29) Changelog
+
 
 ## Version 28
 
