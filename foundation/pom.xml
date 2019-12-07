@@ -29,7 +29,10 @@
     <properties>
         <!-- see http://docs.codehaus.org/display/MAVENUSER/POM+Element+for+Source+File+Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.targetJdk>1.8</project.build.targetJdk>
+        <!-- The minimum JDK version required to build. This must be JDK 9 or above as only those support
+             the release configuration for the maven compiler plugin -->
+        <project.build.systemJdk>9</project.build.systemJdk>
+        <project.build.targetJdk>8</project.build.targetJdk>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.reporting.inputEncoding>UTF-8</project.reporting.inputEncoding>
 
@@ -202,7 +205,6 @@
         <dep.plugin.invoker.version>3.2.1</dep.plugin.invoker.version>
         <dep.plugin.release.version>2.5.3</dep.plugin.release.version>
         <dep.plugin.scm.version>1.11.2</dep.plugin.scm.version>
-        <dep.plugin.toolchains.version>3.0.0</dep.plugin.toolchains.version>
 
         <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
         <dep.plugin.build-helper.version>3.0.0</dep.plugin.build-helper.version>
@@ -293,7 +295,12 @@
                                 <version>[${basepom.maven.version},)</version>
                             </requireMavenVersion>
                             <requireJavaVersion>
-                                <version>${project.build.targetJdk}</version>
+                                <version>${project.build.systemJdk}</version>
+                            </requireJavaVersion>
+                            <!-- really enforce Java version 9+ -->
+                            <requireJavaVersion>
+                                <message>basepom only supports JDK version 9 and above</message>
+                                <version>[9,)</version>
                             </requireJavaVersion>
                         </rules>
                     </configuration>
@@ -324,8 +331,7 @@
                     <version>${dep.plugin.compiler.version}</version>
                     <configuration>
                         <failOnWarning>${basepom.compiler.fail-warnings}</failOnWarning>
-                        <source>${project.build.targetJdk}</source>
-                        <target>${project.build.targetJdk}</target>
+                        <release>${project.build.targetJdk}</release>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${basepom.build.jvmsize}</maxmem>
                         <showWarnings>true</showWarnings>
@@ -407,8 +413,7 @@
                     <configuration>
                         <skip>${basepom.check.skip-javadoc}</skip>
                         <failOnError>${basepom.check.fail-javadoc}</failOnError>
-                        <source>${project.build.targetJdk}</source>
-                        <target>${project.build.targetJdk}</target>
+                        <release>${project.build.targetJdk}</release>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmemory>${basepom.build.jvmsize}</maxmemory>
                         <additionalparam>-quiet</additionalparam>
@@ -693,12 +698,6 @@
                     <configuration>
                         <scalaVersion>${dep.scala.version}</scalaVersion>
                     </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-toolchains-plugin</artifactId>
-                    <version>${dep.plugin.toolchains.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

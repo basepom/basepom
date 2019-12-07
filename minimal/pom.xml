@@ -40,9 +40,6 @@
 
         <!-- policy jar for license and checkstyle defaults -->
         <dep.basepom-policy.version>7</dep.basepom-policy.version>
-
-        <!-- Toolchain JDK vendor. This matches to a local toolchains.xml file. -->
-        <basepom.toolchain.vendor>openjdk</basepom.toolchain.vendor>
     </properties>
 
     <build>
@@ -212,19 +209,6 @@
                             <!-- speed up tests that use random, see https://bugs.openjdk.java.net/browse/JDK-6202721 for details -->
                             <java.security.egd>file:/dev/./urandom</java.security.egd>
                         </systemPropertyVariables>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-toolchains-plugin</artifactId>
-                    <configuration>
-                        <toolchains>
-                            <jdk>
-                                <version>${project.build.targetJdk}</version>
-                                <vendor>${basepom.toolchain.vendor}</vendor>
-                            </jdk>
-                        </toolchains>
                     </configuration>
                 </plugin>
             </plugins>

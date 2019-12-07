@@ -20,10 +20,24 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Security
 
 
+## Version 32 - 2019-12-06
+
+This version is identical to version 31, except that it requires a JDK 9+ as the system JDK (the JDK that runs maven). If the build can not be run on JDK 9+, basepom 31 has identical functionality. It no longer supports the toolchain plugin.
+
+### Changed
+
+* Requires JDK 9+ as the system JDK. Most important change is switching from `<source>` and `<target>` for the compiler plugin to `<release>`. This switch, which is only available in JDK 9+, allows correct compilation for all older versions of Java (6, 7, 8 etc.) without the need to provide a bootclasspath or the toolchain plugin. The resulting binaries will still be compatible with the given JDK (JDK 11, the current LTS version) supports 6 - 11.
+* The values supported by the `project.build.targetJdk` have changed. 1.6, 1.7, 1.8 are no longer supported; the value must now be a single number (6 - the version of the current system JDK). Default is now `8` (was `1.8`).
+* A new property `project.build.systemJdk` has been introduced. This specifies the minimal version (enforced by the enforcer)) here is now `9`.
+
+### Removed
+
+* The toolchain plugin has been removed.
+
 
 ## Version 31 - 2019-12-06
 
-* IMPORTANT! THIS IS THE LAST BASEPOM RELEASE THAT SUPPORTS JDK 8 AS THE BUILD JDK! STARTING WITH VERSION 31, THE BUILD JDK MUST BE JDK9+ (THE TARGET JDK CAN STILL BE 7, 8 OR BETTER). WITH JDK 11 BEING THE DEFAULT LTS FOR ALMOST 15 MONTHS, SUPPORTING JDK 8 IS NO LONGER A PRIORITY! * 
+**IMPORTANT! THIS IS THE LAST BASEPOM RELEASE THAT SUPPORTS JDK 8 AS THE BUILD JDK! STARTING WITH VERSION 32, THE BUILD JDK MUST BE JDK9+ (THE TARGET JDK CAN STILL BE 7, 8 OR BETTER). WITH JDK 11 BEING THE DEFAULT LTS FOR ALMOST 15 MONTHS, SUPPORTING JDK 8 IS NO LONGER A PRIORITY!**
 
 ### Added
 
