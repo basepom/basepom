@@ -165,7 +165,7 @@
         <dep.pmd.version>6.20.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>8.27</dep.checkstyle.version>
+        <dep.checkstyle.version>8.29</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>3.1.12</dep.spotbugs.version>
