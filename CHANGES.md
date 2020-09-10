@@ -29,6 +29,7 @@ Every release of this project is potentially incompatible to the previous one ev
   * about*, license*, .*, *schema
   * mime.types, plugin.xml, reference.conf
 * add generated-sources/annotations to the pmd exclusion list
+* add more annotation-only jars to dependency checker exclusion
 
 ### Changed
 

@@ -148,9 +148,13 @@
                     <artifactId>maven-dependency-plugin</artifactId>
                     <configuration>
                         <ignoredDependencies>
-                            <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
+                            <!-- jars that only contain annotations are pretty rough to detect as they need -->
+                            <!-- to be present when compiling but may or may not be referenced at runtime -->
                             <ignoredDependency>com.google.code.findbugs:annotations</ignoredDependency>
+                            <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
+                            <ignoredDependency>javax.inject:javax.inject</ignoredDependency>
                             <ignoredDependency>net.jcip:jcip-annotations</ignoredDependency>
+                            <ignoredDependency>org.glassfish.hk2.external:javax.inject</ignoredDependency>
                         </ignoredDependencies>
                     </configuration>
                 </plugin>
