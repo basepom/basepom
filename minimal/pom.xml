@@ -101,18 +101,33 @@
                             </exception>
                         </exceptions>
                         <ignoredResourcePatterns>
+                            <!-- common file endings -->
+                            <ignoredResourcePattern>.*\.afm$</ignoredResourcePattern>
+                            <ignoredResourcePattern>.*\.dtd$</ignoredResourcePattern>
+                            <ignoredResourcePattern>.*\.gif$</ignoredResourcePattern>
                             <ignoredResourcePattern>.*\.html</ignoredResourcePattern>
-                            <ignoredResourcePattern>about_files/.*</ignoredResourcePattern>
-                            <ignoredResourcePattern>plugin\.properties</ignoredResourcePattern>
-                            <ignoredResourcePattern>plugin\.xml</ignoredResourcePattern>
-                            <ignoredResourcePattern>.*\.java</ignoredResourcePattern>
-                            <!-- the log4j config should not be ignored but they are a constant -->
-                            <!-- source of annoyance. If you use log4j.properties from the classpath -->
+                            <ignoredResourcePattern>.*\.java$</ignoredResourcePattern>
+                            <ignoredResourcePattern>.*\.png$</ignoredResourcePattern>
+                            <ignoredResourcePattern>.*\.properties$</ignoredResourcePattern>
+                            <ignoredResourcePattern>.*\.txt$</ignoredResourcePattern>
+                            <!-- common file name patterns -->
+                            <ignoredResourcePattern>^\..*</ignoredResourcePattern>
+                            <ignoredResourcePattern>about.*</ignoredResourcePattern>
+                            <ignoredResourcePattern>about_files\/.*</ignoredResourcePattern>
+                            <ignoredResourcePattern>license\/.*</ignoredResourcePattern>
+                            <ignoredResourcePattern>.*\/schema$</ignoredResourcePattern>
+                            <!-- jars tend to contain these files all the time -->
+                            <ignoredResourcePattern>mime\.types$</ignoredResourcePattern>
+                            <ignoredResourcePattern>plugin\.properties$</ignoredResourcePattern>
+                            <ignoredResourcePattern>plugin\.xml$</ignoredResourcePattern>
+                            <ignoredResourcePattern>reference\.conf$</ignoredResourcePattern>
+                            <!-- the logging config should not be ignored but they are a constant -->
+                            <!-- source of annoyance. If you use logging properties from the classpath -->
                             <!-- then you are in trouble anyway -->
-                            <ignoredResourcePattern>log4j\.xml</ignoredResourcePattern>
-                            <ignoredResourcePattern>log4j\.properties</ignoredResourcePattern>
-                            <ignoredResourcePattern>logback\.xml</ignoredResourcePattern>
-                            <ignoredResourcePattern>logback\.properties</ignoredResourcePattern>
+                            <ignoredResourcePattern>log4j\.xml$</ignoredResourcePattern>
+                            <ignoredResourcePattern>log4j\.properties$</ignoredResourcePattern>
+                            <ignoredResourcePattern>logback\.xml$</ignoredResourcePattern>
+                            <ignoredResourcePattern>logback\.properties$</ignoredResourcePattern>
                         </ignoredResourcePatterns>
                     </configuration>
                 </plugin>

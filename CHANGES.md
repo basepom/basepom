@@ -19,6 +19,26 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Security
 
+## Unreleased
+
+### Added
+
+* more ignored resource patterns for the duplicate finder plugin
+  * .afm, .properties, .gif, .png, .txt, .dtd
+  * clarify .java to only match at the end of a pattern
+  * about*, license*, .*, *schema
+  * mime.types, plugin.xml, reference.conf
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
 
 ## Version 32 - 2019-12-06
 
