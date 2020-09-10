@@ -138,6 +138,7 @@
                     <configuration>
                         <excludeRoots>
                             <excludeRoot>target/generated-sources/stubs</excludeRoot>
+                            <excludeRoot>target/generated-sources/annotations</excludeRoot>
                         </excludeRoots>
                     </configuration>
                 </plugin>

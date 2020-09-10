@@ -28,6 +28,7 @@ Every release of this project is potentially incompatible to the previous one ev
   * clarify .java to only match at the end of a pattern
   * about*, license*, .*, *schema
   * mime.types, plugin.xml, reference.conf
+* add generated-sources/annotations to the pmd exclusion list
 
 ### Changed
 
