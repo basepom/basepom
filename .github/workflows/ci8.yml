@@ -1,0 +1,32 @@
+name: ci8
+
+on:
+  push:
+    branches:
+      - basepom8
+  pull_request:
+    branches:
+      - basepom8
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [ 8, 11, 14 ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache local Maven repository
+        uses: actions/cache@v2
+        with:
+            path: ~/.m2/repository
+            key: ${{ runner.os }}-${{ matrix.java-version }}-maven-${{ hashFiles('**/pom.xml') }}
+            restore-keys: |
+                ${{ runner.os }}-${{ matrix.java-version }}-maven-
+      - uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java-version }}
+      - name: Build
+        run: |
+          ./mvnw -B -fae clean install
