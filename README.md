@@ -1,9 +1,4 @@
-
 # Base POMs
-
-## Where are the docs?
-
-Documentation is coming. With release 10, basepom is now finally in a shape where it is possible to accomodate a wider audience.
 
 ## Building and deployment
 
@@ -20,4 +15,4 @@ Run the release script:
 
 ----
 
-[![Build Status](https://travis-ci.org/basepom/basepom.svg?branch=master)](https://travis-ci.org/basepom/basepom)[![Latest Release](https://maven-badges.herokuapp.com/maven-central/org.basepom/build-basepom-root/badge.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.basepom%22%20AND%20a%3A%22build-basepom-root%22)
+[![ci](https://github.com/basepom/basepom/workflows/ci/badge.svg)](https://github.com/basepom/basepom/actions?query=workflow%3Aci)[![Latest Release](https://maven-badges.herokuapp.com/maven-central/org.basepom/build-basepom-root/badge.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.basepom%22%20AND%20a%3A%22build-basepom-root%22)
