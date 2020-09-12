@@ -30,6 +30,7 @@ Every release of this project is potentially incompatible to the previous one ev
   * mime.types, plugin.xml, reference.conf
 * add generated-sources/annotations to the pmd exclusion list
 * add more annotation-only jars to dependency checker exclusion
+* new property `basepom.build.use-incremental-compilation` to turn incremental on and off. Defaults to off.
 
 ### Changed
 

@@ -41,6 +41,8 @@
         <!-- Default jvm size for compiler, tests etc. -->
         <basepom.build.maxheap-mb>1024</basepom.build.maxheap-mb>
         <basepom.build.jvmsize>${basepom.build.maxheap-mb}m</basepom.build.jvmsize>
+        <!-- only turn on if using a non-standard-jdk compiler -->
+        <basepom.build.use-incremental-compilation>false</basepom.build.use-incremental-compilation>
 
         <!-- whether a release:perform automatically pushes the created files and tags to -->
         <!-- the upstream repository. Default is no. -->
@@ -337,6 +339,7 @@
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${basepom.build.jvmsize}</maxmem>
                         <showWarnings>true</showWarnings>
+                        <useIncrementalCompilation>${basepom.build.use-incremental-compilation}</useIncrementalCompilation>
                     </configuration>
                 </plugin>
 
