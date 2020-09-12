@@ -17,16 +17,16 @@
 
     <parent>
         <groupId>org.basepom</groupId>
-        <artifactId>basepom-minimal</artifactId>
+        <artifactId>basepom8-minimal</artifactId>
         <version>33-SNAPSHOT</version>
         <relativePath>../minimal</relativePath>
     </parent>
 
-    <artifactId>basepom-oss</artifactId>
+    <artifactId>basepom8-oss</artifactId>
     <packaging>pom</packaging>
 
     <!--
-        <name>basepom-oss</name>
+        <name>basepom8-oss</name>
         <description>Same as minimal base POM, but also includes packaging and deployment for oss.sonatype.org</description>
         <url>https://github.com/basepom/basepom/minimal-oss</url>
     -->

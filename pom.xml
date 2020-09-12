@@ -17,12 +17,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.basepom</groupId>
-        <artifactId>basepom-oss</artifactId>
+        <artifactId>basepom8-oss</artifactId>
         <version>33-SNAPSHOT</version>
         <relativePath>./oss</relativePath>
     </parent>
 
-    <artifactId>build-basepom-root</artifactId>
+    <artifactId>build-basepom8-root</artifactId>
     <packaging>pom</packaging>
     <description>
         All the base poms in the world.
@@ -30,7 +30,7 @@
         Glue to build the various flavors of the basepom.
     </description>
     <url>https://github.com/basepom/basepom/</url>
-    <name>basepom-build</name>
+    <name>basepom8-build</name>
 
     <inceptionYear>2013</inceptionYear>
 
@@ -59,13 +59,14 @@
     </scm>
 
     <properties>
-        <project.build.targetJdk>8</project.build.targetJdk>
+        <project.build.targetJdk>1.8</project.build.targetJdk>
+        <basepom.toolchain.vendor>openjdk</basepom.toolchain.vendor>
 
         <basepom.maven.version>3.5.0</basepom.maven.version>
         <basepom.check.skip-all>true</basepom.check.skip-all>
         <basepom.check.skip-enforcer>false</basepom.check.skip-enforcer>
         <basepom.check.skip-license>false</basepom.check.skip-license>
-        <basepom.release.tag-name-format>basepom-@{project.version}</basepom.release.tag-name-format>
+        <basepom.release.tag-name-format>basepom8-@{project.version}</basepom.release.tag-name-format>
         <basepom.release.profiles>release,oss-release</basepom.release.profiles>
     </properties>
 
@@ -77,7 +78,7 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <configuration>
                         <arguments>-N</arguments>
-                        <tagNameFormat>basepom-@{project.version}</tagNameFormat>
+                        <tagNameFormat>basepom8-@{project.version}</tagNameFormat>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -119,7 +120,7 @@
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <artifactId>basepom-foundation</artifactId>
+                            <artifactId>basepom8-foundation</artifactId>
                             <file>${basedir}/foundation/pom.xml</file>
                         </configuration>
                     </execution>
@@ -130,7 +131,7 @@
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <artifactId>basepom-minimal</artifactId>
+                            <artifactId>basepom8-minimal</artifactId>
                             <file>${basedir}/minimal/pom.xml</file>
                         </configuration>
                     </execution>
@@ -141,7 +142,7 @@
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <artifactId>basepom-oss</artifactId>
+                            <artifactId>basepom8-oss</artifactId>
                             <file>${basedir}/oss/pom.xml</file>
                         </configuration>
                     </execution>
@@ -172,7 +173,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <artifactId>basepom-foundation</artifactId>
+                                    <artifactId>basepom8-foundation</artifactId>
                                     <file>${basedir}/foundation/pom.xml</file>
                                 </configuration>
                             </execution>
@@ -183,7 +184,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <artifactId>basepom-minimal</artifactId>
+                                    <artifactId>basepom8-minimal</artifactId>
                                     <file>${basedir}/minimal/pom.xml</file>
                                 </configuration>
                             </execution>
@@ -194,7 +195,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <artifactId>basepom-oss</artifactId>
+                                    <artifactId>basepom8-oss</artifactId>
                                     <file>${basedir}/oss/pom.xml</file>
                                 </configuration>
                             </execution>
@@ -246,7 +247,7 @@
                                     <goal>sign-and-deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <artifactId>basepom-foundation</artifactId>
+                                    <artifactId>basepom8-foundation</artifactId>
                                     <file>${basedir}/foundation/pom.xml</file>
                                 </configuration>
                             </execution>
@@ -257,7 +258,7 @@
                                     <goal>sign-and-deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <artifactId>basepom-minimal</artifactId>
+                                    <artifactId>basepom8-minimal</artifactId>
                                     <file>${basedir}/minimal/pom.xml</file>
                                 </configuration>
                             </execution>
@@ -268,7 +269,7 @@
                                     <goal>sign-and-deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <artifactId>basepom-oss</artifactId>
+                                    <artifactId>basepom8-oss</artifactId>
                                     <file>${basedir}/oss/pom.xml</file>
                                 </configuration>
                             </execution>
@@ -279,7 +280,7 @@
                                     <goal>sign-and-deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <artifactId>build-basepom-root</artifactId>
+                                    <artifactId>build-basepom8-root</artifactId>
                                     <file>${basedir}/pom.xml</file>
                                 </configuration>
                             </execution>

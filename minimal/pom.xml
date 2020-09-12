@@ -17,16 +17,16 @@
 
     <parent>
         <groupId>org.basepom</groupId>
-        <artifactId>basepom-foundation</artifactId>
+        <artifactId>basepom8-foundation</artifactId>
         <version>33-SNAPSHOT</version>
         <relativePath>../foundation</relativePath>
     </parent>
 
-    <artifactId>basepom-minimal</artifactId>
+    <artifactId>basepom8-minimal</artifactId>
     <packaging>pom</packaging>
 
     <!--
-        <name>basepom-minimal</name>
+        <name>basepom8-minimal</name>
         <description>Base POM for new projects with minimal rules and minimal applied. Does not include any dependency, distribution or repository information.</description>
         <url>https://github.com/basepom/basepom/minimal</url>
     -->
@@ -40,6 +40,9 @@
 
         <!-- policy jar for license and checkstyle defaults -->
         <dep.basepom-policy.version>7</dep.basepom-policy.version>
+
+        <!-- Toolchain JDK vendor. This matches to a local toolchains.xml file. -->
+        <basepom.toolchain.vendor>openjdk</basepom.toolchain.vendor>
     </properties>
 
     <build>
@@ -244,6 +247,19 @@
                             <!-- speed up tests that use random, see https://bugs.openjdk.java.net/browse/JDK-6202721 for details -->
                             <java.security.egd>file:/dev/./urandom</java.security.egd>
                         </systemPropertyVariables>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-toolchains-plugin</artifactId>
+                    <configuration>
+                        <toolchains>
+                            <jdk>
+                                <version>${project.build.targetJdk}</version>
+                                <vendor>${basepom.toolchain.vendor}</vendor>
+                            </jdk>
+                        </toolchains>
                     </configuration>
                 </plugin>
             </plugins>
