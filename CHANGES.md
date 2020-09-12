@@ -31,6 +31,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * add generated-sources/annotations to the pmd exclusion list
 * add more annotation-only jars to dependency checker exclusion
 * new property `basepom.build.use-incremental-compilation` to turn incremental on and off. Defaults to off.
+* new property `basepom.it.parallel` to control the number of parallel invoker integration test executions. Defaults to 1.
 
 ### Changed
 

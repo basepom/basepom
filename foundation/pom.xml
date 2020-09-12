@@ -67,6 +67,7 @@
         <!-- Integration testing -->
         <basepom.it.skip>${skipITs}</basepom.it.skip>
         <basepom.it.memory>${basepom.test.memory}</basepom.it.memory>
+        <basepom.it.parallel>1</basepom.it.parallel>
 
         <!-- Invoker plugin for integration testing -->
         <basepom.invoker.folder>src/it</basepom.invoker.folder>
@@ -679,7 +680,7 @@
                     <configuration>
                         <skipInvocation>${basepom.it.skip}</skipInvocation>
                         <skipInstallation>${basepom.it.skip}</skipInstallation>
-                        <debug>true</debug>
+                        <parallelThreads>${basepom.it.parallel}</parallelThreads>
                         <projectsDirectory>${basepom.invoker.folder}</projectsDirectory>
                         <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                         <pomIncludes>
