@@ -101,6 +101,7 @@
                             <headerDefinition>license/xml-prefix.xml</headerDefinition>
                         </headerDefinitions>
                         <mapping>
+                            <groovy>SLASHSTAR_STYLE</groovy>
                             <xml>XML_PREFIX</xml>
                             <java>SLASHSTAR_STYLE</java>
                             <yaml>SCRIPT_STYLE</yaml>
