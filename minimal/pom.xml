@@ -99,6 +99,7 @@
                                     <package>edu.umd.cs.findbugs.annotations</package>
                                 </packages>
                             </exception>
+                            <!-- Glassfish does not use the official javax injection annotations -->
                             <exception>
                                 <conflictingDependencies>
                                     <dependency>
@@ -112,6 +113,23 @@
                                 </conflictingDependencies>
                                 <packages>
                                     <package>javax.inject</package>
+                                </packages>
+                            </exception>
+                            <!-- Glassfish repackages aopalliance annotations -->
+                            <exception>
+                                <conflictingDependencies>
+                                    <dependency>
+                                        <groupId>aopalliance</groupId>
+                                        <artifactId>aopalliance</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>org.glassfish.hk2.external</groupId>
+                                        <artifactId>aopalliance-repackaged</artifactId>
+                                    </dependency>
+                                </conflictingDependencies>
+                                <packages>
+                                    <package>org.aopalliance.aop</package>
+                                    <package>org.aopalliance.intercept</package>
                                 </packages>
                             </exception>
                         </exceptions>
@@ -165,10 +183,12 @@
                         <ignoredDependencies>
                             <!-- jars that only contain annotations are pretty rough to detect as they need -->
                             <!-- to be present when compiling but may or may not be referenced at runtime -->
+                            <ignoredDependency>aopalliance:aopalliance</ignoredDependency>
                             <ignoredDependency>com.google.code.findbugs:annotations</ignoredDependency>
                             <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
                             <ignoredDependency>javax.inject:javax.inject</ignoredDependency>
                             <ignoredDependency>net.jcip:jcip-annotations</ignoredDependency>
+                            <ignoredDependency>org.glassfish.hk2.external:aopalliance-repackaged</ignoredDependency>
                             <ignoredDependency>org.glassfish.hk2.external:javax.inject</ignoredDependency>
                         </ignoredDependencies>
                     </configuration>
