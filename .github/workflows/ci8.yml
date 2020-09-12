@@ -1,19 +1,19 @@
-name: ci
+name: ci8
 
 on:
   push:
     branches:
-      - master
+      - basepom8
   pull_request:
     branches:
-      - master
+      - basepom8
 
 jobs:
   ci:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java-version: [ 9, 10, 11, 12, 13, 14 ]
+        java-version: [ 8, 11, 14 ]
 
     steps:
       - uses: actions/checkout@v2
