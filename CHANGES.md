@@ -58,6 +58,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump scala plugin to 4.4.0  (from 4.3.0)
 * Bump license plugin to 4.0.rc2 (from 3.0)
 
+* Use the collecting manifest transformer to also add the main class to an executable jar. This is a workaround for a change in the shade plugin since 3.2.4.
 
 ### Deprecated
 

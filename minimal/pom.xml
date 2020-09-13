@@ -38,8 +38,11 @@
         <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
         <basepom.check.fail-checkstyle>${basepom.check.fail-extended}</basepom.check.fail-checkstyle>
 
+        <!-- shade plugin -->
+        <basepom.shaded.main-class />
+
         <!-- policy jar for license and checkstyle defaults -->
-        <dep.basepom-policy.version>7</dep.basepom-policy.version>
+        <dep.basepom-policy.version>8</dep.basepom-policy.version>
     </properties>
 
     <build>
@@ -213,10 +216,7 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
                     <configuration>
-                        <transformers>
-                            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-                            <!-- replace with <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer" > -->
-                            <!-- once http://jira.codehaus.org/browse/MSHADE-165 is applied to the shade plugin and the plugin is released. -->
+                        <transformers combine.children="append">
                             <transformer implementation="org.basepom.maven.shade.CollectingManifestResourceTransformer">
                                 <collectSections>true</collectSections>
                                 <manifestEntries>
@@ -224,6 +224,7 @@
                                     <X-BasePOM-Name>${project.name}</X-BasePOM-Name>
                                     <X-BasePOM-Git-Commit-Id>${git.commit.id}</X-BasePOM-Git-Commit-Id>
                                 </manifestEntries>
+                                <mainClass>${basepom.shaded.main-class}</mainClass>
                             </transformer>
                         </transformers>
                     </configuration>
