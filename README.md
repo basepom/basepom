@@ -1,4 +1,8 @@
-# Base POMs
+# Base POMs - JDK9+ Edition
+
+**THIS is the JDK9+ version of the basepom project.**
+
+If you are stuck on JDK8 as the **build JDK** (not the execution JDK), please check out the [basepom8 branch](https://github.com/basepom/basepom/tree/basepom8).
 
 ## Building and deployment
 
