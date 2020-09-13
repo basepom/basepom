@@ -199,7 +199,7 @@
         <dep.plugin.pmd.version>3.13.0</dep.plugin.pmd.version>
 
         <!-- tools -->
-        <dep.plugin.assembly.version>3.2.0</dep.plugin.assembly.version>
+        <dep.plugin.assembly.version>3.3.0</dep.plugin.assembly.version>
         <!-- watch https://issues.apache.org/jira/browse/MSHARED-957 -->
         <dep.plugin.dependency.version>3.1.2</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>3.0.0-M3</dep.plugin.enforcer.version>
