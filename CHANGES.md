@@ -5,21 +5,7 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number which is incremented with every release.
 
 
-## Unreleased
-
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-
-## Unreleased
+## 33 - 2020-09-13
 
 ### Added
 
@@ -27,14 +13,20 @@ Every release of this project is potentially incompatible to the previous one ev
   * .afm, .properties, .gif, .png, .txt, .dtd
   * clarify .java to only match at the end of a pattern
   * about*, license*, .*, *schema
-  * mime.types, plugin.xml, reference.conf
-* add generated-sources/annotations to the pmd exclusion list
+  * mime.types, plugin.xml, reference.conf. changelog.txt
+* add `generated-sources/annotations` to the pmd exclusion list
 * add more annotation-only jars to dependency checker exclusion
+  * javax.inject (javax.inject and org.glassfish.hk2.external)
+  * aopalliance (aopalliance and org.glassfish.hk2.external)
 * new property `basepom.build.use-incremental-compilation` to turn incremental on and off. Defaults to off.
 * new property `basepom.it.parallel` to control the number of parallel invoker integration test executions. Defaults to 1.
 * set default for groovy license formatting.
 
 ### Changed
+
+* use github actions for CI, remove travis
+* use maven wrapper
+* CI build with JDK 9 - 14
 
 * Bump PMD to 6.27.0 (from 6.20.0)
 * Bump checkstyle to 8.36 (from 8.27)
@@ -43,7 +35,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump resources plugin to 3.2.0 (from 3.1.0)
 * Bump site plugin to 3.9.1 (from 3.8.2)
 * Bump surefire plugin to 3.0.0-M5 (from 3.0.0-M4)
-* Bump shade plugin to 3.2.4 (from 3.2.1)
+* Bump shade plugin to 3.2.4 (from 3.2.1) (see below)
 * Bump source plugin to 3.2.1 (from 3.2.0)
 * Bump checkstyle plugin to 3.1.1 (from 3.1.0)
 * Bump javadoc plugin to 3.2.0 (from 3.1.1)
@@ -57,16 +49,10 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump scala plugin to 4.4.0  (from 4.3.0)
 * Bump license plugin to 4.0.rc2 (from 3.0)
 
+* Bump basepom-policy to 8 (from 7) (see below)
+
 * Use the collecting manifest transformer to also add the main class to an executable jar. This is a workaround for a change in the shade plugin since 3.2.4.
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-
+* remove spurious `<debug>` statement from the invoker plugin.
 
 ## Version 32 - 2019-12-06
 
