@@ -137,9 +137,6 @@
         <basepom.git-id.fail-no-info>true</basepom.git-id.fail-no-info>
         <basepom.git-id.use-native>false</basepom.git-id.use-native>
 
-        <!-- shade plugin -->
-        <basepom.shaded.main-class />
-
         <!-- dependency management plugin -->
         <basepom.dependency-management.dependencies>false</basepom.dependency-management.dependencies>
         <basepom.dependency-management.plugins>false</basepom.dependency-management.plugins>
@@ -1066,13 +1063,6 @@
                                 <goals>
                                     <goal>shade</goal>
                                 </goals>
-                                <configuration>
-                                    <transformers combine.children="append">
-                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                            <mainClass>${basepom.shaded.main-class}</mainClass>
-                                        </transformer>
-                                    </transformers>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
