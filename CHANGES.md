@@ -39,7 +39,6 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump PMD to 6.27.0 (from 6.20.0)
 * Bump checkstyle to 8.36 (from 8.27)
 * Bump spotbugs to 4.1.2 (from 3.1.12)
-* Bump release plugin to 3.0.0-M1 (from 2.5.3)
 * Bump failsafe plugin to 3.0.0-M5 (from 3.0.0-M4)
 * Bump resources plugin to 3.2.0 (from 3.1.0)
 * Bump site plugin to 3.9.1 (from 3.8.2)
