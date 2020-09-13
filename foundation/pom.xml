@@ -204,7 +204,8 @@
         <dep.plugin.dependency.version>3.1.2</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>3.0.0-M3</dep.plugin.enforcer.version>
         <dep.plugin.invoker.version>3.2.1</dep.plugin.invoker.version>
-        <dep.plugin.release.version>3.0.0-M1</dep.plugin.release.version>
+        <!-- 3.0.0-M1 is a disaster; it broke release profile activation and has a number of regressions -->
+        <dep.plugin.release.version>2.5.3</dep.plugin.release.version>
         <dep.plugin.scm.version>1.11.2</dep.plugin.scm.version>
         <dep.plugin.toolchains.version>3.0.0</dep.plugin.toolchains.version>
 
