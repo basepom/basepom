@@ -174,9 +174,6 @@
         <!-- do not update until https://issues.apache.org/jira/browse/MSHARED-957 is fixed -->
         <dep.dependency-analyzer.version>1.11.1</dep.dependency-analyzer.version>
 
-        <!-- leave at scala 2.11 for backwards compatibility -->
-        <dep.scala.version>2.11.12</dep.scala.version>
-
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
         <!-- core plugins -->
@@ -235,9 +232,6 @@
 
         <!-- https://github.com/ktoso/maven-git-commit-id-plugin/releases -->
         <dep.plugin.git-commit-id.version>4.0.2</dep.plugin.git-commit-id.version>
-
-        <!-- https://github.com/davidB/scala-maven-plugin/releases -->
-        <dep.plugin.scala.version>4.4.0</dep.plugin.scala.version>
 
         <!-- https://github.com/brianm/really-executable-jars-maven-plugin/releases -->
         <dep.plugin.really-executable.version>1.5.0</dep.plugin.really-executable.version>
@@ -694,15 +688,6 @@
                         </goals>
                     </configuration>
                 </plugin>
-
-                <plugin>
-                    <groupId>net.alchim31.maven</groupId>
-                    <artifactId>scala-maven-plugin</artifactId>
-                    <version>${dep.plugin.scala.version}</version>
-                    <configuration>
-                        <scalaVersion>${dep.scala.version}</scalaVersion>
-                    </configuration>
-                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -990,52 +975,6 @@
                                     <goal>install</goal>
                                     <goal>integration-test</goal>
                                     <goal>verify</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>basepom.scala-build</id>
-            <activation>
-                <file>
-                    <exists>${basedir}/src/main/scala</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>net.alchim31.maven</groupId>
-                        <artifactId>scala-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>basepom.scala-build.initialize</id>
-                                <phase>initialize</phase>
-                                <goals>
-                                    <goal>add-source</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>basepom.scala-build.compile</id>
-                                <phase>compile</phase>
-                                <goals>
-                                    <goal>compile</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>basepom.scala-build.test-compile</id>
-                                <phase>test-compile</phase>
-                                <goals>
-                                    <goal>testCompile</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>basepom.scala-build.prepare-package</id>
-                                <phase>prepare-package</phase>
-                                <goals>
-                                    <goal>doc</goal>
                                 </goals>
                             </execution>
                         </executions>

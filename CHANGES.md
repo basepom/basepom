@@ -4,6 +4,11 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number which is incremented with every release.
 
+## Unreleased
+
+## Removed
+
+* Removed scala support. This has not gotten any love beyond basic "bump the plugin", this is better served with a possible corporate pom than having this in the foundation code. If maven ever supports mixins, this may come back as a mixin.
 
 ## 33 - 2020-09-13
 
