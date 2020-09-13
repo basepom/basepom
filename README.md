@@ -1,3 +1,12 @@
+# Base POMs - JDK 1.8 Edition
+
+**THIS is the JDK 1.8 version of the basepom project.**
+
+If you are stuck on JDK8 as the **build JDK** (not the execution JDK), use this version. Support for newer JDKs is incomplete (especially the `<release>` option of modern compilers is not supported, which makes cross-compilation really hard. Also, JDK 8 must be referred as `1.8` all the time which is inconsistent to the newer Java versions.
+
+You are **strongly** encouraged to upgrade to a newer JDK for building and use the [main version](https://github.com/basepom/basepom/tree/master) of the basepom project, especially if you target JDK8+ compatibility and not just 1.8.
+
+
 # Base POMs
 
 ## Building and deployment
