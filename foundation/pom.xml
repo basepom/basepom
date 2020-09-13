@@ -234,7 +234,7 @@
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
 
         <!-- https://github.com/ktoso/maven-git-commit-id-plugin/releases -->
-        <dep.plugin.git-commit-id.version>4.0.0</dep.plugin.git-commit-id.version>
+        <dep.plugin.git-commit-id.version>4.0.2</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/davidB/scala-maven-plugin/releases -->
         <dep.plugin.scala.version>4.4.0</dep.plugin.scala.version>
