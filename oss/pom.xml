@@ -41,9 +41,6 @@
 
         <basepom.license.skip-existing>true</basepom.license.skip-existing>
 
-        <!-- by default, do not build scaladocs for oss releases. -->
-        <basepom.oss.skip-scala-doc>true</basepom.oss.skip-scala-doc>
-
         <!-- release profiles -->
         <basepom.release.profiles>basepom.oss-release</basepom.release.profiles>
 
@@ -173,23 +170,6 @@
             </properties>
             <build>
                 <plugins>
-                    <!-- if necessary, build a scaladoc jar. Disabled by default. -->
-                    <plugin>
-                        <groupId>net.alchim31.maven</groupId>
-                        <artifactId>scala-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>basepom.oss-release.package</id>
-                                <phase>package</phase>
-                                <configuration>
-                                    <skip>${basepom.oss.skip-scala-doc}</skip>
-                                </configuration>
-                                <goals>
-                                    <goal>doc-jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
                     <!-- Sign artifacts using gpg for oss upload -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
