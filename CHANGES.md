@@ -6,7 +6,21 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
-## Removed
+### Changed
+
+* Some link housekeeping (update outdated links etc.)
+* Bump PMD to 6.32.0 (from 6.27.0)
+* Bump checkstyle to 8.41 to  (from 8.36)
+* Bump spotbugs to 4.2.2 to  (from 4.1.2)
+* Bump checkstyle plugin to 3.1.2 to  (from 3.1.1)
+* Bump pmd plugin to 3.14.0 (from 3.13.0)
+* Bump invoker plugin to 3.2.2 (from 3.2.1)
+* Bump duplicate-finder plugin to 1.5.0 (from 1.4.0)
+* Bump spotbugs plugin to 4.2.0 (from 4.0.4)
+* Bump jacoco plugin to 0.8.6 (from 0.8.5)
+* Bump git-commit to 4.0.4 (from 4.0.2)
+
+### Removed
 
 * Removed scala support. This has not gotten any love beyond basic "bump the plugin", this is better served with a possible corporate pom than having this in the foundation code. If maven ever supports mixins, this may come back as a mixin.
 
