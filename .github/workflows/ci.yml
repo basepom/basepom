@@ -3,17 +3,17 @@ name: ci
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   ci:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java-version: [ 9, 10, 11, 12, 13, 14 ]
+        java-version: [ 9, 10, 11, 12, 13, 14, 15 ]
 
     steps:
       - uses: actions/checkout@v2
