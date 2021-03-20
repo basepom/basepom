@@ -19,6 +19,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump spotbugs plugin to 4.2.0 (from 4.0.4)
 * Bump jacoco plugin to 0.8.6 (from 0.8.5)
 * Bump git-commit to 4.0.4 (from 4.0.2)
+* Replace ning dependency-versions plugin with basepom plugin 3.0.0
 
 ### Removed
 
