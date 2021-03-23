@@ -209,8 +209,8 @@
         <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
         <dep.plugin.build-helper.version>3.2.0</dep.plugin.build-helper.version>
 
-        <!-- https://github.com/basepom/dependency-versions-check-maven-plugin -->
-        <dep.plugin.dependency-versions-check.version>3.0.0</dep.plugin.dependency-versions-check.version>
+        <!-- https://basepom.github.io/dependency-versions-check-maven-plugin/ -->
+        <dep.plugin.dependency-versions-check.version>3.1.0</dep.plugin.dependency-versions-check.version>
 
         <!-- https://github.com/HubSpot/dependency-management-plugin/releases -->
         <dep.plugin.dependency-management.version>0.11</dep.plugin.dependency-management.version>
@@ -473,18 +473,7 @@
                     <version>${dep.plugin.dependency-versions-check.version}</version>
                     <configuration>
                         <skip>${basepom.check.skip-dependency-versions-check}</skip>
-                        <includePomProjects>false</includePomProjects>
-                        <quiet>false</quiet>
-                        <scope>test</scope>
-                        <deepScan>false</deepScan>
-                        <directOnly>false</directOnly>
-                        <managedOnly>false</managedOnly>
-                        <unresolvedSystemArtifactsFailBuild>false</unresolvedSystemArtifactsFailBuild>
-                        <defaultStrategy>default</defaultStrategy>
-                        <conflictOnly>true</conflictOnly>
-                        <directConflictFailsBuild>${basepom.check.fail-dependency-versions-check}</directConflictFailsBuild>
-                        <transitiveConflictFailsBuild>${basepom.check.fail-dependency-versions-check}</transitiveConflictFailsBuild>
-                        <failBuildInCaseOfConflict>${basepom.check.fail-dependency-versions-check}</failBuildInCaseOfConflict>
+                        <directConflictsFailBuild>${basepom.check.fail-dependency-versions-check}</directConflictsFailBuild>
                     </configuration>
                 </plugin>
 
