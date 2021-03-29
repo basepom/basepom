@@ -251,7 +251,7 @@
                             <user.timezone>UTC</user.timezone>
                             <java.awt.headless>true</java.awt.headless>
                             <java.util.logging.SimpleFormatter.format>%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n</java.util.logging.SimpleFormatter.format>
-                            <!-- speed up tests that use random, see https://bugs.openjdk.java.net/browse/JDK-6202721 for details -->
+                            <!-- see https://stackoverflow.com/questions/58991966/what-java-security-egd-option-is-for -->
                             <java.security.egd>file:/dev/./urandom</java.security.egd>
                         </systemPropertyVariables>
                     </configuration>
@@ -266,7 +266,7 @@
                             <user.timezone>UTC</user.timezone>
                             <java.awt.headless>true</java.awt.headless>
                             <java.util.logging.SimpleFormatter.format>%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n</java.util.logging.SimpleFormatter.format>
-                            <!-- speed up tests that use random, see https://bugs.openjdk.java.net/browse/JDK-6202721 for details -->
+                            <!-- see https://stackoverflow.com/questions/58991966/what-java-security-egd-option-is-for -->
                             <java.security.egd>file:/dev/./urandom</java.security.egd>
                         </systemPropertyVariables>
                     </configuration>
