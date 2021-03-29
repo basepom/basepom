@@ -11,6 +11,12 @@ Every release of this project is potentially incompatible to the previous one ev
 * Only report direct dependency problems with the dependency version check plugin. Configurable with `basepom.dvc.direct-only`, default is `true`.
 
 
+### Added
+
+* add another annotation-only jars to dependency checker exclusion
+  * jakarta.inject (javax.inject and org.glassfish.hk2.external)
+
+
 ## 35 - 2021-03-22
 
 ### Changed
