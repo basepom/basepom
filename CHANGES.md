@@ -4,6 +4,13 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number which is incremented with every release.
 
+## Unreleased
+
+### Changed
+
+* Only report direct dependency problems with the dependency version check plugin. Configurable with `basepom.dvc.direct-only`, default is `true`.
+
+
 ## 35 - 2021-03-22
 
 ### Changed

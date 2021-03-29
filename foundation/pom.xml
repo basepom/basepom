@@ -158,6 +158,9 @@
         <basepom.at-end.install>${basepom.at-end}</basepom.at-end.install>
         <basepom.at-end.deploy>${basepom.at-end}</basepom.at-end.deploy>
 
+        <!-- only report conflicts with direct dependencies -->
+        <basepom.dvc.direct-only>true</basepom.dvc.direct-only>
+
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.5.0</basepom.maven.version>
 
@@ -474,6 +477,7 @@
                     <configuration>
                         <skip>${basepom.check.skip-dependency-versions-check}</skip>
                         <directConflictsFailBuild>${basepom.check.fail-dependency-versions-check}</directConflictsFailBuild>
+                        <directOnly>${basepom.dvc.direct-only}</directOnly>
                     </configuration>
                 </plugin>
 
