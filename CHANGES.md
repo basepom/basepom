@@ -9,6 +9,9 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * Only report direct dependency problems with the dependency version check plugin. Configurable with `basepom.dvc.direct-only`, default is `true`.
+* Bump dependency-versions-check plugin to 3.2.0 (from 3.1.0)
+* Bump PMD to 6.33.0 (from 6.32.0)
+* Bump checkstyle to 8.41.1 (from 8.41)
 
 
 ### Added

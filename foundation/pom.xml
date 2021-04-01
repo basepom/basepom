@@ -165,10 +165,10 @@
         <basepom.maven.version>3.5.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>6.32.0</dep.pmd.version>
+        <dep.pmd.version>6.33.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>8.41</dep.checkstyle.version>
+        <dep.checkstyle.version>8.41.1</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.2.2</dep.spotbugs.version>
@@ -213,7 +213,7 @@
         <dep.plugin.build-helper.version>3.2.0</dep.plugin.build-helper.version>
 
         <!-- https://basepom.github.io/dependency-versions-check-maven-plugin/ -->
-        <dep.plugin.dependency-versions-check.version>3.1.0</dep.plugin.dependency-versions-check.version>
+        <dep.plugin.dependency-versions-check.version>3.2.0</dep.plugin.dependency-versions-check.version>
 
         <!-- https://github.com/HubSpot/dependency-management-plugin/releases -->
         <dep.plugin.dependency-management.version>0.11</dep.plugin.dependency-management.version>
