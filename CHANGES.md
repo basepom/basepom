@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 36 - 2021-04-01
+
 ### Changed
 
 * Only report direct dependency problems with the dependency version check plugin. Configurable with `basepom.dvc.direct-only`, default is `true`.
