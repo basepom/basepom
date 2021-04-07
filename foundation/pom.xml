@@ -79,6 +79,8 @@
 
         <!-- compiler warnings are treated as errors -->
         <basepom.compiler.fail-warnings>false</basepom.compiler.fail-warnings>
+        <!-- add the parameters of methods and constructors to the class files -->
+        <basepom.compiler.parameters>true</basepom.compiler.parameters>
 
         <!-- define minimum level for pmd to fail the build -->
         <basepom.pmd.fail-level>4</basepom.pmd.fail-level>
@@ -336,6 +338,7 @@
                         <maxmem>${basepom.build.jvmsize}</maxmem>
                         <showWarnings>true</showWarnings>
                         <useIncrementalCompilation>${basepom.build.use-incremental-compilation}</useIncrementalCompilation>
+                        <parameters>${basepom.compiler.parameters}</parameters>
                     </configuration>
                 </plugin>
 
