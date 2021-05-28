@@ -21,6 +21,8 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Added
 
 * Also run CI builds with Java 16
+* Added project-info-reports plugin (3.1.2)
+* Add a basic reporting section to oss pom.
 
 ## 36 - 2021-04-01
 
