@@ -25,6 +25,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Add a basic reporting section to oss pom.
 * fix for the bad "jaspersoft.org" repo in spring dependencies in the minimal pom.
 * add 'jakarta.indect:jakarta.inject-api' to the conflicting deps for injection in minimal.
+* force git-id plugin to run for every module in multi-module build, can be controlled with basepom.git-id.run-only-once.
 
 ## 36 - 2021-04-01
 
