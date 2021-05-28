@@ -27,7 +27,7 @@
 
     <!--
         <name>basepom-minimal</name>
-        <description>Base POM for new projects with minimal rules and minimal applied. Does not include any dependency, distribution or repository information.</description>
+        <description>Base POM for new projects with minimal rules applied. Does not include any dependency, distribution or repository information.</description>
         <url>https://github.com/basepom/basepom/minimal</url>
     -->
 
@@ -116,7 +116,7 @@
                                     <package>edu.umd.cs.findbugs.annotations</package>
                                 </packages>
                             </exception>
-                            <!-- Glassfish does not use the official javax injection annotations -->
+                            <!-- Java injection is a mess as well... -->
                             <exception>
                                 <conflictingDependencies>
                                     <dependency>
@@ -130,6 +130,10 @@
                                     <dependency>
                                         <groupId>org.glassfish.hk2.external</groupId>
                                         <artifactId>javax.inject</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>jakarta.inject</groupId>
+                                        <artifactId>jakarta.inject-api</artifactId>
                                     </dependency>
                                 </conflictingDependencies>
                                 <packages>
