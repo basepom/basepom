@@ -137,6 +137,8 @@
         <basepom.git-id.fail-no-git>false</basepom.git-id.fail-no-git>
         <basepom.git-id.fail-no-info>true</basepom.git-id.fail-no-info>
         <basepom.git-id.use-native>false</basepom.git-id.use-native>
+        <!-- needs to run for all modules, otherwise the git specific values in the jar manifest are undefined -->
+        <basepom.git-id.run-only-once>false</basepom.git-id.run-only-once>
 
         <!-- dependency management plugin -->
         <basepom.dependency-management.dependencies>false</basepom.dependency-management.dependencies>
@@ -664,6 +666,7 @@
                             <forceLongFormat>false</forceLongFormat>
                             <tags>true</tags>
                         </gitDescribe>
+                        <runOnlyOnce>${basepom.git-id.run-only-once}</runOnlyOnce>
                     </configuration>
                 </plugin>
 
