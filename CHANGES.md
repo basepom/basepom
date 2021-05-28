@@ -24,6 +24,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Added project-info-reports plugin (3.1.2)
 * Add a basic reporting section to oss pom.
 * fix for the bad "jaspersoft.org" repo in spring dependencies in the minimal pom.
+* add 'jakarta.indect:jakarta.inject-api' to the conflicting deps for injection in minimal.
 
 ## 36 - 2021-04-01
 
