@@ -18,6 +18,10 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump jacoco to 0.8.7 (from 0.8.6)
 * Bump license plugin to 4.1 (from 4.0.rc2)
 
+### Added
+
+* Also run CI builds with Java 16
+
 ## 36 - 2021-04-01
 
 ### Changed
