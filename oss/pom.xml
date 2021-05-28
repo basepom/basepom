@@ -163,25 +163,27 @@
     </build>
 
     <reporting>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-project-info-reports-plugin</artifactId>
-            <version>${plugin.project-info-reports.version}</version>
-            <reportSets>
-                <reportSet>
-                    <reports>
-                        <report>index</report>
-                        <report>summary</report>
-                        <report>team</report>
-                        <report>scm</report>
-                        <report>issue-management</report>
-                        <report>ci-management</report>
-                        <report>dependency-info</report>
-                        <report>dependencies</report>
-                    </reports>
-                </reportSet>
-            </reportSets>
-        </plugin>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${plugin.project-info-reports.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>summary</report>
+                            <report>team</report>
+                            <report>scm</report>
+                            <report>issue-management</report>
+                            <report>ci-management</report>
+                            <report>dependency-info</report>
+                            <report>dependencies</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
     </reporting>
 
     <profiles>
