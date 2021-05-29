@@ -4,7 +4,11 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number which is incremented with every release.
 
-## Unreleased
+## 38 - 2021-05-28
+
+* re-merged the `basepom.compiler.parameters` flag.
+
+## 37 - 2021-05-28 (DO NOT USE)
 
 ### Changed
 
@@ -25,7 +29,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Add a basic reporting section to oss pom.
 * fix for the bad "jaspersoft.org" repo in spring dependencies in the minimal pom.
 * add 'jakarta.indect:jakarta.inject-api' to the conflicting deps for injection in minimal.
-* force git-id plugin to run for every module in multi-module build, can be controlled with basepom.git-id.run-only-once.
+* force git-id plugin to run for every module in multi-module build, can be controlled with `basepom.git-id.run-only-once`.
 
 ## 36 - 2021-04-01
 
