@@ -18,7 +18,7 @@
     <parent>
         <groupId>org.basepom</groupId>
         <artifactId>basepom-foundation</artifactId>
-        <version>37-SNAPSHOT</version>
+        <version>38-SNAPSHOT</version>
         <relativePath>../foundation</relativePath>
     </parent>
 
@@ -27,7 +27,7 @@
 
     <!--
         <name>basepom-minimal</name>
-        <description>Base POM for new projects with minimal rules and minimal applied. Does not include any dependency, distribution or repository information.</description>
+        <description>Base POM for new projects with minimal rules applied. Does not include any dependency, distribution or repository information.</description>
         <url>https://github.com/basepom/basepom/minimal</url>
     -->
 
@@ -44,6 +44,20 @@
         <!-- policy jar for license and checkstyle defaults -->
         <dep.basepom-policy.version>8</dep.basepom-policy.version>
     </properties>
+
+    <repositories>
+        <!-- Fix for a bad dependency in spring -->
+        <repository>
+            <id>jaspersoft.org</id>
+            <url>dummy-url</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <build>
         <pluginManagement>
@@ -102,7 +116,7 @@
                                     <package>edu.umd.cs.findbugs.annotations</package>
                                 </packages>
                             </exception>
-                            <!-- Glassfish does not use the official javax injection annotations -->
+                            <!-- Java injection is a mess as well... -->
                             <exception>
                                 <conflictingDependencies>
                                     <dependency>
@@ -116,6 +130,10 @@
                                     <dependency>
                                         <groupId>org.glassfish.hk2.external</groupId>
                                         <artifactId>javax.inject</artifactId>
+                                    </dependency>
+                                    <dependency>
+                                        <groupId>jakarta.inject</groupId>
+                                        <artifactId>jakarta.inject-api</artifactId>
                                     </dependency>
                                 </conflictingDependencies>
                                 <packages>

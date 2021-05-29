@@ -6,6 +6,27 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Changed
+
+* Bump PMD to 6.34.0 (from 6.33.0)
+* Bump checkstyle to 8.42 (from 8.41.1)
+* Bump spotbugs to 4.2.3 (from 4.2.2)
+* Bump release plugin to 3.0.0-M4 (from 2.5.3)
+* Bump javadoc plugin to 3.3.0 (from 3.2.0)
+* Bump gpg plugin to 3.0.1 (from 1.6)
+* Bump spotbugs plugin to 4.2.3 (from 4.2.0)
+* Bump jacoco to 0.8.7 (from 0.8.6)
+* Bump license plugin to 4.1 (from 4.0.rc2)
+
+### Added
+
+* Also run CI builds with Java 16
+* Added project-info-reports plugin (3.1.2)
+* Add a basic reporting section to oss pom.
+* fix for the bad "jaspersoft.org" repo in spring dependencies in the minimal pom.
+* add 'jakarta.indect:jakarta.inject-api' to the conflicting deps for injection in minimal.
+* force git-id plugin to run for every module in multi-module build, can be controlled with basepom.git-id.run-only-once.
+
 ## 36 - 2021-04-01
 
 ### Added
@@ -39,9 +60,9 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Some link housekeeping (update outdated links etc.)
 * Bump PMD to 6.32.0 (from 6.27.0)
-* Bump checkstyle to 8.41 to  (from 8.36)
-* Bump spotbugs to 4.2.2 to  (from 4.1.2)
-* Bump checkstyle plugin to 3.1.2 to  (from 3.1.1)
+* Bump checkstyle to 8.41 (from 8.36)
+* Bump spotbugs to 4.2.2 (from 4.1.2)
+* Bump checkstyle plugin to 3.1.2 (from 3.1.1)
 * Bump pmd plugin to 3.14.0 (from 3.13.0)
 * Bump invoker plugin to 3.2.2 (from 3.2.1)
 * Bump duplicate-finder plugin to 1.5.0 (from 1.4.0)
@@ -348,7 +369,7 @@ from `findbugs` to `spotbugs`.
 * 2016-07-12 - (foundation) Upgrade findbugs plugin to 3.0.4 (from 3.0.3)
 * 2016-07-12 - (foundation) Upgrade build-helper plugin to 1.11 (from 1.10)
 * 2016-07-12 - (foundation) Upgrade resources plugin to 3.0.1 (from 2.7)
-* 2016-07-12 - (foundation) Upgrade jar plugin to  3.0.2 (from 2.6)
+* 2016-07-12 - (foundation) Upgrade jar plugin to 3.0.2 (from 2.6)
 * 2016-07-12 - (foundation) Upgrade source plugin to 3.0.1 (from 3.0.0)
 * 2016-07-12 - (foundation) Upgrade javadoc plugin to 2.10.4 (from 2.10.3)
 * 2016-07-12 - (foundation) Upgrade scm plugin to 1.9.5 (from 1.9.4)
@@ -670,7 +691,7 @@ Sometime in a future release, the 'standard' and 'standard-oss' poms
 * 2014-06-12 - (standard) Upgrade guava dependency to 17.0 (from 16.0.1)
 * 2014-06-12 - (standard) Upgrade jackson dependency to 2.4.0 (from 2.3.2)
 * 2014-06-12 - (standard) Upgrade slf4j dependency to 1.7.7 (from 1.7.6)
-* 2014-06-12 - (standard) Upgrade logback dependency 1.1.2 to  (from 1.1.1)
+* 2014-06-12 - (standard) Upgrade logback dependency to 1.1.2 (from 1.1.1)
 * 2014-06-12 - (foundation) Upgrade release plugin to 2.5 (from 2.4.2)
 * 2014-06-12 - (foundation) Upgrade checkstyle plugin to 2.12.1 (from 2.11)
 * 2014-06-12 - (foundation) Upgrade surefire plugin to 2.17 (from 2.16)

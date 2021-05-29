@@ -18,7 +18,7 @@
     <parent>
         <groupId>org.basepom</groupId>
         <artifactId>basepom-minimal</artifactId>
-        <version>37-SNAPSHOT</version>
+        <version>38-SNAPSHOT</version>
         <relativePath>../minimal</relativePath>
     </parent>
 
@@ -47,10 +47,13 @@
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
         <!-- tools -->
-        <dep.plugin.gpg.version>1.6</dep.plugin.gpg.version>
+        <dep.plugin.gpg.version>3.0.1</dep.plugin.gpg.version>
+
+        <!-- reporting -->
+        <dep.plugin.project-info-reports.version>3.1.2</dep.plugin.project-info-reports.version>
 
         <!-- https://github.com/mycila/license-maven-plugin/releases -->
-        <dep.plugin.license.version>4.0.rc2</dep.plugin.license.version>
+        <dep.plugin.license.version>4.1</dep.plugin.license.version>
 
     </properties>
 
@@ -158,6 +161,30 @@
             </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${plugin.project-info-reports.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>summary</report>
+                            <report>team</report>
+                            <report>scm</report>
+                            <report>issue-management</report>
+                            <report>ci-management</report>
+                            <report>dependency-info</report>
+                            <report>dependencies</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
 
     <profiles>
         <profile>
