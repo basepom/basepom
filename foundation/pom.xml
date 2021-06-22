@@ -33,8 +33,12 @@
              the release configuration for the maven compiler plugin -->
         <project.build.systemJdk>9</project.build.systemJdk>
         <project.build.targetJdk>8</project.build.targetJdk>
+        <project.build.sourceVersion>${project.build.targetJdk}</project.build.sourceVersion>
+        <project.build.targetVersion>${project.build.targetJdk}</project.build.targetVersion>
+
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.reporting.inputEncoding>UTF-8</project.reporting.inputEncoding>
+
 
         <!-- Build specific options are prefixed basepom.build. -->
 
@@ -335,6 +339,8 @@
                     <configuration>
                         <failOnWarning>${basepom.compiler.fail-warnings}</failOnWarning>
                         <release>${project.build.targetJdk}</release>
+                        <source>${project.build.sourceVersion}</source>
+                        <target>${project.build.targetVersion}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${basepom.build.jvmsize}</maxmem>
                         <showWarnings>true</showWarnings>
@@ -419,6 +425,7 @@
                         <skip>${basepom.check.skip-javadoc}</skip>
                         <failOnError>${basepom.check.fail-javadoc}</failOnError>
                         <release>${project.build.targetJdk}</release>
+                        <source>${project.build.sourceVersion}</source>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmemory>${basepom.build.jvmsize}</maxmemory>
                         <additionalparam>-quiet</additionalparam>
