@@ -11,6 +11,11 @@ Every release of this project is potentially incompatible to the previous one ev
 * add more annotation-only jars to dependency checker exclusion
   * jakarta.inject:jakarta.inject-api
   * com.google.errorprone:error_prone_annotations
+* Bump dependency analyzer dependency to 1.11.3 (from 1.11.1), MSHARED-957 finally resolved
+* Bump PMD to 6.35.0 (from 6.34.0)
+* Bump checkstyle to 8.43 (from 8.42)
+* Bump git-commit to 4.0.5 (from 4.0.4)
+
 
 ## 38 - 2021-05-28
 

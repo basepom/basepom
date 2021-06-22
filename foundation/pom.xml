@@ -169,16 +169,16 @@
         <basepom.maven.version>3.5.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>6.34.0</dep.pmd.version>
+        <dep.pmd.version>6.35.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>8.42</dep.checkstyle.version>
+        <dep.checkstyle.version>8.43</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.2.3</dep.spotbugs.version>
 
         <!-- https://github.com/apache/maven-dependency-analyzer/releases -->
-        <!-- do not update until https://issues.apache.org/jira/browse/MSHARED-957 is fixed -->
+        <!-- Still holding off on upgrading to 1.11.3 because MDEP-753 / MDEP-757 -->
         <dep.dependency-analyzer.version>1.11.1</dep.dependency-analyzer.version>
 
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
@@ -205,7 +205,7 @@
 
         <!-- tools -->
         <dep.plugin.assembly.version>3.3.0</dep.plugin.assembly.version>
-        <!-- watch https://issues.apache.org/jira/browse/MSHARED-957 -->
+        <!-- Still holding off on upgrading to 3.2.0 because MDEP-753 / MDEP-757 -->
         <dep.plugin.dependency.version>3.1.2</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>3.0.0-M3</dep.plugin.enforcer.version>
         <dep.plugin.invoker.version>3.2.2</dep.plugin.invoker.version>
@@ -237,7 +237,7 @@
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
 
         <!-- https://github.com/ktoso/maven-git-commit-id-plugin/releases -->
-        <dep.plugin.git-commit-id.version>4.0.4</dep.plugin.git-commit-id.version>
+        <dep.plugin.git-commit-id.version>4.0.5</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/brianm/really-executable-jars-maven-plugin/releases -->
         <dep.plugin.really-executable.version>1.5.0</dep.plugin.really-executable.version>
