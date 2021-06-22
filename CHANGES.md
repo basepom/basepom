@@ -4,6 +4,14 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number which is incremented with every release.
 
+## unreleased
+
+### Added
+
+* add more annotation-only jars to dependency checker exclusion
+  * jakarta.inject:jakarta.inject-api
+  * com.google.errorprone:error_prone_annotations
+
 ## 38 - 2021-05-28
 
 * re-merged the `basepom.compiler.parameters` flag.
