@@ -215,6 +215,8 @@
                             <ignoredDependency>net.jcip:jcip-annotations</ignoredDependency>
                             <ignoredDependency>org.glassfish.hk2.external:aopalliance-repackaged</ignoredDependency>
                             <ignoredDependency>org.glassfish.hk2.external:javax.inject</ignoredDependency>
+                            <ignoredDependency>jakarta.inject:jakarta.inject-api</ignoredDependency>
+                            <ignoredDependency>com.google.errorprone:error_prone_annotations</ignoredDependency>
                         </ignoredDependencies>
                     </configuration>
                 </plugin>
