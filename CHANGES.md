@@ -16,6 +16,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump checkstyle to 8.43 (from 8.42)
 * Bump git-commit to 4.0.5 (from 4.0.4)
 * add `project.build.sourceVersion` and `project.build.targetVersion` to set the source and target fields for the compiler. By default use the same value as `project.build.targetJdk`. There are some corner cases where there compiler plugin will ignore flags (e.g. -parameter) if only the `<release>` element but not the `<source>` element is set.
+* add .g4 and .stg as known endings for the license plugin
 
 
 ## 38 - 2021-05-28
