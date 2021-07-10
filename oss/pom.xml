@@ -51,6 +51,7 @@
 
         <!-- reporting -->
         <dep.plugin.project-info-reports.version>3.1.2</dep.plugin.project-info-reports.version>
+        <dep.plugin.jxr.version>3.0.0</dep.plugin.jxr.version>
 
         <!-- https://github.com/mycila/license-maven-plugin/releases -->
         <dep.plugin.license.version>4.1</dep.plugin.license.version>
@@ -169,7 +170,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${plugin.project-info-reports.version}</version>
+                <version>${dep.plugin.project-info-reports.version}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -184,6 +185,79 @@
                         </reports>
                     </reportSet>
                 </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${dep.plugin.surefire.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <consoleOutput>false</consoleOutput>
+                    <linkXRef>true</linkXRef>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>${dep.plugin.jxr.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <targetJdk>${project.build.targetJdk}</targetJdk>
+                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                    <linkXRef>true</linkXRef>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>pmd</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <configuration>
+                    <maxHeap>${basepom.build.maxheap-mb}</maxHeap>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <release>${project.build.targetJdk}</release>
+                    <source>${project.build.sourceVersion}</source>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <maxmemory>${basepom.build.jvmsize}</maxmemory>
+                    <quiet>true</quiet>
+                    <doclint>${basepom.javadoc.doclint}</doclint>
+                    <show>${basepom.javadoc.show}</show>
+                </configuration>
             </plugin>
         </plugins>
     </reporting>

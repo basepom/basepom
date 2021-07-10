@@ -606,7 +606,6 @@
                         <violationSeverity>${basepom.check.checkstyle-severity}</violationSeverity>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <consoleOutput>true</consoleOutput>
-                        <linkXRef>false</linkXRef>
                     </configuration>
                 </plugin>
 
