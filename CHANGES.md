@@ -11,6 +11,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * add even more annotation only jars to dependency checker exclusion
   * com.github.spotbugs:spotbugs-annotations
   * org.checkerframework:checker-qual
+* make javadoc doclint and show level configurable with two new settings: `basepom.javadoc.doclint` and `basepom.javadoc.show`
 
 ## 39 - 2021-06-22
 
