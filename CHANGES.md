@@ -12,6 +12,7 @@ Every release of this project is potentially incompatible to the previous one ev
   * com.github.spotbugs:spotbugs-annotations
   * org.checkerframework:checker-qual
 * make javadoc doclint and show level configurable with two new settings: `basepom.javadoc.doclint` and `basepom.javadoc.show`
+* Add more comprehensive reporting to the oss profile.
 
 ## 39 - 2021-06-22
 
