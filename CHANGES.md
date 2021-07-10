@@ -13,6 +13,11 @@ Every release of this project is potentially incompatible to the previous one ev
   * org.checkerframework:checker-qual
 * make javadoc doclint and show level configurable with two new settings: `basepom.javadoc.doclint` and `basepom.javadoc.show`
 * Add more comprehensive reporting to the oss profile.
+* Bump spotbugs to 4.3.0 (from 4.2.3)
+* Bump checkstyle to 8.44 (from 8.43)
+* Bump PMD to 6.36.0 (from 6.35.0)
+* Bump spotbugs plugin to 4.3.0 (from 4.2.3)
+* Bump jxr plugin to 3.1.1 (from 3.0.0)
 
 ## 39 - 2021-06-22
 
