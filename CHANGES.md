@@ -6,6 +6,12 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Added
+
+* add even more annotation only jars to dependency checker exclusion
+  * com.github.spotbugs:spotbugs-annotations
+  * org.checkerframework:checker-qual
+
 ## 39 - 2021-06-22
 
 ### Added
