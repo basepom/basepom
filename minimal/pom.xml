@@ -217,6 +217,8 @@
                             <ignoredDependency>org.glassfish.hk2.external:javax.inject</ignoredDependency>
                             <ignoredDependency>jakarta.inject:jakarta.inject-api</ignoredDependency>
                             <ignoredDependency>com.google.errorprone:error_prone_annotations</ignoredDependency>
+                            <ignoreDependency>com.github.spotbugs:spotbugs-annotations</ignoreDependency>
+                            <ignoreDependency>org.checkerframework:checker-qual</ignoreDependency>
                         </ignoredDependencies>
                     </configuration>
                 </plugin>
