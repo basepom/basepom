@@ -58,6 +58,12 @@
         <!-- Javadoc generation -->
         <basepom.javadoc.skip>true</basepom.javadoc.skip>
 
+        <!-- Javadoc lint level -->
+        <basepom.javadoc.doclint>none</basepom.javadoc.doclint>
+
+        <!-- Javadoc show level: public, protected, package, private  -->
+        <basepom.javadoc.show>public</basepom.javadoc.show>
+
         <!-- surefire skip tests -->
         <basepom.test.skip>${skipTests}</basepom.test.skip>
 
@@ -428,7 +434,9 @@
                         <source>${project.build.sourceVersion}</source>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmemory>${basepom.build.jvmsize}</maxmemory>
-                        <additionalparam>-quiet</additionalparam>
+                        <quiet>true</quiet>
+                        <doclint>${basepom.javadoc.doclint}</doclint>
+                        <show>${basepom.javadoc.show}</show>
                     </configuration>
                 </plugin>
 
