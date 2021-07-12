@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+
+## 40 - 2021-07-12
+
+**IMPORTANT! WITH THE UPCOMING RELEASE OF JDK17, VERSION 40 IS THE LAST BASEPOM RELEASE THAT SUPPORTS JDK 9 AND 10 AS THE BUILD JDK. STARTING WITH THE NEXT RELEASE, ONLY JDK11+ WILL BE SUPPORTED (TARGET JDK CAN STILL BE 7-10).
 ### Added
 
 * add even more annotation only jars to dependency checker exclusion
