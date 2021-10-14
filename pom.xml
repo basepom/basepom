@@ -59,7 +59,7 @@
     </scm>
 
     <properties>
-        <project.build.targetJdk>8</project.build.targetJdk>
+        <project.build.targetJdk>11</project.build.targetJdk>
 
         <basepom.maven.version>3.5.0</basepom.maven.version>
         <basepom.check.skip-all>true</basepom.check.skip-all>

@@ -4,12 +4,28 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number which is incremented with every release.
 
-## Unreleased
+## 41 - 2021-10-13
 
+### Changed
+
+* enforce JDK 11+ for using basepom.
+* enforce Maven 3.6.0 or better.
+* git-commit-id now has new coordinates (io.github.git-commit-id:git-commit-id-maven-plugin)
+* Bump PMD to 6.39.0 (from 6.36.0)
+* Bump checkstyle to 9.0.1 (from 8.44)
+* Bump spotbugs to 4.4.2 (from 4.3.0)
+* Bump javadoc plugin to 3.3.1 (from 3.3.0)
+* Bump pmd plugin to 3.15.0 (from 3.14.0)
+* Bump enforcer plugin to 3.0.0 (from 3.0.0-M3)
+* Bump scm plugin to 1.12 (from 1.11.2)
+* Bump spotbugs plugin to 4.4.1 (from 4.3.0)
+* Bump git-commit-id plugin to 5.0.0 (from 4.0.5)
+* Bump license plugin to 4.2.rc1 (from 4.1)
 
 ## 40 - 2021-07-12
 
 **IMPORTANT! WITH THE UPCOMING RELEASE OF JDK17, VERSION 40 IS THE LAST BASEPOM RELEASE THAT SUPPORTS JDK 9 AND 10 AS THE BUILD JDK. STARTING WITH THE NEXT RELEASE, ONLY JDK11+ WILL BE SUPPORTED (TARGET JDK CAN STILL BE 7-10).
+
 ### Added
 
 * add even more annotation only jars to dependency checker exclusion

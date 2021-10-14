@@ -54,7 +54,7 @@
         <dep.plugin.jxr.version>3.1.1</dep.plugin.jxr.version>
 
         <!-- https://github.com/mycila/license-maven-plugin/releases -->
-        <dep.plugin.license.version>4.1</dep.plugin.license.version>
+        <dep.plugin.license.version>4.2.rc1</dep.plugin.license.version>
 
     </properties>
 
