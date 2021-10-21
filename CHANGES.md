@@ -4,6 +4,12 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number which is incremented with every release.
 
+## Unreleased
+
+### Fixed
+
+* scm plugin version to 1.12.0
+
 ## 41 - 2021-10-13
 
 ### Changed
