@@ -239,7 +239,7 @@
 
         <!-- https://github.com/spotbugs/spotbugs-maven-plugin/releases -->
         <!-- 4.4.2 was tagged but not released to central... -->
-        <dep.plugin.spotbugs.version>4.4.1</dep.plugin.spotbugs.version>
+        <dep.plugin.spotbugs.version>4.4.2.2</dep.plugin.spotbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
         <dep.plugin.jacoco.version>0.8.7</dep.plugin.jacoco.version>
