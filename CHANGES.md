@@ -6,9 +6,14 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 42 - 2021-10-26
+
 ### Fixed
 
 * scm plugin version to 1.12.0
+
+### Changed
+
 * Bump spotbugs to 4.4.2.2 (from 4.4.2)
 
 ## 41 - 2021-10-13
