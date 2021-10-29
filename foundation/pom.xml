@@ -247,7 +247,7 @@
         <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
 
-        <!-- https://github.com/ktoso/maven-git-commit-id-plugin/releases -->
+        <!-- https://github.com/git-commit-id/git-commit-id-maven-plugin/releases -->
         <dep.plugin.git-commit-id.version>5.0.0</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/brianm/really-executable-jars-maven-plugin/releases -->
