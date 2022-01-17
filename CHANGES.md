@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Added
+* new switch `basepom.site.skip` (default to `false`) to skip site generation.
+* control report generation with the same flags as the underlying plugins (test, javadoc, checkstyle, pmd, spotbugs)
+
 ## 42 - 2021-10-26
 
 ### Fixed

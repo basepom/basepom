@@ -175,6 +175,9 @@
         <!-- only report conflicts with direct dependencies -->
         <basepom.dvc.direct-only>true</basepom.dvc.direct-only>
 
+        <!-- control site building -->
+        <basepom.site.skip>false</basepom.site.skip>
+
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.6.0</basepom.maven.version>
 
@@ -653,6 +656,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${dep.plugin.site.version}</version>
+                    <configuration>
+                        <skip>${basepom.site.skip}</skip>
+                    </configuration>
                 </plugin>
 
                 <plugin>
