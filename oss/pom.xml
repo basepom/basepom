@@ -53,8 +53,8 @@
         <dep.plugin.project-info-reports.version>3.1.2</dep.plugin.project-info-reports.version>
         <dep.plugin.jxr.version>3.1.1</dep.plugin.jxr.version>
 
-        <!-- https://github.com/mycila/license-maven-plugin/releases -->
-        <dep.plugin.license.version>4.2.rc1</dep.plugin.license.version>
+        <!-- https://github.com/mathieucarbou/license-maven-plugin/tags -->
+        <dep.plugin.license.version>4.2.rc2</dep.plugin.license.version>
 
     </properties>
 

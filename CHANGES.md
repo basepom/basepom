@@ -25,6 +25,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump build-helper plugin to 3.3.0 (from 3.2.0)
 * Bump duplicate-finder plugin to 1.5.1 (from 1.5.0)
 * Bump spotbugs plugin to 4.5.3.0 (from 4.4.2.2)
+* Bump license plugin to 4.2.rc2 (from 4.2.rc1)
 
 
 ## 42 - 2021-10-26
