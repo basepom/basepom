@@ -129,6 +129,7 @@
                             <exclude>**/*.raw</exclude>
                             <exclude>**/*.ser</exclude>
                             <exclude>**/src/license/**</exclude>
+                            <exclude>**/CNAME</exclude>
                         </excludes>
                         <includes>
                             <include>src/**</include>
