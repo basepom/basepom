@@ -7,8 +7,24 @@ Every release of this project is potentially incompatible to the previous one ev
 ## Unreleased
 
 ### Added
+
 * new switch `basepom.site.skip` (default to `false`) to skip site generation.
 * control report generation with the same flags as the underlying plugins (test, javadoc, checkstyle, pmd, spotbugs)
+
+### Changed
+* Bump deploy plugin to 3.0.0-M2 to (from 3.0.0-M1)
+* Bump site plugin to 3.10.0 to (from 3.9.1)
+* Bump compiler plugin to 3.9.0 to (from 3.8.1)
+* Bump jar plugin to 3.2.2 (from 3.2.0)
+* Bump release plugin to 3.0.0-M5 to (from 3.0.0-M4)
+* Bump scm plugin to 2.0.0-M1 (from 1.12.0)
+* Bump PMD to 6.41.0 (from 6.39.0)
+* Bump spotbugs to 4.5.3 to (from 4.4.2)
+* Bump checkstyle to 9.2.1 (from 9.0.1)
+* Bump build-helper plugin to 3.3.0 (from 3.2.0)
+* Bump duplicate-finder plugin to 1.5.1 (from 1.5.0)
+* Bump spotbugs plugin to 4.5.3.0 (from 4.4.2.2)
+
 
 ## 42 - 2021-10-26
 
