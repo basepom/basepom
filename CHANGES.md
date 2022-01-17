@@ -10,6 +10,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * new switch `basepom.site.skip` (default to `false`) to skip site generation.
 * control report generation with the same flags as the underlying plugins (test, javadoc, checkstyle, pmd, spotbugs)
+* add scm-publish plugin (version 3.1.0)
 
 ### Changed
 * Bump deploy plugin to 3.0.0-M2 to (from 3.0.0-M1)

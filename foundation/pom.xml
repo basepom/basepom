@@ -224,6 +224,7 @@
         <dep.plugin.invoker.version>3.2.2</dep.plugin.invoker.version>
         <dep.plugin.release.version>3.0.0-M5</dep.plugin.release.version>
         <dep.plugin.scm.version>2.0.0-M1</dep.plugin.scm.version>
+        <dep.plugin.scm-publish.version>3.1.0</dep.plugin.scm-publish.version>
 
         <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
         <dep.plugin.build-helper.version>3.3.0</dep.plugin.build-helper.version>
@@ -716,6 +717,17 @@
                         </goals>
                     </configuration>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-publish-plugin</artifactId>
+                    <version>${dep.plugin.scm-publish.version}</version>
+                    <configuration>
+                        <skip>${basepom.site.skip}</skip>
+                        <localCheckout>true</localCheckout>
+                    </configuration>
+                </plugin>
+
             </plugins>
         </pluginManagement>
 
