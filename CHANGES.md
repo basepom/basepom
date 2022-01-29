@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 43 - 2022-01-29
+
 ### Added
 
 * new switch `basepom.site.skip` (default to `false`) to skip site generation.
