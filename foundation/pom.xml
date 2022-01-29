@@ -182,7 +182,7 @@
         <basepom.maven.version>3.6.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>6.41.0</dep.pmd.version>
+        <dep.pmd.version>6.42.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
         <dep.checkstyle.version>9.2.1</dep.checkstyle.version>

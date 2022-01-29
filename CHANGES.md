@@ -20,7 +20,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump jar plugin to 3.2.2 (from 3.2.0)
 * Bump release plugin to 3.0.0-M5 to (from 3.0.0-M4)
 * Bump scm plugin to 2.0.0-M1 (from 1.12.0)
-* Bump PMD to 6.41.0 (from 6.39.0)
+* Bump PMD to 6.42.0 (from 6.39.0)
 * Bump spotbugs to 4.5.3 to (from 4.4.2)
 * Bump checkstyle to 9.2.1 (from 9.0.1)
 * Bump build-helper plugin to 3.3.0 (from 3.2.0)
