@@ -275,6 +275,15 @@
                     <doclint>${basepom.javadoc.doclint}</doclint>
                     <show>${basepom.javadoc.show}</show>
                 </configuration>
+                <reportSets>
+                    <reportSet>
+                        <id>default</id>
+                        <reports>
+                            <report>javadoc</report>
+                            <report>test-javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
         </plugins>
     </reporting>

@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+* Add report set for javadoc site
+
 ## 43 - 2022-01-29
 
 ### Added
