@@ -7,6 +7,7 @@ Every release of this project is potentially incompatible to the previous one ev
 ## Unreleased
 
 * Add report set for javadoc site
+* Add controls for site reports (`basepom.site.check.skip-...` and `basepom.site.test.skip`) to control site report generation independently from main report generation. All settings default to the parent (`basepom.check.skip-...` and `basepom.test.skip`) values.
 
 ## 43 - 2022-01-29
 

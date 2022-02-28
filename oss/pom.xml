@@ -56,6 +56,13 @@
         <!-- https://github.com/mathieucarbou/license-maven-plugin/tags -->
         <dep.plugin.license.version>4.2.rc2</dep.plugin.license.version>
 
+        <!-- control reporting independently from the checkers -->
+        <basepom.site.test.skip>${basepom.test.skip}</basepom.site.test.skip>
+        <basepom.site.check.skip-checkstyle>${basepom.check.skip-checkstyle}</basepom.site.check.skip-checkstyle>
+        <basepom.site.check.skip-coverage>${basepom.check.skip-coverage}</basepom.site.check.skip-coverage>
+        <basepom.site.check.skip-javadoc>${basepom.check.skip-javadoc}</basepom.site.check.skip-javadoc>
+        <basepom.site.check.skip-pmd>${basepom.check.skip-pmd}</basepom.site.check.skip-pmd>
+        <basepom.site.check.skip-spotbugs>${basepom.check.skip-spotbugs}</basepom.site.check.skip-spotbugs>
     </properties>
 
     <distributionManagement>
@@ -196,7 +203,7 @@
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>${dep.plugin.surefire.version}</version>
                 <configuration>
-                    <skipSurefireReport>${basepom.test.skip}</skipSurefireReport>
+                    <skipSurefireReport>${basepom.site.test.skip}</skipSurefireReport>
                 </configuration>
             </plugin>
 
@@ -204,7 +211,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <configuration>
-                    <skip>${basepom.check.skip-checkstyle}</skip>
+                    <skip>${basepom.site.check.skip-checkstyle}</skip>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <consoleOutput>false</consoleOutput>
                     <linkXRef>true</linkXRef>
@@ -216,7 +223,7 @@
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>${dep.plugin.jxr.version}</version>
                 <configuration>
-                    <skip>${basepom.check.skip-javadoc}</skip>
+                    <skip>${basepom.site.check.skip-javadoc}</skip>
                 </configuration>
             </plugin>
 
@@ -224,7 +231,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <configuration>
-                    <skip>${basepom.check.skip-pmd}</skip>
+                    <skip>${basepom.site.check.skip-pmd}</skip>
                     <targetJdk>${project.build.targetJdk}</targetJdk>
                     <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                     <linkXRef>true</linkXRef>
@@ -242,7 +249,7 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <configuration>
-                    <skip>${basepom.check.skip-spotbugs}</skip>
+                    <skip>${basepom.site.check.skip-spotbugs}</skip>
                     <maxHeap>${basepom.build.maxheap-mb}</maxHeap>
                 </configuration>
             </plugin>
@@ -251,7 +258,7 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <configuration>
-                    <skip>${basepom.check.skip-coverage}</skip>
+                    <skip>${basepom.site.check.skip-coverage}</skip>
                 </configuration>
                 <reportSets>
                     <reportSet>
@@ -266,7 +273,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
-                    <skip>${basepom.check.skip-javadoc}</skip>
+                    <skip>${basepom.site.check.skip-javadoc}</skip>
                     <release>${project.build.targetJdk}</release>
                     <source>${project.build.sourceVersion}</source>
                     <encoding>${project.build.sourceEncoding}</encoding>
