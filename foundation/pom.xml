@@ -191,8 +191,8 @@
         <dep.spotbugs.version>4.5.3</dep.spotbugs.version>
 
         <!-- https://github.com/apache/maven-dependency-analyzer/releases -->
-        <!-- Still holding off on upgrading to 1.11.3 because MDEP-753 / MDEP-757 -->
-        <dep.dependency-analyzer.version>1.11.1</dep.dependency-analyzer.version>
+        <dep.dependency-analyzer.version>1.12.0</dep.dependency-analyzer.version>
+        <dep.dependency-asm.version>9.3</dep.dependency-asm.version>
 
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
@@ -218,8 +218,7 @@
 
         <!-- tools -->
         <dep.plugin.assembly.version>3.3.0</dep.plugin.assembly.version>
-        <!-- Still holding off on upgrading to 3.2.0 because MDEP-753 / MDEP-757 -->
-        <dep.plugin.dependency.version>3.1.2</dep.plugin.dependency.version>
+        <dep.plugin.dependency.version>3.3.0</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>3.0.0</dep.plugin.enforcer.version>
         <dep.plugin.invoker.version>3.2.2</dep.plugin.invoker.version>
         <dep.plugin.release.version>3.0.0-M5</dep.plugin.release.version>
@@ -332,6 +331,11 @@
                             <groupId>org.apache.maven.shared</groupId>
                             <artifactId>maven-dependency-analyzer</artifactId>
                             <version>${dep.dependency-analyzer.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.ow2.asm</groupId>
+                            <artifactId>asm</artifactId>
+                            <version>${dep.dependency-asm.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
