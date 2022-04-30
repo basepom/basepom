@@ -6,8 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
-* Add report set for javadoc site
-* Add controls for site reports (`basepom.site.check.skip-...` and `basepom.site.test.skip`) to control site report generation independently from main report generation. All settings default to the parent (`basepom.check.skip-...` and `basepom.test.skip`) values.
+### Added
+
+* create report set for javadoc site
+* new controls for site reports (`basepom.site.check.skip-...` and `basepom.site.test.skip`) to control site report generation independently from main report generation. All settings default to the parent (`basepom.check.skip-...` and `basepom.test.skip`) values.
 
 ## 43 - 2022-01-29
 
@@ -19,14 +21,14 @@ Every release of this project is potentially incompatible to the previous one ev
 * exclude `CNAME` file (for github site setup)
 
 ### Changed
-* Bump deploy plugin to 3.0.0-M2 to (from 3.0.0-M1)
-* Bump site plugin to 3.10.0 to (from 3.9.1)
-* Bump compiler plugin to 3.9.0 to (from 3.8.1)
+* Bump deploy plugin to 3.0.0-M2 (from 3.0.0-M1)
+* Bump site plugin to 3.10.0 (from 3.9.1)
+* Bump compiler plugin to 3.9.0 (from 3.8.1)
 * Bump jar plugin to 3.2.2 (from 3.2.0)
-* Bump release plugin to 3.0.0-M5 to (from 3.0.0-M4)
+* Bump release plugin to 3.0.0-M5 (from 3.0.0-M4)
 * Bump scm plugin to 2.0.0-M1 (from 1.12.0)
 * Bump PMD to 6.42.0 (from 6.39.0)
-* Bump spotbugs to 4.5.3 to (from 4.4.2)
+* Bump spotbugs to 4.5.3 (from 4.4.2)
 * Bump checkstyle to 9.2.1 (from 9.0.1)
 * Bump build-helper plugin to 3.3.0 (from 3.2.0)
 * Bump duplicate-finder plugin to 1.5.1 (from 1.5.0)
@@ -264,9 +266,9 @@ This version is identical to version 31, except that it requires a JDK 9+ as the
 * Bump PMD to 6.18.0 (from 6.16.0)
 * Bump checkstyle to 8.25.0 (from 8.22.0)
 * Bump site plugin to 3.8.2 (from 3.7.1)
-* Bump javadoc plugin to 3.1.1 to (from 3.1.0)
+* Bump javadoc plugin to 3.1.1 (from 3.1.0)
 * Bump invoker plugin to 3.2.1 (from 3.2.0)
-* Bump spotbugs plugin to 3.1.12.2 to (from 3.1.12)
+* Bump spotbugs plugin to 3.1.12.2 (from 3.1.12)
 * Bump jacoco plugin to 0.8.5 (from 0.8.4)
 * Bump git-commit-id plugin to 3.0.1 (from 3.0.0)
 * Bump scala plugin to 4.2.0 (from 4.0.2)
@@ -338,7 +340,7 @@ version properties. They are identical by default.
 * 2018-09-07 - (foundation) Upgrade spotbugs plugin to 3.1.6 (from 3.1.5)
 * 2018-09-07 - (foundation) Upgrade jacoco plugin to 0.8.2 (from 0.8.1)
 * 2018-09-07 - (foundation) Upgrade git-commit-id plugin to 2.2.5 (from 2.2.4)
-* 2018-09-07 - (foundation) Upgrade scala plugin to 3.4.2 to (from 3.4.1)
+* 2018-09-07 - (foundation) Upgrade scala plugin to 3.4.2 (from 3.4.1)
 
 ## Version 26
 
