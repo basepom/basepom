@@ -11,6 +11,18 @@ Every release of this project is potentially incompatible to the previous one ev
 * create report set for javadoc site
 * new controls for site reports (`basepom.site.check.skip-...` and `basepom.site.test.skip`) to control site report generation independently from main report generation. All settings default to the parent (`basepom.check.skip-...` and `basepom.test.skip`) values.
 
+### Changed
+* Bump clean plugin to 3.2.0 (from 3.1.0)
+* Bump compiler plugin to 3.10.1 (from 3.9.0)
+* Bump failsafe plugin to 3.0.0-M6 (from 3.0.0-M5)
+* Bump site plugin to 3.12.0 (from 3.10.0)
+* Bump surefire plugin to 3.0.0-M6 (from 3.0.0-M5)
+* Bump share plugin to 3.3.0 (from 3.2.4)
+* Bump javadoc plugin to 3.4.0 (from 3.3.1)
+* Bump pmd plugin to 3.16.0 (from 3.15.0)
+* Bump dependency plugin to 3.3.0 (from 3.1.2)
+
+
 ## 43 - 2022-01-29
 
 ### Added
