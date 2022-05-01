@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 44 - 2022-04-30
+
 This release finally updates the dependency plugin post 3.1.2, thus enabling Java 17 support. However, the behavior with test dependencies has changed from the 3.1.2 release. If a build reports large numbers of *Non-test scoped test only dependencies found* problems, this is due to the new behavior.
 
 The recommended fix from the Apache Maven team is either to add these dependencies to the `ignoredNonTestScopedDependencies` configuration which is brittle and cumbersome or to change the scope of these dependencies to `test` which may break for many reasons, especially in larger projects. Changing the scope also clashes with the dependency-scope plugin so this must be temporarily disabled with `<basepom.check.skip-dependency-scope>true</basepom.check.skip-dependency-scope>`.
