@@ -21,6 +21,15 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump javadoc plugin to 3.4.0 (from 3.3.1)
 * Bump pmd plugin to 3.16.0 (from 3.15.0)
 * Bump dependency plugin to 3.3.0 (from 3.1.2)
+* Bump dependency-analyzer to 1.12.0 (from 1.11.1)
+* Bump PMD to 6.45.0 (from 6.42.0)
+* Bump checkstyle to 10.2 (from 9.2.1)
+* Bump spotbugs to 4.6.0 (from 4.5.3)
+* Bump jacoco plugin to 0.8.8 (from 0.8.7)
+* Bump project-info-reports plugin to 3.2.2 (from 3.1.2)
+* Bump spotbugs plugin to 4.6.0.0 (from 4.5.3.0)
+* Bump jxr plugin to 3.2.0 (from 3.1.1)
+* Bump license plugin to 4.2.rc3 (from 4.2.rc2)
 
 
 ## 43 - 2022-01-29

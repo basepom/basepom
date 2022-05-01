@@ -182,17 +182,16 @@
         <basepom.maven.version>3.6.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>6.42.0</dep.pmd.version>
+        <dep.pmd.version>6.45.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>9.2.1</dep.checkstyle.version>
+        <dep.checkstyle.version>10.2</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
-        <dep.spotbugs.version>4.5.3</dep.spotbugs.version>
+        <dep.spotbugs.version>4.6.0</dep.spotbugs.version>
 
-        <!-- https://github.com/apache/maven-dependency-analyzer/releases -->
-        <!-- Still holding off on upgrading to 1.11.3 because MDEP-753 / MDEP-757 -->
-        <dep.dependency-analyzer.version>1.11.1</dep.dependency-analyzer.version>
+        <!-- https://github.com/apache/maven-dependency-analyzer/tags -->
+        <dep.dependency-analyzer.version>1.12.0</dep.dependency-analyzer.version>
 
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
@@ -241,10 +240,10 @@
         <dep.plugin.duplicate-finder.version>1.5.1</dep.plugin.duplicate-finder.version>
 
         <!-- https://github.com/spotbugs/spotbugs-maven-plugin/releases -->
-        <dep.plugin.spotbugs.version>4.5.3.0</dep.plugin.spotbugs.version>
+        <dep.plugin.spotbugs.version>4.6.0.0</dep.plugin.spotbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
-        <dep.plugin.jacoco.version>0.8.7</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.8.8</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/property-helper-maven-plugin/tags -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
