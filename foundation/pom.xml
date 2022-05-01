@@ -246,13 +246,13 @@
         <!-- https://github.com/jacoco/jacoco/releases -->
         <dep.plugin.jacoco.version>0.8.7</dep.plugin.jacoco.version>
 
-        <!-- https://github.com/basepom/property-helper-maven-plugin/releases -->
+        <!-- https://github.com/basepom/property-helper-maven-plugin/tags -->
         <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
 
         <!-- https://github.com/git-commit-id/git-commit-id-maven-plugin/releases -->
         <dep.plugin.git-commit-id.version>5.0.0</dep.plugin.git-commit-id.version>
 
-        <!-- https://github.com/brianm/really-executable-jars-maven-plugin/releases -->
+        <!-- https://github.com/brianm/really-executable-jars-maven-plugin/tags -->
         <dep.plugin.really-executable.version>1.5.0</dep.plugin.really-executable.version>
     </properties>
 
