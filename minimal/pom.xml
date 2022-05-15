@@ -125,11 +125,18 @@
                                     </dependency>
                                     <dependency>
                                         <groupId>org.glassfish.hk2.external</groupId>
-                                        <artifactId>jakarta.inject</artifactId>
+                                        <artifactId>javax.inject</artifactId>
                                     </dependency>
+                                </conflictingDependencies>
+                                <packages>
+                                    <package>javax.inject</package>
+                                </packages>
+                            </exception>
+                            <exception>
+                                <conflictingDependencies>
                                     <dependency>
                                         <groupId>org.glassfish.hk2.external</groupId>
-                                        <artifactId>javax.inject</artifactId>
+                                        <artifactId>jakarta.inject</artifactId>
                                     </dependency>
                                     <dependency>
                                         <groupId>jakarta.inject</groupId>
@@ -137,7 +144,7 @@
                                     </dependency>
                                 </conflictingDependencies>
                                 <packages>
-                                    <package>javax.inject</package>
+                                    <package>jakarta.inject</package>
                                 </packages>
                             </exception>
                             <!-- Glassfish repackages aopalliance annotations -->
@@ -209,16 +216,17 @@
                             <!-- jars that only contain annotations are pretty rough to detect as they need -->
                             <!-- to be present when compiling but may or may not be referenced at runtime -->
                             <ignoredDependency>aopalliance:aopalliance</ignoredDependency>
+                            <ignoredDependency>com.github.spotbugs:spotbugs-annotations</ignoredDependency>
                             <ignoredDependency>com.google.code.findbugs:annotations</ignoredDependency>
                             <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
+                            <ignoredDependency>com.google.errorprone:error_prone_annotations</ignoredDependency>
+                            <ignoredDependency>jakarta.inject:jakarta.inject-api</ignoredDependency>
                             <ignoredDependency>javax.inject:javax.inject</ignoredDependency>
                             <ignoredDependency>net.jcip:jcip-annotations</ignoredDependency>
+                            <ignoredDependency>org.checkerframework:checker-qual</ignoredDependency>
                             <ignoredDependency>org.glassfish.hk2.external:aopalliance-repackaged</ignoredDependency>
+                            <ignoredDependency>org.glassfish.hk2.external:jakarta.inject</ignoredDependency>
                             <ignoredDependency>org.glassfish.hk2.external:javax.inject</ignoredDependency>
-                            <ignoredDependency>jakarta.inject:jakarta.inject-api</ignoredDependency>
-                            <ignoredDependency>com.google.errorprone:error_prone_annotations</ignoredDependency>
-                            <ignoreDependency>com.github.spotbugs:spotbugs-annotations</ignoreDependency>
-                            <ignoreDependency>org.checkerframework:checker-qual</ignoreDependency>
                         </ignoredDependencies>
                     </configuration>
                 </plugin>

@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Changed
+
+* Correctly ignore jakarta.inject annotations
+
 ## 44 - 2022-04-30
 
 This release finally updates the dependency plugin post 3.1.2, thus enabling Java 17 support. However, the behavior with test dependencies has changed from the 3.1.2 release. If a build reports large numbers of *Non-test scoped test only dependencies found* problems, this is due to the new behavior.
