@@ -9,6 +9,13 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * Correctly ignore jakarta.inject annotations
+* Bump policy jar to 9 (from 8)
+* Bump spotbugs plugin to 4.7.0.0 (from 4.6.0.0)
+* Bump spotbugs to 4.7.0 (from 4.6.0)
+
+### Added
+* Add suppression of noisy 4.7.x spotbugs annotations to the minimal pom.
+
 
 ## 44 - 2022-04-30
 

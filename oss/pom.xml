@@ -249,8 +249,16 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.basepom</groupId>
+                            <artifactId>basepom-policy</artifactId>
+                            <version>${dep.basepom-policy.version}</version>
+                        </dependency>
+                    </dependencies>
                     <skip>${basepom.site.check.skip-spotbugs}</skip>
                     <maxHeap>${basepom.build.maxheap-mb}</maxHeap>
+                    <excludeFilterFile>spotbugs/spotbugs-suppress.xml</excludeFilterFile>
                 </configuration>
             </plugin>
 

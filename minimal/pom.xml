@@ -42,7 +42,7 @@
         <basepom.shaded.main-class />
 
         <!-- policy jar for license and checkstyle defaults -->
-        <dep.basepom-policy.version>8</dep.basepom-policy.version>
+        <dep.basepom-policy.version>9</dep.basepom-policy.version>
     </properties>
 
     <repositories>
@@ -269,6 +269,21 @@
                             <version>${dep.basepom-policy.version}</version>
                         </dependency>
                     </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.basepom</groupId>
+                            <artifactId>basepom-policy</artifactId>
+                            <version>${dep.basepom-policy.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <excludeFilterFile>spotbugs/spotbugs-suppress.xml</excludeFilterFile>
+                    </configuration>
                 </plugin>
 
                 <plugin>
