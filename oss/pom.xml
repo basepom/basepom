@@ -185,6 +185,7 @@
                 </configuration>
                 <reportSets>
                     <reportSet>
+                        <id>default</id>
                         <reports>
                             <report>index</report>
                             <report>summary</report>
@@ -239,6 +240,7 @@
                 </configuration>
                 <reportSets>
                     <reportSet>
+                        <id>default</id>
                         <reports>
                             <report>pmd</report>
                         </reports>
@@ -271,6 +273,7 @@
                 </configuration>
                 <reportSets>
                     <reportSet>
+                        <id>default</id>
                         <reports>
                             <report>report</report>
                         </reports>
