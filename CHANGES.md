@@ -12,6 +12,9 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump policy jar to 9 (from 8)
 * Bump spotbugs plugin to 4.7.0.0 (from 4.6.0.0)
 * Bump spotbugs to 4.7.0 (from 4.6.0)
+* Bump site plugin to 4.0.0-M1 (from 3.12.0)
+* Bump project-info-reports plugin to 3.3.0 (from 3.2.2)
+* Bump property-helper plugin to 3.0 (from 2.0)
 
 ### Added
 * Add suppression of noisy 4.7.x spotbugs annotations to the minimal pom.

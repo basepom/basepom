@@ -202,7 +202,7 @@
         <dep.plugin.failsafe.version>3.0.0-M6</dep.plugin.failsafe.version>
         <dep.plugin.install.version>3.0.0-M1</dep.plugin.install.version>
         <dep.plugin.resources.version>3.2.0</dep.plugin.resources.version>
-        <dep.plugin.site.version>3.12.0</dep.plugin.site.version>
+        <dep.plugin.site.version>4.0.0-M1</dep.plugin.site.version>
         <dep.plugin.surefire.version>3.0.0-M6</dep.plugin.surefire.version>
 
         <!-- packaging -->
@@ -245,8 +245,8 @@
         <!-- https://github.com/jacoco/jacoco/releases -->
         <dep.plugin.jacoco.version>0.8.8</dep.plugin.jacoco.version>
 
-        <!-- https://github.com/basepom/property-helper-maven-plugin/tags -->
-        <dep.plugin.property-helper.version>2.0</dep.plugin.property-helper.version>
+        <!-- https://github.com/basepom/maven-plugins/releases -->
+        <dep.plugin.property-helper.version>3.0</dep.plugin.property-helper.version>
 
         <!-- https://github.com/git-commit-id/git-commit-id-maven-plugin/releases -->
         <dep.plugin.git-commit-id.version>5.0.0</dep.plugin.git-commit-id.version>
