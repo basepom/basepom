@@ -997,7 +997,7 @@
             <activation>
                 <file>
                     <!-- An integration testing folder exists for the invoker plugin. -->
-                    <exists>${basedir}/${basepom.invoker.folder}</exists>
+                    <exists>src/it</exists>
                 </file>
             </activation>
             <build>
