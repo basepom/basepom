@@ -18,6 +18,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Added
 * Add suppression of noisy 4.7.x spotbugs annotations to the minimal pom.
+* Add workaround for MDEP-804 to minimal pom
 
 
 ## 44 - 2022-04-30
