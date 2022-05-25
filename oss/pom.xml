@@ -218,6 +218,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${dep.plugin.checkstyle.version}</version>
                 <configuration>
                     <skip>${basepom.site.check.skip-checkstyle}</skip>
                     <encoding>${project.build.sourceEncoding}</encoding>
@@ -238,6 +239,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
+                <version>${dep.plugin.pmd.version}</version>
                 <configuration>
                     <skip>${basepom.site.check.skip-pmd}</skip>
                     <targetJdk>${project.build.targetJdk}</targetJdk>
@@ -257,6 +259,7 @@
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>${dep.plugin.spotbugs.version}</version>
                 <configuration>
                     <dependencies>
                         <dependency>
@@ -274,6 +277,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${dep.plugin.jacoco.version}</version>
                 <configuration>
                     <skip>${basepom.site.check.skip-coverage}</skip>
                 </configuration>
@@ -290,6 +294,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${dep.plugin.javadoc.version}</version>
                 <configuration>
                     <skip>${basepom.site.check.skip-javadoc}</skip>
                     <release>${project.build.targetJdk}</release>
