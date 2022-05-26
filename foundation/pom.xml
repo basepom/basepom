@@ -95,6 +95,10 @@
         <!-- define minimum level for pmd to fail the build -->
         <basepom.pmd.fail-level>4</basepom.pmd.fail-level>
 
+        <!-- jacoco command line property. Define as empty (the plugin will overwrite that value) -->
+        <basepom.coverage.test-args/>
+        <basepom.coverage.it-args/>
+
         <!-- Controls all the checkers run when building the project.                 -->
         <!-- Can be activated with -Dbasepom.check.skip-all=true on the command line. -->
         <basepom.check.skip-all>false</basepom.check.skip-all>
@@ -385,7 +389,7 @@
                     <version>${dep.plugin.surefire.version}</version>
                     <configuration>
                         <skipTests>${basepom.test.skip}</skipTests>
-                        <argLine>${argLine} -Xmx${basepom.test.memory} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
+                        <argLine>@{basepom.coverage.test-args} -Xmx${basepom.test.memory} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
                         <runOrder>random</runOrder>
                         <reuseForks>${basepom.test.reuse-vm}</reuseForks>
                         <forkCount>${basepom.test.fork-count}</forkCount>
@@ -400,7 +404,7 @@
                     <version>${dep.plugin.failsafe.version}</version>
                     <configuration>
                         <skipITs>${basepom.it.skip}</skipITs>
-                        <argLine>${argLine} -Xmx${basepom.it.memory} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
+                        <argLine>@{basepom.coverage.it-args} -Xmx${basepom.it.memory} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
                         <runOrder>random</runOrder>
                         <reuseForks>${basepom.failsafe.reuse-vm}</reuseForks>
                         <forkCount>${basepom.failsafe.fork-count}</forkCount>
@@ -647,6 +651,7 @@
                     <configuration>
                         <skip>${basepom.check.skip-coverage}</skip>
                         <haltOnFailure>${basepom.check.fail-coverage}</haltOnFailure>
+                        <propertyName>basepom.coverage.test-args</propertyName>
                     </configuration>
                 </plugin>
 
@@ -985,6 +990,9 @@
                         <goals>
                             <goal>prepare-agent-integration</goal>
                         </goals>
+                        <configuration>
+                            <propertyName>basepom.coverage.it-args</propertyName>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
