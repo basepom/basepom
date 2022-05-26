@@ -18,7 +18,7 @@
     <groupId>org.basepom</groupId>
     <artifactId>basepom-foundation</artifactId>
     <packaging>pom</packaging>
-    <version>45-SNAPSHOT</version>
+    <version>45</version>
 
     <!--
         <name>basepom-foundation</name>
@@ -96,8 +96,8 @@
         <basepom.pmd.fail-level>4</basepom.pmd.fail-level>
 
         <!-- jacoco command line property. Define as empty (the plugin will overwrite that value) -->
-        <basepom.coverage.test-args/>
-        <basepom.coverage.it-args/>
+        <basepom.coverage.test-args />
+        <basepom.coverage.it-args />
 
         <!-- Controls all the checkers run when building the project.                 -->
         <!-- Can be activated with -Dbasepom.check.skip-all=true on the command line. -->
