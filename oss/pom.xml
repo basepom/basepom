@@ -59,12 +59,13 @@
         <!-- control reporting independently from the checkers -->
         <basepom.site.test.skip>${basepom.test.skip}</basepom.site.test.skip>
         <basepom.site.it.skip>${basepom.it.skip}</basepom.site.it.skip>
-        <basepom.site.check.skip-checkstyle>${basepom.check.skip-checkstyle}</basepom.site.check.skip-checkstyle>
-        <basepom.site.check.skip-coverage>${basepom.check.skip-coverage}</basepom.site.check.skip-coverage>
-        <basepom.site.check.skip-javadoc>${basepom.check.skip-javadoc}</basepom.site.check.skip-javadoc>
-        <basepom.site.check.skip-pmd>${basepom.check.skip-pmd}</basepom.site.check.skip-pmd>
-        <basepom.site.check.skip-spotbugs>${basepom.check.skip-spotbugs}</basepom.site.check.skip-spotbugs>
-    </properties>
+        <basepom.site.skip-checkstyle>${basepom.check.skip-checkstyle}</basepom.site.skip-checkstyle>
+        <basepom.site.skip-coverage>${basepom.check.skip-coverage}</basepom.site.skip-coverage>
+        <basepom.site.skip-pmd>${basepom.check.skip-pmd}</basepom.site.skip-pmd>
+        <basepom.site.skip-spotbugs>${basepom.check.skip-spotbugs}</basepom.site.skip-spotbugs>
+        <!-- javadoc is special -->
+        <basepom.site.skip-javadoc>${basepom.javadoc.skip}</basepom.site.skip-javadoc>
+   </properties>
 
     <distributionManagement>
         <snapshotRepository>
@@ -213,6 +214,14 @@
                 <configuration>
                     <skipSurefireReport>${basepom.site.test.skip}</skipSurefireReport>
                 </configuration>
+                <reportSets>
+                    <reportSet>
+                        <id>default</id>
+                        <reports>
+                            <report>report-only</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
 
             <plugin>
@@ -220,7 +229,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${dep.plugin.checkstyle.version}</version>
                 <configuration>
-                    <skip>${basepom.site.check.skip-checkstyle}</skip>
+                    <skip>${basepom.site.skip-checkstyle}</skip>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <consoleOutput>false</consoleOutput>
                     <linkXRef>true</linkXRef>
@@ -232,7 +241,7 @@
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>${dep.plugin.jxr.version}</version>
                 <configuration>
-                    <skip>${basepom.site.check.skip-javadoc}</skip>
+                    <skip>${basepom.site.skip-javadoc}</skip>
                 </configuration>
             </plugin>
 
@@ -241,7 +250,7 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>${dep.plugin.pmd.version}</version>
                 <configuration>
-                    <skip>${basepom.site.check.skip-pmd}</skip>
+                    <skip>${basepom.site.skip-pmd}</skip>
                     <targetJdk>${project.build.targetJdk}</targetJdk>
                     <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                     <linkXRef>true</linkXRef>
@@ -268,7 +277,7 @@
                             <version>${dep.basepom-policy.version}</version>
                         </dependency>
                     </dependencies>
-                    <skip>${basepom.site.check.skip-spotbugs}</skip>
+                    <skip>${basepom.site.skip-spotbugs}</skip>
                     <maxHeap>${basepom.build.maxheap-mb}</maxHeap>
                     <excludeFilterFile>spotbugs/spotbugs-suppress.xml</excludeFilterFile>
                 </configuration>
@@ -279,13 +288,14 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${dep.plugin.jacoco.version}</version>
                 <configuration>
-                    <skip>${basepom.site.check.skip-coverage}</skip>
+                    <skip>${basepom.site.skip-coverage}</skip>
                 </configuration>
                 <reportSets>
                     <reportSet>
                         <id>default</id>
                         <reports>
                             <report>report</report>
+                            <report>report-integration</report>
                         </reports>
                     </reportSet>
                 </reportSets>
@@ -296,7 +306,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${dep.plugin.javadoc.version}</version>
                 <configuration>
-                    <skip>${basepom.site.check.skip-javadoc}</skip>
+                    <skip>${basepom.site.skip-javadoc}</skip>
                     <release>${project.build.targetJdk}</release>
                     <source>${project.build.sourceVersion}</source>
                     <encoding>${project.build.sourceEncoding}</encoding>
@@ -309,8 +319,8 @@
                     <reportSet>
                         <id>default</id>
                         <reports>
-                            <report>javadoc</report>
-                            <report>test-javadoc</report>
+                            <report>javadoc-no-fork</report>
+                            <report>test-javadoc-no-fork</report>
                         </reports>
                     </reportSet>
                 </reportSets>
