@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+
+
+## 45 - 2022-05-25
+
 ### Changed
 
 * Correctly ignore jakarta.inject annotations
@@ -15,10 +19,15 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump site plugin to 4.0.0-M1 (from 3.12.0)
 * Bump project-info-reports plugin to 3.3.0 (from 3.2.2)
 * Bump property-helper plugin to 3.0 (from 2.0)
+* Bump policy jar to 9 (from 8) to suppress noisy new spotbugs checks
+* Change `basepom.site.check.skip-*` properties to `basepom.site.skip-*` properties.
+* Cleanup site reports
 
 ### Added
 * Add suppression of noisy 4.7.x spotbugs annotations to the minimal pom.
 * Add workaround for MDEP-804 to minimal pom
+* Use hardcoded `src/it` folder to activate invoker integration test profiles (maven limitation)
+
 
 
 ## 44 - 2022-04-30
