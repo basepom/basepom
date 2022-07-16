@@ -186,13 +186,13 @@
         <basepom.maven.version>3.6.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>6.45.0</dep.pmd.version>
+        <dep.pmd.version>6.47.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>10.2</dep.checkstyle.version>
+        <dep.checkstyle.version>10.3.1</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
-        <dep.spotbugs.version>4.7.0</dep.spotbugs.version>
+        <dep.spotbugs.version>4.7.1</dep.spotbugs.version>
 
         <!-- https://github.com/apache/maven-dependency-analyzer/tags -->
         <dep.dependency-analyzer.version>1.12.0</dep.dependency-analyzer.version>
@@ -203,11 +203,11 @@
         <dep.plugin.clean.version>3.2.0</dep.plugin.clean.version>
         <dep.plugin.compiler.version>3.10.1</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>3.0.0-M2</dep.plugin.deploy.version>
-        <dep.plugin.failsafe.version>3.0.0-M6</dep.plugin.failsafe.version>
+        <dep.plugin.failsafe.version>3.0.0-M7</dep.plugin.failsafe.version>
         <dep.plugin.install.version>3.0.0-M1</dep.plugin.install.version>
         <dep.plugin.resources.version>3.2.0</dep.plugin.resources.version>
-        <dep.plugin.site.version>4.0.0-M1</dep.plugin.site.version>
-        <dep.plugin.surefire.version>3.0.0-M6</dep.plugin.surefire.version>
+        <dep.plugin.site.version>4.0.0-M2</dep.plugin.site.version>
+        <dep.plugin.surefire.version>3.0.0-M7</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>3.2.2</dep.plugin.jar.version>
@@ -217,14 +217,14 @@
         <!-- reporting -->
         <dep.plugin.checkstyle.version>3.1.2</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>3.4.0</dep.plugin.javadoc.version>
-        <dep.plugin.pmd.version>3.16.0</dep.plugin.pmd.version>
+        <dep.plugin.pmd.version>3.17.0</dep.plugin.pmd.version>
 
         <!-- tools -->
-        <dep.plugin.assembly.version>3.3.0</dep.plugin.assembly.version>
+        <dep.plugin.assembly.version>3.4.1</dep.plugin.assembly.version>
         <dep.plugin.dependency.version>3.3.0</dep.plugin.dependency.version>
-        <dep.plugin.enforcer.version>3.0.0</dep.plugin.enforcer.version>
-        <dep.plugin.invoker.version>3.2.2</dep.plugin.invoker.version>
-        <dep.plugin.release.version>3.0.0-M5</dep.plugin.release.version>
+        <dep.plugin.enforcer.version>3.1.0</dep.plugin.enforcer.version>
+        <dep.plugin.invoker.version>3.3.0</dep.plugin.invoker.version>
+        <dep.plugin.release.version>3.0.0-M6</dep.plugin.release.version>
         <dep.plugin.scm.version>2.0.0-M1</dep.plugin.scm.version>
         <dep.plugin.scm-publish.version>3.1.0</dep.plugin.scm-publish.version>
 
@@ -244,7 +244,7 @@
         <dep.plugin.duplicate-finder.version>1.5.1</dep.plugin.duplicate-finder.version>
 
         <!-- https://github.com/spotbugs/spotbugs-maven-plugin/releases -->
-        <dep.plugin.spotbugs.version>4.7.0.0</dep.plugin.spotbugs.version>
+        <dep.plugin.spotbugs.version>4.7.1.0</dep.plugin.spotbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
         <dep.plugin.jacoco.version>0.8.8</dep.plugin.jacoco.version>

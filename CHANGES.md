@@ -6,7 +6,20 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Changed
 
+* Bump invoker plugin to 3.3.0 (from 3.2.2)
+* Bump pmd plugin to 3.17.0 (from 3.16.0)
+* Bump failsafe plugin to 3.0.0-M7 (from 3.0.0-M6)
+* Bump surefire plugin to 3.0.0-M7 (from 3.0.0-M6)
+* Bump site plugin to 4.0.0-M2 (from 4.0.0-M1)
+* Bump enforcer plugin to 3.1.0 (from 3.0.0)
+* Bump release plugin to 3.0.0-M6 (from 3.0.0-M5)
+* Bump assembly plugin to 3.4.1 (from 3.3.0)
+* Bump spotbugs plugin to 4.7.1.0 (from 4.7.0)
+* Bump pmd to 6.47.0 (from 6.45.0)
+* Bump checkstyle to 10.3.1 to (from 10.2)
+* Bump spotbugs to 4.7.1 (from 4.7.0)
 
 ## 45 - 2022-05-25
 
