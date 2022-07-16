@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 46 - 2022-07-16
+
 ### Changed
 
 * Bump invoker plugin to 3.3.0 (from 3.2.2)
