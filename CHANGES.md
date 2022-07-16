@@ -21,6 +21,32 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump checkstyle to 10.3.1 to (from 10.2)
 * Bump spotbugs to 4.7.1 (from 4.7.0)
 
+* spotbugs now supports multiple exclusion files. This version changes the default exclusion setup in the `minimal` and `oss`:
+
+Old:
+```xml
+  <excludeFilterFile>spotbugs/spotbugs-suppress.xml</excludeFilterFile>
+```
+
+New:
+
+``` xml
+<excludeFilterFiles>
+    <excludeFilterFile>spotbugs/spotbugs-suppress.xml</excludeFilterFile>
+</excludeFilterFiles>
+```
+
+If a project supplies its own spotbugs exclusion file, it can no longer rely on overwriting the default file by setting the `excludeFilteFile` property but must do
+
+``` xml
+<excludeFilterFiles combine.children="overwrite">
+    <excludeFilterFile>... new exclusion files ...</excludeFilterFile>
+</excludeFilterFiles>
+```
+
+Otherwise, the default exclusion file will be loaded in addition to any project specific files. There are only very few exclusions (see [this file](https://github.com/basepom/basepom-policy/blob/master/src/main/resources/spotbugs/spotbugs-suppress.xml) for a full list) so this might not be a big problem.
+
+
 ## 45 - 2022-05-25
 
 ### Changed

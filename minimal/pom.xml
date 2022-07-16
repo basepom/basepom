@@ -286,7 +286,9 @@
                         </dependency>
                     </dependencies>
                     <configuration>
-                        <excludeFilterFile>spotbugs/spotbugs-suppress.xml</excludeFilterFile>
+                        <excludeFilterFiles>
+                            <excludeFilterFile>spotbugs/spotbugs-suppress.xml</excludeFilterFile>
+                        </excludeFilterFiles>
                     </configuration>
                 </plugin>
 
