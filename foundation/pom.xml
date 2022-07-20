@@ -726,7 +726,7 @@
                     <artifactId>maven-scm-publish-plugin</artifactId>
                     <version>${dep.plugin.scm-publish.version}</version>
                     <configuration>
-                        <skip>${basepom.site.skip}</skip>
+                        <skipDeployement>${basepom.site.skip}</skipDeployement>
                         <localCheckout>true</localCheckout>
                     </configuration>
                 </plugin>
