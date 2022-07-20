@@ -100,7 +100,6 @@
                         <!-- for install-file -->
                         <groupId>${project.groupId}</groupId>
                         <generatePom>false</generatePom>
-                        <createChecksum>true</createChecksum>
                         <packaging>pom</packaging>
                         <version>${project.version}</version>
                     </configuration>
