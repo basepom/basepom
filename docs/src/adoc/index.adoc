@@ -1,0 +1,946 @@
+= BasePOM Users Guide
+:doctype: book
+:toc: left
+:toclevels: 3
+:sectanchors:
+:sectlinks:
+:sectnums:
+:linkattrs:
+:icons: font
+:source-highlighter: coderay
+:source-language: asciidoc
+:imagesdir: images
+:docinfo: private
+
+:projecthome: https://github.com/basepom/basepom
+
+== Introduction
+
+The BasePOM project aims to make using Apache Maven as a build tool painless. It provides a set of well known plugins for Apache Maven with an opinionated base configuration and a number of configuration options. It is aiming at Java projects but can easily be extended for other languages that are supported by Apache Maven.
+
+It provides base configurations for unified, organization-wide build setups and supports simple project setups and complex Multi Module project use cases.
+
+BasePOM and its private predecessors have been in use in many companies and open-source projects since 2010.
+
+Core features of BasePOM:
+
+* *Opinionated configuration*. BasePOM Parent POMs configure Maven Plugins with reasonable defaults
+* *Property based customization*. BasePOM Parent POMs expose a number of properties that can be customized in Child POMs or from the command line
+* *Profile activation*. BasePOM Parent POMs contain a number of profiles that activate under specific conditions and customize build steps or activate specific plugins
+* *Policy modifications*. Any aspect of a BasePOM Parent POM can be customized through Policy POMs
+
+== Features
+
+BasePOM provides opinionated configuration for the following plugins:
+
+* core plugins:
+https://maven.apache.org/plugins/maven-clean-plugin/[clean],
+https://maven.apache.org/plugins/maven-compiler-plugin/[compiler],
+https://maven.apache.org/plugins/maven-resources-plugin/[resources],
+https://maven.apache.org/plugins/maven-deploy-plugin/[deploy],
+https://maven.apache.org/plugins/maven-install-plugin/[install]
+
+* packaging plugins:
+https://maven.apache.org/plugins/maven-assembly-plugin/[assembly],
+https://maven.apache.org/plugins/maven-jar-plugin/[jar],
+https://maven.apache.org/plugins/maven-javadoc-plugin/[javadoc],
+https://maven.apache.org/plugins/maven-source-plugin/[source],
+https://maven.apache.org/plugins/maven-shade-plugin/[shade],
+https://maven.apache.org/jxr/maven-jxr-plugin/[jxr]
+
+* testing:
+https://maven.apache.org/surefire/maven-surefire-plugin/[surefire],
+https://maven.apache.org/surefire/maven-failsafe-plugin/[failsafe],
+https://maven.apache.org/plugins/maven-invoker-plugin/[invoker]
+
+* build quality:
+https://maven.apache.org/enforcer/maven-enforcer-plugin/[enforcer],
+https://maven.apache.org/plugins/maven-dependency-plugin/[dependency],
+https://basepom.github.io/dependency-versions-check-maven-plugin/[dependency-versions-check],
+https://github.com/HubSpot/dependency-management-maven-plugin[dependency-management],
+https://github.com/HubSpot/dependency-scope-maven-plugin[dependency-scope],
+https://github.com/basepom/duplicate-finder-maven-plugin/wiki[duplicate-finder],
+https://spotbugs.github.io/spotbugs-maven-plugin/[spotbugs],
+https://maven.apache.org/plugins/maven-pmd-plugin/[pmd],
+https://maven.apache.org/plugins/maven-checkstyle-plugin/[checkstyle],
+https://www.eclemma.org/jacoco/trunk/doc/maven.html[jacoco],
+https://mycila.carbou.me/license-maven-plugin/[license]
+
+* tools:
+https://www.mojohaus.org/build-helper-maven-plugin/[build-helper], property-helper,
+https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md[git-commit-id],
+https://github.com/brianm/really-executable-jars-maven-plugin/[really-executable-jar]
+
+* release and site:
+https://maven.apache.org/scm/maven-scm-plugin/[scm],
+https://maven.apache.org/maven-release/maven-release-plugin/[release],
+https://maven.apache.org/plugins/maven-gpg-plugin/[gpg]
+
+* site building:
+https://maven.apache.org/plugins/maven-site-plugin/[site],
+https://maven.apache.org/plugins/maven-scm-publish-plugin/[scm-publish],
+https://maven.apache.org/plugins/maven-project-info-reports-plugin/[project-info-reports]
+
+Most of the plugins are configured with reasonable defaults and might not need to be changed.
+
+BasePOM provides:
+
+* defaults for build lifecycle setup and phases
+* defaults for unit and integration test execution
+* defaults for code quality checks and static code analysis
+* locked versions for auxiliary tool libraries
+* locked versions for Maven plugins
+
+[IMPORTANT]
+====
+As the BasePOMs stack on top of each other, some features are only available in `minimal` and `oss` or just `oss`. This document applies to all the BasePOMs (`foundation`, `minimal` and `oss`) unless otherwise noted.
+====
+
+== Overview
+
+The Apache Maven documentation is vast, very disjointed and spread across many micro-documentation sites, often outdated and generally hard to understand. As a result, Apache Maven projects often "grow" out of a home-made set of plugins which got copied from some other project and then augmented https://stackoverflow.com/questions/tagged/maven[by looking at StackOverflow]. Maven builds become hard to understand and often undermaintained.
+
+Even though there have been https://maven.apache.org/articles.html[a number of attempts to improve the documentation situation], getting a Maven build going is often dreaded by developers.
+
+None of that is a fundamental Maven problem. Setting up Maven is much easier than setting up build tools that require programming or scripting. And POM inheritance allow centralized setup of almost all aspects of a build.
+
+=== Requirements
+
+* Java 11 is the minimal version for building. It is highly recommended to use the latest LTS version (Java 17) to execute the build process. Each of those Java versions can build project artifacts that are compatible with JDK version 7 or later.
+* Maven 3.6.0 is the minimal version for building. It is recommended to use Apache Maven 3.8.4 or later. BasePOM will stay compatible with the 3.6.0 version of Maven as long as this constraint does not stop innovating.
+
+=== Releases and compatibility
+
+BasePOM uses single digit versioning for releases. Every release is a major version and while there is an effort to keep releases backwards compatible, it is only an effort not goal. Any change in a BasePOM release is listed in the https://github.com/basepom/basepom/blob/main/CHANGES.md[CHANGES file on GitHub].
+
+Build systems are generally stable and there should be no need to upgrade the BasePOM version unless there are compatibility issues with the current version, features from a newer version needed or known security problems.
+
+=== License
+
+All BasePOM code is released under the https://github.com/basepom/basepom/blob/main/LICENSE.txt[Apache Software License Version 2.0].
+
+== Glossary
+
+Single Module Project:: A Maven project that contains only a single POM file in its root directory. This POM file does not contain a `<modules>` section.
+Multi Module Project:: A Maven project that is structured into multiple build units. The POM file in the root directory contains a `<modules>` section and directories with additional POM files.
+POM:: Project object model. The configuration file read by the Apache Maven build tool to execute build steps for a project. A standard POM file is structured using XML and is named `pom.xml`.
+Child POM:: A POM file that contains a `<parent>` section and inherits configuration from the referenced POM file.
+Parent POM:: A POM file that is referenced by a child POM.
+Root POM:: The POM file in the root directory of a Multi Module project.
+Base POM:: A Parent POM file that defines configuration and policy for many projects.
+Policy POM:: A POM file that inherits from a Base POM file and configures specific policies e.g. for an organization. A policy POM in turn serves as a Base POM for an organization.
+
+
+[ditaa, round-corners=true, transparent=false]
+----
+ Single Module Project   Multi Module Project
+ =====================   ====================
+
+    +-------------+        +-------------+
+    |             |        |             |
+    | Base POM    |        | Base POM    |   Parent POM
+    |             |        |             |
+    +------+------+        +-----+-------+
+           ^                     ^
+           |     inheritance     |
+           |                     |
+    +------+------+        +-----+-------+
+    |             |        |             |
+    | Policy POM  |        | Policy POM  |   Child/Parent POM
+    | (optional)  |        | (optional)  |
+    |             |        |             |
+    +------+------+        +-----+-------+
+           ^                     ^
+           |     inheritance     |
+           |                     |
+           |               +-----+-------+
+           |               |             |
+           |               |  Root POM   |   Child/Parent POM
+           |               |             |
+           |               +-----+-------+
+           |                     ^
+           |     inheritance     |
+           |                     |
+           |                     +---------+--------+------------------+
+           |                     |                  |                  |
+    +------+------+       +------+------+    +------+------+    +------+------+
+    |             |       |             |    |             |    |             |
+    | Project POM |       | Module POM  |    | Module POM  |    | Module POM  |   Child POM
+    |             |       |             |    |             |    |             |
+    +-------------+       +-------------+    +-------------+    +-------------+
+----
+
+== BasePOM starting points
+
+BasePOM contains the following Parent POMs:
+
+foundation:: The `foundation` POM provides an opinionated base configuration but not any code-specific policies. It sets the Maven plugins up for further configuration in a specific Policy POM. It is intended as starting point when putting together an organization specific Policy POM. Projects will rarely use this directly.
+
+Usage:
+
+[source,xml,indent=0,subs="+attributes"]
+----
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.basepom</groupId>
+        <artifactId>basepom-foundation</artifactId>
+        <version>{revnumber}</version>
+    </parent>
+...
+</project>
+----
+
+minimal:: This is a bare-bones Policy POM that defines a small set of policies. It can be used directly for projects that do not need a lot of scrutiny. For larger projects, a custom Policy POM should be defined which can be built on top of the `minimal` BasePOM.
+
+[source,xml,indent=0,subs="+attributes"]
+----
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.basepom</groupId>
+        <artifactId>basepom-minimal</artifactId>
+        <version>{revnumber}</version>
+    </parent>
+...
+</project>
+----
+
+oss:: A Policy POM for releasing and distributing projects through the Sonatype OSS repository. It can be used as a parent POM for projects that distribute their artifacts through OSS.
+
+[source,xml,indent=0,subs="+attributes"]
+----
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.basepom</groupId>
+        <artifactId>basepom-oss</artifactId>
+        <version>{revnumber}</version>
+    </parent>
+...
+</project>
+----
+
+== Customizations using Maven properties
+
+BasePOM provides a set of properties that configure the various Maven plugins. The default values have been chosen so that they make sense for most projects.
+
+Each property can be overridden from the command line, a Policy POM or a project specific POM file.
+
+All properties are namespaced using the `.` separator.
+
+* All BasePOM specific properties begin with `basepom.`
+* Properties that define the version of a library or a dependency begin with `dep.` and end with `.version`
+* Properties that define the version of a Maven plugin begin with `dep.plugin.` and end with `.version`
+
+Project customization overrides these properties in Policy or Project POM files. The following tables
+contain a `customization` column that gives some guidance how common these values are modified:
+
+often:: This is a default value that works for some projects. It is common for a Project or Policy POM to override it.
+sometimes:: This is a default value that works for most projects. Project or Policy POMs can override it but most don't.
+rarely:: The default value should work for almost every project. Only in very special cases is it overridden by a Project or Policy POM.
+policy:: This is a value that is often modified as part of a larger, organization-wide policy set of customizations.
+profile:: This value is often controlled through specific profile activation.
+
+=== Standard Maven Properties
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                    | Default Value                         | customization | defined in | function
+| project.build.systemJdk          | `11`                                  | often         | foundation | Minimal JDK version for running the Apache Maven tool chain
+| project.build.targetJdk          | `11`                                  | often         | foundation | Target JDK version. Build artifacts will run on this JDK version.
+| project.build.sourceEncoding     | `UTF-8`                               | rarely        | foundation | Character encoding for source files.
+| project.reporting.inputEncoding  | `UTF-8`                               | rarely        | foundation | Character encoding for all files read when generating reports.
+| project.reporting.outputEncoding | `UTF-8`                               | rarely        | foundation | Character encoding for all reporting files generated by Maven.
+| maven.compiler.source            | `${project.build.targetJdk}` (= `11`) | rarely        | foundation | The source code specification used in this project.
+| maven.compiler.target            | `${project.build.targetJdk}` (= `11`) | rarely        | foundation | The target bytecode specification used in this project.
+|===
+
+[NOTE]
+====
+The `maven.compiler.source` and `maven.compiler.target` properties may need to be set to `1.8` explicitly when setting `project.build.targetJdk` to `8`. This is a limitation of some build plugins (most prominently the GMavenPlus plugin).
+====
+
+=== Global properties
+
+These properties affect multiple plugins. POMs that add new plugins should evaluate these properties if necessary and not define plugin specific properties.
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                    | Default Value                         | customization | defined in | function
+| basepom.build.maxheap-mb                      | `1024`                                     | sometimes     | foundation | Sets the maximum heap in MB for plugins. This value has no qualifier, so it can be used in plugins that do not take a unit in their configuration value.
+| basepom.build.jvmsize                         | `${basepom.build.maxheap-mb}m` (= `1024m`) | rarely        | foundation | Sets the maximum heap size for plugins that take a qualifier. This value is rarely modified directly, but uses the value set in `basepom.build.maxheap-mb`.
+| basepom.site.skip                             | `false`                                    | often         | foundation | If set to `true`, supports generating the Maven documentation site.
+| basepom.maven.version                         | `3.6.0`                                    | sometimes     | foundation | The minimum version of Apache Maven required.
+|===
+
+=== Plugin customizations
+
+These properties control settings for specific plugins. Most plugins have an opinionated default configuration with very little need for further customization. Where it is useful, these customizations are exposed as properties that can be changed in a Project or Policy POM.
+
+Properties are usually grouped by prefix.
+
+==== Compilation control
+
+All properties in this section should be supported by language compilers. By default, BasePOM uses the `maven-compiler-plugin` for Java.
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                                 | Default Value                              | customization | defined in | function
+| basepom.compiler.fail-warnings                | `false`                                    | sometimes     | foundation | Fail compilations if warnings are present.
+| basepom.compiler.parameters                   | `true`                                     | rarely        | foundation | Generate metadata for reflection on parameter names. By default, this is activated.
+| basepom.compiler.use-incremental-compilation  | false                                      | sometimes     | foundation | If a language compiler supports incremental compilation, it should use this property for control. The compiler plugin supports this flag.
+|===
+
+==== Artifact installation, deployment and release customization
+
+Besides building, Apache Maven can install the resulting artifacts into the local repository or deploy them to a remote repository. Releasing an artifact is creating a stable, immutable build with a version that does not end in `-SNAPSHOT`. All steps of the Apache Maven lifecycle can be customized with the following properties:
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                                 | Default Value                              | customization | defined in | function
+| basepom.at-end                                | `false`                                    | sometimes, policy | foundation | Set the default value for installing and deploying artifacts in the build cycle for Multi Module projects. If `true`, the respective operation is done after all modules have been built, otherwise it is done as part of the module build cycle.
+| basepom.at-end.install                        | `${basepom.at-end}`                        | rarely, policy    | foundation | If `true`, install artifacts at the end of a Multi Module project build cycle.
+| basepom.at-end.deploy                         | `${basepom.at-end}`                        | sometimes, policy | foundation | If `true`, deploy artifacts at the end of a Multi Module project build cycle.
+| basepom.release.push-changes                  | `false`                                    | sometimes     | foundation | If `true`, then running the Maven `release:prepare` goal will push changes directly to the upstream repository. Defaults to `false`.
+| basepom.release.tag-name-format               | `@{project.artifactId}-@{project.version}` | often         | foundation | Name tag format for the release tag. See the https://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#tagNameFormat[Maven Release Plugin Documentation] for details.
+|===
+
+==== Javadoc Generation
+
+Javadoc artifacts are created as part of the build lifecycle. While they are optional, some distribution sites (OSS, Maven Central) require the creation of a Javadoc artifact.
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                                 | Default Value                              | customization   | defined in | function
+| basepom.javadoc.skip                          | `true`                                     | often, profile  | foundation | If `true`, generate a javadoc artifact as part of the build.
+| basepom.javadoc.doclint                       | `none`                                     | sometimes       | foundation | Controls the https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#BEJEFABE[Javadoc `-Xdoclint` setting].
+| basepom.javadoc.show                          | `public`                                   | rarely, policy  | foundation | Controls the access level included in the javadocs.
+|===
+
+==== Unit Tests
+
+The Apache Maven `surefire` plugin is active by default. Any other test plugin should also use these properties.
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                                 | Default Value                              | customization   | defined in | function
+| basepom.test.skip                             | `$\{skipTests}`                             | often, profile | foundation | If `true`, skip all unit tests. The default is the value of the standard Maven `skipTests` property.
+| basepom.test.fork-count                       | `0.75C`                                    | sometimes, policy | foundation | Controls the number of parallel tests to run. Default is the 3/4 of number of reported CPU cores.
+| basepom.test.reuse-vm                         | `true`                                     | sometimes, policy | foundation | If `true`, reuse existing VM instances, otherwise start a new instance for each test.
+| basepom.test.timeout                          | `30`                                       | often          | foundation | Maximum time in seconds that a unit test can run.
+| basepom.test.memory                           | `256m`                                     | often          | foundation | Memory for each forked VM.
+|===
+
+==== Integration Tests
+
+Apache Maven supports multiple plugins for integration tests. BasePOM supports the `failsafe` and the `invoker` plugin for integration tests.
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                             | Default Value                              | customization     | defined in | function
+| basepom.it.skip                           | `$\{skipITs}`                              | often, profile    | foundation | If `true`, skip all integration tests. The default is the value of the standard Maven `skipITs` property.
+| basepom.it.memory                         | `${basepom.test.memory}`                   | sometimes, policy | foundation | Memory allocated for each integration test VM.
+| basepom.it.fork-count                     | `0.5C`                                     | sometimes, policy | foundation | Controls the number of parallel tests to run. Default is 1/2 the number of reported CPU cores.
+| basepom.it.timeout                        | `30`                                       | often, policy     | foundation | Maximum time in seconds that an integration test can run.
+| [#invoker-folder]#basepom.invoker.folder# | `src/it`                                   | rarely            | foundation | Base directory where all integration tests are located.
+| basepom.failsafe.reuse-vm                 | `false`                                    | sometimes, policy | foundation | If `true`, reuse existing VM instances, otherwise start a new instance for each test.
+|===
+
+==== git version control support
+BasePOM uses the https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md[git-commit-id-maven-plugin] to provide scm information to the build. The main use case to modify its configuration is if the code base does not actually use git.
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                                 | Default Value                              | customization     | defined in | function
+| basepom.git-id.skip                           | `false`                                    | sometimes, policy | foundation | If `true`, skip the plugin.
+| basepom.git-id.fail-no-git                    | `false`                                    | sometimes, policy | foundation | If `true`, fail if the current build directory does not use git.
+| basepom.git-id.fail-no-info                   | `true`                                     | rarely, policy    | foundation | If `true`, fail if the plugin can not extract build information from the local git repository.
+| basepom.git-id.use-native                     | `false`                                    | rarely            | foundation | Use the system installed `git` binary instead of the pure Java `jgit` library. This is intended for troubleshooting.
+| basepom.git-id.run-only-once                  | `false`                                    | rarely, policy    | foundation | Execute only once for a Multi Module project build. This is almost never the right thing: If the build uses a `pom` packaged module as its root, then the plugin will not be executed. Also, for builds that use git submodules, the scm information may be different for each directory.
+|===
+
+==== Executable support
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                                 | Default Value                              | customization   | defined in | function
+| basepom.executable.flags                      |                                            | sometimes     | foundation | command line parameters for the `java` command when executing.
+| basepom.executable.name                       | `${project.name}`                          | rarely        | foundation | Sets the name of the executable.
+| basepom.shaded.main-class                     | (empty)                                    | often         | minimal    | Defines the main class for the executable jar.
+|===
+
+=== Setting plugin and dependency versions
+
+Each BasePOM release defines the versions for all Maven plugins and dependent libraries. The values change from release to release and are chosen based on stability and release quality of the various tools.
+
+These versions can be overwritten in Policy POMs, project POMs  or the command line.
+
+[%header, cols="<2, <1, <2", stripe=none]
+|===
+| Property Name | defined in | comment
+| `dep.plugin.assembly.version` | foundation |
+| `dep.plugin.build-helper.version` | foundation |
+| `dep.plugin.checkstyle.version` | foundation |
+| `dep.plugin.clean.version` | foundation |
+| `dep.plugin.compiler.version` | foundation |
+| `dep.plugin.dependency-management.version` | foundation |
+| `dep.plugin.dependency-scope.version` | foundation |
+| `dep.plugin.dependency-versions-check.version` | foundation |
+| `dep.plugin.dependency.version` | foundation |
+| `dep.plugin.deploy.version` | foundation |
+| `dep.plugin.duplicate-finder.version` | foundation |
+| `dep.plugin.enforcer.version` | foundation |
+| `dep.plugin.failsafe.version` | foundation |
+| `dep.plugin.git-commit-id.version` | foundation |
+| `dep.plugin.gpg.version` | oss |
+| `dep.plugin.install.version` | foundation |
+| `dep.plugin.invoker.version` | foundation |
+| `dep.plugin.jacoco.version` | foundation |
+| `dep.plugin.jar.version` | foundation |
+| `dep.plugin.javadoc.version` | foundation |
+| `dep.plugin.jxr.version` | oss |
+| `dep.plugin.license.version` | oss |
+| `dep.plugin.pmd.version` | foundation |
+| `dep.plugin.project-info-reports.version` | oss |
+| `dep.plugin.property-helper.version` | foundation |
+| `dep.plugin.really-executable.version` | foundation |
+| `dep.plugin.release.version` | foundation |
+| `dep.plugin.resources.version` | foundation |
+| `dep.plugin.scm-publish.version` | foundation |
+| `dep.plugin.scm.version` | foundation |
+| `dep.plugin.shade.version` | foundation |
+| `dep.plugin.site.version` | foundation |
+| `dep.plugin.source.version` | foundation |
+| `dep.plugin.spotbugs.version` | foundation |
+| `dep.plugin.surefire.version` | foundation |
+| `dep.checkstyle.version` | foundation | Checkstyle library version, used by the checkstyle plugin
+| `dep.dependency-analyzer.version` | foundation | Dependency Analyzer library version, used by the dependency plugin
+| `dep.pmd.version` | foundation | PMD library version, used by the PMD plugin
+| `dep.spotbugs.version` | foundation | Spotbugs library version, used by the spotbugs plugin
+| `dep.basepom-policy.version` | minimal | BasePOM policy jar version
+|===
+
+== Code quality and Build checkers
+
+BasePOM brings a set of preconfigured plugins to check the quality of the code base and ensure that the resulting artifacts are valid. The following plugins are supported:
+
+* https://maven.apache.org/enforcer/maven-enforcer-plugin/index.html[Maven Enforcer] - Basic checks for Build JDK, Maven version etc. ("The Loving Iron Fist of Maven™")
+* https://maven.apache.org/plugins/maven-dependency-plugin/[Maven Dependency Plugin] - Ensure declared and used dependencies.
+* https://github.com/basepom/duplicate-finder-maven-plugin/wiki[Duplicate Finder Plugin] - Test for duplicate classes on the class path which threaten build stability
+* https://github.com/HubSpot/dependency-management-maven-plugin[Dependency Management Plugin] - Ensure that plugins and dependencies are declared in `pluginManagement` and `dependencyManagement` sections
+* https://github.com/HubSpot/dependency-scope-maven-plugin[Dependency Scope Plugin] - Ensure that transitive dependencies are not accidentally declared in `test` scope.
+* https://basepom.github.io/dependency-versions-check-maven-plugin/[Dependency Versions Check Plugin] - Ensure that multiple dependency references with different versions converge.
+* https://spotbugs.github.io/spotbugs-maven-plugin/[Spotbugs] - Run the spotbugs code quality tool.
+* https://www.eclemma.org/jacoco/trunk/doc/maven.html[Coverage] - Use the jacoco code coverage tool.
+* https://maven.apache.org/plugins/maven-pmd-plugin/[Maven PMD] - Run the PMD code quality tool.
+* https://maven.apache.org/plugins/maven-checkstyle-plugin/[Maven Checkstyle] - Run the checkstyle code formatting and checker tool.
+* https://maven.apache.org/plugins/maven-javadoc-plugin/[Maven Javadoc] - Lint the javadoc included in the source code.
+* https://mycila.carbou.me/license-maven-plugin/[License check plugin] - Ensure that source code files contain correct license headers.
+
+All checkers are optional. Each checker can fail the build if it detects a problem.
+
+Execution of each checker is controlled by a `basepom.check.skip-<name>` property. If this is set to `true`, the checker will not be executed.
+
+Build failure is controlled through a `basepom.check.fail-<name>` property. If this is set to `true`, any error detected by the checker will fail the build.
+
+[%header, cols="<1, <1, <1", stripe=none]
+|===
+| Checker | property for enabling/disabling | property for build failure enable/disable
+3+^| Checker groups
+| all checkers             | `basepom.check.skip-all`                       | `basepom.check.fail-all`
+| basic checkers           | `basepom.check.skip-basic`                     | `basepom.check.fail-basic`
+| extended checkers        | `basepom.check.skip-extended`                  | `basepom.check.fail-extended`
+3+^| Individual checkers
+| Maven checkstyle         | `basepom.check.skip-checkstyle`                | `basepom.check.fail-checkstyle`
+| Jacoco                   | `basepom.check.skip-coverage`                  | `basepom.check.fail-coverage`
+| Maven Enforcer           | `basepom.check.skip-enforcer`                  | `basepom.check.fail-enforcer`
+| Maven Dependency         | `basepom.check.skip-dependency`                | `basepom.check.fail-dependency`
+| Dependency Management    | `basepom.check.skip-dependency-management`     | `basepom.check.fail-dependency-management`
+| Dependency Scope         | `basepom.check.skip-dependency-scope`          | `basepom.check.fail-dependency-scope`
+| Dependency Version Check | `basepom.check.skip-dependency-versions-check` | `basepom.check.fail-dependency-versions-check`
+| Duplicate Finder         | `basepom.check.skip-duplicate-finder`          | `basepom.check.fail-duplicate-finder`
+| License                  | `basepom.check.skip-license`                   | `basepom.check.fail-license`
+| Maven PMD                | `basepom.check.skip-pmd`                       | `basepom.check.fail-pmd`
+| Spotbugs                 | `basepom.check.skip-spotbugs`                  | `basepom.check.fail-spotbugs`
+| Javadoc                  | `basepom.javadoc.skip`                         | `basepom.check.fail-javadoc`
+|===
+
+[NOTE]
+====
+Javadoc is special, because it generates an artifact but also provides checking ("linting") of the javadoc blocks in the source code. Javadoc generation is
+often controlled independently of checker runs, so it is not part of the `basepom.check.skip-` properties. Failing the build however still uses the `basepom.check.fail-` convention.
+====
+
+=== Checker hierarchy
+
+The different checkers are grouped together but can also be individually controlled. By default,
+the group properties `basepom.check.skip|fail-basic` and `basepom.check.skip|fail-extended` inherit the value of the `basepom.check.skip|fail-all` properties:
+
+[source,xml,indent=0]
+----
+    <properties>
+        <basepom.check.skip-all>false</basepom.check.skip-all>
+        <basepom.check.skip-basic>${basepom.check.skip-all}</basepom.check.skip-basic>
+        <basepom.check.skip-extended>${basepom.check.skip-all}</basepom.check.skip-extended>
+
+        <basepom.check.fail-all>true</basepom.check.fail-all>
+        <basepom.check.fail-basic>${basepom.check.fail-all}</basepom.check.fail-basic>
+        <basepom.check.fail-extended>${basepom.check.fail-all}</basepom.check.fail-extended>
+    </properties>
+----
+
+[ditaa, round-corners=true, transparent=false]
+----
+
+   +----------------+
+   | 'all' property |
+   +----------------+
+          ^
+          |  inherits from
+          |
+          +-----------------+
+          |                 |
+          |                 |
+ +------------------+    +----------------------+
+ | 'basic' property |    | 'extendend' property |
+ +------------------+    +----------------------+
+         ^                              ^
+         |     inherit from             |
+         |                              |
+     +---+---+                      +---+---+
+     |   |   |                      |   |   |
+     |   |   |                      |   |   |
+
+ individual plugins             individual plugins
+----
+
+Changing the `all` property also affects all its children. Parent or Policy POMs can override these properties to attach or detach a checker from a group.
+
+The foundation BasePOM defines the following groups:
+
+* `all` which contains all `basic` and `extended` checks.
+* `basic`, which contains `enforcer`, `dependency`, `duplicate-finder`, `dependency-management`, `dependency-scope` and `dependency-versions-check`
+* `extended` is different for three BasePOM types:
+** for the `foundation` BasePOM, it contains `spotbugs` and `coverage`
+** for the `minimal` BasePOM, it contains `spotbugs`, `coverage`, `pmd`, and `checkstyle`
+** for the `oss` BasePOM, it contains `spotbugs`, `coverage`, `pmd`, `checkstyle` and `license`
+
+In the foundation BasePOM, the `pmd` and `checkstyle` checkers are deactivated. All other checkers are active. All active checkers will fail the build if an error is detected.
+
+=== Checker execution phases
+
+While some checkers rely on class files, others only look at source code or configuration. These checkers can be executed before compilation ("early") or after compilation and test execution ("late").
+
+There are good reasons for either:
+
+* early execution avoids long compile times and then checkers failing the artifact generation
+* late execution allows the execution of the compilation and test lifecycle phases without having to continuously fix unrelated problems (e.g. dependencies or code style issues).
+
+The following plugins can be configured for early (use `validate`) or late (use `verify`) execution. By default, all checkers are run late (in the `verify` phase).
+
+
+[%header, cols="<1, <1", stripe=none]
+|===
+| Checker | Property Name
+| Dependency Version Check | `basepom.check.phase-dependency-versions-check`
+| Dependency Management    | `basepom.check.phase-dependency-management`
+| Dependency Scope         | `basepom.check.phase-dependency-scope`
+| Maven Dependency         | `basepom.check.phase-dependency`
+| Maven checkstyle         | `basepom.check.phase-checkstyle`
+| License                  | `basepom.check.phase-license`
+|===
+
+=== Checker customization
+
+Most checkers are self-contained and need no additional configuration. Others (especially PMD and checkstyle) require extensive policy configuration (see the <<Creating a PolicyPOM to apply a build policy>> section).
+
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                                 | Default Value | customization   | defined in | function
+| basepom.check.checkstyle-severity             | `error`       | sometimes, policy     | foundation | Controls which severity levels are considered a violation. Only violations fail the build. Valid values are `info`, `warning` and `error`
+| basepom.dependency-management.dependencies    | `false`       | often, policy         | foundation | If `true`, all project dependencies must be defined in a `dependencyManagement` section and `dependency` sections must not contain versions
+| basepom.dependency-management.plugins         | `false`       | often, policy         | foundation | If `true`, all project plugins must be defined in a `pluginManagement` section and `plugin` sections must not contain versions
+| basepom.dvc.direct-only                       | `true`        | sometimes, policy     | foundation | Only report direct dependencies of a project, not all dependencies
+| basepom.pmd.fail-level                        | `4`           | sometimes, policy     | foundation | Minimum PMD violation level that will fail the build
+| basepom.license.header                        | `license/basepom-apache-license-header.txt` | often, policy | oss | The license header to use. This is a reference to a file or a resource on the plugin classpath
+| basepom.license.skip-existing                 | `true`        | sometimes, policy     | oss        | Keep existing license headers, do not replace them
+| basepom.gpg.use-agent                         | `true`        | rarely                | oss        | Use the GnuPG agent to manage private signing keys
+|===
+
+
+== Build cycle
+
+BasePOM configures all the Maven plugins as part of the Maven build lifecycle. Being configured is different from execution, though. Plugin execution can be skipped for many reasons, most common is that the plugin configuration has a `skip` property set.
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Plugin                                   | Phase                  | execution id          | goal(s)                   | function
+| `property-helper-maven-plugin`           | validate               | basepom.default       | get                       | create build specific ids
+| `maven-enforcer-plugin`                  | validate               | basepom.default       | enforce                   | enforce maven and jdk version
+| `git-commit-id-maven-plugin`             | initialize             | basepom.default       | revision                  | fetch SCM revision information
+| `maven-resources-plugin`                 | process-resources      | default-resources     | resources                 | prepare main resources
+| `maven-compiler-plugin`                  | compile                | default-compile       | compile                   | compile main sources
+| `maven-resources-plugin`                 | process-test-resources | default-testResources | testResources             | prepare test resources
+| `maven-compiler-plugin`                  | test-compile           | default-testCompile   | testCompile               | compile test sources
+| `jacoco-maven-plugin`                    | process-test-classes   | basepom.default       | prepare-agent             | prepare test coverage agent
+| `maven-surefire-plugin`                  | test                   | default-test          | test                      | run unit tests
+| `maven-jar-plugin`                       | package                | default-jar           | jar                       | package main artifact
+| `maven-jar-plugin`                       | package                | basepom.default       | test-jar                  | package test artifact
+| `maven-javadoc-plugin`                   | package                | basepom.default       | jar                       | package javadocs / run javadoc linter
+| `maven-source-plugin`                    | package                | basepom.default       | jar-no-fork               | package main sources
+| `maven-source-plugin`                    | package                | basepom.default       | test-jar-no-fork          | package test sources
+| `maven-dependency-plugin`                | validate/verify        | basepom.default       | analyze-only              | build checker
+| `maven-dependency-plugin`                | validate/verify        | basepom.default       | analyze-duplicate         | build checker
+| `maven-dependency-plugin`                | validate/verify        | basepom.default       | analyze-dep-mgt           | build checker
+| `dependency-versions-check-maven-plugin` | validate/verify        | basepom.default       | check                     | build checker
+| `dependency-management-maven-plugin`     | validate/verify        | basepom.default       | analyze                   | build checker
+| `dependency-scope-maven-plugin`          | validate/verify        | basepom.default       | check                     | build checker
+| `duplicate-finder-maven-plugin`          | verify                 | basepom.default       | check                     | build checker
+| `spotbugs-maven-plugin`                  | verify                 | basepom.default       | check                     | build checker
+| `maven-pmd-plugin`                       | verify                 | basepom.default       | check                     | build checker
+| `maven-checkstyle-plugin`                | validate/verify        | basepom.default       | check                     | build checker
+| `maven-install-plugin`                   | install                | default-install       | install                   | install artifacts in the local repository
+| `maven-deploy-plugin`                    | deploy                 | default-deploy        | deploy                    | deploy artifacts to remote repository
+|===
+
+=== Build profiles
+
+A BasePOM may contain additional profiles that configure plugins or add goals to the lifecycle.
+
+==== `basepom.invoker-integration-testing` (foundation)
+
+This profile activates if the build module contains a `src/it` directory.
+
+[NOTE]
+====
+Due to a limitation in Apache Maven is the `src/it` path hardcoded for profile activation. For that reason, changing the xref:invoker-folder[basepom.invoker.folder] property is rarely done. If integration tests are located in a different directory, this profile will not activate automatically.
+====
+
+This profile adds the following goals to the lifecycle:
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Plugin                                   | Phase                  | execution id                                | goal(s)                   | function
+| `jacoco-maven-plugin`                    | pre-integration-test   | basepom.default-it                          | prepare-agent-integration | prepare integration test coverage agent
+| `maven-invoker-plugin`                   | integration-test       | basepom.invoker-integration-testing.default | install                   | install integration test prerequisites
+| `maven-invoker-plugin`                   | integration-test       | basepom.invoker-integration-testing.default | integration-test          | run integration tests
+| `maven-invoker-plugin`                   | integration-test       | basepom.invoker-integration-testing.default | verify                    | verify integration test results
+|===
+
+==== `basepom.executable` (foundation)
+
+This profile activates if a `.build-executable` file exists in the current build module. This file only need to exist, it can be empty.
+
+[WARNING]
+====
+This profile is experimental. While it is possible to build executables, there are some shortcomings that will be addressed in the future. The plugins in this profile may be replaced with other plugins.
+====
+
+This profile adds the following goals to the lifecycle:
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Plugin                                   | Phase                  | execution id                                | goal(s)                   | function
+| `maven-shade-plugin`                     | package                | basepom.executable.default                  | shade                     | create a jar with all dependencies included
+| `really-executable-jar-maven-plugin`     | package                | basepom.executable.default                  | really-executable-jar     | create an executable from the shaded jar
+|===
+
+==== `basepom.oss-release` (oss)
+
+This is the release profile for releasing an artifact to the OSS repository (and subsequently to Maven Central). It is configured as release profile for the `release` plugin if the `oss` BasePOM is used. It gets activated when executing the `release:perform` goal of the `release` plugin.
+
+* skip unit tests (all tests have already passed as part of the release process)
+* skip all checkers that are following the `basepom.check.skip-all` setting (they have already been executed as part of the release process)
+* always create a `javadoc` artifact
+
+This profile adds the following goals to the lifecycle:
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Plugin              | Phase  | execution id            | goal(s) | function
+| `maven-gpg-plugin`  | verify | basepom.release.default | sign    | create GPG signature for releasing to OSS
+|===
+
+
+==== `basepom.invoker-reporting` (oss)
+
+This profile activates if the build module contains a `src/it` directory.
+
+[NOTE]
+====
+Due to a limitation in Apache Maven is the `src/it` path hardcoded for profile activation. For that reason, changing the xref:invoker-folder[basepom.invoker.folder] property is rarely done. If integration tests are located in a different directory, this profile will not activate automatically.
+====
+
+This profile adds the following reports to the site build:
+
+[%header, cols="<1, <1", stripe=none]
+|===
+| Plugin | Report
+| `maven-invoker-plugin` | report
+| `jacoco-maven-plugin` | report-integration
+|===
+
+
+== Creating a PolicyPOM to apply a build policy
+
+Most organizations create internal policies on how builds should be organized, what rules should be enforced etc. Having such policies codified and enforced by the build system are a massive boost for code quality and reuse.
+
+An organization that plans to use BasePOM should also create an organization specific Policy POM.
+
+BasePOMs were designed specifically to allow policy enforcement across many projects. The `minimal` and `oss` BasePOMs are examples on how to create Policy POMs that can be used by projects.
+
+A PolicyPOM should define or apply specific rules for
+
+* property settings (e.g. required JDK level, checker settings etc.)
+* remote repositories for artifacts and artifact deployment
+* specific checker configuration
+* code packaging
+* Unit and integration test configuration
+* Policy profiles
+
+=== The `minimal` Policy POM
+
+When using the `minimal` BasePOM for a project, some policies are applied:
+
+* The `pmd` and `checkstyle` checkers are added to the `extended` set of Build checkers.
+* Rule configuration for `pmd`, `checkstyle` and `spotbugs`
+* a repository reference is added that fixes a problem with the popular Spring framework
+* rules for the `duplicate-finder` build checker
+* rules for the `dependency-checkers` build checker
+* configuration for the `shade` plugin
+* environment variables for unit and integration tests
+
+The `minimal` BasePOM uses a https://github.com/basepom/basepom-policy[policy jar] to store the configuration for `spotbugs` and `checkstyle`.
+
+====  `duplicate-finder` plugin configuration
+
+The `duplicate-finder` plugin will flag any class that appears multiple times on the class path (in multiple jars). While this is generally desirable, there are some common jars that overlap in a benign way. Almost all of these overlaps are specific to annotation classes.
+
+[%header, cols="<1, <4", stripe=none]
+|===
+| package | dependencies (jars that may contain these classes)
+| `javax.annotation` | `com.google.code.findbugs:jsr305` `com.google.code.findbugs:annotations`
+| `net.jcip.annotations` | `com.google.code.findbugs:annotations` `net.jcip:jcip-annotations`
+| `edu.umd.cs.findbugs.annotations` | `com.google.code.findbugs:annotations` `com.google.code.findbugs:findbugs-annotations` `com.github.spotbugs:spotbugs-annotations`
+| `javax.inject` | `javax.inject:javax.inject` `org.glassfish.hk2.external:javax.inject`
+| `jakarta.inject` | `org.glassfish.hk2.external:jakarta.inject` `jakarta.inject:jakarta.inject-api`
+e| `org.aopalliance.aop` `org.aopalliance.intercept` | `aopalliance:aopalliance` `org.glassfish.hk2.external:aopalliance-repackaged`
+|===
+
+Similar to classes, there are other resources on the class path as well. Most of those should be unique, however there are a few resources that are often packaged into jars where duplicates can be tolerated.
+
+The following resource patterns are ignored:
+
+* any resource ending with  `.afm`, `.dtd`, `.gif`, `.html`, `.java`, `.png`, `.properties`, `.txt`
+* any resource starting with `.` `about.`
+* any resource in a directory named `about_files` or `license`
+* resources called `schema` in any directory
+* resource named `mime.types`, `plugin.properties`, `plugin.xml`, `reference.conf`, `log4j.xml`, `log4j.properties`, `logback.xml`, `logback.properties`
+
+==== `pmd` plugin configuration
+
+PMD does code analysis and flags common programming errors and anti-patterns. This is useful for code that is actually written but less so for code that is auto-generated where the constructs in auto-generated classes can not be modified unless the code generator itself is changed.
+
+Auto-generated code is usually located in `target/generated-sources/stubs` and `target/generated-sources/annotations`. These folders are excluded from being scanned by PMD.
+
+==== `dependency` plugin configuration
+
+Similar to the `duplicate-checker`, the `dependency` plugin checks what elements are on the class path and whether these are used. This process is more difficult for elements that need to be present at compile-time but not at runtime and that are not referenced from the build artifacts.
+
+For the `minimal` BasePOM, the `dependency` plugin is configured to:
+
+* ignore all non-test scoped dependencies in "test" scope
+* allow the following dependencies on the classpath even if there are no direct references in the resulting artifacts (all of these jars are "annotation-only" jars)
+
+[%header, cols="<1", stripe=none]
+|===
+| dependency
+| `aopalliance:aopalliance`
+| `com.github.spotbugs:spotbugs-annotations`
+| `com.google.code.findbugs:annotations`
+| `com.google.code.findbugs:jsr305`
+| `com.google.errorprone:error_prone_annotations`
+| `jakarta.inject:jakarta.inject-api`
+| `javax.inject:javax.inject`
+| `net.jcip:jcip-annotations`
+| `org.checkerframework:checker-qual`
+| `org.glassfish.hk2.external:aopalliance-repackaged`
+| `org.glassfish.hk2.external:jakarta.inject`
+| `org.glassfish.hk2.external:javax.inject`
+|===
+
+==== `shade` plugin configuration
+
+The `shade` plugin is used to repack a build artifact and all its dependencies into a single "fat jar".
+
+In the `minimal` Policy POM, the `shade` plugin is configured to
+
+* support `basepom.shaded.main-class` to configure main class for a shaded jar
+* collect all additional, named sections from dependencies into the shaded jar
+* create the `X-BasePOM-Build-Id` main manifest entry from the `${basepom.shaded.id}` to differentiate a shaded jar from the original, non-shaded jar
+
+==== `surefire` and `failsafe` plugins
+
+The `minimal` BasePOM adds a few system properties for testing.
+
+[%header, cols="<1, <1, <4", stripe=none]
+|===
+| property | value | function
+| `sun.jnu.encoding` | `${project.build.sourceEncoding}` | `sun.jnu.encoding` is used for encoding/decoding file paths
+| `user.timezone` | `UTC` | user timezone for tests
+| `java.awt.headless` | `true` | tests run without a graphical UI
+| `java.util.logging.SimpleFormatter.format` | `%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n` | formatter for java.util.logging messages
+|===
+
+=== The `oss` Policy POM
+
+The `oss` BasePOM is intended for projects that distribute their artifacts through the Sonatype https://oss.sonatype.org/[OSS] ecosystem to Maven Central. In addition to the `minimal` policy, it applies the following configuration:
+
+* the `license` checker is added to the `extended` set of Build checkers.
+* configure the OSS repositories for snapshot and release distribution. The repositories are configured as `sonatype-nexus-snapshots` and `sonatype-nexus-staging`. The local `settings.xml` file must contain credentials for these ids to authenticate to the repositories for artifact upload.
+* set the `basepom.oss-release` profile as release profile for the `maven-release-plugin`
+
+The `oss` BasePOM also adds the following goals to the lifecycle:
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Plugin                 | Phase             | execution id    | goal(s) | function
+| `license-maven-plugin` | validate / verify | basepom.default | check   | check license headers
+|===
+
+
+== Plugin configuration notes
+
+=== Unit and integration tests and code coverage
+
+The interaction between the `surefire`, `failsafe` and `invoker` plugin and the respective code coverage plugin (jacoco) is through an agent specification that modifies the command line for test invocation.
+
+To hide this implementation detail, two properties exist for internal BasePOM use that should not be modified: `basepom.coverage.test-args` for unit tests and `basepom.coverage.it-args` for integration tests.
+
+If the coverage agent is not active (by setting `basepom.check.skip-coverage` to `true`), these properties are empty. If the agent is active, it will write the necessary parameters for adding the coverage agent to these properties.
+
+When the respective test plugin executes, they pick up the content of these properties (through the `argLine` configuration setting). Using a secondary property (and not the `argLine` property directly as most stack overflow posts would suggest) allows manual configuration on the command line while still preserving the ability to add the coverage agent through the build lifecycle.
+
+If the `argLine` configuration needs to be modified (e.g. in a Policy POM), the `@{basepom.coverage.test-args`}` (for `surefire`) and `@{basepom.coverage.it-args}` (for `failsafe`) *must* be present, otherwise this integration no longer works. Using a `@` is not a typo but necessary for late evaluation of these properties.
+
+Unfortunately, for the `invoker` plugin, this is not possible. For invoker, a `invoker.properties` file must be used which should contain the line
+
+[source,properties,indent=0]
+----
+invoker.mavenOpts = ${basepom.coverage.it-args} -Xmx${basepom.it.memory} -Dfile.encoding=${project.build.sourceEncoding}
+----
+
+to emulate the `argLine` setting for `surefire` and `failsafe`. This property file is also late (at runtime) evaluated.
+
+=== Jar properties
+
+The `maven-jar-plugin` is used to create the main and test artifacts.
+
+It is configured to create the standard implementation and specification entries as described in the Maven Jar documentation.
+
+It also adds a number of custom entries in the jar manifest that allow inspection of build artifacts:
+
+[%header, cols="<2, ^1, ^1, ^1", stripe=none]
+|===
+| Manifest entry                  | value                                      | section | function
+| `X-BasePOM-Build-Id`            | ${basepom.build.id}, unique build UUID, created for every build | main    | unique build id for each artifact
+| `X-BasePOM-Build-Name`          | `${project.name}`                          | main    | project name of the build
+| `X-BasePOM-Build-Git-Commit-Id` | `${git.commit.id}` (created by the `git-commit-id-maven-plugin`)          | main | see `git.commit.id` in the https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md#generated-properties[`git-commit-id-maven-plugin` documentation]
+| `Build-Time`                    | `${git.build.time}` (created by the `git-commit-id-maven-plugin`)         | `${project.groupId}:${project.artifactId}` | see `git.build.time` in the https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md#generated-properties[`git-commit-id-maven-plugin` documentation]
+| `Git-Branch`                    | `${git.branch}` (created by the `git-commit-id-maven-plugin`)             | `${project.groupId}:${project.artifactId}` | see `git.branch` in the https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md#generated-properties[`git-commit-id-maven-plugin` documentation]
+| `Git-Commit-Id`                 | `${git.commit.id}` (created by the `git-commit-id-maven-plugin`)          | `${project.groupId}:${project.artifactId}` | see `git.commit.id` in the https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md#generated-properties[`git-commit-id-maven-plugin` documentation]
+| `Git-Commit-Id-Describe`        | `${git.commit.id.describe}` (created by the `git-commit-id-maven-plugin`) | `${project.groupId}:${project.artifactId}` | see `git.commit.id.describe` in the https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md#generated-properties[`git-commit-id-maven-plugin` documentation]
+| `Git-Remote-Origin-Url`         | `${git.remote.origin.url}` (created by the `git-commit-id-maven-plugin`)  | `${project.groupId}:${project.artifactId}` | see `git.remote.origin.url` in the https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md#generated-properties[`git-commit-id-maven-plugin` documentation]
+| `Project-ArtifactId`            | `${project.artifactId}` | `${project.groupId}:${project.artifactId}` | The artifact id of the build
+| `Project-GroupId`               | `${project.groupId}`    | `${project.groupId}:${project.artifactId}` | The group id of the build
+| `Project-Name`                  | `${project.name}`       | `${project.groupId}:${project.artifactId}` | The project name of the build
+| `Project-Version`               | `${project.version}`    | `${project.groupId}:${project.artifactId}` | The version of the build
+|===
+
+The `${project.groupId}:${project.artifactId}` section is specific for each project. This allows the `maven-shade-plugin` to coalesce all these sections without overwriting any of the parameters.
+
+=== Jar shading
+
+The `maven-shade-plugin` is used to create single artifacts with all dependencies ("fat jars") for a project.
+
+BasePOM does not create a dependency reduced POM and all shaded artifacts are attached. Shaded artifacts should *never* be used as dependencies but should be terminal (e.g. an application jar).
+
+=== Using the license plugin
+
+The `oss` BasePOM configures the `license-maven-plugin` for releasing artifacts to Maven Central:
+
+* use the Apache Software License without copyright line
+* map `g4`, `groovy` and `java` files to `SLASHSTAR_STYLE`
+* map `stg` files to `DOUBLESLASH_STYLE`
+* map `xml` files to `XML_PREFIX`
+* map `yaml` files to `SCRIPT_STYLE`
+* exclude all files in directories starting with `.`
+* exclude all files ending with `.md`, `.rst`, `.adoc`, `.sh`, `.txt`, `.thrift`, `.proto`, `.g`, `.releaseBackup`, `.vm`, `.st`, `.raw`, `.ser`
+* exclude all files in the `src/license` tree
+* exclude all `CNAME` files
+
+== Maven Site generation
+
+The `foundation` BasePOM provides basic configuration for the Maven autogenerated site which summarizes information about the build lifecycle. The `oss` BasePOM contains the necessary reporting setup to generate a base site for a project.
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Property Name                  | Default Value                      | customization   | defined in | function
+| basepom.site.skip              | `false`                            | often           | foundation | If `true`, skip site and report generation
+| basepom.site.skip-deploy       | `true`                             | often, policy   | foundation | If `true`, do not execute `site:deploy` for deployment using the site plugin
+| basepom.site.scm.skip-deploy   | `true`                             | often, policy   | foundation | If `true`, do not execute `scm-publish:publish-scm` for deployment using the `scm-publish` plugin
+| basepom.site.scm.site-path     | `development`                      | often           | foundation | The path on the remote repository where the site is deployed
+| basepom.site.scm.branch        | `main`                             | sometimes       | foundation | The branch on the remote repository where the site is deployed
+| basepom.site.scm.url           | <unset>                            | always          | foundation | The remote URL of the site repository
+| basepom.site.scm.id            | <unset>                            | always          | foundation | The settings id used for authenticating the site repository
+| basepom.site.test.skip         | `${basepom.test.skip}`             | rarely          | oss        | Skip test report generation.
+| basepom.site.it.skip           | `${basepom.it.skip}`               | rarely          | oss        | Skip integration test report generation.
+| basepom.site.skip-checkstyle   | `${basepom.check.skip-checkstyle}` | rarely          | oss        | Skip checkstyle report generation.
+| basepom.site.skip-coverage     | `${basepom.check.skip-coverage}`   | rarely          | oss        | Skip coverage (jacoco) report generation.
+| basepom.site.skip-pmd          | `${basepom.check.skip-pmd}`        | rarely          | oss        | Skip PMD report generation.
+| basepom.site.skip-spotbugs     | `${basepom.check.skip-spotbugs}`   | rarely          | oss        | Skip spotbugs report generation.
+| basepom.site.skip-javadoc      | `${basepom.javadoc.skip}`          | rarely          | oss        | Skip javadoc for site generation.
+| basepom.site.fail-javadoc      | `${basepom.check.fail-javadoc}`    | rarely          | oss        | If `true`, fail the site build if the javadoc generation fails.
+|===
+
+The following reports are generated (`oss` BasePOM):
+
+[%header, cols="<2, <2", stripe=none]
+|===
+| Plugin | Report
+| `maven-project-info-reports-plugin` | index
+| `maven-project-info-reports-plugin` | summary
+| `maven-project-info-reports-plugin` | dependency-info
+| `maven-project-info-reports-plugin` | scm
+| `maven-project-info-reports-plugin` | issue-management
+| `maven-project-info-reports-plugin` | team
+| `maven-project-info-reports-plugin` | modules
+| `maven-project-info-reports-plugin` | licenses
+| `maven-project-info-reports-plugin` | ci-management
+| `maven-project-info-reports-plugin` | dependency-convergence
+| `maven-project-info-reports-plugin` | dependencies
+| `maven-project-info-reports-plugin` | dependency-management
+| `maven-project-info-reports-plugin` | plugins
+| `maven-project-info-reports-plugin` | plugin-management
+| `maven-surefire-plugin` | report-only
+| `maven-checkstyle-plugin` | checkstyle
+| `maven-jxr-plugin` | jxr-no-fork
+| `maven-jxr-plugin` | test-jxr-no-fork
+| `maven-pmd-plugin` | pmd
+| `spotbugs-maven-plugin` | spotbugs
+| `jacoco-maven-plugin` | report
+| `maven-javadoc-plugin` | javadoc-no-fork
+| `maven-javadoc-plugin` | test-javadoc-no-fork
+|===
+

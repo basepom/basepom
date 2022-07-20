@@ -61,12 +61,15 @@
     <properties>
         <project.build.targetJdk>11</project.build.targetJdk>
 
-        <basepom.maven.version>3.5.0</basepom.maven.version>
         <basepom.check.skip-all>true</basepom.check.skip-all>
         <basepom.check.skip-enforcer>false</basepom.check.skip-enforcer>
         <basepom.check.skip-license>false</basepom.check.skip-license>
         <basepom.release.tag-name-format>basepom-@{project.version}</basepom.release.tag-name-format>
         <basepom.release.profiles>release,oss-release</basepom.release.profiles>
+
+        <dep.plugin.asciidoctor.version>2.2.2</dep.plugin.asciidoctor.version>
+        <dep.asciidoctorj.version>2.5.4</dep.asciidoctorj.version>
+        <dep.asciidoctorj-diagram.version>2.2.3</dep.asciidoctorj-diagram.version>
     </properties>
 
     <build>
@@ -104,49 +107,33 @@
                         <version>${project.version}</version>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.asciidoctor</groupId>
+                    <artifactId>asciidoctor-maven-plugin</artifactId>
+                    <version>${dep.plugin.asciidoctor.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.asciidoctor</groupId>
+                            <artifactId>asciidoctorj</artifactId>
+                            <version>${dep.asciidoctorj.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.asciidoctor</groupId>
+                            <artifactId>asciidoctorj-diagram</artifactId>
+                            <version>${dep.asciidoctorj-diagram.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <attributes>
+                            <imagesdir>${project.build.directory}/generated-docs/images</imagesdir>
+                        </attributes>
+                        <requires>
+                            <require>asciidoctor-diagram</require>
+                        </requires>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>foundation</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <artifactId>basepom-foundation</artifactId>
-                            <file>${basedir}/foundation/pom.xml</file>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>minimal</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <artifactId>basepom-minimal</artifactId>
-                            <file>${basedir}/minimal/pom.xml</file>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>oss</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                        <configuration>
-                            <artifactId>basepom-oss</artifactId>
-                            <file>${basedir}/oss/pom.xml</file>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
     </build>
 
     <profiles>
@@ -160,6 +147,45 @@
             </activation>
             <build>
                 <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-install-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>foundation</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>install-file</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactId>basepom-foundation</artifactId>
+                                    <file>${basedir}/foundation/pom.xml</file>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>minimal</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>install-file</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactId>basepom-minimal</artifactId>
+                                    <file>${basedir}/minimal/pom.xml</file>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>oss</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>install-file</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactId>basepom-oss</artifactId>
+                                    <file>${basedir}/oss/pom.xml</file>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-deploy-plugin</artifactId>
@@ -286,6 +312,13 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>docs</id>
+            <modules>
+                <module>docs</module>
+            </modules>
+            <build></build>
         </profile>
     </profiles>
 </project>
