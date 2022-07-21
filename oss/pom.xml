@@ -308,7 +308,7 @@
                 <configuration>
                     <skip>${basepom.site.skip-javadoc}</skip>
                     <release>${project.build.targetJdk}</release>
-                    <source>${project.build.sourceVersion}</source>
+                    <source>${maven.compiler.source}</source>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <maxmemory>${basepom.build.jvmsize}</maxmemory>
                     <quiet>true</quiet>

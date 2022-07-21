@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## Changed
+
+* Removed `project.build.sourceVersion` and `project.build.targetVersion` for the more compatible `maven.compiler.source` and `maven.compiler.target` setting.
+
 ## 46 - 2022-07-16
 
 ### Changed
