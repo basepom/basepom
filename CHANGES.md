@@ -10,9 +10,13 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Replaced `project.build.sourceVersion` and `project.build.targetVersion` with the more compatible `maven.compiler.source` and `maven.compiler.target` setting.
 * Renamed `basepom.build.use-incremental-compilation` to `basepom.compiler.use-incremental-compilation`.
+* Changed default value for `basepom.test.fork-count` from `1.0C` to `0.75C`.
+* Replaced `basepom.it.parallel` and `basepom.failsafe.fork-count` with `basepom.it.fork-count` with a default of `0.5C`.
+* Replaced `basepom.failsafe.timeout` with `basepom.it.timeout`.
 
 ## Added
 * Introduced `basepom.site.fail-javadoc` for site generation, default is `${basepom.check.fail-javadoc}`.
+* Invoker plugin now uses `basepom.it.timeout` for test execution.
 
 ## Removed
 * Removed `basepom.check.skip-javadoc` again; javadoc does not really align to the checkers (except for failure), generation is often controlled separately.

@@ -66,7 +66,7 @@
         <basepom.test.skip>${skipTests}</basepom.test.skip>
 
         <!-- surefire fork control -->
-        <basepom.test.fork-count>1.0C</basepom.test.fork-count>
+        <basepom.test.fork-count>0.75C</basepom.test.fork-count>
         <basepom.test.reuse-vm>true</basepom.test.reuse-vm>
         <basepom.test.timeout>30</basepom.test.timeout>
 
@@ -75,15 +75,14 @@
         <!-- Integration testing -->
         <basepom.it.skip>${skipITs}</basepom.it.skip>
         <basepom.it.memory>${basepom.test.memory}</basepom.it.memory>
-        <basepom.it.parallel>1</basepom.it.parallel>
+        <basepom.it.fork-count>0.5C</basepom.it.fork-count>
+        <basepom.it.timeout>30</basepom.it.timeout>
 
         <!-- Invoker plugin for integration testing -->
         <basepom.invoker.folder>src/it</basepom.invoker.folder>
 
         <!-- failsafe fork control -->
-        <basepom.failsafe.fork-count>1</basepom.failsafe.fork-count>
         <basepom.failsafe.reuse-vm>false</basepom.failsafe.reuse-vm>
-        <basepom.failsafe.timeout>30</basepom.failsafe.timeout>
 
         <!-- compiler warnings are treated as errors -->
         <basepom.compiler.fail-warnings>false</basepom.compiler.fail-warnings>
@@ -406,8 +405,8 @@
                         <argLine>@{basepom.coverage.it-args} -Xmx${basepom.it.memory} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
                         <runOrder>random</runOrder>
                         <reuseForks>${basepom.failsafe.reuse-vm}</reuseForks>
-                        <forkCount>${basepom.failsafe.fork-count}</forkCount>
-                        <forkedProcessTimeoutInSeconds>${basepom.failsafe.timeout}</forkedProcessTimeoutInSeconds>
+                        <forkCount>${basepom.it.fork-count}</forkCount>
+                        <forkedProcessTimeoutInSeconds>${basepom.it.timeout}</forkedProcessTimeoutInSeconds>
                         <useManifestOnlyJar>false</useManifestOnlyJar>
                     </configuration>
                 </plugin>
@@ -703,7 +702,7 @@
                     <configuration>
                         <skipInvocation>${basepom.it.skip}</skipInvocation>
                         <skipInstallation>${basepom.it.skip}</skipInstallation>
-                        <parallelThreads>${basepom.it.parallel}</parallelThreads>
+                        <parallelThreads>${basepom.it.fork-count}</parallelThreads>
                         <projectsDirectory>${basepom.invoker.folder}</projectsDirectory>
                         <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                         <pomIncludes>
@@ -713,6 +712,7 @@
                         <postBuildHookScript>verify</postBuildHookScript>
                         <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
                         <settingsFile>${basepom.invoker.folder}/settings.xml</settingsFile>
+                        <invokerTimeoutInSeconds>${basepom.it.timeout}</invokerTimeoutInSeconds>
                         <goals>
                             <goal>clean</goal>
                             <goal>package</goal>
