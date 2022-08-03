@@ -114,7 +114,6 @@
         <basepom.check.skip-dependency-management>${basepom.check.skip-basic}</basepom.check.skip-dependency-management>
         <basepom.check.skip-dependency-scope>${basepom.check.skip-basic}</basepom.check.skip-dependency-scope>
         <basepom.check.skip-dependency-versions-check>${basepom.check.skip-basic}</basepom.check.skip-dependency-versions-check>
-        <basepom.check.skip-javadoc>${basepom.javadoc.skip}</basepom.check.skip-javadoc>
 
         <!-- extended checks -->
         <basepom.check.skip-spotbugs>${basepom.check.skip-extended}</basepom.check.skip-spotbugs>
@@ -434,7 +433,7 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>${dep.plugin.javadoc.version}</version>
                     <configuration>
-                        <skip>${basepom.check.skip-javadoc}</skip>
+                        <skip>${basepom.javadoc.skip}</skip>
                         <failOnError>${basepom.check.fail-javadoc}</failOnError>
                         <release>${project.build.targetJdk}</release>
                         <source>${maven.compiler.source}</source>

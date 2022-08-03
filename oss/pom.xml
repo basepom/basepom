@@ -65,6 +65,7 @@
         <basepom.site.skip-spotbugs>${basepom.check.skip-spotbugs}</basepom.site.skip-spotbugs>
         <!-- javadoc is special -->
         <basepom.site.skip-javadoc>${basepom.javadoc.skip}</basepom.site.skip-javadoc>
+        <basepom.site.fail-javadoc>${basepom.check.fail-javadoc}</basepom.site.fail-javadoc>
    </properties>
 
     <distributionManagement>
@@ -242,6 +243,7 @@
                 <version>${dep.plugin.jxr.version}</version>
                 <configuration>
                     <skip>${basepom.site.skip-javadoc}</skip>
+                    <failOnError>${basepom.site.fail-javadoc}</failOnError>
                 </configuration>
             </plugin>
 
@@ -335,7 +337,7 @@
                 <!-- tests run in the preparation step of the release -->
                 <skipTests>true</skipTests>
                     <!-- oss requires a javadoc jar. Build one when releasing. -->
-                <basepom.check.skip-javadoc>false</basepom.check.skip-javadoc>
+                <basepom.javadoc.skip>false</basepom.javadoc.skip>
             </properties>
             <build>
                 <plugins>

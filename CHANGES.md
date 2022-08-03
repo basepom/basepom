@@ -10,6 +10,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Removed `project.build.sourceVersion` and `project.build.targetVersion` for the more compatible `maven.compiler.source` and `maven.compiler.target` setting.
 * Renamed `basepom.build.use-incremental-compilation` to `basepom.compiler.use-incremental-compilation`.
+* Removed `basepom.check.skip-javadoc` again; javadoc does not really align to the checkers (except for failure), generation is often controlled separately.
+
+## Added
+* Introduced `basepom.site.fail-javadoc` for site generation, default is `${basepom.check.fail-javadoc}`.
 
 ## 46 - 2022-07-16
 
