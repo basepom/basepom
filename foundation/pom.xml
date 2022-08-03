@@ -189,7 +189,7 @@
         <dep.pmd.version>6.47.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>10.3.1</dep.checkstyle.version>
+        <dep.checkstyle.version>10.3.2</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.7.1</dep.spotbugs.version>

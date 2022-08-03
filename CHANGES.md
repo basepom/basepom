@@ -9,6 +9,7 @@ Every release of this project is potentially incompatible to the previous one ev
 ## Changed
 
 * Removed `project.build.sourceVersion` and `project.build.targetVersion` for the more compatible `maven.compiler.source` and `maven.compiler.target` setting.
+* Bump checkstyle to 10.3.2 (from 10.3.1)
 
 ## 46 - 2022-07-16
 
