@@ -14,6 +14,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Replaced `basepom.it.parallel` and `basepom.failsafe.fork-count` with `basepom.it.fork-count` with a default of `0.5C`.
 * Replaced `basepom.failsafe.timeout` with `basepom.it.timeout`.
 * Moved jacoco agent preparation from the `initialize` to the `process-test-classes` phase. Too bad that there is no `pre-test`.
+* Moved integration test jacoco agent preparation into the integration test profile.
 
 ## Added
 * Introduced `basepom.site.fail-javadoc` for site generation, default is `${basepom.check.fail-javadoc}`.
