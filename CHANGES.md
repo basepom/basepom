@@ -20,6 +20,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Removed
 * Removed `basepom.check.skip-javadoc` again; javadoc does not really align to the checkers (except for failure), generation is often controlled separately.
+* Removed plugins that do not contribute default goals to the lifecycle and are not explicitly configured. Those plugins are still in the `<pluginManagement>` section.
 
 
 ## 46 - 2022-07-16
