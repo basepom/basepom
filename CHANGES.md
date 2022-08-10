@@ -16,6 +16,16 @@ Every release of this project is potentially incompatible to the previous one ev
 * Moved jacoco agent preparation from the `initialize` to the `process-test-classes` phase. Too bad that there is no `pre-test`.
 * Moved integration test jacoco agent preparation into the integration test profile.
 * Bump basepom policy to 10 (from 9)
+* Bump spotbugs plugin to 4.7.1.1 (from 4.7.1.0)
+* Bump assembly plugin to 3.4.2 (from 3.4.1)
+* Bump deploy plugin to 3.0.0 (from 3.0.0-M2)
+* Bump install plugin to 3.0.1 (from 3.0.0-M1)
+* Bump resources plugin to 3.3.0 (from 3.2.0)
+* Bump scm plugin to 2.0.0-M2 (from 2.0.0-M1)
+* Bump site plugin to 4.0.0-M3 (from 4.0.0-M2)
+* Bump project-info-reports plugin to 3.4.0 (from 3.3.0)
+* Bump pmd to 6.48.0 (from 6.47.0)
+* Bump checkstyle to 10.3.2 to (from 10.3.1)
 
 ## Added
 * Introduced `basepom.site.fail-javadoc` for site generation, default is `${basepom.check.fail-javadoc}`.
