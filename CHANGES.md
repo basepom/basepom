@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 47 - 2022-08-10
+
 ## Changed
 
 * Replaced `project.build.sourceVersion` and `project.build.targetVersion` with the more compatible `maven.compiler.source` and `maven.compiler.target` setting.
@@ -28,13 +30,15 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump checkstyle to 10.3.2 to (from 10.3.1)
 
 ## Added
+
 * Introduced `basepom.site.fail-javadoc` for site generation, default is `${basepom.check.fail-javadoc}`.
 * Invoker plugin now uses `basepom.it.timeout` for test execution.
 
 ## Removed
+
 * Removed `basepom.check.skip-javadoc` again; javadoc does not really align to the checkers (except for failure), generation is often controlled separately.
-* Removed plugins that do not contribute default goals to the lifecycle and are not explicitly configured. Those plugins are still in the `<pluginManagement>` section.
-* The `<java.security.egd>file:/dev/./urandom</java.security.egd>` for unit tests is no longer needed (since Java 8).
+* Removed plugins that do not contribute default goals to the lifecycle and are not explicitly configured. Those plugins are still configured in the `<pluginManagement>` section.
+* The `java.security.egd` setting for unit tests is no longer needed (since Java 8).
 
 ## 46 - 2022-07-16
 
