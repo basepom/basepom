@@ -42,7 +42,7 @@
         <basepom.shaded.main-class />
 
         <!-- policy jar for license and checkstyle defaults -->
-        <dep.basepom-policy.version>10-SNAPSHOT</dep.basepom-policy.version>
+        <dep.basepom-policy.version>10</dep.basepom-policy.version>
     </properties>
 
     <repositories>
