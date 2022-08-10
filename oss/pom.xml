@@ -40,6 +40,8 @@
         <basepom.check.phase-license>verify</basepom.check.phase-license>
 
         <basepom.license.skip-existing>true</basepom.license.skip-existing>
+        <!-- this is a reference to a resource in the basepom-policy jar -->
+        <basepom.license.header>license/basepom-apache-license-header.txt</basepom.license.header>
 
         <!-- release profiles -->
         <basepom.release.profiles>basepom.oss-release</basepom.release.profiles>
@@ -107,7 +109,7 @@
                         <skip>${basepom.check.skip-license}</skip>
                         <skipExistingHeaders>${basepom.license.skip-existing}</skipExistingHeaders>
                         <failIfMissing>${basepom.check.fail-license}</failIfMissing>
-                        <header>license/basepom-apache-license-header.txt</header>
+                        <header>${basepom.license.header}</header>
                         <headerDefinitions>
                             <headerDefinition>license/xml-prefix.xml</headerDefinition>
                         </headerDefinitions>

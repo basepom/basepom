@@ -6,9 +6,13 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Added
+
+* Add `basepom.license.header` to control the checked file license header
+
 ## 47 - 2022-08-10
 
-## Changed
+### Changed
 
 * Replaced `project.build.sourceVersion` and `project.build.targetVersion` with the more compatible `maven.compiler.source` and `maven.compiler.target` setting.
 * Renamed `basepom.build.use-incremental-compilation` to `basepom.compiler.use-incremental-compilation`.
@@ -29,12 +33,12 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump pmd to 6.48.0 (from 6.47.0)
 * Bump checkstyle to 10.3.2 to (from 10.3.1)
 
-## Added
+### Added
 
 * Introduced `basepom.site.fail-javadoc` for site generation, default is `${basepom.check.fail-javadoc}`.
 * Invoker plugin now uses `basepom.it.timeout` for test execution.
 
-## Removed
+### Removed
 
 * Removed `basepom.check.skip-javadoc` again; javadoc does not really align to the checkers (except for failure), generation is often controlled separately.
 * Removed plugins that do not contribute default goals to the lifecycle and are not explicitly configured. Those plugins are still configured in the `<pluginManagement>` section.
