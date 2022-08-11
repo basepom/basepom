@@ -10,6 +10,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Add `basepom.license.header` to control the checked file license header
 * Add `basepom.gpg.use-agent` to control GnuPG agent use
+* Add `basepom.site.skip-deploy` and `basepom.site.skip-scm-deploy` to control site deployment.
 
 ## 47 - 2022-08-10
 

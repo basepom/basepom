@@ -179,6 +179,8 @@
 
         <!-- control site building -->
         <basepom.site.skip>false</basepom.site.skip>
+        <basepom.site.skip-deploy>true</basepom.site.skip-deploy>
+        <basepom.site.skip-scm-deploy>true</basepom.site.skip-scm-deploy>
 
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.6.0</basepom.maven.version>
@@ -659,6 +661,17 @@
                     <version>${dep.plugin.site.version}</version>
                     <configuration>
                         <skip>${basepom.site.skip}</skip>
+                        <skipDeploy>${basepom.site.skip-deploy</skipDeploy>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-publish-plugin</artifactId>
+                    <version>${dep.plugin.scm-publish.version}</version>
+                    <configuration>
+                        <skipDeployement>${basepom.site.skip-scm-deploy}</skipDeployement>
+                        <localCheckout>true</localCheckout>
                     </configuration>
                 </plugin>
 
@@ -719,17 +732,6 @@
                         </goals>
                     </configuration>
                 </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-scm-publish-plugin</artifactId>
-                    <version>${dep.plugin.scm-publish.version}</version>
-                    <configuration>
-                        <skipDeployement>${basepom.site.skip}</skipDeployement>
-                        <localCheckout>true</localCheckout>
-                    </configuration>
-                </plugin>
-
             </plugins>
         </pluginManagement>
 
@@ -971,6 +973,20 @@
                         <phase>process-test-classes</phase>
                         <goals>
                             <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>basepom.default-site</id>
+                        <phase>site-deploy</phase>
+                        <goals>
+                            <goal>publish-scm</goal>
                         </goals>
                     </execution>
                 </executions>
