@@ -302,7 +302,6 @@
                         <id>default</id>
                         <reports>
                             <report>report</report>
-                            <report>report-integration</report>
                         </reports>
                     </reportSet>
                 </reportSets>
@@ -385,6 +384,18 @@
                                 <id>default</id>
                                 <reports>
                                     <report>report</report>
+                                </reports>
+                            </reportSet>
+                        </reportSets>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <reportSets>
+                            <reportSet>
+                                <id>default-it</id>
+                                <reports >
+                                    <report>report-integration</report>
                                 </reports>
                             </reportSet>
                         </reportSets>

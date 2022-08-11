@@ -13,6 +13,10 @@ Every release of this project is potentially incompatible to the previous one ev
 * Add `basepom.site.skip-deploy` and `basepom.site.scm.skip-deploy` to control site deployment.
 * Add configuration for the publish-scm plugin
 
+### Changed
+
+* Move `report-integration` site report to the `basepom.invoker.reporting` plugin.
+
 ## 47 - 2022-08-10
 
 ### Changed
