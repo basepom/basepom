@@ -250,6 +250,15 @@
                     <skip>${basepom.site.skip-javadoc}</skip>
                     <failOnError>${basepom.site.fail-javadoc}</failOnError>
                 </configuration>
+                <reportSets>
+                    <reportSet>
+                        <id>default</id>
+                        <reports>
+                            <report>jxr-no-fork</report>
+                            <report>test-jxr-no-fork</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
 
             <plugin>
