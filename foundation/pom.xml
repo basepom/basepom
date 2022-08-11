@@ -180,7 +180,15 @@
         <!-- control site building -->
         <basepom.site.skip>false</basepom.site.skip>
         <basepom.site.skip-deploy>true</basepom.site.skip-deploy>
-        <basepom.site.skip-scm-deploy>true</basepom.site.skip-scm-deploy>
+        <basepom.site.scm.skip-deploy>true</basepom.site.scm.skip-deploy>
+
+        <!-- path where the site is written into the remote scm -->
+        <basepom.site.scm.site-path>development</basepom.site.scm.site-path>
+        <!-- branch on the remote scm -->
+        <basepom.site.scm.branch>main</basepom.site.scm.branch>
+        <!-- the following two values must be set to use SCM site deploy -->
+        <basepom.site.scm.url />
+        <basepom.site.scm.id />
 
         <!-- the current "minimal" version of maven -->
         <basepom.maven.version>3.6.0</basepom.maven.version>
@@ -661,7 +669,7 @@
                     <version>${dep.plugin.site.version}</version>
                     <configuration>
                         <skip>${basepom.site.skip}</skip>
-                        <skipDeploy>${basepom.site.skip-deploy</skipDeploy>
+                        <skipDeploy>${basepom.site.skip-deploy}</skipDeploy>
                     </configuration>
                 </plugin>
 
@@ -670,8 +678,14 @@
                     <artifactId>maven-scm-publish-plugin</artifactId>
                     <version>${dep.plugin.scm-publish.version}</version>
                     <configuration>
-                        <skipDeployement>${basepom.site.skip-scm-deploy}</skipDeployement>
                         <localCheckout>true</localCheckout>
+                        <scmBranch>${basepom.site.scm.branch}</scmBranch>
+                        <checkoutDirectory>${java.io.tmpdir}/gh-pages-publish/${project.name}</checkoutDirectory>
+                        <content>${project.reporting.outputDirectory}</content>
+                        <subDirectory>${basepom.site.scm.site-path}</subDirectory>
+                        <skipDeployement>${basepom.site.scm.skip-deploy}</skipDeployement>
+                        <serverId>${basepom.site.scm.id}</serverId>
+                        <pubScmUrl>${basepom.site.scm.url}</pubScmUrl>
                     </configuration>
                 </plugin>
 
