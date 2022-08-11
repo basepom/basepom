@@ -39,6 +39,9 @@
         <!-- Some plugins can run early ("validate") or late ("verify") -->
         <basepom.check.phase-license>verify</basepom.check.phase-license>
 
+        <!-- gpg agent configuration -->
+        <basepom.gpg.use-agent>true</basepom.gpg.use-agent>
+
         <basepom.license.skip-existing>true</basepom.license.skip-existing>
         <!-- this is a reference to a resource in the basepom-policy jar -->
         <basepom.license.header>license/basepom-apache-license-header.txt</basepom.license.header>
@@ -155,7 +158,7 @@
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${dep.plugin.gpg.version}</version>
                     <configuration>
-                        <useAgent>true</useAgent>
+                        <useAgent>${basepom.gpg.use-agent}</useAgent>
                     </configuration>
                 </plugin>
             </plugins>

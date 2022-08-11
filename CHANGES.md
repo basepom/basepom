@@ -9,6 +9,7 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Added
 
 * Add `basepom.license.header` to control the checked file license header
+* Add `basepom.gpg.use-agent` to control GnuPG agent use
 
 ## 47 - 2022-08-10
 
