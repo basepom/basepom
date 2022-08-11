@@ -347,9 +347,13 @@
         <profile>
             <id>basepom.oss-release</id>
             <properties>
-                <!-- tests run in the preparation step of the release -->
+                <!-- tests have been run in the preparation step of the release -->
                 <skipTests>true</skipTests>
-                    <!-- oss requires a javadoc jar. Build one when releasing. -->
+
+                <!-- checks have been run in the preparation step of the release -->
+                <basepom.check.skip-all>true</basepom.check.skip-all>
+
+                <!-- oss requires a javadoc jar. Build one when releasing. -->
                 <basepom.javadoc.skip>false</basepom.javadoc.skip>
             </properties>
             <build>

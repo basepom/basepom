@@ -16,6 +16,7 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * Move `report-integration` site report to the `basepom.invoker.reporting` plugin.
+* Skip checkers when releasing code, they have already been run as part of the prepare step
 
 ## 47 - 2022-08-10
 
