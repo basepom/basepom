@@ -91,7 +91,7 @@
                     <attributes>
                         <attribute-missing>warn</attribute-missing>
                         <source-highlighter>coderay</source-highlighter>
-                        <imagesdir>${project.reporting.outputDirectory}/images</imagesdir>
+                        <imagesdir>images</imagesdir>
 
                         <project_version>${project.version}</project_version>
                         <revnumber>${project.version}</revnumber>
