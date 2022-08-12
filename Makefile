@@ -1,6 +1,6 @@
 SHELL = /bin/sh
 .SUFFIXES:
-.PHONY: install deploy docs release
+.PHONY: install deploy docs release deploy-docs
 
 default: install
 
@@ -12,6 +12,9 @@ deploy:
 
 docs:
 	mvn -Pdocs clean install
+
+deploy-docs:
+	mvn -Pdocs clean deploy
 
 release:
 	mvn -Prelease clean release:clean release:prepare release:perform

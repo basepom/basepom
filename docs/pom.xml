@@ -30,10 +30,19 @@
     </description>
 
     <properties>
+        <basepom.site.scm.skip-deploy>false</basepom.site.scm.skip-deploy>
+        <basepom.site.scm.url>scm:git:git@github.com:basepom/basepom.org.git</basepom.site.scm.url>
+        <basepom.site.scm.site-path>/</basepom.site.scm.site-path>
         <dep.plugin.asciidoctor.version>2.2.2</dep.plugin.asciidoctor.version>
     </properties>
 
     <build>
+        <resources>
+            <resource>
+                <filtering>false</filtering>
+                <directory>${project.basedir}/src/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -54,6 +63,7 @@
                     <timeZone>America/Los_Angeles</timeZone>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -71,6 +81,7 @@
                 <configuration>
                     <sourceDirectory>src/adoc</sourceDirectory>
                     <sourceDocumentName>index.adoc</sourceDocumentName>
+                    <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
                     <backend>html5</backend>
                     <logHandler>
                         <failIf>
@@ -79,13 +90,45 @@
                     </logHandler>
                     <attributes>
                         <attribute-missing>warn</attribute-missing>
+                        <source-highlighter>coderay</source-highlighter>
+                        <imagesdir>${project.reporting.outputDirectory}/images</imagesdir>
+
                         <project_version>${project.version}</project_version>
                         <revnumber>${project.version}</revnumber>
                         <revdate>${doc.timestamp}</revdate>
                         <docdatetime>${doc.timestamp}</docdatetime>
-                        <source-highlighter>coderay</source-highlighter>
                     </attributes>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>publish-docs</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>publish-scm</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

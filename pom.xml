@@ -318,7 +318,28 @@
             <modules>
                 <module>docs</module>
             </modules>
-            <build></build>
+            <properties>
+                <basepom.check.skip-license>true</basepom.check.skip-license>
+            </properties>
+            <build>
+                <!-- creating the documentation neither installs nor deploys anything -->
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-install-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>
