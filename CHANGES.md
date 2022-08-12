@@ -12,6 +12,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Add `basepom.gpg.use-agent` to control GnuPG agent use
 * Add `basepom.site.skip-deploy` and `basepom.site.scm.skip-deploy` to control site deployment.
 * Add configuration for the publish-scm plugin
+* Add documentation
 
 ### Changed
 

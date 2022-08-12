@@ -1,20 +1,24 @@
-# Base POMs - JDK11+ Edition
-
-**THIS is the JDK11+ version of the basepom project.**
-
-If you are stuck on JDK8 as the **build JDK** (not the execution JDK), please check out the [basepom8 branch](https://github.com/basepom/basepom/tree/basepom8).
+# All the BasePOMs in the world
 
 ## Building and deployment
 
-    % mvn clean install
+```bash
+% make install
 
-    % mvn clean deploy
+% make deploy
+```
 
-## Releasing
+## Create documentation
 
-Run the release script:
+```bash
+% make docs
+```
 
-% ./do-release.sh
+## Create a release
+
+```bash
+% make release
+```
 
 
 ----
