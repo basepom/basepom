@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 48 - 2022-08-12
+
+**Note** This is the first release that is [fully documented](https://basepom.org).
+
 ### Added
 
 * Add `basepom.license.header` to control the checked file license header
