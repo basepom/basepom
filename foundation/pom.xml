@@ -157,6 +157,8 @@
         <!-- dependency management plugin -->
         <basepom.dependency-management.dependencies>false</basepom.dependency-management.dependencies>
         <basepom.dependency-management.plugins>false</basepom.dependency-management.plugins>
+        <basepom.dependency-management.allow-versions>false</basepom.dependency-management.allow-versions>
+        <basepom.dependency-management.allow-exclusions>false</basepom.dependency-management.allow-exclusions>
 
         <!-- executable plugin -->
         <basepom.executable.flags />
@@ -524,8 +526,8 @@
                         <requireManagement>
                             <dependencies>${basepom.dependency-management.dependencies}</dependencies>
                             <plugins>${basepom.dependency-management.plugins}</plugins>
-                            <allowVersions>false</allowVersions>
-                            <allowExclusions>false</allowExclusions>
+                            <allowVersions>${basepom.dependency-management.allow-versions}</allowVersions>
+                            <allowExclusions>${basepom.dependency-management.allow-exclusions}</allowExclusions>
                         </requireManagement>
                     </configuration>
                 </plugin>

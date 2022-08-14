@@ -567,15 +567,17 @@ Most checkers are self-contained and need no additional configuration. Others (e
 
 [%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
 |===
-| Property Name                                 | Default Value | customization   | defined in | function
-| basepom.check.checkstyle-severity             | `error`       | sometimes, policy     | foundation | Controls which severity levels are considered a violation. Only violations fail the build. Valid values are `info`, `warning` and `error`
-| basepom.dependency-management.dependencies    | `false`       | often, policy         | foundation | If `true`, all project dependencies must be defined in a `dependencyManagement` section and `dependency` sections must not contain versions
-| basepom.dependency-management.plugins         | `false`       | often, policy         | foundation | If `true`, all project plugins must be defined in a `pluginManagement` section and `plugin` sections must not contain versions
-| basepom.dvc.direct-only                       | `true`        | sometimes, policy     | foundation | Only report direct dependencies of a project, not all dependencies
-| basepom.pmd.fail-level                        | `4`           | sometimes, policy     | foundation | Minimum PMD violation level that will fail the build
-| basepom.license.header                        | `license/basepom-apache-license-header.txt` | often, policy | oss | The license header to use. This is a reference to a file or a resource on the plugin classpath
-| basepom.license.skip-existing                 | `true`        | sometimes, policy     | oss        | Keep existing license headers, do not replace them
-| basepom.gpg.use-agent                         | `true`        | rarely                | oss        | Use the GnuPG agent to manage private signing keys
+| Property Name                                  | Default Value | customization   | defined in | function
+| basepom.check.checkstyle-severity              | `error`       | sometimes, policy     | foundation | Controls which severity levels are considered a violation. Only violations fail the build. Valid values are `info`, `warning` and `error`
+| basepom.dependency-management.allow-versions   | `false`       | sometimes, policy     | foundation | If `true`, dependencies are allowed to specify versions to override the `<dependencyManagement>` section
+| basepom.dependency-management.allow-exclusions | `false`       | sometimes, policy     | foundation | If `true`, dependencies are allowed to contain `<exclusions>` elements to override the `<dependencyManagement>` section
+| basepom.dependency-management.dependencies     | `false`       | often, policy         | foundation | If `true`, all project dependencies must be defined in a `dependencyManagement` section and `dependency` sections must not contain versions
+| basepom.dependency-management.plugins          | `false`       | often, policy         | foundation | If `true`, all project plugins must be defined in a `pluginManagement` section and `plugin` sections must not contain versions
+| basepom.dvc.direct-only                        | `true`        | sometimes, policy     | foundation | Only report direct dependencies of a project, not all dependencies
+| basepom.pmd.fail-level                         | `4`           | sometimes, policy     | foundation | Minimum PMD violation level that will fail the build
+| basepom.license.header                         | `license/basepom-apache-license-header.txt` | often, policy | oss | The license header to use. This is a reference to a file or a resource on the plugin classpath
+| basepom.license.skip-existing                  | `true`        | sometimes, policy     | oss        | Keep existing license headers, do not replace them
+| basepom.gpg.use-agent                          | `true`        | rarely                | oss        | Use the GnuPG agent to manage private signing keys
 |===
 
 

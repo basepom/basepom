@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Added
+
+* Add `basepom.dependency-management.allow-versions` and `basepom.dependency-management.allow-exclusions`.
+
 ## 48 - 2022-08-12
 
 **Note** This is the first release that is [fully documented](https://basepom.org).
