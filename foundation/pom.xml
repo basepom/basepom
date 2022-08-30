@@ -107,6 +107,11 @@
         <basepom.coverage.test-args />
         <basepom.coverage.it-args />
 
+        <!-- skip deploy and / or installation -->
+        <basepom.install.skip>false</basepom.install.skip>
+        <!-- inherit from install; if install is disabled, deploy usually is as well -->
+        <basepom.deploy.skip>${basepom.install.skip}</basepom.deploy.skip>
+
         <!-- Controls all the checkers run when building the project.                 -->
         <!-- Can be activated with -Dbasepom.check.skip-all=true on the command line. -->
         <basepom.check.skip-all>false</basepom.check.skip-all>
@@ -296,6 +301,7 @@
                     <version>${dep.plugin.deploy.version}</version>
                     <configuration>
                         <deployAtEnd>${basepom.at-end.deploy}</deployAtEnd>
+                        <skip>${basepom.deploy.skip}</skip>
                     </configuration>
                 </plugin>
 
@@ -311,6 +317,7 @@
                     <version>${dep.plugin.install.version}</version>
                     <configuration>
                         <installAtEnd>${basepom.at-end.install}</installAtEnd>
+                        <skip>${basepom.install.skip}</skip>
                     </configuration>
                 </plugin>
 

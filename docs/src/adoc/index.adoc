@@ -307,12 +307,14 @@ Besides building, Apache Maven can install the resulting artifacts into the loca
 
 [%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
 |===
-| Property Name                                 | Default Value                              | customization | defined in | function
+| Property Name                                 | Default Value                              customization      | defined in | function
 | basepom.at-end                                | `false`                                    | sometimes, policy | foundation | Set the default value for installing and deploying artifacts in the build cycle for Multi Module projects. If `true`, the respective operation is done after all modules have been built, otherwise it is done as part of the module build cycle.
 | basepom.at-end.install                        | `${basepom.at-end}`                        | rarely, policy    | foundation | If `true`, install artifacts at the end of a Multi Module project build cycle.
 | basepom.at-end.deploy                         | `${basepom.at-end}`                        | sometimes, policy | foundation | If `true`, deploy artifacts at the end of a Multi Module project build cycle.
-| basepom.release.push-changes                  | `false`                                    | sometimes     | foundation | If `true`, then running the Maven `release:prepare` goal will push changes directly to the upstream repository. Defaults to `false`.
-| basepom.release.tag-name-format               | `@{project.artifactId}-@{project.version}` | often         | foundation | Name tag format for the release tag. See the https://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#tagNameFormat[Maven Release Plugin Documentation] for details.
+| basepom.install.skip                          | `false`                                    | rarely            | foundation | If `true`, skip artifact installation.
+| basepom.deploy.skip                           | `${basepom.install.skip}`                  | rarely            | foundation | If `true`, skip artifact deployment.
+| basepom.release.push-changes                  | `false`                                    | sometimes         | foundation | If `true`, then running the Maven `release:prepare` goal will push changes directly to the upstream repository. Defaults to `false`.
+| basepom.release.tag-name-format               | `@{project.artifactId}-@{project.version}` | often             | foundation | Name tag format for the release tag. See the https://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#tagNameFormat[Maven Release Plugin Documentation] for details.
 |===
 
 ==== Javadoc Generation
