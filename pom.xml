@@ -65,7 +65,7 @@
         <basepom.check.skip-enforcer>false</basepom.check.skip-enforcer>
         <basepom.check.skip-license>false</basepom.check.skip-license>
         <basepom.release.tag-name-format>basepom-@{project.version}</basepom.release.tag-name-format>
-        <basepom.release.profiles>release,oss-release</basepom.release.profiles>
+        <basepom.release.profiles>release,oss-release,docs</basepom.release.profiles>
 
         <dep.plugin.asciidoctor.version>2.2.2</dep.plugin.asciidoctor.version>
         <dep.asciidoctorj.version>2.5.4</dep.asciidoctorj.version>
@@ -234,6 +234,7 @@
                 <module>foundation</module>
                 <module>minimal</module>
                 <module>oss</module>
+                <module>docs</module>
             </modules>
         </profile>
         <profile>
@@ -297,17 +298,6 @@
                                     <file>${basedir}/oss/pom.xml</file>
                                 </configuration>
                             </execution>
-                            <execution>
-                                <id>build-root</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>sign-and-deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>build-basepom-root</artifactId>
-                                    <file>${basedir}/pom.xml</file>
-                                </configuration>
-                            </execution>
                         </executions>
                     </plugin>
                 </plugins>
@@ -320,26 +310,9 @@
             </modules>
             <properties>
                 <basepom.check.skip-license>true</basepom.check.skip-license>
+                <basepom.deploy.skip>true</basepom.deploy.skip>
+                <basepom.install.skip>true</basepom.install.skip>
             </properties>
-            <build>
-                <!-- creating the documentation neither installs nor deploys anything -->
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-install-plugin</artifactId>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>
 </project>
