@@ -324,6 +324,7 @@ Javadoc artifacts are created as part of the build lifecycle. While they are opt
 | Property Name                                 | Default Value                              | customization   | defined in | function
 | basepom.javadoc.skip                          | `true`                                     | often, profile  | foundation | If `true`, generate a javadoc artifact as part of the build.
 | basepom.javadoc.doclint                       | `none`                                     | sometimes       | foundation | Controls the https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#BEJEFABE[Javadoc `-Xdoclint` setting].
+| basepom.javadoc.exclude-package-names         | ``                                         | sometimes       | foundation | Allows exclusion of package names from javadoc generation. See https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html#excludePackageNames[Maven javadoc plugin] documentation for the exact syntax.
 | basepom.javadoc.show                          | `public`                                   | rarely, policy  | foundation | Controls the access level included in the javadocs.
 |===
 

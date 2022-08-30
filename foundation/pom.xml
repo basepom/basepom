@@ -62,6 +62,9 @@
         <!-- Javadoc show level: public, protected, package, private  -->
         <basepom.javadoc.show>public</basepom.javadoc.show>
 
+        <!-- Javadoc exclude package names -->
+        <basepom.javadoc.exclude-package-names />
+
         <!-- surefire skip tests -->
         <basepom.test.skip>${skipTests}</basepom.test.skip>
 
@@ -453,6 +456,7 @@
                         <quiet>true</quiet>
                         <doclint>${basepom.javadoc.doclint}</doclint>
                         <show>${basepom.javadoc.show}</show>
+                        <excludePackageNames>${basepom.javadoc.exclude-package-names}</excludePackageNames>
                     </configuration>
                 </plugin>
 
