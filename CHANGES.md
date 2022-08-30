@@ -10,6 +10,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Add `basepom.dependency-management.allow-versions` and `basepom.dependency-management.allow-exclusions`.
 * Add `basepom.javadoc.exclude-package-names` to exclude specific package names from javadoc generation.
+* Add `basepom.test.groups` and `basepom.it.groups` to select specific test groups for execution.
 
 ## 48 - 2022-08-12
 

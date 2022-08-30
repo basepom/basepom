@@ -340,6 +340,7 @@ The Apache Maven `surefire` plugin is active by default. Any other test plugin s
 | basepom.test.reuse-vm                         | `true`                                     | sometimes, policy | foundation | If `true`, reuse existing VM instances, otherwise start a new instance for each test.
 | basepom.test.timeout                          | `30`                                       | often          | foundation | Maximum time in seconds that a unit test can run.
 | basepom.test.memory                           | `256m`                                     | often          | foundation | Memory for each forked VM.
+| basepom.test.groups                           | ``                                         | sometimes      | foundation | Test group selection for unit tests.
 |===
 
 ==== Integration Tests
@@ -353,6 +354,7 @@ Apache Maven supports multiple plugins for integration tests. BasePOM supports t
 | basepom.it.memory                         | `${basepom.test.memory}`                   | sometimes, policy | foundation | Memory allocated for each integration test VM.
 | basepom.it.fork-count                     | `0.5C`                                     | sometimes, policy | foundation | Controls the number of parallel tests to run. Default is 1/2 the number of reported CPU cores.
 | basepom.it.timeout                        | `30`                                       | often, policy     | foundation | Maximum time in seconds that an integration test can run.
+| basepom.it.groups                         | ``                                         | sometimes         | foundation | Test group selection for integration tests.
 | [#invoker-folder]#basepom.invoker.folder# | `src/it`                                   | rarely            | foundation | Base directory where all integration tests are located.
 | basepom.failsafe.reuse-vm                 | `false`                                    | sometimes, policy | foundation | If `true`, reuse existing VM instances, otherwise start a new instance for each test.
 |===
