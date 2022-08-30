@@ -19,7 +19,7 @@
         <groupId>org.basepom</groupId>
         <artifactId>basepom-oss</artifactId>
         <version>49-SNAPSHOT</version>
-        <relativePath>./oss</relativePath>
+        <relativePath>./poms/oss</relativePath>
     </parent>
 
     <artifactId>build-basepom-root</artifactId>
@@ -30,7 +30,7 @@
         Glue to build the various flavors of the basepom.
     </description>
     <url>https://github.com/basepom/basepom/</url>
-    <name>basepom-build</name>
+    <name>basepom :: build :: root</name>
 
     <inceptionYear>2013</inceptionYear>
 
@@ -64,8 +64,12 @@
         <basepom.check.skip-all>true</basepom.check.skip-all>
         <basepom.check.skip-enforcer>false</basepom.check.skip-enforcer>
         <basepom.check.skip-license>false</basepom.check.skip-license>
+
         <basepom.release.tag-name-format>basepom-@{project.version}</basepom.release.tag-name-format>
-        <basepom.release.profiles>release,oss-release,docs</basepom.release.profiles>
+        <basepom.release.profiles>release,oss-release</basepom.release.profiles>
+
+        <basepom.deploy.skip>true</basepom.deploy.skip>
+        <basepom.install.skip>true</basepom.install.skip>
 
         <dep.plugin.asciidoctor.version>2.2.2</dep.plugin.asciidoctor.version>
         <dep.asciidoctorj.version>2.5.4</dep.asciidoctorj.version>
@@ -75,14 +79,6 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <configuration>
-                        <arguments>-N</arguments>
-                        <tagNameFormat>basepom-@{project.version}</tagNameFormat>
-                    </configuration>
-                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
@@ -145,162 +141,28 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-install-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>foundation</id>
-                                <phase>install</phase>
-                                <goals>
-                                    <goal>install-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-foundation</artifactId>
-                                    <file>${basedir}/foundation/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>minimal</id>
-                                <phase>install</phase>
-                                <goals>
-                                    <goal>install-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-minimal</artifactId>
-                                    <file>${basedir}/minimal/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>oss</id>
-                                <phase>install</phase>
-                                <goals>
-                                    <goal>install-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-oss</artifactId>
-                                    <file>${basedir}/oss/pom.xml</file>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>foundation</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-foundation</artifactId>
-                                    <file>${basedir}/foundation/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>minimal</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-minimal</artifactId>
-                                    <file>${basedir}/minimal/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>oss</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-oss</artifactId>
-                                    <file>${basedir}/oss/pom.xml</file>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
+            <modules>
+                <module>poms</module>
+            </modules>
         </profile>
         <profile>
             <id>release</id>
             <modules>
-                <module>foundation</module>
-                <module>minimal</module>
-                <module>oss</module>
+                <module>poms</module>
                 <module>docs</module>
             </modules>
-        </profile>
-        <profile>
-            <id>oss-release</id>
             <build>
                 <pluginManagement>
                     <plugins>
-                        <!-- Sign artifacts using gpg for oss upload -->
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-gpg-plugin</artifactId>
+                            <artifactId>maven-release-plugin</artifactId>
                             <configuration>
-                                <!-- sign-and-deploy-file -->
-                                <groupId>${project.groupId}</groupId>
-                                <generatePom>false</generatePom>
-                                <packaging>pom</packaging>
-                                <version>${project.version}</version>
-                                <repositoryId>sonatype-nexus-staging</repositoryId>
-                                <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                                <updateReleaseInfo>true</updateReleaseInfo>
-                                <!-- sign-and-deploy-file -->
+                                <arguments>-pl :build-basepom-root,:build-basepom-poms,:build-basepom-docs</arguments>
                             </configuration>
                         </plugin>
                     </plugins>
                 </pluginManagement>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>foundation</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>sign-and-deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-foundation</artifactId>
-                                    <file>${basedir}/foundation/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>minimal</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>sign-and-deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-minimal</artifactId>
-                                    <file>${basedir}/minimal/pom.xml</file>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>oss</id>
-                                <phase>deploy</phase>
-                                <goals>
-                                    <goal>sign-and-deploy-file</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactId>basepom-oss</artifactId>
-                                    <file>${basedir}/oss/pom.xml</file>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
             </build>
         </profile>
         <profile>
@@ -308,11 +170,6 @@
             <modules>
                 <module>docs</module>
             </modules>
-            <properties>
-                <basepom.check.skip-license>true</basepom.check.skip-license>
-                <basepom.deploy.skip>true</basepom.deploy.skip>
-                <basepom.install.skip>true</basepom.install.skip>
-            </properties>
         </profile>
     </profiles>
 </project>

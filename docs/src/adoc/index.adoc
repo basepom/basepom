@@ -14,6 +14,36 @@
 
 :projecthome: https://github.com/basepom/basepom
 
+ifdef::release[]
+== Release {revnumber} documentation
+
+This is release {revnumber} of the BasePOM project.
+
+* https://basepom.org/releases/{revnumber}[Permalink to this document]
+* https://github.com/basepom/basepom/releases/tag/basepom-{revnumber}[Complete list of changes]
+* https://github.com/basepom/basepom/tree/basepom-{revnumber}[Release tag]
+
+* https://basepom.org/[Documentation for the current development version].
+
+endif::[]
+
+ifndef::release[]
+== Current development version ({revnumber})
+
+This is the current development documentation for the BasePOM project. All information in here reflects the current state of development on the `main` branch.
+
+* https://basepom.org/[Permalink to this document]
+* https://github.com/basepom/basepom/blob/main/CHANGES.md[Current changes summary]
+* https://github.com/basepom/basepom/[Development source tree]
+
+=== Previous releases
+
+* https://basepom.org/releases/48[Release 48 - 2022-08-12]
+
+
+endif::[]
+
+
 == Introduction
 
 The BasePOM project aims to make using Apache Maven as a build tool painless. It provides a set of well known plugins for Apache Maven with an opinionated base configuration and a number of configuration options. It is aiming at Java projects but can easily be extended for other languages that are supported by Apache Maven.

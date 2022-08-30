@@ -14,6 +14,10 @@ Every release of this project is potentially incompatible to the previous one ev
 * Add `basepom.javadoc.exclude-package-names` to exclude specific package names from javadoc generation.
 * Add `basepom.test.groups` and `basepom.it.groups` to select specific test groups for execution.
 
+### Changed
+
+* Changed the repository layout to release documentation and deployment at the same time.
+
 ## 48 - 2022-08-12
 
 **Note** This is the first release that is [fully documented](https://basepom.org).
