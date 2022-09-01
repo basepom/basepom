@@ -18,8 +18,8 @@ jobs:
 
     - name: configure git user
       run: |
-          git config user.name github-cd-action
-          git config user.email github-cd-action@basepom.org
+          git config --global user.name github-cd-action
+          git config --global user.email github-cd-action@basepom.org
     - name: setup build environment
       uses: actions/setup-java@v3
       with:
@@ -47,5 +47,4 @@ jobs:
       env:
         SITE_DEPLOY: ${{ secrets.SITE_DEPLOY }}
       run: |
-        cat $HOME/.m2/settings.xml
         make deploy-docs
