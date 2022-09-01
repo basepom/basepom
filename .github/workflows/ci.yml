@@ -16,21 +16,13 @@ jobs:
         java-version: [ 11, 17 ]
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Cache local Maven repository
-        uses: actions/cache@v2
-        with:
-            path: ~/.m2/repository
-            key: ${{ runner.os }}-${{ matrix.java-version }}-maven-${{ hashFiles('**/pom.xml') }}
-            restore-keys: |
-                ${{ runner.os }}-${{ matrix.java-version }}-maven-
-      - uses: actions/setup-java@v2
-        id: build_java
-        with:
-          java-version: ${{ matrix.java-version }}
-          distribution: temurin
-          cache: maven
-      - name: Build
-        run: |
-          ./mvnw --version
-          ./mvnw -B -fae clean install
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v2
+      id: build_java
+      with:
+        distribution: temurin
+        java-version: ${{ matrix.java-version }}
+        cache: maven
+    - name: Build
+      run: |
+        make deploy deploy-docs

@@ -5,19 +5,19 @@ SHELL = /bin/sh
 default: help
 
 install:
-	mvn clean install
+	./mvnw clean install
 
 deploy:
-	mvn clean deploy
+	./mvnw clean deploy
 
 docs:
-	mvn -Pdocs clean install
+	./mvnw -Pdocs clean install
 
 deploy-docs:
-	mvn -Pdocs clean deploy
+	./mvnw -Pdocs clean deploy
 
 release:
-	mvn -Prelease clean release:clean release:prepare release:perform
+	./mvnw -Prelease clean release:clean release:prepare release:perform
 
 help:
 	@echo " * install     - installs basepom versions in the local maven repository"
