@@ -29,9 +29,10 @@
         <basepom.check.skip-license>true</basepom.check.skip-license>
 
         <basepom.site.scm.skip-deploy>false</basepom.site.scm.skip-deploy>
-        <basepom.site.scm.url>scm:git:git@github.com:basepom/basepom.org.git</basepom.site.scm.url>
+        <basepom.site.scm.url>scm:git:https://github.com/basepom/basepom.org</basepom.site.scm.url>
         <basepom.site.scm.site-path>/</basepom.site.scm.site-path>
         <basepom.site.scm.checkout-directory>${java.io.tmpdir}/gh-pages-publish/basepom-docs</basepom.site.scm.checkout-directory>
+        <basepom.site.scm.id>github</basepom.site.scm.id>
     </properties>
 
     <build>

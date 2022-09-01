@@ -1,11 +1,7 @@
 name: CD (Snapshot deployment)
 
-
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -14,9 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-java@v3
-      id: build_code
+    - uses: actions/checkout@v3
+
+    - name: configure git user
+      run: |
+          git config --global user.name github-cd-action
+          git config --global user.email github-cd-action@basepom.org
+    - name: setup build environment
+      uses: actions/setup-java@v3
       with:
         distribution: temurin
         java-version: 17
@@ -30,14 +31,13 @@ jobs:
         NEXUS_REPO_PASSWORD: ${{ secrets.NEXUS_REPO_PASSWORD }}
       run: |
         make deploy
-    - uses: actions/setup-java@v3
-      id: build_docs
+    - name: setup doc environment
+      uses: actions/setup-java@v3
       with:
         distribution: temurin
         java-version: 17
         cache: maven
         server-id: github
-        server-username: github
         server-password: SITE_DEPLOY
     - name: deploy documentation
       env:
