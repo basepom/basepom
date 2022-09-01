@@ -10,13 +10,13 @@ on:
       - main
 
 jobs:
-  ci:
+  cd:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-java@v3
-      id: build_java
+      id: build_code
       with:
         distribution: temurin
         java-version: 17
@@ -30,8 +30,17 @@ jobs:
         NEXUS_REPO_PASSWORD: ${{ secrets.NEXUS_REPO_PASSWORD }}
       run: |
         make deploy
+    - uses: actions/setup-java@v3
+      id: build_docs
+      with:
+        distribution: temurin
+        java-version: 17
+        cache: maven
+        server-id: github
+        server-username: github
+        server-password: SITE_DEPLOY
     - name: deploy documentation
       env:
-        GITHUB_TOKEN: ${{ secrets.SITE_DEPLOY }}
+        SITE_DEPLOY: ${{ secrets.SITE_DEPLOY }}
       run: |
         make deploy-docs
