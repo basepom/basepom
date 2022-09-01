@@ -32,6 +32,6 @@ jobs:
         make deploy
     - name: deploy documentation
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.SITE_DEPLOY }}
       run: |
         make deploy-docs
