@@ -37,11 +37,12 @@ jobs:
         java-version: 17
         cache: maven
         server-id: github
-        server-username: github
+        server-username: SITE_USER
         server-password: SITE_DEPLOY
     - name: deploy documentation
       env:
         SITE_DEPLOY: ${{ secrets.SITE_DEPLOY }}
+        SITE_USER: hgschmie
       run: |
         cat $HOME/.m2/settings.xml
         make deploy-docs
