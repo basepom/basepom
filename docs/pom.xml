@@ -31,7 +31,6 @@
         <basepom.site.scm.skip-deploy>false</basepom.site.scm.skip-deploy>
         <basepom.site.scm.url>scm:git:git@github.com:basepom/basepom.org.git</basepom.site.scm.url>
         <basepom.site.scm.site-path>/</basepom.site.scm.site-path>
-        <basepom.site.scm.try-update>true</basepom.site.scm.try-update>
         <basepom.site.scm.checkout-directory>${java.io.tmpdir}/gh-pages-publish/basepom-docs</basepom.site.scm.checkout-directory>
     </properties>
 

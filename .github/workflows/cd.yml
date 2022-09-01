@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-java@v2
+    - uses: actions/setup-java@v3
       id: build_java
       with:
         distribution: temurin
@@ -24,9 +24,14 @@ jobs:
         server-id: sonatype-nexus-snapshots
         server-username: NEXUS_REPO_USER
         server-password: NEXUS_REPO_PASSWORD
-    - name: Build
+    - name: deploy code
       env:
-        NEXUS_REPO_USER: ${{ secrets.NEXUS_REPO_USER }}
+        NEXUS_REPO_USER:     ${{ secrets.NEXUS_REPO_USER }}
         NEXUS_REPO_PASSWORD: ${{ secrets.NEXUS_REPO_PASSWORD }}
       run: |
-        make deploy deploy-docs
+        make deploy
+    - name: deploy documentation
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        make deploy-docs
