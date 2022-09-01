@@ -212,10 +212,10 @@
         <basepom.maven.version>3.6.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>6.48.0</dep.pmd.version>
+        <dep.pmd.version>6.49.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>10.3.2</dep.checkstyle.version>
+        <dep.checkstyle.version>10.3.3</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.7.1</dep.spotbugs.version>
@@ -241,9 +241,9 @@
         <dep.plugin.source.version>3.2.1</dep.plugin.source.version>
 
         <!-- reporting -->
-        <dep.plugin.checkstyle.version>3.1.2</dep.plugin.checkstyle.version>
-        <dep.plugin.javadoc.version>3.4.0</dep.plugin.javadoc.version>
-        <dep.plugin.pmd.version>3.17.0</dep.plugin.pmd.version>
+        <dep.plugin.checkstyle.version>3.2.0</dep.plugin.checkstyle.version>
+        <dep.plugin.javadoc.version>3.4.1</dep.plugin.javadoc.version>
+        <dep.plugin.pmd.version>3.18.0</dep.plugin.pmd.version>
 
         <!-- tools -->
         <dep.plugin.assembly.version>3.4.2</dep.plugin.assembly.version>

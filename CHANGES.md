@@ -17,6 +17,13 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * Changed the repository layout to release documentation and deployment at the same time.
+* Bump checkstyle plugin to 3.2.0 (from 3.1.2)
+* Bump javadoc plugin to 3.4.1 (from 3.4.0)
+* Bump pmd plugin to 3.18.0(from 3.17.0)
+* Bump project-info-reports plugin to 3.4.1 (from 3.4.0)
+* Bump jxr plugin to 3.3.0 (from 3.2.0)
+* Bump pmd to 6.49.0 (from 6.48.0)
+* Bump checkstyle to 10.3.3 (from 10.3.2)
 
 ## 48 - 2022-08-12
 
