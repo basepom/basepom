@@ -43,4 +43,5 @@ jobs:
       env:
         SITE_DEPLOY: ${{ secrets.SITE_DEPLOY }}
       run: |
+        cat $HOME/.m2/settings.xml
         make deploy-docs
