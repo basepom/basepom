@@ -8,6 +8,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Added
 
+* Add `basepom.site.scm.checkout-directory` and `basepom.site.scm.try-update` to control local site scm checkout.
 * Add `basepom.install.skip` and `basepom.deploy.skip` to control deployment and installation.
 * Add `basepom.dependency-management.allow-versions` and `basepom.dependency-management.allow-exclusions`.
 * Add `basepom.javadoc.exclude-package-names` to exclude specific package names from javadoc generation.

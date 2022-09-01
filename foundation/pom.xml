@@ -197,6 +197,8 @@
         <basepom.site.skip>false</basepom.site.skip>
         <basepom.site.skip-deploy>true</basepom.site.skip-deploy>
         <basepom.site.scm.skip-deploy>true</basepom.site.scm.skip-deploy>
+        <basepom.site.scm.try-update>false</basepom.site.scm.try-update>
+        <basepom.site.scm.checkout-directory>${java.io.tmpdir}/gh-pages-publish/${project.name}</basepom.site.scm.checkout-directory>
 
         <!-- path where the site is written into the remote scm -->
         <basepom.site.scm.site-path>development</basepom.site.scm.site-path>
@@ -701,7 +703,8 @@
                     <configuration>
                         <localCheckout>true</localCheckout>
                         <scmBranch>${basepom.site.scm.branch}</scmBranch>
-                        <checkoutDirectory>${java.io.tmpdir}/gh-pages-publish/${project.name}</checkoutDirectory>
+                        <checkoutDirectory>${basepom.site.scm.checkout-directory}</checkoutDirectory>
+                        <tryUpdate>${basepom.site.scm.try-update}</tryUpdate>
                         <content>${project.reporting.outputDirectory}</content>
                         <subDirectory>${basepom.site.scm.site-path}</subDirectory>
                         <skipDeployement>${basepom.site.scm.skip-deploy}</skipDeployement>

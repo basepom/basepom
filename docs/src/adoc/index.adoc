@@ -903,22 +903,24 @@ The `foundation` BasePOM provides basic configuration for the Maven autogenerate
 
 [%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
 |===
-| Property Name                  | Default Value                      | customization   | defined in | function
-| basepom.site.skip              | `false`                            | often           | foundation | If `true`, skip site and report generation
-| basepom.site.skip-deploy       | `true`                             | often, policy   | foundation | If `true`, do not execute `site:deploy` for deployment using the site plugin
-| basepom.site.scm.skip-deploy   | `true`                             | often, policy   | foundation | If `true`, do not execute `scm-publish:publish-scm` for deployment using the `scm-publish` plugin
-| basepom.site.scm.site-path     | `development`                      | often           | foundation | The path on the remote repository where the site is deployed
-| basepom.site.scm.branch        | `main`                             | sometimes       | foundation | The branch on the remote repository where the site is deployed
-| basepom.site.scm.url           | <unset>                            | always          | foundation | The remote URL of the site repository
-| basepom.site.scm.id            | <unset>                            | always          | foundation | The settings id used for authenticating the site repository
-| basepom.site.test.skip         | `${basepom.test.skip}`             | rarely          | oss        | Skip test report generation.
-| basepom.site.it.skip           | `${basepom.it.skip}`               | rarely          | oss        | Skip integration test report generation.
-| basepom.site.skip-checkstyle   | `${basepom.check.skip-checkstyle}` | rarely          | oss        | Skip checkstyle report generation.
-| basepom.site.skip-coverage     | `${basepom.check.skip-coverage}`   | rarely          | oss        | Skip coverage (jacoco) report generation.
-| basepom.site.skip-pmd          | `${basepom.check.skip-pmd}`        | rarely          | oss        | Skip PMD report generation.
-| basepom.site.skip-spotbugs     | `${basepom.check.skip-spotbugs}`   | rarely          | oss        | Skip spotbugs report generation.
-| basepom.site.skip-javadoc      | `${basepom.javadoc.skip}`          | rarely          | oss        | Skip javadoc for site generation.
-| basepom.site.fail-javadoc      | `${basepom.check.fail-javadoc}`    | rarely          | oss        | If `true`, fail the site build if the javadoc generation fails.
+| Property Name                       | Default Value                                       | customization   | defined in | function
+| basepom.site.skip                   | `false`                                              | often           | foundation | If `true`, skip site and report generation
+| basepom.site.skip-deploy            | `true`                                               | often, policy   | foundation | If `true`, do not execute `site:deploy` for deployment using the site plugin
+| basepom.site.scm.skip-deploy        | `true`                                               | often, policy   | foundation | If `true`, do not execute `scm-publish:publish-scm` for deployment using the `scm-publish` plugin
+| basepom.site.scm.site-path          | `development`                                        | often           | foundation | The path on the remote repository where the site is deployed
+| basepom.site.scm.branch             | `main`                                               | sometimes       | foundation | The branch on the remote repository where the site is deployed
+| basepom.site.scm.url                | <unset>                                             | always          | foundation | The remote URL of the site repository
+| basepom.site.scm.id                 | <unset>                                             | always          | foundation | The settings id used for authenticating the site repository
+| basepom.site.scm.try-update         | false                                               | sometimes       | foundation | If true, try a local scm update first before doing a full checkout.
+| basepom.site.scm.checkout-directory | `${java.io.tmpdir}/gh-pages-publish/${project.name}` | sometimes       | foundation | the local checkout directory for the site.
+| basepom.site.test.skip              | `${basepom.test.skip}`                               | rarely          | oss        | Skip test report generation.
+| basepom.site.it.skip                | `${basepom.it.skip}`                                 | rarely          | oss        | Skip integration test report generation.
+| basepom.site.skip-checkstyle        | `${basepom.check.skip-checkstyle}`                   | rarely          | oss        | Skip checkstyle report generation.
+| basepom.site.skip-coverage          | `${basepom.check.skip-coverage}`                     | rarely          | oss        | Skip coverage (jacoco) report generation.
+| basepom.site.skip-pmd               | `${basepom.check.skip-pmd}`                          | rarely          | oss        | Skip PMD report generation.
+| basepom.site.skip-spotbugs          | `${basepom.check.skip-spotbugs}`                     | rarely          | oss        | Skip spotbugs report generation.
+| basepom.site.skip-javadoc           | `${basepom.javadoc.skip}`                            | rarely          | oss        | Skip javadoc for site generation.
+| basepom.site.fail-javadoc           | `${basepom.check.fail-javadoc}`                      | rarely          | oss        | If `true`, fail the site build if the javadoc generation fails.
 |===
 
 The following reports are generated (`oss` BasePOM):
