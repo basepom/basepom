@@ -15,6 +15,7 @@
 :projecthome: https://github.com/basepom/basepom
 
 ifdef::release[]
+[preface]
 == Release {revnumber} documentation
 
 This is release {revnumber} of the BasePOM project.
@@ -28,15 +29,16 @@ This is release {revnumber} of the BasePOM project.
 endif::[]
 
 ifndef::release[]
-== Current development version ({revnumber})
+[preface]
+== Development documentation ({revnumber})
 
-This is the current development documentation for the BasePOM project. All information in here reflects the current state of development on the `main` branch.
+This is the documentation for the current development state of the BasePOM project. All information in here reflects the current state of development on the `main` branch and is subject to change until it has been released as a numbered version.
 
 * https://basepom.org/[Permalink to this document]
 * https://github.com/basepom/basepom/blob/main/CHANGES.md[Current changes summary]
 * https://github.com/basepom/basepom/[Development source tree]
 
-=== Previous releases
+=== Release documentation
 
 * https://basepom.org/releases/48[Release 48 - 2022-08-12]
 
