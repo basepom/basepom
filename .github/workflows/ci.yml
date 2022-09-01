@@ -1,4 +1,4 @@
-name: ci
+name: CI (Build with multiple java versions)
 
 on:
   push:
@@ -25,4 +25,4 @@ jobs:
         cache: maven
     - name: Build
       run: |
-        make deploy deploy-docs
+        make install docs
