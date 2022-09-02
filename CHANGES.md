@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 49 - 2022-09-01
+
 ### Added
 
 * Add `basepom.site.scm.checkout-directory` and `basepom.site.scm.try-update` to control local site scm checkout.
