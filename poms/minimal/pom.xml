@@ -127,6 +127,16 @@
                                         <groupId>org.glassfish.hk2.external</groupId>
                                         <artifactId>javax.inject</artifactId>
                                     </dependency>
+                                    <!-- Can contain the classes in the javax package if using version 1.x-->
+                                    <dependency>
+                                        <groupId>jakarta.inject</groupId>
+                                        <artifactId>jakarta.inject-api</artifactId>
+                                    </dependency>
+                                    <!-- Can contain the classes in the javax package if using version 2.6.1-->
+                                    <dependency>
+                                        <groupId>org.glassfish.hk2.external</groupId>
+                                        <artifactId>jakarta.inject</artifactId>
+                                    </dependency>
                                 </conflictingDependencies>
                                 <packages>
                                     <package>javax.inject</package>
