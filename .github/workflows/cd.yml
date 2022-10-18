@@ -1,9 +1,9 @@
-name: CD (Snapshot deployment)
+name: CD from master pushes
 
 on:
   push:
     branches:
-      - main
+    - main
 
 jobs:
   cd:
@@ -12,34 +12,38 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: configure git user
-      run: |
-          git config --global user.name github-cd-action
-          git config --global user.email github-cd-action@basepom.org
     - name: setup build environment
       uses: actions/setup-java@v3
       with:
-        distribution: temurin
         java-version: 17
+        distribution: temurin
         cache: maven
         server-id: sonatype-nexus-snapshots
         server-username: NEXUS_REPO_USER
         server-password: NEXUS_REPO_PASSWORD
+
+    - name: configure git user
+      run: |
+          git config --global user.name github-cd-action
+          git config --global user.email github-cd-action@basepom.org
+
     - name: deploy code
       env:
-        NEXUS_REPO_USER:     ${{ secrets.NEXUS_REPO_USER }}
+        NEXUS_REPO_USER: ${{ secrets.NEXUS_REPO_USER }}
         NEXUS_REPO_PASSWORD: ${{ secrets.NEXUS_REPO_PASSWORD }}
       run: |
         make deploy
+
     - name: setup doc environment
       uses: actions/setup-java@v3
       with:
-        distribution: temurin
         java-version: 17
+        distribution: temurin
         cache: maven
         server-id: github
         server-password: SITE_DEPLOY
-    - name: deploy documentation
+
+    - name: deploy docs
       env:
         SITE_DEPLOY: ${{ secrets.SITE_DEPLOY }}
       run: |
