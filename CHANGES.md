@@ -10,6 +10,16 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Add more exclusions for JSR-330 dependencies (#61, thank you @JKomoroski)
 
+## Changed
+
+* Bump pmd to 6.50.0 (from 6.49.0)
+* Bump checkstyle to 10.3.4 (from 10.3.3)
+* Bump spotbugs to 4.7.3 (from 4.7.1)
+* Bump jar plugin to 3.3.0 (from 3.2.2)
+* Bump shade plugin to 3.4.0 (from 3.3.0)
+* Bump pmd plugin to 3.19.0 (from 3.18.0)
+* Bump spotbugs plugin to 4.7.2.1 (from 4.7.1.1)
+
 ## 49 - 2022-09-01
 
 ### Added
