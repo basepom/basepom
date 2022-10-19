@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 50 - 2022-10-18
+
 ### Added
 
 * Add more exclusions for JSR-330 dependencies (#61, thank you @JKomoroski)
