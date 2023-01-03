@@ -763,7 +763,7 @@
                         <postBuildHookScript>verify</postBuildHookScript>
                         <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
                         <settingsFile>${basepom.invoker.folder}/settings.xml</settingsFile>
-                        <invokerTimeoutInSeconds>${basepom.it.timeout}</invokerTimeoutInSeconds>
+                        <timeoutInSeconds>${basepom.it.timeout}</timeoutInSeconds>
                         <goals>
                             <goal>clean</goal>
                             <goal>package</goal>

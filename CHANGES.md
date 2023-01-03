@@ -6,13 +6,17 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Changed
+
+* fixed invoker timeout property
+
 ## 50 - 2022-10-18
 
 ### Added
 
 * Add more exclusions for JSR-330 dependencies (#61, thank you @JKomoroski)
 
-## Changed
+### Changed
 
 * Bump pmd to 6.50.0 (from 6.49.0)
 * Bump checkstyle to 10.3.4 (from 10.3.3)
