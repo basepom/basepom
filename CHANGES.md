@@ -9,6 +9,19 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * fixed invoker timeout property
+* Bump pmd to 6.53.0 (from 6.50.0)
+* Bump checkstyle to 10.6.0 (from 10.3.4)
+* Bump site plugin to 4.0.0-M4 (from 4.0.0-M3)
+* Bump invoker plugin to 3.4.0 (from 3.3.0)
+* Bump dependency analyzer to 1.13.0 (from 1.12.0)
+* Bump dependency plugin to 3.4.0 (from 3.3.0)
+* Bump install plugin to 3.1.0 (from 3.0.1)
+* Bump shade plugin to 3.4.1 (from 3.4.0)
+* Bump release plugin to 3.0.0-M7 (from 3.0.0-M6)
+* Bump scm plugin to 2.0.0-M3 (from 2.0.0-M2)
+* Bump spotbugs plugin to 4.7.3.0 (from 4.7.2.1)
+* Bump really-executable-jars plugin to 2.0.0 (from 1.5.0)
+
 
 ## 50 - 2022-10-18
 
