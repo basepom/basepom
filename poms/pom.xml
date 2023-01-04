@@ -25,6 +25,11 @@
     <packaging>pom</packaging>
     <name>basepom :: build :: poms</name>
 
+    <properties>
+        <basepom.deploy.skip>true</basepom.deploy.skip>
+        <basepom.install.skip>true</basepom.install.skip>
+    </properties>
+
     <profiles>
         <!-- This must be in a default-activated profile so that when doing -->
         <!-- a release, this profile gets implicitly deactivated (and the   -->
