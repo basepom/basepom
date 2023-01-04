@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 51 - 2023-01-03
+
 ### Changed
 
 * fixed invoker timeout property
