@@ -21,6 +21,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump scm plugin to 2.0.0-M3 (from 2.0.0-M2)
 * Bump spotbugs plugin to 4.7.3.0 (from 4.7.2.1)
 * Bump really-executable-jars plugin to 2.0.0 (from 1.5.0)
+* turn off pmd printFailingErrors, the plugin otherwise logs errors twice (see https://github.com/pmd/pmd/issues/4001 / MPMD-344)
 
 
 ## 50 - 2022-10-18
