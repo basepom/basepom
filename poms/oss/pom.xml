@@ -112,7 +112,6 @@
                         <skip>${basepom.check.skip-license}</skip>
                         <skipExistingHeaders>${basepom.license.skip-existing}</skipExistingHeaders>
                         <failIfMissing>${basepom.check.fail-license}</failIfMissing>
-                        <header>${basepom.license.header}</header>
                         <headerDefinitions>
                             <headerDefinition>license/xml-prefix.xml</headerDefinition>
                         </headerDefinitions>
@@ -128,28 +127,33 @@
                         <aggregate>true</aggregate>
                         <useDefaultExcludes>true</useDefaultExcludes>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <excludes>
-                            <exclude>.*/**</exclude>
-                            <exclude>**/*.md</exclude>
-                            <exclude>**/*.rst</exclude>
-                            <exclude>**/*.adoc</exclude>
-                            <exclude>**/*.sh</exclude>
-                            <exclude>**/*.txt</exclude>
-                            <exclude>**/*.thrift</exclude>
-                            <exclude>**/*.proto</exclude>
-                            <exclude>**/*.g</exclude>
-                            <exclude>**/*.releaseBackup</exclude>
-                            <exclude>**/*.vm</exclude>
-                            <exclude>**/*.st</exclude>
-                            <exclude>**/*.raw</exclude>
-                            <exclude>**/*.ser</exclude>
-                            <exclude>**/src/license/**</exclude>
-                            <exclude>**/CNAME</exclude>
-                        </excludes>
-                        <includes>
-                            <include>src/**</include>
-                            <include>**/pom.xml</include>
-                        </includes>
+                        <licenseSets>
+                            <licenseSet>
+                                <header>${basepom.license.header}</header>
+                                <excludes>
+                                    <exclude>.*/**</exclude>
+                                    <exclude>**/*.md</exclude>
+                                    <exclude>**/*.rst</exclude>
+                                    <exclude>**/*.adoc</exclude>
+                                    <exclude>**/*.sh</exclude>
+                                    <exclude>**/*.txt</exclude>
+                                    <exclude>**/*.thrift</exclude>
+                                    <exclude>**/*.proto</exclude>
+                                    <exclude>**/*.g</exclude>
+                                    <exclude>**/*.releaseBackup</exclude>
+                                    <exclude>**/*.vm</exclude>
+                                    <exclude>**/*.st</exclude>
+                                    <exclude>**/*.raw</exclude>
+                                    <exclude>**/*.ser</exclude>
+                                    <exclude>**/src/license/**</exclude>
+                                    <exclude>**/CNAME</exclude>
+                                </excludes>
+                                <includes>
+                                    <include>src/**</include>
+                                    <include>**/pom.xml</include>
+                                </includes>
+                            </licenseSet>
+                        </licenseSets>
                     </configuration>
                 </plugin>
 
