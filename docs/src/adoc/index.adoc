@@ -40,6 +40,7 @@ This is the documentation for the current development state of the BasePOM proje
 
 === Release documentation
 
+* https://basepom.org/releases/52[Release 52 - 2023-03-02]
 * https://basepom.org/releases/51[Release 51 - 2023-01-03]
 * https://basepom.org/releases/50[Release 50 - 2022-10-18]
 * https://basepom.org/releases/49[Release 49 - 2022-09-01]
@@ -109,7 +110,8 @@ https://github.com/brianm/really-executable-jars-maven-plugin/[really-executable
 * release and site:
 https://maven.apache.org/scm/maven-scm-plugin/[scm],
 https://maven.apache.org/maven-release/maven-release-plugin/[release],
-https://maven.apache.org/plugins/maven-gpg-plugin/[gpg]
+https://maven.apache.org/plugins/maven-gpg-plugin/[gpg],
+https://github.com/sonatype/nexus-maven-plugins/[nexus-staging]
 
 * site building:
 https://maven.apache.org/plugins/maven-site-plugin/[site],
@@ -247,7 +249,7 @@ minimal:: This is a bare-bones Policy POM that defines a small set of policies. 
 </project>
 ----
 
-oss:: A Policy POM for releasing and distributing projects through the Sonatype OSS repository. It can be used as a parent POM for projects that distribute their artifacts through OSS.
+oss:: A Policy POM for releasing and distributing projects through the Sonatype OSS repository. It can be used as a parent POM for projects that distribute their artifacts through OSS. The plugin uses the Sonatype Nexus staging plugin by default to deploy a project to OSS.
 
 [source,xml,indent=0,subs="+attributes"]
 ----
@@ -342,14 +344,18 @@ Besides building, Apache Maven can install the resulting artifacts into the loca
 
 [%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
 |===
-| Property Name                                 | Default Value                              customization      | defined in | function
+| Property Name                                 | Default Value                              | customization      | defined in | function
 | basepom.at-end                                | `false`                                    | sometimes, policy | foundation | Set the default value for installing and deploying artifacts in the build cycle for Multi Module projects. If `true`, the respective operation is done after all modules have been built, otherwise it is done as part of the module build cycle.
 | basepom.at-end.install                        | `${basepom.at-end}`                        | rarely, policy    | foundation | If `true`, install artifacts at the end of a Multi Module project build cycle.
 | basepom.at-end.deploy                         | `${basepom.at-end}`                        | sometimes, policy | foundation | If `true`, deploy artifacts at the end of a Multi Module project build cycle.
 | basepom.install.skip                          | `false`                                    | rarely            | foundation | If `true`, skip artifact installation.
 | basepom.deploy.skip                           | `${basepom.install.skip}`                  | rarely            | foundation | If `true`, skip artifact deployment.
+| basepom.release.profiles | `basepom.oss-release` | rarely | oss | Sets the name of one or more release profiles. Multiple release profiles must be comma-separated. By default, the `basepom.oss-release` profile is used which uploads to Sonatype OSS using the Nexus Staging plugin. For other repositories that do not support staging, the `basepom.default-release` profile can be used.
 | basepom.release.push-changes                  | `false`                                    | sometimes         | foundation | If `true`, then running the Maven `release:prepare` goal will push changes directly to the upstream repository. Defaults to `false`.
 | basepom.release.tag-name-format               | `@{project.artifactId}-@{project.version}` | often             | foundation | Name tag format for the release tag. See the https://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#tagNameFormat[Maven Release Plugin Documentation] for details.
+| basepom.nexus-staging.skip                        | `true`  | rarely | oss | If `true` skips artifact installation.
+| basepom.nexus-staging.staging-url                 | `https://s01.oss.sonatype.org/`            | rarely            | oss | The staging repository for deploying to Sonatype OSS. Used only with the nexus staging plugin. The deploy plugin uses the standard maven repository settings.
+| basepom.nexus-staging.release-after-close         | `false` | often | oss | Whether to release right after the deployment ends. The default is `false` (either run `mvn nexus-staging:release` or use the Sonatype OSS GUI to deploy).
 |===
 
 ==== Javadoc Generation
@@ -450,6 +456,7 @@ These versions can be overwritten in Policy POMs, project POMs  or the command l
 | `dep.plugin.javadoc.version` | foundation |
 | `dep.plugin.jxr.version` | oss |
 | `dep.plugin.license.version` | oss |
+| `dep.plugin.nexus-staging.version` | oss |
 | `dep.plugin.pmd.version` | foundation |
 | `dep.plugin.project-info-reports.version` | oss |
 | `dep.plugin.property-helper.version` | foundation |
@@ -702,6 +709,24 @@ This profile adds the following goals to the lifecycle:
 
 This is the release profile for releasing an artifact to the OSS repository (and subsequently to Maven Central). It is configured as release profile for the `release` plugin if the `oss` BasePOM is used. It gets activated when executing the `release:perform` goal of the `release` plugin.
 
+* disables the regular `maven-deploy-plugin`
+* skip unit tests (all tests have already passed as part of the release process)
+* skip all checkers that are following the `basepom.check.skip-all` setting (they have already been executed as part of the release process)
+* always create a `javadoc` artifact
+
+This profile adds the following goals to the lifecycle:
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Plugin              | Phase  | execution id            | goal(s) | function
+| `maven-gpg-plugin`  | verify | basepom.release.default | sign    | create GPG signature for releasing to OSS
+| `maven-nexus-staging-plugin` | deploy | basepom.release.default | deploy | deploy the project to the Nexus OSS staging area. Depending on the setting of `basepom.nexus-staging.release-after-close`, the project will be directly released, otherwise the repo will be closed and must be released in an additional step.
+|===
+
+==== `basepom.default-release` (oss)
+
+This is an alternate release profile for releasing an artifact to a non-staging repository. It must be activated by replacing `basepom.oss-release` in the `basepom.release.profiles` property with `basepom.default-release`.
+
 * skip unit tests (all tests have already passed as part of the release process)
 * skip all checkers that are following the `basepom.check.skip-all` setting (they have already been executed as part of the release process)
 * always create a `javadoc` artifact
@@ -851,7 +876,7 @@ The `oss` BasePOM is intended for projects that distribute their artifacts throu
 
 * the `license` checker is added to the `extended` set of Build checkers.
 * configure the OSS repositories for snapshot and release distribution. The repositories are configured as `sonatype-nexus-snapshots` and `sonatype-nexus-staging`. The local `settings.xml` file must contain credentials for these ids to authenticate to the repositories for artifact upload.
-* set the `basepom.oss-release` profile as release profile for the `maven-release-plugin`
+* set the `basepom.oss-release` profile as release profile for the `maven-release-plugin`, which uses the nexus staging plugin to upload the project.
 
 The `oss` BasePOM also adds the following goals to the lifecycle:
 
@@ -930,7 +955,7 @@ The `oss` BasePOM configures the `license-maven-plugin` for releasing artifacts 
 * exclude all files in directories starting with `.`
 * exclude all files ending with `.md`, `.rst`, `.adoc`, `.sh`, `.txt`, `.thrift`, `.proto`, `.g`, `.releaseBackup`, `.vm`, `.st`, `.raw`, `.ser`
 * exclude all files in the `src/license` tree
-* exclude all `CNAME` files
+* exclude all `CNAME` and `.keepme` files
 
 == Maven Site generation
 
