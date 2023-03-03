@@ -11,6 +11,7 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Added
 
 * license plugin now ignores `.keepme` files
+* nexus oss plugin (1.6.13)
 
 ### Changed
 
@@ -32,6 +33,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump spotbugs plugin to 4.7.3.2 (from 4.7.3.0)
 
 * for the license plugin, the `header`, `includes` and `excludes` properties are now wrapped in a license set. The old configuration was deprecated for a while and Maven 3.9 has started nagging about it. This affects any project that adds custom excludes or includes. The `basepom.license.header` property still works as before.
+* the `oss` parent pom will now use the nexus oss staging plugin by default. A new profile, `basepom.deploy-release`, has been added that uses the maven deploy plugin. Suggested by @klausbrunner in #64.
 
 ### Fixed
 
