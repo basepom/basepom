@@ -6,6 +6,27 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 52 - 2023-03-02
+
+### Changed
+
+* Bump pmd to 6.55.0 (from 6.53.0)
+* Bump checkstyle to 10.8.0 (from 10.6.0)
+* Bump failsafe plugin to 3.0.0-M9 (from 3.0.0-M7)
+* Bump surefire plugin to 3.0.0-M9 (from 3.0.0-M7)
+* Bump checkstyle plugin to 3.2.1 (from 3.2.0)
+* Bump dependency plugin to 3.5.0 (from 3.4.0)
+* Bump enforcer plugin to 3.2.1 (from 3.1.0)
+* Bump project-info reports plugin to 3.4.2 (from 3.4.1)
+* Bump compiler plugin to 3.11.0 (from 3.10.1)
+* Bump assembly plugin to 3.5.0 (from 3.4.2)
+* Bump deploy plugin to 3.1.0 (from 3.0.0)
+* Bump invoker plugin to 3.5.0 (from 3.4.0)
+* Bump javadoc plugin to 3.5.0 (from 3.4.1)
+* Bump pmd plugin to 3.20.0 (from 3.19.0)
+* Bump site plugin to 4.0.0-M5 (from 4.0.0-M4)
+* Bump spotbugs plugin to 4.7.3.2 (from 4.7.3.0)
+
 ## 51 - 2023-01-03
 
 ### Changed
