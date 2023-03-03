@@ -147,6 +147,7 @@
                                     <exclude>**/*.ser</exclude>
                                     <exclude>**/src/license/**</exclude>
                                     <exclude>**/CNAME</exclude>
+                                    <exclude>**/.keepme</exclude>
                                 </excludes>
                                 <includes>
                                     <include>src/**</include>

@@ -8,6 +8,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## 52 - 2023-03-02
 
+### Added
+
+* license plugin now ignores `.keepme` files
+
 ### Changed
 
 * Bump pmd to 6.55.0 (from 6.53.0)
