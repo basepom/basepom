@@ -33,6 +33,11 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * for the license plugin, the `header`, `includes` and `excludes` properties are now wrapped in a license set. The old configuration was deprecated for a while and Maven 3.9 has started nagging about it. This affects any project that adds custom excludes or includes. The `basepom.license.header` property still works as before.
 
+### Fixed
+
+* removed invalid `sourceEncoding` property from pmd plugin configuration
+* rename `encoding` property to `inputEncoding` for checkstyle plugin configuration
+
 ## 51 - 2023-01-03
 
 ### Changed

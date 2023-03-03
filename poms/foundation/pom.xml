@@ -619,7 +619,6 @@
                         <printFailingErrors>false</printFailingErrors>
                         <verbose>true</verbose>
                         <targetJdk>${project.build.targetJdk}</targetJdk>
-                        <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                         <minimumTokens>100</minimumTokens>
                         <failurePriority>${basepom.pmd.fail-level}</failurePriority>
                         <linkXRef>false</linkXRef>
@@ -642,7 +641,7 @@
                         <skip>${basepom.check.skip-checkstyle}</skip>
                         <failOnViolation>${basepom.check.fail-checkstyle}</failOnViolation>
                         <violationSeverity>${basepom.check.checkstyle-severity}</violationSeverity>
-                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
                         <consoleOutput>true</consoleOutput>
                     </configuration>
                 </plugin>
