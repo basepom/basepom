@@ -58,4 +58,5 @@ The BasePOM code is licensed under the Apache Software License v2 (ASLv2)
 
 ----
 
-[![ci](https://github.com/basepom/basepom/workflows/ci/badge.svg)](https://github.com/basepom/basepom/actions?query=workflow%3Aci)[![Latest Release](https://maven-badges.herokuapp.com/maven-central/org.basepom/build-basepom-root/badge.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.basepom%22%20AND%20a%3A%22build-basepom-root%22)
+[![ci](https://github.com/basepom/basepom/actions/workflows/ci.yml/badge.svg)](https://github.com/basepom/basepom/actions/workflows/ci.yml)
+[![Latest Release](https://maven-badges.herokuapp.com/maven-central/org.basepom/basepom-foundation/badge.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.basepom%22%20AND%20a%3A%22basepom-foundation%22)
