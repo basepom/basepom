@@ -374,7 +374,8 @@
             <id>basepom.oss-release</id>
             <properties>
                 <!-- tests have been run in the preparation step of the release -->
-                <skipTests>true</skipTests>
+                <basepom.test.skip>true</basepom.test.skip>
+                <basepom.it.skip>true</basepom.it.skip>
 
                 <!-- checks have been run in the preparation step of the release -->
                 <basepom.check.skip-all>true</basepom.check.skip-all>
@@ -424,7 +425,8 @@
             <id>basepom.deploy-release</id>
             <properties>
                 <!-- tests have been run in the preparation step of the release -->
-                <skipTests>true</skipTests>
+                <basepom.test.skip>true</basepom.test.skip>
+                <basepom.it.skip>true</basepom.it.skip>
 
                 <!-- checks have been run in the preparation step of the release -->
                 <basepom.check.skip-all>true</basepom.check.skip-all>

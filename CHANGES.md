@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Changed
+
+* Deploy profiles (basepom.oss-release and basepom.deploy-release) should also skip integration tests.
+
 ## 52 - 2023-03-02
 
 ### Added
