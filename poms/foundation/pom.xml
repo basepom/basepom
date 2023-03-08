@@ -282,7 +282,7 @@
         <dep.plugin.git-commit-id.version>5.0.0</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/brianm/really-executable-jars-maven-plugin/tags -->
-        <dep.plugin.really-executable.version>2.0.0</dep.plugin.really-executable.version>
+        <dep.plugin.really-executable.version>2.1.0</dep.plugin.really-executable.version>
     </properties>
 
     <build>
