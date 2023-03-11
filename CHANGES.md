@@ -8,7 +8,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
-* Bump really-executable-jars plugin to 2.1.0 (from 2.0.0)
+* Bump really-executable-jars plugin to 2.1.1 (from 2.0.0)
 * Deploy profiles (basepom.oss-release and basepom.deploy-release) should also skip integration tests.
 
 ## 52 - 2023-03-02
