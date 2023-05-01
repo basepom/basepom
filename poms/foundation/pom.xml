@@ -226,9 +226,6 @@
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.7.3</dep.spotbugs.version>
 
-        <!-- https://github.com/apache/maven-dependency-analyzer/tags -->
-        <dep.dependency-analyzer.version>1.13.0</dep.dependency-analyzer.version>
-
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
         <!-- core plugins -->
@@ -363,13 +360,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>${dep.plugin.dependency.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.apache.maven.shared</groupId>
-                            <artifactId>maven-dependency-analyzer</artifactId>
-                            <version>${dep.dependency-analyzer.version}</version>
-                        </dependency>
-                    </dependencies>
                     <configuration>
                         <skip>${basepom.check.skip-dependency}</skip>
                         <failOnWarning>${basepom.check.fail-dependency}</failOnWarning>

@@ -10,6 +10,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Add `basepom.test.arguments` and `basepom.it.arguments` to provide additional argline arguments to unit tests and integration tests.
 
+### Removed
+
+* Removed `dep.dependency-analyzer.version`, it stopped being useful.
+
 ### Changed
 
 * Bump really-executable-jars plugin to 2.1.1 (from 2.0.0)
