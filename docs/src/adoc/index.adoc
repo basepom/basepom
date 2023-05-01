@@ -378,6 +378,7 @@ The Apache Maven `surefire` plugin is active by default. Any other test plugin s
 [%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
 |===
 | Property Name                                 | Default Value                              | customization   | defined in | function
+| basepom.test.arguments                        | ``                                         | sometimes, policy | foundation | Allows additional arguments for the `argLine` plugin configuration parameter when executing unit tests.
 | basepom.test.skip                             | `$\{skipTests}`                             | often, profile | foundation | If `true`, skip all unit tests. The default is the value of the standard Maven `skipTests` property.
 | basepom.test.fork-count                       | `0.75C`                                    | sometimes, policy | foundation | Controls the number of parallel tests to run. Default is the 3/4 of number of reported CPU cores.
 | basepom.test.reuse-vm                         | `true`                                     | sometimes, policy | foundation | If `true`, reuse existing VM instances, otherwise start a new instance for each test.
@@ -393,6 +394,7 @@ Apache Maven supports multiple plugins for integration tests. BasePOM supports t
 [%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
 |===
 | Property Name                             | Default Value                              | customization     | defined in | function
+| basepom.it.arguments                      | ``                                         | sometimes, policy | foundation | Allows additional arguments for the `argLine` plugin configuration parameter when executing integration tests.
 | basepom.it.skip                           | `$\{skipITs}`                              | often, profile    | foundation | If `true`, skip all integration tests. The default is the value of the standard Maven `skipITs` property.
 | basepom.it.memory                         | `${basepom.test.memory}`                   | sometimes, policy | foundation | Memory allocated for each integration test VM.
 | basepom.it.fork-count                     | `0.5C`                                     | sometimes, policy | foundation | Controls the number of parallel tests to run. Default is 1/2 the number of reported CPU cores.

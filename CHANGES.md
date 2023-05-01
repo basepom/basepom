@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Added
+
+* Add `basepom.test.arguments` and `basepom.it.arguments` to provide additional argline arguments to unit tests and integration tests.
+
 ### Changed
 
 * Bump really-executable-jars plugin to 2.1.1 (from 2.0.0)

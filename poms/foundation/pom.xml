@@ -65,6 +65,9 @@
         <!-- Javadoc exclude package names -->
         <basepom.javadoc.exclude-package-names />
 
+        <!-- set surefire plugin argline arguments here -->
+        <basepom.test.arguments />
+
         <!-- surefire skip tests -->
         <basepom.test.skip>${skipTests}</basepom.test.skip>
 
@@ -77,6 +80,9 @@
 
         <!-- test groups for unit tests -->
         <basepom.test.groups />
+
+        <!-- set it plugin argline arguments here -->
+        <basepom.it.arguments />
 
         <!-- Integration testing -->
         <basepom.it.skip>${skipITs}</basepom.it.skip>
@@ -417,7 +423,7 @@
                     <version>${dep.plugin.surefire.version}</version>
                     <configuration>
                         <skipTests>${basepom.test.skip}</skipTests>
-                        <argLine>@{basepom.coverage.test-args} -Xmx${basepom.test.memory} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
+                        <argLine>@{basepom.coverage.test-args} -Xmx${basepom.test.memory} -Dfile.encoding=${project.build.sourceEncoding} ${basepom.test.arguments}</argLine>
                         <runOrder>random</runOrder>
                         <reuseForks>${basepom.test.reuse-vm}</reuseForks>
                         <forkCount>${basepom.test.fork-count}</forkCount>
@@ -433,7 +439,7 @@
                     <version>${dep.plugin.failsafe.version}</version>
                     <configuration>
                         <skipITs>${basepom.it.skip}</skipITs>
-                        <argLine>@{basepom.coverage.it-args} -Xmx${basepom.it.memory} -Dfile.encoding=${project.build.sourceEncoding}</argLine>
+                        <argLine>@{basepom.coverage.it-args} -Xmx${basepom.it.memory} -Dfile.encoding=${project.build.sourceEncoding} ${basepom.it.arguments}</argLine>
                         <runOrder>random</runOrder>
                         <reuseForks>${basepom.failsafe.reuse-vm}</reuseForks>
                         <forkCount>${basepom.it.fork-count}</forkCount>
