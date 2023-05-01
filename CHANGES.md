@@ -10,6 +10,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Bump really-executable-jars plugin to 2.1.1 (from 2.0.0)
 * Deploy profiles (basepom.oss-release and basepom.deploy-release) should also skip integration tests.
+* switch back to using the `basepom.deploy-release` by default. The Nexus plugin has too many bugs (https://issues.sonatype.org/browse/NEXUS-38079, https://issues.sonatype.org/browse/NEXUS-38262) which can only be fixed by sonatype because of their development model.
 
 ## 52 - 2023-03-02
 

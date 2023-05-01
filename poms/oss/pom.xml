@@ -47,7 +47,7 @@
         <basepom.license.header>license/basepom-apache-license-header.txt</basepom.license.header>
 
         <!-- release profiles -->
-        <basepom.release.profiles>basepom.oss-release</basepom.release.profiles>
+        <basepom.release.profiles>basepom.deploy-release</basepom.release.profiles>
 
         <!-- configure the nexus-staging plugin for deployment -->
         <basepom.nexus-staging.skip>false</basepom.nexus-staging.skip>
