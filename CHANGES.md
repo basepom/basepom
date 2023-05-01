@@ -17,6 +17,24 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * Bump really-executable-jars plugin to 2.1.1 (from 2.0.0)
+* Bump deploy plugin to 3.1.1 (from 3.1.0)
+* Bump checkstyle plugin to 3.2.2 (from 3.2.1)
+* Bump enforcer plugin to 3.3.0 (from 3.2.1)
+* Bump surefire plugin to 3.0.0 (from 3.0.0-M9)
+* Bump failsafe plugin to 3.0.0 (from 3.0.0-M9)
+* Bump install plugin to 3.1.1 (from 3.1.0)
+* Bump invoker plugin to 3.5.1 (from 3.5.0)
+* Bump release plugin to 3.0.0 (from 3.0.0-M7)
+* Bump resources plugin to 3.3.1 (from 3.3.0)
+* Bump scm plugin to 2.0.0 (from 2.0.0-M3)
+* Bump scm-publish plugin to 3.2.1 (from 3.1.0)
+* Bump site plugin to 4.0.0-M7 (from 4.0.0-M5)
+* Bump jacoco plugin to 0.8.10 (from 0.8.8)
+* Bump spotbugs plugin to 4.7.3.4 (from 4.7.3.2)
+* Bump project-info-reports plugin to 3.4.3 (from 3.4.2)
+* Bump license plugin to 4.2 (from 4.2.rc3)
+* Bump checkstyle to 10.10.0 (from 10.8.0)
+
 * Deploy profiles (basepom.oss-release and basepom.deploy-release) should also skip integration tests.
 * switch back to using the `basepom.deploy-release` by default. The Nexus plugin has too many bugs (https://issues.sonatype.org/browse/NEXUS-38079, https://issues.sonatype.org/browse/NEXUS-38262) which can only be fixed by sonatype because of their development model.
 
