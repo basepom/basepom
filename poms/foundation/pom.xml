@@ -221,7 +221,7 @@
         <dep.pmd.version>6.55.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>10.10.0</dep.checkstyle.version>
+        <dep.checkstyle.version>10.11.0</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.7.3</dep.spotbugs.version>
@@ -232,11 +232,11 @@
         <dep.plugin.clean.version>3.2.0</dep.plugin.clean.version>
         <dep.plugin.compiler.version>3.11.0</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>3.1.1</dep.plugin.deploy.version>
-        <dep.plugin.failsafe.version>3.0.0</dep.plugin.failsafe.version>
+        <dep.plugin.failsafe.version>3.1.0</dep.plugin.failsafe.version>
         <dep.plugin.install.version>3.1.1</dep.plugin.install.version>
         <dep.plugin.resources.version>3.3.1</dep.plugin.resources.version>
-        <dep.plugin.site.version>4.0.0-M7</dep.plugin.site.version>
-        <dep.plugin.surefire.version>3.0.0</dep.plugin.surefire.version>
+        <dep.plugin.site.version>4.0.0-M8</dep.plugin.site.version>
+        <dep.plugin.surefire.version>3.1.0</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>3.3.0</dep.plugin.jar.version>
@@ -258,7 +258,7 @@
         <dep.plugin.scm-publish.version>3.2.1</dep.plugin.scm-publish.version>
 
         <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
-        <dep.plugin.build-helper.version>3.3.0</dep.plugin.build-helper.version>
+        <dep.plugin.build-helper.version>3.4.0</dep.plugin.build-helper.version>
 
         <!-- https://basepom.github.io/dependency-versions-check-maven-plugin/ -->
         <dep.plugin.dependency-versions-check.version>3.2.0</dep.plugin.dependency-versions-check.version>

@@ -72,8 +72,8 @@
         <basepom.install.skip>true</basepom.install.skip>
 
         <dep.plugin.asciidoctor.version>2.2.3</dep.plugin.asciidoctor.version>
-        <dep.asciidoctorj.version>2.5.6</dep.asciidoctorj.version>
-        <dep.asciidoctorj-diagram.version>2.2.3</dep.asciidoctorj-diagram.version>
+        <dep.asciidoctorj.version>2.5.8</dep.asciidoctorj.version>
+        <dep.asciidoctorj-diagram.version>2.2.8</dep.asciidoctorj-diagram.version>
     </properties>
 
     <build>
