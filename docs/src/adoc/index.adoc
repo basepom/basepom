@@ -473,6 +473,7 @@ These versions can be overwritten in Policy POMs, project POMs  or the command l
 | `dep.plugin.spotbugs.version` | foundation |
 | `dep.plugin.surefire.version` | foundation |
 | `dep.checkstyle.version` | foundation | Checkstyle library version, used by the checkstyle plugin
+| `dep.dependency-analyzer.version` | foundation | Dependency Analyzer library version, used by the dependency plugin
 | `dep.pmd.version` | foundation | PMD library version, used by the PMD plugin
 | `dep.spotbugs.version` | foundation | Spotbugs library version, used by the spotbugs plugin
 | `dep.basepom-policy.version` | minimal | BasePOM policy jar version

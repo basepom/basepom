@@ -10,10 +10,6 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Add `basepom.test.arguments` and `basepom.it.arguments` to provide additional argline arguments to unit tests and integration tests.
 
-### Removed
-
-* Removed `dep.dependency-analyzer.version`, it stopped being useful.
-
 ### Changed
 
 * Bump really-executable-jars plugin to 2.1.1 (from 2.0.0)
@@ -38,6 +34,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump checkstyle to 10.11.0 (from 10.8.0)
 * Bump asciidoctorj to 2.5.8 (from 2.5.6)
 * Bump asciidoctorj-diagram to 2.2.8 (from 2.2.3)
+* Bump dependency-analyzer to 1.13.2 (from 1.13.0)
 
 * Deploy profiles (basepom.oss-release and basepom.deploy-release) should also skip integration tests.
 * switch back to using the `basepom.deploy-release` by default. The Nexus plugin has too many bugs (https://issues.sonatype.org/browse/NEXUS-38079, https://issues.sonatype.org/browse/NEXUS-38262) which can only be fixed by sonatype because of their development model.
