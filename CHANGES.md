@@ -6,6 +6,9 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+
+## 52 - 2023-05-12
+
 ### Added
 
 * Add `basepom.test.arguments` and `basepom.it.arguments` to provide additional argline arguments to unit tests and integration tests.
