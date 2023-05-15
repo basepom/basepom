@@ -980,6 +980,7 @@ The `foundation` BasePOM provides basic configuration for the Maven autogenerate
 | basepom.site.scm.id                 | <unset>                                             | always          | foundation | The settings id used for authenticating the site repository
 | basepom.site.scm.try-update         | false                                               | sometimes       | foundation | If true, try a local scm update first before doing a full checkout.
 | basepom.site.scm.checkout-directory | `${java.io.tmpdir}/gh-pages-publish/${project.name}` | sometimes       | foundation | the local checkout directory for the site.
+| basepom.site.scm.comment            |  `Site checkin for project ${project.name} (${project.version})` | sometimes | foundation | The commit message for a site checkin.
 | basepom.site.test.skip              | `${basepom.test.skip}`                               | rarely          | oss        | Skip test report generation.
 | basepom.site.it.skip                | `${basepom.it.skip}`                                 | rarely          | oss        | Skip integration test report generation.
 | basepom.site.skip-checkstyle        | `${basepom.check.skip-checkstyle}`                   | rarely          | oss        | Skip checkstyle report generation.

@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Added
+
+* added `basepom.site.scm.comment` to set the site checkin comment. Default is `Site checkin for project ${project.name} (${project.version})`
+
 
 ## 52 - 2023-05-12
 
