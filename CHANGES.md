@@ -13,7 +13,7 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * Bump dependency-versions-check plugin to 4.0.0 (from 3.2.0)
-* Bump duplicate-finder plugin to 2.0.0 (from 1.5.1)
+* Bump duplicate-finder plugin to 2.0.1 (from 1.5.1)
 
 ## 52 - 2023-05-12
 
