@@ -14,6 +14,15 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Bump dependency-versions-check plugin to 4.0.0 (from 3.2.0)
 * Bump duplicate-finder plugin to 2.0.1 (from 1.5.1)
+* Bump asciidoctor plugin to 2.2.4 (from 2.2.3)
+* Bump git-commit-id plugin to 6.0.0 (from 5.0.0)
+* Bump assembly plugin to 3.6.0 (from 3.5.0)
+* Bump checkstyle plugin to 3.3.0 (from 3.2.2)
+* Bump dependency plugin to 3.6.0 (from 3.5.0)
+* Bump pmd plugin to 3.21.0 (from 3.20.0)
+* Bump scm plugin to 2.0.1 (from 2.0.0)
+* Bump source plugin to 3.3.0 (from 3.2.1)
+
 
 ## 52 - 2023-05-12
 

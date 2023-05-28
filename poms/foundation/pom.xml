@@ -245,20 +245,20 @@
         <!-- packaging -->
         <dep.plugin.jar.version>3.3.0</dep.plugin.jar.version>
         <dep.plugin.shade.version>3.4.1</dep.plugin.shade.version>
-        <dep.plugin.source.version>3.2.1</dep.plugin.source.version>
+        <dep.plugin.source.version>3.3.0</dep.plugin.source.version>
 
         <!-- reporting -->
-        <dep.plugin.checkstyle.version>3.2.2</dep.plugin.checkstyle.version>
+        <dep.plugin.checkstyle.version>3.3.0</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>3.5.0</dep.plugin.javadoc.version>
-        <dep.plugin.pmd.version>3.20.0</dep.plugin.pmd.version>
+        <dep.plugin.pmd.version>3.21.0</dep.plugin.pmd.version>
 
         <!-- tools -->
-        <dep.plugin.assembly.version>3.5.0</dep.plugin.assembly.version>
-        <dep.plugin.dependency.version>3.5.0</dep.plugin.dependency.version>
+        <dep.plugin.assembly.version>3.6.0</dep.plugin.assembly.version>
+        <dep.plugin.dependency.version>3.6.0</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>3.3.0</dep.plugin.enforcer.version>
         <dep.plugin.invoker.version>3.5.1</dep.plugin.invoker.version>
         <dep.plugin.release.version>3.0.0</dep.plugin.release.version>
-        <dep.plugin.scm.version>2.0.0</dep.plugin.scm.version>
+        <dep.plugin.scm.version>2.0.1</dep.plugin.scm.version>
         <dep.plugin.scm-publish.version>3.2.1</dep.plugin.scm-publish.version>
 
         <!-- https://github.com/mojohaus/build-helper-maven-plugin/releases -->
@@ -286,7 +286,7 @@
         <dep.plugin.property-helper.version>3.0</dep.plugin.property-helper.version>
 
         <!-- https://github.com/git-commit-id/git-commit-id-maven-plugin/releases -->
-        <dep.plugin.git-commit-id.version>5.0.0</dep.plugin.git-commit-id.version>
+        <dep.plugin.git-commit-id.version>6.0.0</dep.plugin.git-commit-id.version>
 
         <!-- https://github.com/brianm/really-executable-jars-maven-plugin/tags -->
         <dep.plugin.really-executable.version>2.1.1</dep.plugin.really-executable.version>
