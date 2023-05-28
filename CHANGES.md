@@ -22,6 +22,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump pmd plugin to 3.21.0 (from 3.20.0)
 * Bump scm plugin to 2.0.1 (from 2.0.0)
 * Bump source plugin to 3.3.0 (from 3.2.1)
+* Bump checkstyle to 10.12.0 (from 10.11.0)
 
 
 ## 52 - 2023-05-12
