@@ -267,11 +267,6 @@
         <!-- https://basepom.github.io/dependency-versions-check-maven-plugin/ -->
         <dep.plugin.dependency-versions-check.version>4.0.0</dep.plugin.dependency-versions-check.version>
 
-        <!-- https://github.com/HubSpot/dependency-management-plugin/releases -->
-        <dep.plugin.dependency-management.version>0.11</dep.plugin.dependency-management.version>
-
-        <!-- https://github.com/HubSpot/dependency-scope-maven-plugin/releases -->
-        <dep.plugin.dependency-scope.version>0.10</dep.plugin.dependency-scope.version>
 
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
         <dep.plugin.duplicate-finder.version>2.0.1</dep.plugin.duplicate-finder.version>
@@ -283,7 +278,9 @@
         <dep.plugin.jacoco.version>0.8.10</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/maven-plugins/releases -->
-        <dep.plugin.property-helper.version>3.0</dep.plugin.property-helper.version>
+        <dep.plugin.property-helper.version>3.1</dep.plugin.property-helper.version>
+        <dep.plugin.dependency-management.version>1.0.0</dep.plugin.dependency-management.version>
+        <dep.plugin.dependency-scope.version>1.0.0</dep.plugin.dependency-scope.version>
 
         <!-- https://github.com/git-commit-id/git-commit-id-maven-plugin/releases -->
         <dep.plugin.git-commit-id.version>6.0.0</dep.plugin.git-commit-id.version>
@@ -545,7 +542,7 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>com.hubspot.maven.plugins</groupId>
+                    <groupId>org.basepom.maven</groupId>
                     <artifactId>dependency-management-maven-plugin</artifactId>
                     <version>${dep.plugin.dependency-management.version}</version>
                     <configuration>
@@ -561,7 +558,7 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>com.hubspot.maven.plugins</groupId>
+                    <groupId>org.basepom.maven</groupId>
                     <artifactId>dependency-scope-maven-plugin</artifactId>
                     <version>${dep.plugin.dependency-scope.version}</version>
                     <configuration>
@@ -927,7 +924,7 @@
             </plugin>
 
             <plugin>
-                <groupId>com.hubspot.maven.plugins</groupId>
+                <groupId>org.basepom.maven</groupId>
                 <artifactId>dependency-management-maven-plugin</artifactId>
                 <executions>
                     <execution>
@@ -941,7 +938,7 @@
             </plugin>
 
             <plugin>
-                <groupId>com.hubspot.maven.plugins</groupId>
+                <groupId>org.basepom.maven</groupId>
                 <artifactId>dependency-scope-maven-plugin</artifactId>
                 <executions>
                     <execution>

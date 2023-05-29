@@ -94,8 +94,8 @@ https://maven.apache.org/plugins/maven-invoker-plugin/[invoker]
 https://maven.apache.org/enforcer/maven-enforcer-plugin/[enforcer],
 https://maven.apache.org/plugins/maven-dependency-plugin/[dependency],
 https://basepom.github.io/dependency-versions-check-maven-plugin/[dependency-versions-check],
-https://github.com/HubSpot/dependency-management-maven-plugin[dependency-management],
-https://github.com/HubSpot/dependency-scope-maven-plugin[dependency-scope],
+https://github.com/basepom/maven-plugins/[dependency-management],
+https://github.com/basepom/maven-plugins/[dependency-scope],
 https://github.com/basepom/duplicate-finder-maven-plugin/wiki[duplicate-finder],
 https://spotbugs.github.io/spotbugs-maven-plugin/[spotbugs],
 https://maven.apache.org/plugins/maven-pmd-plugin/[pmd],
@@ -104,7 +104,8 @@ https://www.eclemma.org/jacoco/trunk/doc/maven.html[jacoco],
 https://mycila.carbou.me/license-maven-plugin/[license]
 
 * tools:
-https://www.mojohaus.org/build-helper-maven-plugin/[build-helper], property-helper,
+https://www.mojohaus.org/build-helper-maven-plugin/[build-helper],
+https://github.com/basepom/maven-plugins/[property-helper],
 https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md[git-commit-id],
 https://github.com/brianm/really-executable-jars-maven-plugin/[really-executable-jar]
 
@@ -487,8 +488,8 @@ BasePOM brings a set of preconfigured plugins to check the quality of the code b
 * https://maven.apache.org/enforcer/maven-enforcer-plugin/index.html[Maven Enforcer] - Basic checks for Build JDK, Maven version etc. ("The Loving Iron Fist of Maven™")
 * https://maven.apache.org/plugins/maven-dependency-plugin/[Maven Dependency Plugin] - Ensure declared and used dependencies.
 * https://github.com/basepom/duplicate-finder-maven-plugin/wiki[Duplicate Finder Plugin] - Test for duplicate classes on the class path which threaten build stability
-* https://github.com/HubSpot/dependency-management-maven-plugin[Dependency Management Plugin] - Ensure that plugins and dependencies are declared in `pluginManagement` and `dependencyManagement` sections
-* https://github.com/HubSpot/dependency-scope-maven-plugin[Dependency Scope Plugin] - Ensure that transitive dependencies are not accidentally declared in `test` scope.
+* https://github.com/basepom/maven-plugins/[Dependency Management Plugin] - Ensure that plugins and dependencies are declared in `pluginManagement` and `dependencyManagement` sections
+* https://github.com/basepom/maven-plugins/[Dependency Scope Plugin] - Ensure that transitive dependencies are not accidentally declared in `test` scope.
 * https://basepom.github.io/dependency-versions-check-maven-plugin/[Dependency Versions Check Plugin] - Ensure that multiple dependency references with different versions converge.
 * https://spotbugs.github.io/spotbugs-maven-plugin/[Spotbugs] - Run the spotbugs code quality tool.
 * https://www.eclemma.org/jacoco/trunk/doc/maven.html[Coverage] - Use the jacoco code coverage tool.
