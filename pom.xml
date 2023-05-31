@@ -18,7 +18,7 @@
     <parent>
         <groupId>org.basepom</groupId>
         <artifactId>basepom-oss</artifactId>
-        <version>54</version>
+        <version>55-SNAPSHOT</version>
         <relativePath>./poms/oss</relativePath>
     </parent>
 
@@ -55,7 +55,7 @@
         <connection>scm:git:git://github.com/basepom/basepom.git</connection>
         <developerConnection>scm:git:git@github.com:basepom/basepom.git</developerConnection>
         <url>https://github.com/basepom/basepom</url>
-        <tag>basepom-54</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
