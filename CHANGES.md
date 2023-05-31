@@ -23,9 +23,9 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump scm plugin to 2.0.1 (from 2.0.0)
 * Bump source plugin to 3.3.0 (from 3.2.1)
 * Bump checkstyle to 10.12.0 (from 10.11.0)
-* Bump property-helper to 3.1 (from 3.0)
-* Bump dependency-management to 1.0.0 (from 0.11)
-* Bump dependency-scope to 1.0.0 (from 0.10)
+* Bump property-helper plugin to 3.1.1 (from 3.0)
+* Bump dependency-management plugin to 1.0.1 (from 0.11)
+* Bump dependency-scope plugin to 1.0.1 (from 0.10)
 
 This release changes the Hubspot dependency-management and
 dependency-scope plugin to forked plugins under the
