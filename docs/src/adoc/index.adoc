@@ -81,6 +81,7 @@ https://maven.apache.org/plugins/maven-install-plugin/[install]
 https://maven.apache.org/plugins/maven-assembly-plugin/[assembly],
 https://maven.apache.org/plugins/maven-jar-plugin/[jar],
 https://maven.apache.org/plugins/maven-javadoc-plugin/[javadoc],
+https://basepom.github.io/repack-maven-plugin/[repack],
 https://maven.apache.org/plugins/maven-source-plugin/[source],
 https://maven.apache.org/plugins/maven-shade-plugin/[shade],
 https://maven.apache.org/jxr/maven-jxr-plugin/[jxr]
@@ -93,10 +94,10 @@ https://maven.apache.org/plugins/maven-invoker-plugin/[invoker]
 * build quality:
 https://maven.apache.org/enforcer/maven-enforcer-plugin/[enforcer],
 https://maven.apache.org/plugins/maven-dependency-plugin/[dependency],
-https://basepom.github.io/dependency-versions-check-maven-plugin/[dependency-versions-check],
 https://github.com/basepom/maven-plugins/[dependency-management],
 https://github.com/basepom/maven-plugins/[dependency-scope],
-https://github.com/basepom/duplicate-finder-maven-plugin/wiki[duplicate-finder],
+https://basepom.github.io/dependency-versions-check-maven-plugin/[dependency-versions-check],
+https://basepom.github.io/duplicate-finder-maven-plugin/[duplicate-finder],
 https://spotbugs.github.io/spotbugs-maven-plugin/[spotbugs],
 https://maven.apache.org/plugins/maven-pmd-plugin/[pmd],
 https://maven.apache.org/plugins/maven-checkstyle-plugin/[checkstyle],
@@ -105,7 +106,7 @@ https://mycila.carbou.me/license-maven-plugin/[license]
 
 * tools:
 https://www.mojohaus.org/build-helper-maven-plugin/[build-helper],
-https://github.com/basepom/maven-plugins/[property-helper],
+https://basepom.github.io/property-helper-maven-plugin/[property-helper],
 https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md[git-commit-id],
 https://github.com/brianm/really-executable-jars-maven-plugin/[really-executable-jar]
 
@@ -134,6 +135,19 @@ BasePOM provides:
 ====
 As the BasePOMs stack on top of each other, some features are only available in `minimal` and `oss` or just `oss`. This document applies to all the BasePOMs (`foundation`, `minimal` and `oss`) unless otherwise noted.
 ====
+
+=== BasePOM Maven Plugins
+
+The BasePOM project maintains a number of Apache Maven plugins that are useful outside the BasePOM project as well:
+
+* https://basepom.github.io/dependency-versions-check-maven-plugin/[dependency-versions-check] - verifies that the resolved versions of project dependencies are mutually compatible to each other
+* https://basepom.github.io/duplicate-finder-maven-plugin/[duplicate-finder] - Finds and flags duplicate and conflicting classes and resources on the java classpath
+* https://basepom.github.io/property-helper-maven-plugin/[property-helper] - generate and manipulate properties during the build process
+* https://basepom.github.io/inline-maven-plugin/[inline] - inlines dependencies into a main artifact by rewriting classes and resources
+* https://basepom.github.io/repack-maven-plugin/[repack] - repacks code and its dependencies into a single archive for applications and services
+* https://github.com/basepom/maven-plugins/[dependency-management] - validates that the versions in dependency management and plugin management match the resolved versions
+* https://github.com/basepom/maven-plugins/[dependency-scope] - ensures that tests scoped dependencies do not override dependencies in compile scope
+
 
 == Overview
 
@@ -426,7 +440,8 @@ BasePOM uses the https://github.com/git-commit-id/git-commit-id-maven-plugin/blo
 | Property Name                                 | Default Value                              | customization   | defined in | function
 | basepom.executable.flags                      |                                            | sometimes     | foundation | command line parameters for the `java` command when executing.
 | basepom.executable.name                       | `${project.name}`                          | rarely        | foundation | Sets the name of the executable.
-| basepom.shaded.main-class                     | (empty)                                    | often         | minimal    | Defines the main class for the executable jar.
+| basepom.shaded.main-class                     | (empty)                                    | *deprecated*  | minimal    | Defines the main class for a shaded jar (using the `basepom.executable` profile). This option was ill-named and should be replaced with the `basepom.main-class` option which works for both shaded and repacked jars.
+| basepom.main-class                            | `${basepom.shaded.main-class}`             | often         | minimal    | Defines the main class for the executable jar when shading or repacking an artifact.
 |===
 
 === Setting plugin and dependency versions
@@ -693,7 +708,7 @@ This profile adds the following goals to the lifecycle:
 
 ==== `basepom.executable` (foundation)
 
-This profile activates if a `.build-executable` file exists in the current build module. This file only need to exist, it can be empty.
+This profile activates if a `.build-executable` file exists in the current build module. This file only needs to exist, it can be empty.
 
 [WARNING]
 ====
@@ -708,6 +723,25 @@ This profile adds the following goals to the lifecycle:
 | `maven-shade-plugin`                     | package                | basepom.executable.default                  | shade                     | create a jar with all dependencies included
 | `really-executable-jar-maven-plugin`     | package                | basepom.executable.default                  | really-executable-jar     | create an executable from the shaded jar
 |===
+
+==== `basepom.repack` (foundation)
+
+This profile activates if a `.repack-executable` file exists in the current build module. This file only needs to exist, it can be empty.
+
+[WARNING]
+====
+This profile is experimental. While it is possible to build executables, there are a number of configuration options of the `repack` plugin that have not been exposed yet. This profile will ultimately replace the `basepom.executable` profile.
+====
+
+This profile adds the following goals to the lifecycle:
+
+[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
+|===
+| Plugin                                   | Phase                  | execution id                                | goal(s)                   | function
+| `repack-maven-plugin`                    | package                | basepom.repack.default                      | repack                    | repacks the main artifact with all dependencies
+| `really-executable-jar-maven-plugin`     | package                | basepom.repack.default                      | really-executable-jar     | create an executable from the repacked jar
+|===
+
 
 ==== `basepom.deploy-release` (oss)
 
@@ -857,13 +891,21 @@ For the `minimal` BasePOM, the `dependency` plugin is configured to:
 
 ==== `shade` plugin configuration
 
-The `shade` plugin is used to repack a build artifact and all its dependencies into a single "fat jar".
+The `shade` plugin is used to "shade" a build artifact and all its dependencies into a single "fat jar" by rewriting packages and classes.
 
 In the `minimal` Policy POM, the `shade` plugin is configured to
 
-* support `basepom.shaded.main-class` to configure main class for a shaded jar
+* support `basepom.main-class` to configure main class for a shaded jar
 * collect all additional, named sections from dependencies into the shaded jar
 * create the `X-BasePOM-Build-Id` main manifest entry from the `${basepom.shaded.id}` to differentiate a shaded jar from the original, non-shaded jar
+
+==== `repack` plugin configuration
+
+The `repack` plugin can create a "fat jar" artifact from a build artifact by including all its dependencies into a single jar. It does not rewrite any classes or unpack dependencies.
+
+In the `minimal` Policy POM, the `repack` plugin is configured to
+
+* support `basepom.main-class` to configure main class for a repacked jar
 
 ==== `surefire` and `failsafe` plugins
 
@@ -950,6 +992,12 @@ The `${project.groupId}:${project.artifactId}` section is specific for each proj
 The `maven-shade-plugin` is used to create single artifacts with all dependencies ("fat jars") for a project.
 
 BasePOM does not create a dependency reduced POM and all shaded artifacts are attached. Shaded artifacts should *never* be used as dependencies but should be terminal (e.g. an application jar).
+
+=== Jar repacking
+
+The `repack-maven-plugin` is used to create single artifacts with all dependencies ("fat jars") for a project. This method adds all dependencies "as is" (it does not rewrite the contents of main jar or unpacks dependencies) and produces better outcomes than shading jars.
+
+Repacked artifacts cannot be used as dependencies as its contents are packaged into different directories.
 
 === Using the license plugin
 

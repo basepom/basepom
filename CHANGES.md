@@ -10,6 +10,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * added `basepom.site.scm.comment` to set the site checkin comment. Default is `Site checkin for project ${project.name} (${project.version})`
 
+* added the `repack` plugin and introduced jar repackaging by using a `.repack-executable` file. This is a drop-in replacement for jar shading, except that only `${basepom.main-class}` is supported (not `${basepom.shaded.main-class}`).
+
 ### Changed
 
 * Bump dependency-versions-check plugin to 4.0.0 (from 3.2.0)
@@ -33,6 +35,7 @@ dependency-scope plugin to forked plugins under the
 dormant, this was done to address the various maven 3.9.x warnings and
 consolidate upgrading and releasing the plugins.
 
+The `${basepom.shaded.main-class}` property is deprecated and will be removed in a future release. Use the `${basepom.main-class}` property instead.
 
 ## 52 - 2023-05-12
 

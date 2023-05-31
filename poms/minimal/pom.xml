@@ -38,8 +38,11 @@
         <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
         <basepom.check.fail-checkstyle>${basepom.check.fail-extended}</basepom.check.fail-checkstyle>
 
-        <!-- shade plugin -->
+        <!-- deprecated, do not use any longer -->
         <basepom.shaded.main-class />
+
+        <!-- shade and repack plugin.  -->
+        <basepom.main-class>${basepom.shaded.main-class}</basepom.main-class>
 
         <!-- policy jar for license and checkstyle defaults -->
         <dep.basepom-policy.version>10</dep.basepom-policy.version>
@@ -272,7 +275,7 @@
                                     <X-BasePOM-Name>${project.name}</X-BasePOM-Name>
                                     <X-BasePOM-Git-Commit-Id>${git.commit.id}</X-BasePOM-Git-Commit-Id>
                                 </manifestEntries>
-                                <mainClass>${basepom.shaded.main-class}</mainClass>
+                                <mainClass>${basepom.main-class}</mainClass>
                             </transformer>
                         </transformers>
                     </configuration>
@@ -283,6 +286,14 @@
                             <version>${dep.basepom-policy.version}</version>
                         </dependency>
                     </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.basepom.maven</groupId>
+                    <artifactId>repack-maven-plugin</artifactId>
+                    <configuration>
+                        <mainClass>${basepom.main-class}</mainClass>
+                    </configuration>
                 </plugin>
 
                 <plugin>

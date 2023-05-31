@@ -281,6 +281,7 @@
         <dep.plugin.property-helper.version>3.1.1</dep.plugin.property-helper.version>
         <dep.plugin.dependency-management.version>1.0.1</dep.plugin.dependency-management.version>
         <dep.plugin.dependency-scope.version>1.0.1</dep.plugin.dependency-scope.version>
+        <dep.plugin.repack.version>1.0.0</dep.plugin.repack.version>
 
         <!-- https://github.com/git-commit-id/git-commit-id-maven-plugin/releases -->
         <dep.plugin.git-commit-id.version>6.0.0</dep.plugin.git-commit-id.version>
@@ -677,6 +678,12 @@
                     <groupId>org.skife.maven</groupId>
                     <artifactId>really-executable-jar-maven-plugin</artifactId>
                     <version>${dep.plugin.really-executable.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.basepom.maven</groupId>
+                    <artifactId>repack-maven-plugin</artifactId>
+                    <version>${dep.plugin.repack.version}</version>
                 </plugin>
 
                 <plugin>
@@ -1116,6 +1123,50 @@
                                 </goals>
                                 <configuration>
                                     <classifier>shaded</classifier>
+                                    <flags>${basepom.executable.flags}</flags>
+                                    <programFile>${basepom.executable.name}</programFile>
+                                    <attachProgramFile>true</attachProgramFile>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>basepom.repack</id>
+            <activation>
+                <file>
+                    <exists>${basedir}/.repack-executable</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.basepom.maven</groupId>
+                        <artifactId>repack-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>basepom.repack.default</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>repack</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.skife.maven</groupId>
+                        <artifactId>really-executable-jar-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>basepom.repack.default</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>really-executable-jar</goal>
+                                </goals>
+                                <configuration>
+                                    <classifier>repacked</classifier>
                                     <flags>${basepom.executable.flags}</flags>
                                     <programFile>${basepom.executable.name}</programFile>
                                     <attachProgramFile>true</attachProgramFile>
