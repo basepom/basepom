@@ -136,17 +136,18 @@ BasePOM provides:
 As the BasePOMs stack on top of each other, some features are only available in `minimal` and `oss` or just `oss`. This document applies to all the BasePOMs (`foundation`, `minimal` and `oss`) unless otherwise noted.
 ====
 
+
 === BasePOM Maven Plugins
 
 The BasePOM project maintains a number of Apache Maven plugins that are useful outside the BasePOM project as well:
 
 * https://basepom.github.io/dependency-versions-check-maven-plugin/[dependency-versions-check] - verifies that the resolved versions of project dependencies are mutually compatible to each other
-* https://basepom.github.io/duplicate-finder-maven-plugin/[duplicate-finder] - Finds and flags duplicate and conflicting classes and resources on the java classpath
-* https://basepom.github.io/property-helper-maven-plugin/[property-helper] - generate and manipulate properties during the build process
-* https://basepom.github.io/inline-maven-plugin/[inline] - inlines dependencies into a main artifact by rewriting classes and resources
-* https://basepom.github.io/repack-maven-plugin/[repack] - repacks code and its dependencies into a single archive for applications and services
-* https://github.com/basepom/maven-plugins/[dependency-management] - validates that the versions in dependency management and plugin management match the resolved versions
-* https://github.com/basepom/maven-plugins/[dependency-scope] - ensures that tests scoped dependencies do not override dependencies in compile scope
+* https://basepom.github.io/duplicate-finder-maven-plugin/[duplicate-finder^] - Finds and flags duplicate and conflicting classes and resources on the java classpath
+* https://basepom.github.io/property-helper-maven-plugin/[property-helper^] - generate and manipulate properties during the build process
+* https://basepom.github.io/inline-maven-plugin/[inline^] - inlines dependencies into a main artifact by rewriting classes and resources
+* https://basepom.github.io/repack-maven-plugin/[repack^] - repacks code and its dependencies into a single archive for applications and services
+* https://github.com/basepom/maven-plugins/tree/main/dependency-management/[dependency-management^] - validates that the versions in dependency management and plugin management match the resolved versions
+* https://github.com/basepom/maven-plugins/tree/main/dependency-scope/[dependency-scope^] - ensures that tests scoped dependencies do not override dependencies in compile scope
 
 
 == Overview
