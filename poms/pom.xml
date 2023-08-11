@@ -35,7 +35,7 @@
         <!-- a release, this profile gets implicitly deactivated (and the   -->
         <!-- normal release process is used).                               -->
         <profile>
-            <id>basepom.snapshot-deploy</id>
+            <id>basepom.manual-install</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -52,6 +52,7 @@
                                     <goal>install-file</goal>
                                 </goals>
                                 <configuration>
+                                    <skip>false</skip>
                                     <artifactId>basepom-foundation</artifactId>
                                     <file>${basedir}/foundation/pom.xml</file>
                                 </configuration>
@@ -63,6 +64,7 @@
                                     <goal>install-file</goal>
                                 </goals>
                                 <configuration>
+                                    <skip>false</skip>
                                     <artifactId>basepom-minimal</artifactId>
                                     <file>${basedir}/minimal/pom.xml</file>
                                 </configuration>
@@ -74,12 +76,23 @@
                                     <goal>install-file</goal>
                                 </goals>
                                 <configuration>
+                                    <skip>false</skip>
                                     <artifactId>basepom-oss</artifactId>
                                     <file>${basedir}/oss/pom.xml</file>
                                 </configuration>
                             </execution>
                         </executions>
                     </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>basepom.manual-deploy</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-deploy-plugin</artifactId>
@@ -91,7 +104,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <skip>${basepom.skip-snapshot-deploy}</skip>
+                                    <skip>false</skip>
                                     <artifactId>basepom-foundation</artifactId>
                                     <file>${basedir}/foundation/pom.xml</file>
                                 </configuration>
@@ -103,7 +116,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <skip>${basepom.skip-snapshot-deploy}</skip>
+                                    <skip>false</skip>
                                     <artifactId>basepom-minimal</artifactId>
                                     <file>${basedir}/minimal/pom.xml</file>
                                 </configuration>
@@ -115,7 +128,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
-                                    <skip>${basepom.skip-snapshot-deploy}</skip>
+                                    <skip>false</skip>
                                     <artifactId>basepom-oss</artifactId>
                                     <file>${basedir}/oss/pom.xml</file>
                                 </configuration>
@@ -125,6 +138,7 @@
                 </plugins>
             </build>
         </profile>
+
         <profile>
             <!-- this profile is activated for release:prepare and release:perform goals -->
             <id>release</id>
@@ -134,6 +148,7 @@
                 <module>oss</module>
             </modules>
         </profile>
+
         <profile>
             <!-- this profile is activated for release:perform goal -->
             <id>oss-release</id>

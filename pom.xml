@@ -68,12 +68,10 @@
         <basepom.check.skip-license>false</basepom.check.skip-license>
 
         <basepom.release.tag-name-format>basepom-@{project.version}</basepom.release.tag-name-format>
-        <basepom.release.profiles>release,oss-release</basepom.release.profiles>
+        <basepom.release.profiles>release,oss-release,basepom.manual-install</basepom.release.profiles>
 
         <basepom.deploy.skip>true</basepom.deploy.skip>
         <basepom.install.skip>true</basepom.install.skip>
-
-        <basepom.skip-snapshot-deploy>false</basepom.skip-snapshot-deploy>
 
         <dep.plugin.asciidoctor.version>2.2.4</dep.plugin.asciidoctor.version>
         <dep.asciidoctorj.version>2.5.10</dep.asciidoctorj.version>
@@ -137,11 +135,12 @@
     </build>
 
     <profiles>
-        <!-- This must be in a default-activated profile so that when doing -->
-        <!-- a release, this profile gets implicitly deactivated (and the   -->
-        <!-- normal release process is used).                               -->
         <profile>
-            <id>basepom.snapshot-deploy</id>
+            <!-- this profile is activated by default. It adds the poms folder to the build,
+                 so all poms in there are processed. Is deactivated if any other build profile
+                 is selected -->
+            <id>normal</id>
+
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -152,16 +151,17 @@
         </profile>
 
         <profile>
+            <!-- the release profile is activated during releases. It includes the pom folder and the
+                 docs. The release plugin configuration is requires so that the release perform task does
+                 not enter the pom subfolders (which have no knowledge of the deploy repositories) but
+                 still runs the property replacement process to set the right version.
+            -->
             <id>release</id>
 
             <modules>
                 <module>poms</module>
                 <module>docs</module>
             </modules>
-
-            <properties>
-                <basepom.skip-snapshot-deploy>true</basepom.skip-snapshot-deploy>
-            </properties>
 
             <build>
                 <pluginManagement>
@@ -177,8 +177,11 @@
                 </pluginManagement>
             </build>
         </profile>
+
         <profile>
+            <!-- This profile is activated for anything doc related. It includes the doc module in the build (and also turns off the pom build) -->
             <id>docs</id>
+
             <modules>
                 <module>docs</module>
             </modules>
