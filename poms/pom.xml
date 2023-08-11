@@ -91,6 +91,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
+                                    <skip>${basepom.skip-snapshot-deploy}</skip>
                                     <artifactId>basepom-foundation</artifactId>
                                     <file>${basedir}/foundation/pom.xml</file>
                                 </configuration>
@@ -102,6 +103,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
+                                    <skip>${basepom.skip-snapshot-deploy}</skip>
                                     <artifactId>basepom-minimal</artifactId>
                                     <file>${basedir}/minimal/pom.xml</file>
                                 </configuration>
@@ -113,6 +115,7 @@
                                     <goal>deploy-file</goal>
                                 </goals>
                                 <configuration>
+                                    <skip>${basepom.skip-snapshot-deploy}</skip>
                                     <artifactId>basepom-oss</artifactId>
                                     <file>${basedir}/oss/pom.xml</file>
                                 </configuration>

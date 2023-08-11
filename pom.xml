@@ -73,6 +73,8 @@
         <basepom.deploy.skip>true</basepom.deploy.skip>
         <basepom.install.skip>true</basepom.install.skip>
 
+        <basepom.skip-snapshot-deploy>false</basepom.skip-snapshot-deploy>
+
         <dep.plugin.asciidoctor.version>2.2.4</dep.plugin.asciidoctor.version>
         <dep.asciidoctorj.version>2.5.10</dep.asciidoctorj.version>
         <dep.asciidoctorj-diagram.version>2.2.11</dep.asciidoctorj-diagram.version>
@@ -143,16 +145,24 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+
             <modules>
                 <module>poms</module>
             </modules>
         </profile>
+
         <profile>
             <id>release</id>
+
             <modules>
                 <module>poms</module>
                 <module>docs</module>
             </modules>
+
+            <properties>
+                <basepom.skip-snapshot-deploy>true</basepom.skip-snapshot-deploy>
+            </properties>
+
             <build>
                 <pluginManagement>
                     <plugins>
