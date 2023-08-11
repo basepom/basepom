@@ -1,25 +1,31 @@
 SHELL = /bin/sh
 .SUFFIXES:
-.PHONY: install deploy docs release deploy-docs help
+.PHONY: clean install deploy docs deploy-docs release help
+
+MAVEN = ./mvnw
 
 default: help
 
+clean:
+	${MAVEN} clean
+
 install:
-	./mvnw clean install
+	${MAVEN} clean install
 
 deploy:
-	./mvnw clean deploy
+	${MAVEN} clean deploy
 
 docs:
-	./mvnw -Pdocs clean install
+	${MAVEN} -Pdocs clean install
 
 deploy-docs:
-	./mvnw -Pdocs clean deploy
+	${MAVEN} -Pdocs clean deploy
 
 release:
-	./mvnw -Prelease clean release:clean release:prepare release:perform
+	${MAVEN} -Prelease clean release:clean release:prepare release:perform
 
 help:
+	@echo " * clean       - clean local build tree"
 	@echo " * install     - installs basepom versions in the local maven repository"
 	@echo " * deploy      - installs basepom versions in the snapshot OSS repository"
 	@echo " * docs        - build a local copy of the documentation"
