@@ -12,6 +12,21 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Removed
 
+## 55 - 2023-08-11
+
+### Changed
+
+* Bump spotbugs  plugin to 4.7.3.5 (from 4.7.3.4)
+* Bump clean plugin to 3.3.1 (from 3.2.0)
+* Bump failsafe  plugin to 3.1.2 (from 3.1.0)
+* Bump surefire  plugin to 3.1.2 (from 3.1.0)
+* Bump invoker plugin to 3.6.0 (from 3.5.1)
+* Bump release plugin to 3.0.1 (from 3.0.0)
+* Bump shade plugin to 3.5.0 (from 3.4.1)
+* Bump site plugin to 4.0.0-M9 (from 4.0.0-M8)
+* Bump project-info-reports plugin to 3.4.5 (from 3.4.4)
+* Bump checkstyle to 10.12.2 (from 10.12.0)
+
 ## 54 - 2023-05-31
 
 ### Added

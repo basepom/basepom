@@ -60,7 +60,7 @@
         <dep.plugin.gpg.version>3.1.0</dep.plugin.gpg.version>
 
         <!-- reporting -->
-        <dep.plugin.project-info-reports.version>3.4.4</dep.plugin.project-info-reports.version>
+        <dep.plugin.project-info-reports.version>3.4.5</dep.plugin.project-info-reports.version>
         <dep.plugin.jxr.version>3.3.0</dep.plugin.jxr.version>
 
         <!-- https://github.com/mathieucarbou/license-maven-plugin/tags -->
