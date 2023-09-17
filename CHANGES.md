@@ -20,6 +20,10 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump enforcer plugin to 3.4.1 (from 3.3.0)
 * Bump checkstyle to 10.12.3 (from 10.12.2)
 
+### Added
+
+* `javadoc.basepom.legacy-mode` to control javadoc generation when building post-java 8 projects.
+
 ## 55 - 2023-08-11
 
 ### Changed

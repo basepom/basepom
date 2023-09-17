@@ -65,6 +65,9 @@
         <!-- Javadoc exclude package names -->
         <basepom.javadoc.exclude-package-names />
 
+        <!-- Javadoc legacy mode -->
+        <basepom.javadoc.legacy-mode>false</basepom.javadoc.legacy-mode>
+
         <!-- set surefire plugin argline arguments here -->
         <basepom.test.arguments />
 
@@ -470,6 +473,7 @@
                     <configuration>
                         <skip>${basepom.javadoc.skip}</skip>
                         <failOnError>${basepom.check.fail-javadoc}</failOnError>
+                        <legacyMode>${basepom.javadoc.legacy-mode}</legacyMode>
                         <release>${project.build.targetJdk}</release>
                         <source>${maven.compiler.source}</source>
                         <encoding>${project.build.sourceEncoding}</encoding>
