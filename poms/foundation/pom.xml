@@ -222,7 +222,7 @@
         <dep.pmd.version>6.55.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>10.12.2</dep.checkstyle.version>
+        <dep.checkstyle.version>10.12.3</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.7.3</dep.spotbugs.version>
@@ -249,13 +249,13 @@
 
         <!-- reporting -->
         <dep.plugin.checkstyle.version>3.3.0</dep.plugin.checkstyle.version>
-        <dep.plugin.javadoc.version>3.5.0</dep.plugin.javadoc.version>
+        <dep.plugin.javadoc.version>3.6.0</dep.plugin.javadoc.version>
         <dep.plugin.pmd.version>3.21.0</dep.plugin.pmd.version>
 
         <!-- tools -->
         <dep.plugin.assembly.version>3.6.0</dep.plugin.assembly.version>
         <dep.plugin.dependency.version>3.6.0</dep.plugin.dependency.version>
-        <dep.plugin.enforcer.version>3.3.0</dep.plugin.enforcer.version>
+        <dep.plugin.enforcer.version>3.4.1</dep.plugin.enforcer.version>
         <dep.plugin.invoker.version>3.6.0</dep.plugin.invoker.version>
         <dep.plugin.release.version>3.0.1</dep.plugin.release.version>
         <dep.plugin.scm.version>2.0.1</dep.plugin.scm.version>
@@ -266,7 +266,6 @@
 
         <!-- https://basepom.github.io/dependency-versions-check-maven-plugin/ -->
         <dep.plugin.dependency-versions-check.version>4.0.0</dep.plugin.dependency-versions-check.version>
-
 
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
         <dep.plugin.duplicate-finder.version>2.0.1</dep.plugin.duplicate-finder.version>
