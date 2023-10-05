@@ -390,7 +390,6 @@
                         <target>${maven.compiler.target}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${basepom.build.jvmsize}</maxmem>
-                        <proc>full</proc>
                         <showWarnings>true</showWarnings>
                         <useIncrementalCompilation>${basepom.compiler.use-incremental-compilation}</useIncrementalCompilation>
                         <parameters>${basepom.compiler.parameters}</parameters>

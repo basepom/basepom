@@ -8,8 +8,6 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Added
 
-* Add explicit `<proc>full</proc>` to the maven compiler plugin to silence JDK21 warnings
-
 ### Changed
 
 ### Removed
