@@ -75,7 +75,7 @@
 
         <dep.plugin.asciidoctor.version>2.2.4</dep.plugin.asciidoctor.version>
         <dep.asciidoctorj.version>2.5.10</dep.asciidoctorj.version>
-        <dep.asciidoctorj-diagram.version>2.2.11</dep.asciidoctorj-diagram.version>
+        <dep.asciidoctorj-diagram.version>2.2.13</dep.asciidoctorj-diagram.version>
     </properties>
 
     <build>

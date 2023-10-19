@@ -225,7 +225,7 @@
         <dep.pmd.version>6.55.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>10.12.3</dep.checkstyle.version>
+        <dep.checkstyle.version>10.12.4</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.8.0</dep.spotbugs.version>
@@ -242,12 +242,12 @@
         <dep.plugin.failsafe.version>3.1.2</dep.plugin.failsafe.version>
         <dep.plugin.install.version>3.1.1</dep.plugin.install.version>
         <dep.plugin.resources.version>3.3.1</dep.plugin.resources.version>
-        <dep.plugin.site.version>4.0.0-M9</dep.plugin.site.version>
+        <dep.plugin.site.version>4.0.0-M11</dep.plugin.site.version>
         <dep.plugin.surefire.version>3.1.2</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>3.3.0</dep.plugin.jar.version>
-        <dep.plugin.shade.version>3.5.0</dep.plugin.shade.version>
+        <dep.plugin.shade.version>3.5.1</dep.plugin.shade.version>
         <dep.plugin.source.version>3.3.0</dep.plugin.source.version>
 
         <!-- reporting -->
