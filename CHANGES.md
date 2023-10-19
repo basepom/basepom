@@ -12,13 +12,14 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Removed
 
-## 56 - 2023-09-16
+## 56 - unreleased
 
 ### Changed
 
 * Bump javadoc plugin to 3.6.0 (from 3.5.0)
 * Bump enforcer plugin to 3.4.1 (from 3.3.0)
 * Bump checkstyle to 10.12.3 (from 10.12.2)
+* use the non-deprecated `skipDeployment` property for `scm-publish`
 
 ### Added
 

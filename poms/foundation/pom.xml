@@ -721,7 +721,7 @@
                         <tryUpdate>${basepom.site.scm.try-update}</tryUpdate>
                         <content>${project.reporting.outputDirectory}</content>
                         <subDirectory>${basepom.site.scm.site-path}</subDirectory>
-                        <skipDeployement>${basepom.site.scm.skip-deploy}</skipDeployement>
+                        <skipDeployment>${basepom.site.scm.skip-deploy}</skipDeployment>
                         <serverId>${basepom.site.scm.id}</serverId>
                         <pubScmUrl>${basepom.site.scm.url}</pubScmUrl>
                         <checkinComment>${basepom.site.scm.comment}</checkinComment>
