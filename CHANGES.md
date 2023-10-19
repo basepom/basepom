@@ -16,6 +16,9 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+* Bump spotbugs to 4.8.0 (from 4.7.3)
+* Bump spotbugs plugin to 4.7.3.6 (from 4.7.3.5)
+* Bump jacoco plugin to 0.8.11 (from 0.8.10)
 * Bump javadoc plugin to 3.6.0 (from 3.5.0)
 * Bump enforcer plugin to 3.4.1 (from 3.3.0)
 * Bump checkstyle to 10.12.3 (from 10.12.2)

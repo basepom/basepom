@@ -228,7 +228,7 @@
         <dep.checkstyle.version>10.12.3</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
-        <dep.spotbugs.version>4.7.3</dep.spotbugs.version>
+        <dep.spotbugs.version>4.8.0</dep.spotbugs.version>
 
         <!-- https://github.com/apache/maven-dependency-analyzer/tags -->
         <dep.dependency-analyzer.version>1.13.2</dep.dependency-analyzer.version>
@@ -274,10 +274,10 @@
         <dep.plugin.duplicate-finder.version>2.0.1</dep.plugin.duplicate-finder.version>
 
         <!-- https://github.com/spotbugs/spotbugs-maven-plugin/releases -->
-        <dep.plugin.spotbugs.version>4.7.3.5</dep.plugin.spotbugs.version>
+        <dep.plugin.spotbugs.version>4.7.3.6</dep.plugin.spotbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
-        <dep.plugin.jacoco.version>0.8.10</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.8.11</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/maven-plugins/releases -->
         <dep.plugin.property-helper.version>3.1.1</dep.plugin.property-helper.version>
