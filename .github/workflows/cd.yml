@@ -15,7 +15,7 @@ jobs:
     - name: setup build environment
       uses: actions/setup-java@v3
       with:
-        java-version: 17
+        java-version: 21
         distribution: temurin
         cache: maven
         server-id: sonatype-nexus-snapshots
@@ -37,7 +37,7 @@ jobs:
     - name: setup doc environment
       uses: actions/setup-java@v3
       with:
-        java-version: 17
+        java-version: 21
         distribution: temurin
         cache: maven
         server-id: github
