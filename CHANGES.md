@@ -12,6 +12,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Removed
 
+* removed bad property `encoding` from checkstyle site report (caused a warning when building the site)
+
 ## 56 - 2023-08-18
 
 ### Changed

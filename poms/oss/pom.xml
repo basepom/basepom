@@ -262,7 +262,6 @@
                 <version>${dep.plugin.checkstyle.version}</version>
                 <configuration>
                     <skip>${basepom.site.skip-checkstyle}</skip>
-                    <encoding>${project.build.sourceEncoding}</encoding>
                     <consoleOutput>false</consoleOutput>
                     <linkXRef>true</linkXRef>
                 </configuration>
