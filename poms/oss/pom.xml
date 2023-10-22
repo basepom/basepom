@@ -280,7 +280,6 @@
                         <id>default</id>
                         <reports>
                             <report>jxr-no-fork</report>
-                            <report>test-jxr-no-fork</report>
                         </reports>
                     </reportSet>
                 </reportSets>
@@ -360,7 +359,6 @@
                         <id>default</id>
                         <reports>
                             <report>javadoc-no-fork</report>
-                            <report>test-javadoc-no-fork</report>
                         </reports>
                     </reportSet>
                 </reportSets>
