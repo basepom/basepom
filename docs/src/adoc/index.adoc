@@ -954,7 +954,7 @@ If the coverage agent is not active (by setting `basepom.check.skip-coverage` to
 
 When the respective test plugin executes, they pick up the content of these properties (through the `argLine` configuration setting). Using a secondary property (and not the `argLine` property directly as most stack overflow posts would suggest) allows manual configuration on the command line while still preserving the ability to add the coverage agent through the build lifecycle.
 
-If the `argLine` configuration needs to be modified (e.g. in a Policy POM), the `@{basepom.coverage.test-args`}` (for `surefire`) and `@{basepom.coverage.it-args}` (for `failsafe`) *must* be present, otherwise this integration no longer works. Using a `@` is not a typo but necessary for late evaluation of these properties.
+If the `argLine` configuration needs to be modified (e.g. in a Policy POM), the `@{basepom.coverage.test-args}` (for `surefire`) and `@{basepom.coverage.it-args}` (for `failsafe`) *must* be present, otherwise this integration no longer works. Using a `@` is not a typo but necessary for late evaluation of these properties.
 
 Unfortunately, for the `invoker` plugin, this is not possible. For invoker, a `invoker.properties` file must be used which should contain the line
 
