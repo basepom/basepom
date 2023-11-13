@@ -319,7 +319,7 @@
                     <configuration>
                         <systemPropertyVariables combine.children="append">
                             <sun.jnu.encoding>${project.build.sourceEncoding}</sun.jnu.encoding>
-                            <user.timezone>UTC</user.timezone>
+                            <user.timezone>${basepom.test.user.timezone}</user.timezone>
                             <java.awt.headless>true</java.awt.headless>
                             <java.util.logging.SimpleFormatter.format>%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n</java.util.logging.SimpleFormatter.format>
                         </systemPropertyVariables>
@@ -332,7 +332,7 @@
                     <configuration>
                         <systemPropertyVariables combine.children="append">
                             <sun.jnu.encoding>${project.build.sourceEncoding}</sun.jnu.encoding>
-                            <user.timezone>UTC</user.timezone>
+                            <user.timezone>${basepom.test.user.timezone}</user.timezone>
                             <java.awt.headless>true</java.awt.headless>
                             <java.util.logging.SimpleFormatter.format>%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n</java.util.logging.SimpleFormatter.format>
                         </systemPropertyVariables>

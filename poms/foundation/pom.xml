@@ -80,6 +80,8 @@
         <basepom.test.timeout>30</basepom.test.timeout>
 
         <basepom.test.memory>256m</basepom.test.memory>
+        
+        <basepom.test.user.timezone />
 
         <!-- test groups for unit tests -->
         <basepom.test.groups />
