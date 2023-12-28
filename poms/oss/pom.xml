@@ -60,11 +60,11 @@
         <dep.plugin.gpg.version>3.1.0</dep.plugin.gpg.version>
 
         <!-- reporting -->
-        <dep.plugin.project-info-reports.version>3.4.5</dep.plugin.project-info-reports.version>
-        <dep.plugin.jxr.version>3.3.0</dep.plugin.jxr.version>
+        <dep.plugin.project-info-reports.version>3.5.0</dep.plugin.project-info-reports.version>
+        <dep.plugin.jxr.version>3.3.1</dep.plugin.jxr.version>
 
         <!-- https://github.com/mathieucarbou/license-maven-plugin/tags -->
-        <dep.plugin.license.version>4.2</dep.plugin.license.version>
+        <dep.plugin.license.version>4.3</dep.plugin.license.version>
 
         <!-- https://github.com/sonatype/nexus-maven-plugins/tags -->
         <dep.plugin.nexus-staging.version>1.6.13</dep.plugin.nexus-staging.version>

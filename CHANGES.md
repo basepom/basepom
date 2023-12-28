@@ -11,6 +11,26 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * align site javadoc generation with build cycle javadoc generation (`basepom.javadoc.legacy-mode` and `basepom.javadoc.exclude-package-names).
+* raise "minimum" maven version to 3.6.3 to support new build-helper plugin version
+
+* Bump spotbugs to 4.8.3 (from 4.8.0)
+* Bump checkstyle to 10.12.6 (from 10.12.4)
+* Bump spotbugs plugin to 4.8.2.0 (from 4.7.3.6)
+* Bump license plugin to 4.3 (from 4.2)
+* Bump git-commit-id plugin to 7.0.0 (from 6.0.0)
+* Bump checkstyle plugin to 3.3.1 (from 3.3.0)
+* Bump clean plugin to 3.3.2 (from 3.3.1)
+* Bump compiler plugin to 3.12.1 (from 3.11.0)
+* Bump dependency plugin to 3.6.1 (from 3.6.0)
+* Bump failsafe plugin to 3.2.3 (from 3.1.2)
+* Bump surefire plugin to 3.2.3 (from 3.1.2)
+* Bump javadoc plugin to 3.6.3 (from 3.6.0)
+* Bump pmd plugin to 3.21.2 (from 3.21.0)
+* Bump site plugin to 4.0.0-M13 (from 4.0.0-M11)
+* Bump build-helper plugin to 3.5.0 (from 3.4.0)
+* Bump jxr plugin to 3.3.1 (from 3.3.0)
+* Bump project-info-reports plugin to 3.5.0 (from 3.4.5)
+
 
 ### Removed
 
