@@ -346,6 +346,8 @@
                 <version>${dep.plugin.javadoc.version}</version>
                 <configuration>
                     <skip>${basepom.site.skip-javadoc}</skip>
+                    <failOnError>${basepom.site.fail-javadoc}</failOnError>
+                    <legacyMode>${basepom.javadoc.legacy-mode}</legacyMode>
                     <release>${project.build.targetJdk}</release>
                     <source>${maven.compiler.source}</source>
                     <encoding>${project.build.sourceEncoding}</encoding>
@@ -353,6 +355,7 @@
                     <quiet>true</quiet>
                     <doclint>${basepom.javadoc.doclint}</doclint>
                     <show>${basepom.javadoc.show}</show>
+                    <excludePackageNames>${basepom.javadoc.exclude-package-names}</excludePackageNames>
                 </configuration>
                 <reportSets>
                     <reportSet>

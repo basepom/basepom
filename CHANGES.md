@@ -10,6 +10,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+* align site javadoc generation with build cycle javadoc generation (`basepom.javadoc.legacy-mode` and `basepom.javadoc.exclude-package-names).
+
 ### Removed
 
 * removed bad property `encoding` from checkstyle site report (caused a warning when building the site)
