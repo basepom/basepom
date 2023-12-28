@@ -30,6 +30,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump build-helper plugin to 3.5.0 (from 3.4.0)
 * Bump jxr plugin to 3.3.1 (from 3.3.0)
 * Bump project-info-reports plugin to 3.5.0 (from 3.4.5)
+* Bump dependency-versions-check plugin to 4.0.1 (from 4.0.0)
 
 
 ### Removed

@@ -268,7 +268,7 @@
         <dep.plugin.build-helper.version>3.5.0</dep.plugin.build-helper.version>
 
         <!-- https://basepom.github.io/dependency-versions-check-maven-plugin/ -->
-        <dep.plugin.dependency-versions-check.version>4.0.0</dep.plugin.dependency-versions-check.version>
+        <dep.plugin.dependency-versions-check.version>4.0.1</dep.plugin.dependency-versions-check.version>
 
         <!-- https://github.com/basepom/duplicate-finder-maven-plugin/releases -->
         <dep.plugin.duplicate-finder.version>2.0.1</dep.plugin.duplicate-finder.version>
