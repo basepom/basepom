@@ -20,7 +20,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
-* align site javadoc generation with build cycle javadoc generation (`basepom.javadoc.legacy-mode` and `basepom.javadoc.exclude-package-names).
+* align site javadoc generation with build cycle javadoc generation (`basepom.javadoc.legacy-mode` and `basepom.javadoc.exclude-package-names`).
 * raise "minimum" maven version to 3.6.3 to support new build-helper plugin version
 
 * Bump spotbugs to 4.8.3 (from 4.8.0)
