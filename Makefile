@@ -38,14 +38,10 @@ release:: MAVEN_CONFIG += -Prelease
 release::
 	${MAVEN} clean release:clean release:prepare release:perform
 
-release-docs:: MAVEN_CONFIG += -Prelease
-release-docs:: deploy-docs
-
 help::
 	@echo " * clean        - clean local build tree"
 	@echo " * install      - installs basepom versions in the local maven repository"
 	@echo " * deploy       - installs basepom versions in the snapshot OSS repository"
 	@echo " * docs         - build a local copy of the documentation"
-	@echo " * deploy-docs  - builds and deploys the documentation"
+	@echo " * deploy-docs  - builds and deploys the documentation for build and release"
 	@echo " * release      - release a new version to maven central"
-	@echo " * release-docs - run from release directory to deploy new doc site"
