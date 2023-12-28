@@ -6,6 +6,14 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Added
+
+### Changed
+
+### Removed
+
+----
+
 ## 57 - 2023-12-27
 
 ### Added
