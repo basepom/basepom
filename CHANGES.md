@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 57 - 2023-12-27
+
 ### Added
 
 ### Changed
@@ -38,7 +40,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * removed bad property `encoding` from checkstyle site report (caused a warning when building the site)
 * remove test javadoc and jxr generation, this causes problems with projects that have no public or protected test classes
 
-## 56 - 2023-08-18
+## 56 - 2023-10-18
 
 ### Changed
 
