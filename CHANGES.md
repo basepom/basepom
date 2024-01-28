@@ -10,6 +10,18 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+* Bump checkstyle to 10.12.7 (from 10.12.6)
+* Bump spotbugs plugin to 4.8.3.0 (from 4.8.2.0)
+* Bump failsafe plugin to 3.2.5 (from 3.2.3)
+* Bump surefire plugin to 3.2.5 (from 3.2.3)
+* Bump jxr plugin to 3.3.2 (from 3.3.1)
+* Bump asciidoctor plugin to 2.2.5 (from 2.2.4)
+* Bump dependency-management plugin to 1.0.2 (from 1.0.1)
+* Bump dependency-scope plugin to 1.0.2 (from 1.0.1)
+* Bump property-helper plugin to 4.0.0 (from 3.1.1)
+* Bump repack plugin to 1.0.1 (from 1.0.0)
+
+
 ### Removed
 
 ----
