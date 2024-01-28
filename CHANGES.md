@@ -10,6 +10,14 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+### Removed
+
+----
+
+## 58 - 2024-01-27
+
+### Changed
+
 * Bump checkstyle to 10.12.7 (from 10.12.6)
 * Bump spotbugs plugin to 4.8.3.0 (from 4.8.2.0)
 * Bump failsafe plugin to 3.2.5 (from 3.2.3)
@@ -20,9 +28,6 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump dependency-scope plugin to 1.0.2 (from 1.0.1)
 * Bump property-helper plugin to 4.0.0 (from 3.1.1)
 * Bump repack plugin to 1.0.1 (from 1.0.0)
-
-
-### Removed
 
 ----
 
