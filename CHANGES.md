@@ -23,6 +23,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump dependency-scope plugin to 1.0.3 (from 1.0.2)
 * Bump repack plugin to 1.0.2 (from 1.0.1)
 * Bump spotbugs plugin to 4.8.3.1 (from 4.8.3.0)
+* Bump asciidoctor plugin to 2.2.6 (from 2.2.5)
 
 ### Removed
 
