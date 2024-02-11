@@ -274,7 +274,7 @@
         <dep.plugin.duplicate-finder.version>2.0.1</dep.plugin.duplicate-finder.version>
 
         <!-- https://github.com/spotbugs/spotbugs-maven-plugin/releases -->
-        <dep.plugin.spotbugs.version>4.8.3.0</dep.plugin.spotbugs.version>
+        <dep.plugin.spotbugs.version>4.8.3.1</dep.plugin.spotbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
         <dep.plugin.jacoco.version>0.8.11</dep.plugin.jacoco.version>
