@@ -280,10 +280,10 @@
         <dep.plugin.jacoco.version>0.8.11</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/maven-plugins/releases -->
-        <dep.plugin.property-helper.version>4.0.0</dep.plugin.property-helper.version>
-        <dep.plugin.dependency-management.version>1.0.2</dep.plugin.dependency-management.version>
-        <dep.plugin.dependency-scope.version>1.0.2</dep.plugin.dependency-scope.version>
-        <dep.plugin.repack.version>1.0.1</dep.plugin.repack.version>
+        <dep.plugin.property-helper.version>4.1.0</dep.plugin.property-helper.version>
+        <dep.plugin.dependency-management.version>1.0.3</dep.plugin.dependency-management.version>
+        <dep.plugin.dependency-scope.version>1.0.3</dep.plugin.dependency-scope.version>
+        <dep.plugin.repack.version>1.0.2</dep.plugin.repack.version>
 
         <!-- https://github.com/git-commit-id/git-commit-id-maven-plugin/releases -->
         <dep.plugin.git-commit-id.version>7.0.0</dep.plugin.git-commit-id.version>

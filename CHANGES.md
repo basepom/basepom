@@ -12,6 +12,19 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Removed
 
+## 59 - 2024-02-11
+
+### Added
+
+### Changed
+
+* Bump property-helper plugin to 4.1.0 (from 4.0.0)
+* Bump dependency-management plugin to 1.0.3 (from 1.0.2)
+* Bump dependency-scope plugin to 1.0.3 (from 1.0.2)
+* Bump repack plugin to 1.0.2 (from 1.0.1)
+
+### Removed
+
 ----
 
 ## 58 - 2024-01-27
