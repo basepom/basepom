@@ -19,6 +19,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Support for reproducible builds:
   - add `basepom.git-id.date-format` to format git timestamps and use `yyyy-MM-dd'T'HH:mm:ssXXX` as the default, which is compatible with `project.build.outputTimestamp`.
   - add `basepom.git-id.skip-pom-projects` (default is `true`) to allow inclusion of pom-only modules for reproducible builds.
+  -  moved `git-commit-id` plugin into `validate` phase to run as first plugin.
 
 ### Changed
 
