@@ -40,6 +40,7 @@ This is the documentation for the current development state of the BasePOM proje
 
 === Release documentation
 
+* https://basepom.org/releases/59[Release 59 - 2024-02-11]
 * https://basepom.org/releases/58[Release 58 - 2024-01-27]
 * https://basepom.org/releases/57[Release 57 - 2023-12-27]
 * https://basepom.org/releases/56[Release 56 - 2023-10-18]
@@ -434,10 +435,12 @@ BasePOM uses the https://github.com/git-commit-id/git-commit-id-maven-plugin/blo
 |===
 | Property Name                                 | Default Value                              | customization     | defined in | function
 | basepom.git-id.skip                           | `false`                                    | sometimes, policy | foundation | If `true`, skip the plugin.
+| basepom.git-id.skip-pom-projects              |  `true`                                    | sometimes         | foundation | If `true`, skip plugin execution if the current project is a `pom` project (packages only a POM file)
 | basepom.git-id.fail-no-git                    | `false`                                    | sometimes, policy | foundation | If `true`, fail if the current build directory does not use git.
 | basepom.git-id.fail-no-info                   | `true`                                     | rarely, policy    | foundation | If `true`, fail if the plugin can not extract build information from the local git repository.
 | basepom.git-id.use-native                     | `false`                                    | rarely            | foundation | Use the system installed `git` binary instead of the pure Java `jgit` library. This is intended for troubleshooting.
 | basepom.git-id.run-only-once                  | `false`                                    | rarely, policy    | foundation | Execute only once for a Multi Module project build. This is almost never the right thing: If the build uses a `pom` packaged module as its root, then the plugin will not be executed. Also, for builds that use git submodules, the scm information may be different for each directory.
+| basepom.git-id.date-format                    | `yyyy-MM-dd'T'HH:mm:ssXXX`                 | rarely, policy    | foundation | Timestamp format as defined for `java.text.SimpleDateFormat`. The default format is compatible for the `project.build.outputTimestamp` property.
 |===
 
 ==== Executable support
@@ -661,9 +664,9 @@ BasePOM configures all the Maven plugins as part of the Maven build lifecycle. B
 [%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
 |===
 | Plugin                                   | Phase                  | execution id          | goal(s)                   | function
+| `git-commit-id-maven-plugin`             | validate               | basepom.default       | revision                  | fetch SCM revision information
 | `property-helper-maven-plugin`           | validate               | basepom.default       | get                       | create build specific ids
 | `maven-enforcer-plugin`                  | validate               | basepom.default       | enforce                   | enforce maven and jdk version
-| `git-commit-id-maven-plugin`             | initialize             | basepom.default       | revision                  | fetch SCM revision information
 | `maven-resources-plugin`                 | process-resources      | default-resources     | resources                 | prepare main resources
 | `maven-compiler-plugin`                  | compile                | default-compile       | compile                   | compile main sources
 | `maven-resources-plugin`                 | process-test-resources | default-testResources | testResources             | prepare test resources
@@ -942,6 +945,41 @@ The `oss` BasePOM also adds the following goals to the lifecycle:
 | Plugin                 | Phase             | execution id    | goal(s) | function
 | `license-maven-plugin` | validate / verify | basepom.default | check   | check license headers
 |===
+
+== Reproducible Builds with BasePOM
+
+Apache Maven supports reproducible builds (where it is possible to create bit-identical artefacts from a given SCM revision) as described https://maven.apache.org/guides/mini/guide-reproducible-builds.html[in the reproducible build mini-guide]. Apache Maven writes a timestamp into a build property (`project.build.outputTimestamp`) and any plugin is expected to create reproducible output when this property is present.
+
+BasePOM supports reproducible builds in version *59* or higher.
+
+
+=== Using the git SCM information for reproducible builds
+
+It is possible to create reproducible builds for any git commit using BasePOM. In every POM in a project, add
+
+[source,xml,indent=0,subs="+attributes"]
+----
+<properties>
+    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
+</properties>
+----
+
+This uses the commit timestamp of the current commit as timestamp for the reproducible build. BasePOM configures the format of the timestamp to be compatible to the `project.build.outputTimestamp` property and executes the `git-commit-id` plugin as the first plugin in the build cycle, therefore ensuring that all other plugins will pick up the setting correctly.
+
+=== Using POM inheritance with the git SCM information
+
+While the `artifact:check-buildplan` goal recommends not using POM inheritance for the `project.build.outputTimestamp` property, it can be used in combination with the `git.commit.time` value. However, by default, the
+git-commit-id plugin will skip execution for POM project, so the value may not be set correctly. To avoid this, also activate the plugin for POM projects as well. Adding the following properties:
+
+[source,xml,indent=0,subs="+attributes"]
+----
+<properties>
+    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
+    <basepom.git-id.skip-pom-projects>false</basepom.git-id.skip-pom-projects>
+</properties>
+----
+
+to the top-most POM makes a multi-module build reproducible (no additional properties in the child POMs are required).
 
 
 == Plugin configuration notes
