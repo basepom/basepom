@@ -16,6 +16,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Added
 
+* Support for reproducible builds:
+  - add `basepom.git-id.date-format` to format git timestamps and use `yyyy-MM-dd'T'HH:mm:ssXXX` as the default, which is compatible with `project.build.outputTimestamp`.
+  - add `basepom.git-id.skip-pom-projects` (default is `true`) to allow inclusion of pom-only modules for reproducible builds.
+
 ### Changed
 
 * Bump property-helper plugin to 4.1.0 (from 4.0.0)
