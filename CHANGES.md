@@ -12,6 +12,49 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Removed
 
+## 60 - 2024-09-10
+
+### Added
+
+### Changed
+
+* Bump pmd to 7.5.0 (from 6.55.0)
+* Bump checkstyle to 10.18.1 (from 10.12.7)
+* Bump spotbugs to 4.8.6 (from 4.8.3)
+* Bump dependency-analyzer to 1.14.1 (from 1.13.2)
+* Bump asciidoctor plugin to 3.0.0 (from 2.2.6)
+* Bump clean plugin to 3.4.0 (from 3.3.2)
+* Bump compiler plugin to 3.13.0 (from 3.12.1)
+* Bump deploy plugin to 3.1.3 (from 3.1.1)
+* Bump failsafe plugin to 3.5.0 (from 3.2.5)
+* Bump surefire plugin to 3.5.0 (from 3.2.5)
+* Bump install plugin to 3.1.3 (from 3.1.1)
+* Bump site plugin to 4.0.0-M16 (from 4.0.0-M13)
+* Bump jar plugin to 3.4.2 (from 3.3.0)
+* Bump shade plugin to 3.6.0 (from 3.5.1)
+* Bump source plugin to 3.3.1 (from 3.3.0)
+* Bump checkstyle plugin to 3.5.0 (from 3.3.1)
+* Bump javadoc plugin to 3.10.0 (from 3.6.3)
+* Bump pmd plugin to 3.25.0 (from 3.21.2)
+* Bump assembly plugin to 3.7.1 (from 3.6.0)
+* Bump dependency plugin to 3.8.0 (from 3.6.1)
+* Bump enforcer plugin to 3.5.0 (from 3.4.1)
+* Bump invoker plugin to 3.8.0 (from 3.6.0)
+* Bump release plugin to 3.1.1 (from 3.0.1)
+* Bump scm plugin to 2.1.0 (from 2.0.1)
+* Bump scm-publish plugin to 3.3.0 (from 3.2.1)
+* Bump build-helper plugin to 3.6.0 (from 3.5.0)
+* Bump spotbugs plugin to 4.8.6.3 (from 4.8.3.1)
+* Bump jacoco plugin to 0.8.12 (from 0.8.11)
+* Bump git-commit-id plugin to 9.0.1 (from 7.0.0)
+* Bump gpg plugin to 3.2.5 (from 3.1.0)
+* Bump project-info-reports plugin to 3.7.0 (from 3.5.0)
+* Bump jxr plugin to 3.5.0 (from 3.3.2)
+* Bump license plugin to 4.5 (from 4.3)
+* Bump nexus-staging plugin to 1.7.0 (from 1.6.13)
+
+### Removed
+
 ## 59 - 2024-02-11
 
 ### Added

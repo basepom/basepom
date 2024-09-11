@@ -73,7 +73,7 @@
         <basepom.deploy.skip>true</basepom.deploy.skip>
         <basepom.install.skip>true</basepom.install.skip>
 
-        <dep.plugin.asciidoctor.version>2.2.6</dep.plugin.asciidoctor.version>
+        <dep.plugin.asciidoctor.version>3.0.0</dep.plugin.asciidoctor.version>
         <dep.asciidoctorj.version>2.5.10</dep.asciidoctorj.version>
         <dep.asciidoctorj-diagram.version>2.2.14</dep.asciidoctorj-diagram.version>
     </properties>
