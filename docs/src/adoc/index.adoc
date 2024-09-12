@@ -40,6 +40,7 @@ This is the documentation for the current development state of the BasePOM proje
 
 === Release documentation
 
+* https://basepom.org/releases/60[Release 60 - 2024-09-11]
 * https://basepom.org/releases/59[Release 59 - 2024-02-11]
 * https://basepom.org/releases/58[Release 58 - 2024-01-27]
 * https://basepom.org/releases/57[Release 57 - 2023-12-27]
