@@ -52,6 +52,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump jxr plugin to 3.5.0 (from 3.3.2)
 * Bump license plugin to 4.5 (from 4.3)
 * Bump nexus-staging plugin to 1.7.0 (from 1.6.13)
+* Override all pmd plugins configured by default so that all plugins get consistent version numbers
 
 ### Removed
 

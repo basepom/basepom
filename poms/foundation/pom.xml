@@ -622,6 +622,16 @@
                         </dependency>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
+                            <artifactId>pmd-javascript</artifactId>
+                            <version>${dep.pmd.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>net.sourceforge.pmd</groupId>
+                            <artifactId>pmd-jsp</artifactId>
+                            <version>${dep.pmd.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>net.sourceforge.pmd</groupId>
                             <artifactId>pmd-xml</artifactId>
                             <version>${dep.pmd.version}</version>
                         </dependency>
