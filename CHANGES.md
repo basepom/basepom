@@ -8,9 +8,14 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Added
 
+* Added `basepom.git-id.date-format-timezone` to set the git id date timezone.
+
 ### Changed
 
+* Removed `Git-Remote-Origin-Url` from the default jar manifest as it causes reproducible builds to fail. Thanks @hboutemy! (#73)
+
 ### Removed
+
 
 ## 60 - 2024-09-10
 

@@ -180,6 +180,7 @@
         <basepom.git-id.skip-pom-projects>true</basepom.git-id.skip-pom-projects>
         <!-- this timestamp format is compatible to project.build.outputTimestamp -->
         <basepom.git-id.date-format>yyyy-MM-dd'T'HH:mm:ssXXX</basepom.git-id.date-format>
+        <basepom.git-id.date-format-timezone>UTC</basepom.git-id.date-format-timezone>
 
 
         <!-- dependency management plugin -->
@@ -519,7 +520,6 @@
                                         <Git-Branch>${git.branch}</Git-Branch>
                                         <Git-Commit-Id>${git.commit.id}</Git-Commit-Id>
                                         <Git-Commit-Id-Describe>${git.commit.id.describe}</Git-Commit-Id-Describe>
-                                        <Git-Remote-Origin-Url>${git.remote.origin.url}</Git-Remote-Origin-Url>
                                         <!-- project information -->
                                         <Project-ArtifactId>${project.artifactId}</Project-ArtifactId>
                                         <Project-GroupId>${project.groupId}</Project-GroupId>
@@ -759,6 +759,7 @@
                         <verbose>false</verbose>
                         <skipPoms>${basepom.git-id.skip-pom-projects}</skipPoms>
                         <dateFormat>${basepom.git-id.date-format}</dateFormat>
+                        <dateFormatTimeZone>${basepom.git-id.date-format-timezone}</dateFormatTimeZone>
                         <generateGitPropertiesFile>false</generateGitPropertiesFile>
                         <failOnNoGitDirectory>${basepom.git-id.fail-no-git}</failOnNoGitDirectory>
                         <failOnUnableToExtractRepoInfo>${basepom.git-id.fail-no-info}</failOnUnableToExtractRepoInfo>
