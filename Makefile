@@ -15,7 +15,7 @@ SHELL = /bin/sh
 
 MAVEN = ./mvnw
 
-export MAVEN_OPTS MAVEN_CONFIG
+export MAVEN_OPTS MAVEN_ARGS
 
 default:: help
 
@@ -25,16 +25,16 @@ clean::
 install::
 	${MAVEN} clean install
 
-docs:: MAVEN_CONFIG += -Pdocs
+docs:: MAVEN_ARGS += -Pdocs
 docs:: install
 
 deploy::
 	${MAVEN} clean deploy
 
-deploy-docs:: MAVEN_CONFIG += -Pdocs
+deploy-docs:: MAVEN_ARGS += -Pdocs
 deploy-docs:: deploy
 
-release:: MAVEN_CONFIG += -Prelease
+release:: MAVEN_ARGS += -Prelease
 release::
 	${MAVEN} clean release:clean release:prepare release:perform
 

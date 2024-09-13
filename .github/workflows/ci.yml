@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v4
         id: build_jdk
         with:
           java-version: ${{ matrix.java-version }}
@@ -28,6 +28,6 @@ jobs:
 
       - name: build
         env:
-          MAVEN_CONFIG: "-B -fae"
+          MAVEN_ARGS: "-B -fae"
         run: |
           make install docs
