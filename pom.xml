@@ -29,7 +29,7 @@
 
         Glue to build the various flavors of the basepom.
     </description>
-    <url>https://github.com/basepom/basepom/</url>
+    <url>https://basepom.org/</url>
     <name>basepom :: build :: root</name>
 
     <inceptionYear>2013</inceptionYear>
