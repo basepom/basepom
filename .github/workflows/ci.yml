@@ -12,22 +12,44 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java-version: [ 11, 17, 21 ]
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+          fetch-depth: 0
 
       - uses: actions/setup-java@v4
         id: build_jdk
         with:
-          java-version: ${{ matrix.java-version }}
+          java-version: 21
           distribution: temurin
           cache: maven
 
-      - name: build
+      - name: build distribution
         env:
           MAVEN_ARGS: "-B -fae"
         run: |
-          make install docs
+          make install
+
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v4
+        id: build_jdk
+        with:
+          java-version: 21
+          distribution: temurin
+          cache: maven
+
+      - name: build distribution
+        env:
+          MAVEN_ARGS: "-B -fae"
+        run: |
+          make docs

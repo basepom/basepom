@@ -27,23 +27,27 @@ clean::
 install::
 	${MAVEN} clean install
 
-docs:: MAVEN_ARGS += -Pdocs
-docs:: install
-
 deploy::
 	${MAVEN} clean deploy
 
-deploy-docs:: MAVEN_ARGS += -Pdocs
-deploy-docs:: deploy
+docs:: MAVEN_ARGS += -Pdocs
+docs:: install
+
+deploy-site:: MAVEN_ARGS += -Pdocs
+deploy-site:: deploy
 
 release:: MAVEN_ARGS += -Prelease
 release::
 	${MAVEN} clean release:clean release:prepare release:perform
 
+release-site:: MAVEN_ARGS += -Prelease
+release-site:: deploy-site
+
 help::
-	@echo " * clean        - clean local build tree"
-	@echo " * install      - installs basepom versions in the local maven repository"
-	@echo " * deploy       - installs basepom versions in the snapshot OSS repository"
-	@echo " * docs         - build a local copy of the documentation"
-	@echo " * deploy-docs  - builds and deploys the documentation for build and release"
-	@echo " * release      - release a new version to maven central"
+	@echo " * clean           - clean local build tree"
+	@echo " * install         - installs basepom versions in the local maven repository"
+	@echo " * deploy          - installs basepom versions in the snapshot OSS repository"
+	@echo " * docs            - build a local copy of the documentation"
+	@echo " * deploy-site     - builds and deploys the documentation for build and release"
+	@echo " * release         - release a new version to maven central"
+	@echo " * release-site    - run from release directory to deploy the documentation site for a release"
