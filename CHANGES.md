@@ -9,6 +9,7 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Added
 
 * Added `basepom.git-id.date-format-timezone` to set the git id date timezone.
+* Added `basepom.release.preparation-goals` (default: `clean install`) to configure `release:prepare` goals. Addresses #68.
 
 ### Changed
 
