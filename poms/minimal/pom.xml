@@ -45,7 +45,7 @@
         <basepom.main-class>${basepom.shaded.main-class}</basepom.main-class>
 
         <!-- policy jar for license and checkstyle defaults -->
-        <dep.basepom-policy.version>10</dep.basepom-policy.version>
+        <dep.basepom-policy.version>11</dep.basepom-policy.version>
     </properties>
 
     <repositories>

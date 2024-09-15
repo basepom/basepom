@@ -12,10 +12,12 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
-* Removed `Git-Remote-Origin-Url` from the default jar manifest as it causes reproducible builds to fail. Thanks @hboutemy! (#73)
+* bumped basepom-policy for minimal and oss to 11 (from 10)
+
 
 ### Removed
 
+* Removed `Git-Remote-Origin-Url` from the default jar manifest as it causes reproducible builds to fail. Thanks @hboutemy! (#73)
 
 ## 60 - 2024-09-10
 

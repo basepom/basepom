@@ -19,6 +19,8 @@ export MAVEN_OPTS MAVEN_ARGS
 
 default:: help
 
+Makefile:: ;
+
 clean::
 	${MAVEN} clean
 
