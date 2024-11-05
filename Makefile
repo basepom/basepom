@@ -40,7 +40,7 @@ release:: MAVEN_ARGS += -Prelease
 release::
 	${MAVEN} clean release:clean release:prepare release:perform
 
-release-site:: MAVEN_ARGS += -Prelease
+release-site:: MAVEN_ARGS += -pl :build-basepom-docs -Prelease
 release-site:: deploy-site
 
 help::
