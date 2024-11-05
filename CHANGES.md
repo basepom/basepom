@@ -10,6 +10,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 * Added `basepom.git-id.date-format-timezone` to set the git id date timezone.
 * Added `basepom.release.preparation-goals` (default: `clean install`) to configure `release:prepare` goals. Addresses #68.
+* Added `project.build.testJdk` (default: value of `project.build.targetJdk`) to compile test classes to a different JDK version.
 
 ### Changed
 

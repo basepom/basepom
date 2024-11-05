@@ -33,8 +33,15 @@
         <project.build.systemJdk>11</project.build.systemJdk>
         <!-- The default build target. Any value from 7 - current is allowed -->
         <project.build.targetJdk>11</project.build.targetJdk>
+        <maven.compiler.release>${project.build.targetJdk}</maven.compiler.release>
         <maven.compiler.source>${project.build.targetJdk}</maven.compiler.source>
         <maven.compiler.target>${project.build.targetJdk}</maven.compiler.target>
+
+        <!-- The default build target for tests. Any value from 7 - current is allowed. Defaults to project.build.targetJdk -->
+        <project.build.testJdk>${project.build.targetJdk}</project.build.testJdk>
+        <maven.test-compiler.release>${project.build.testJdk}</maven.test-compiler.release>
+        <maven.test-compiler.source>${project.build.testJdk}</maven.test-compiler.source>
+        <maven.test-compiler.target>${project.build.testJdk}</maven.test-compiler.target>
 
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.reporting.inputEncoding>UTF-8</project.reporting.inputEncoding>
@@ -359,11 +366,15 @@
                             </requireMavenVersion>
                             <requireJavaVersion>
                                 <version>${project.build.systemJdk}</version>
+                                <message>JDK version ${java.version} not supported as system JDK (requires ${project.build.systemJdk})!</message>
                             </requireJavaVersion>
-                            <!-- really enforce Java version 11+ -->
                             <requireJavaVersion>
-                                <message>basepom only supports JDK version 11 and above</message>
-                                <version>[11,)</version>
+                                <version>${project.build.targetJdk}</version>
+                                <message>JDK version ${java.version} not supported as target JDK (requires ${project.build.targetJdk})!</message>
+                            </requireJavaVersion>
+                            <requireJavaVersion>
+                                <version>${project.build.testJdk}</version>
+                                <message>JDK version ${java.version} not supported as test JDK (requires ${project.build.testJdk})!</message>
                             </requireJavaVersion>
                         </rules>
                     </configuration>
@@ -394,9 +405,6 @@
                     <version>${dep.plugin.compiler.version}</version>
                     <configuration>
                         <failOnWarning>${basepom.compiler.fail-warnings}</failOnWarning>
-                        <release>${project.build.targetJdk}</release>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <maxmem>${basepom.build.jvmsize}</maxmem>
                         <showWarnings>true</showWarnings>
@@ -852,6 +860,32 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <release>${maven.compiler.release}</release>
+                            <source>${maven.compiler.source}</source>
+                            <target>${maven.compiler.target}</target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <configuration>
+                            <release>${maven.test-compiler.release}</release>
+                            <source>${maven.test-compiler.source}</source>
+                            <target>${maven.test-compiler.target}</target>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
