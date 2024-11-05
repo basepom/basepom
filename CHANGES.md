@@ -15,6 +15,24 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * bumped basepom-policy for minimal and oss to 11 (from 10)
+* Bump spotbugs plugin to 4.8.6.5 (from 4.8.6.3)
+* Bump failsafe plugin to 3.5.2 (from 3.5.0)
+* Bump surefire plugin to 3.5.2 (from 3.5.0)
+* Bump javadoc plugin to 3.11.1 (from 3.10.0)
+* Bump gpg plugin to 3.2.7 (from 3.2.5)
+* Bump license plugin to 4.6 (from 4.5)
+* Bump asciidoctor plugin to 3.1.0 (from 3.0.0)
+* Bump checkstyle plugin to 3.6.0 (from 3.5.0)
+* Bump invoker plugin to 3.8.1 (from 3.8.0)
+* Bump pmd plugin to 3.26.0 (from 3.25.0)
+* Bump dependency plugin to 3.8.1 (from 3.8.0)
+* Bump jxr plugin to 3.6.0 (from 3.5.0)
+* Bump project-info-reports plugin to 3.8.0 (from 3.7.0)
+* Bump pmd to 7.6.0 (from 7.5.0)
+* Bump checkstyle to 10.18.2 (from 10.18.1)
+* Bump asciidoctorj to 3.0.0 (from 2.5.10)
+* Bump asciidoctorj-diagram to 2.3.1 (from 2.2.14)
+* Bump dependency-analyzer to 1.15.0 (from 1.14.1)
 
 
 ### Removed
