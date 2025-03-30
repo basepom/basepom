@@ -6,6 +6,25 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Changed
+
+* Bump clean plugin to 3.4.1 (from 3.4.0)
+* Bump compiler plugin to 3.14.0  (from 3.13.0)
+* Bump deploy plugin to 3.1.4 (from 3.1.3)
+* Bump install plugin to 3.1.4 (from 3.1.3)
+* Bump invoker plugin to 3.9.0 (from 3.8.1)
+* Bump javadoc plugin to 3.11.2 (from 3.11.1)
+* Bump spotbugs plugin to 4.9.3.0 (from 4.8.6.5)
+* Bump license plugin to 5.0.0 (from 4.6)
+* Bump project-info-reports plugin to 3.9.0 (from 3.8.0)
+* Bump asciidoctor plugin to 3.2.0 (from 3.1.0)
+* Bump checkstyle to 10.22.0 (from 10.18.2)
+* Bump spotbugs to 4.9.3 (from 4.8.6)
+* Bump pmd to 7.12.0 (from 7.7.0)
+
+
+## 61 - 2024-11-04
+
 ### Added
 
 * Added `basepom.git-id.date-format-timezone` to set the git id date timezone.
