@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 62 - 2025-03-30
+
 ### Changed
 
 * Bump clean plugin to 3.4.1 (from 3.4.0)
