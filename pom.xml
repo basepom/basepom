@@ -90,8 +90,8 @@
                         <generatePom>false</generatePom>
                         <packaging>pom</packaging>
                         <version>${project.version}</version>
-                        <repositoryId>sonatype-nexus-snapshots</repositoryId>
-                        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                        <repositoryId>${basepom.deploy.repo-id}</repositoryId>
+                        <url>${basepom.deploy.snapshot.url}</url>
                     </configuration>
                 </plugin>
                 <plugin>

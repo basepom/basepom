@@ -6,6 +6,17 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Added
+
+* Add central publish plugin (0.7.0)
+
+Sonatype has the classic way of posting artifacts to oss.sonatype.org deprecated and will turn off the service in the near future. Starting with
+basepom 63, publishing using the new sonatype central plugin is supported. This is the preferred way to publish to central with basepom going forward.
+
+### Removed
+
+* Remove the sonatype nexus plugin and support for publishing with the nexus plugin.
+
 ### Changed
 
 * Bump surefire plugin to 3.5.3 (from 3.5.2)
