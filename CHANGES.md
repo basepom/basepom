@@ -6,6 +6,16 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Changed
+
+* Bump surefire plugin to 3.5.3 (from 3.5.2)
+* Bump failsafe plugin to 3.5.3 (from 3.5.2)
+* Bump jacoco plugin to 0.8.13 (from 0.8.12)
+* Bump checkstyle to 10.23.0 (from 10.22.0)
+* Bump pmd to 7.13.0 (from 7.12.0)
+* Bump asciidoctorj-diagram to 2.3.2 (from 2.3.1)
+* Bump dependency-analyzer to 1.16.0 (from 1.15.1)
+
 ## 62 - 2025-03-30
 
 ### Changed

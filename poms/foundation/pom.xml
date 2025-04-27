@@ -238,16 +238,16 @@
         <basepom.maven.version>3.6.3</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>7.12.0</dep.pmd.version>
+        <dep.pmd.version>7.13.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>10.22.0</dep.checkstyle.version>
+        <dep.checkstyle.version>10.23.0</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.9.3</dep.spotbugs.version>
 
         <!-- https://github.com/apache/maven-dependency-analyzer/tags -->
-        <dep.dependency-analyzer.version>1.15.1</dep.dependency-analyzer.version>
+        <dep.dependency-analyzer.version>1.16.0</dep.dependency-analyzer.version>
 
         <!-- Plugin versions, ordered like http://maven.apache.org/plugins/ -->
 
@@ -255,11 +255,11 @@
         <dep.plugin.clean.version>3.4.1</dep.plugin.clean.version>
         <dep.plugin.compiler.version>3.14.0</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>3.1.4</dep.plugin.deploy.version>
-        <dep.plugin.failsafe.version>3.5.2</dep.plugin.failsafe.version>
+        <dep.plugin.failsafe.version>${dep.plugin.surefire.version}</dep.plugin.failsafe.version>
         <dep.plugin.install.version>3.1.4</dep.plugin.install.version>
         <dep.plugin.resources.version>3.3.1</dep.plugin.resources.version>
         <dep.plugin.site.version>4.0.0-M16</dep.plugin.site.version>
-        <dep.plugin.surefire.version>3.5.2</dep.plugin.surefire.version>
+        <dep.plugin.surefire.version>3.5.3</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>3.4.2</dep.plugin.jar.version>
@@ -293,7 +293,7 @@
         <dep.plugin.spotbugs.version>4.9.3.0</dep.plugin.spotbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
-        <dep.plugin.jacoco.version>0.8.12</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.8.13</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/maven-plugins/releases -->
         <dep.plugin.property-helper.version>4.1.0</dep.plugin.property-helper.version>
