@@ -241,7 +241,7 @@
         <dep.pmd.version>7.13.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>10.23.0</dep.checkstyle.version>
+        <dep.checkstyle.version>10.23.1</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.9.3</dep.spotbugs.version>
