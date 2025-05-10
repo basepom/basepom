@@ -151,7 +151,7 @@
 
         <profile>
             <!-- this profile is activated for release:perform goal -->
-            <id>central-release</id>
+            <id>oss-release</id>
             <build>
                 <pluginManagement>
                     <plugins>

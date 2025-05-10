@@ -12,6 +12,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+* Fix wrong release profile for oss.
+
 ## 63 - 2025-05-09
 
 **Changes to the OSS release process** — Sonatype has deprecated the classic way of publishing

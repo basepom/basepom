@@ -47,7 +47,7 @@
         <basepom.license.header>license/basepom-apache-license-header.txt</basepom.license.header>
 
         <!-- release profiles -->
-        <basepom.release.profiles>basepom.deploy-release</basepom.release.profiles>
+        <basepom.release.profiles>basepom.central-release</basepom.release.profiles>
 
         <!-- configure the central publishing plugin for deployment -->
         <basepom.central-publishing.skip>true</basepom.central-publishing.skip>
