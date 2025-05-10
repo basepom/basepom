@@ -2,20 +2,33 @@
 
 This is the changelog for the basepom project. It follows [Keep a Changelog v1.0.0](http://keepachangelog.com/en/1.0.0/).
 
-Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number which is incremented with every release.
+Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number that is incremented with every release.
 
 ## Unreleased
 
 ### Added
 
-* Add central publish plugin (0.7.0)
+### Removed
 
-Sonatype has the classic way of posting artifacts to oss.sonatype.org deprecated and will turn off the service in the near future. Starting with
-basepom 63, publishing using the new sonatype central plugin is supported. This is the preferred way to publish to central with basepom going forward.
+### Changed
+
+## 63 - 2025-05-09
+
+**Changes to the OSS release process** — Sonatype has deprecated the classic way of publishing
+artifacts to `oss.sonatype.org`. The service will be turned off on June 30th, 2025. Starting with
+basepom 63, publishing will use the new sonatype central plugin. This is the preferred way to
+publish to central with basepom going forward. The pre-63 behavior can be restored by using the
+`release-deploy` release profile explicitly.
+
+### Added
+
+* Add the new central publishing plugin (0.7.0)
+* Add new deployment profile `central-deploy` to use the central publishing plugin. This is now the default profile for releasing.
 
 ### Removed
 
-* Remove the sonatype nexus plugin and support for publishing with the nexus plugin.
+* Remove the deprecated sonatype nexus plugin and support for publishing with the nexus plugin.
+* Remove the `oss-deploy` profile as the nexus plugin is no longer supported.
 
 ### Changed
 
@@ -32,7 +45,7 @@ basepom 63, publishing using the new sonatype central plugin is supported. This 
 ### Changed
 
 * Bump clean plugin to 3.4.1 (from 3.4.0)
-* Bump compiler plugin to 3.14.0  (from 3.13.0)
+* Bump compiler plugin to 3.14.0 (from 3.13.0)
 * Bump deploy plugin to 3.1.4 (from 3.1.3)
 * Bump install plugin to 3.1.4 (from 3.1.3)
 * Bump invoker plugin to 3.9.0 (from 3.8.1)

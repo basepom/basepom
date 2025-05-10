@@ -68,9 +68,9 @@
         <basepom.check.skip-license>false</basepom.check.skip-license>
 
         <basepom.release.tag-name-format>basepom-@{project.version}</basepom.release.tag-name-format>
-        <basepom.release.profiles>release,oss-release,basepom.manual-install</basepom.release.profiles>
+        <basepom.release.profiles>release,central-release,basepom.manual-install</basepom.release.profiles>
 
-        <basepom.deploy.repo-id>sonatype-nexus-snapshots</basepom.deploy.repo-id>
+        <basepom.deploy.snapshot.repo-id>sonatype-nexus-snapshots</basepom.deploy.snapshot.repo-id>
         <basepom.deploy.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</basepom.deploy.snapshot.url>
 
         <basepom.deploy.skip>true</basepom.deploy.skip>
@@ -93,7 +93,7 @@
                         <generatePom>false</generatePom>
                         <packaging>pom</packaging>
                         <version>${project.version}</version>
-                        <repositoryId>${basepom.deploy.repo-id}</repositoryId>
+                        <repositoryId>${basepom.deploy.snapshot.repo-id}</repositoryId>
                         <url>${basepom.deploy.snapshot.url}</url>
                     </configuration>
                 </plugin>
