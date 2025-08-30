@@ -79,6 +79,7 @@
         <dep.plugin.asciidoctor.version>3.2.0</dep.plugin.asciidoctor.version>
         <dep.asciidoctorj.version>3.0.0</dep.asciidoctorj.version>
         <dep.asciidoctorj-diagram.version>3.0.1</dep.asciidoctorj-diagram.version>
+        <dep.asciidoctorj-diagram-ditaamini.version>1.0.3</dep.asciidoctorj-diagram-ditaamini.version>
     </properties>
 
     <build>
@@ -122,6 +123,11 @@
                             <groupId>org.asciidoctor</groupId>
                             <artifactId>asciidoctorj-diagram</artifactId>
                             <version>${dep.asciidoctorj-diagram.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.asciidoctor</groupId>
+                            <artifactId>asciidoctorj-diagram-ditaamini</artifactId>
+                            <version>${dep.asciidoctorj-diagram-ditaamini.version}</version>
                         </dependency>
                     </dependencies>
                     <configuration>
