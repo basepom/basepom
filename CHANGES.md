@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 64 - 2025-08-29
+
 ### Added
 
 * `basepom.it.skip-install` property to control which artifacts to install for integration tests.
