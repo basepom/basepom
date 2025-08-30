@@ -99,6 +99,8 @@
 
         <!-- Integration testing -->
         <basepom.it.skip>${skipITs}</basepom.it.skip>
+        <basepom.it.skip-install>${skipITs}</basepom.it.skip-install>
+        <basepom.it.test-scope>test</basepom.it.test-scope>
         <basepom.it.memory>${basepom.test.memory}</basepom.it.memory>
         <basepom.it.fork-count>0.5C</basepom.it.fork-count>
         <basepom.it.timeout>30</basepom.it.timeout>
@@ -794,7 +796,8 @@
                     <version>${dep.plugin.invoker.version}</version>
                     <configuration>
                         <skipInvocation>${basepom.it.skip}</skipInvocation>
-                        <skipInstallation>${basepom.it.skip}</skipInstallation>
+                        <skipInstallation>${basepom.it.skip-install}</skipInstallation>
+                        <scope>${basepom.it.test-scope}</scope>
                         <parallelThreads>${basepom.it.fork-count}</parallelThreads>
                         <projectsDirectory>${basepom.invoker.folder}</projectsDirectory>
                         <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>

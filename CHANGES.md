@@ -8,6 +8,9 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Added
 
+* `basepom.it.skip-install` property to control which artifacts to install for integration tests.
+* `basepom.it.test-scope` property to control the maven resolution scope for integration test artifact installation.
+
 ### Removed
 
 ### Changed
