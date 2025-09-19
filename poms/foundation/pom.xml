@@ -240,13 +240,13 @@
         <basepom.maven.version>3.6.3</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>7.16.0</dep.pmd.version>
+        <dep.pmd.version>7.17.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>11.0.0</dep.checkstyle.version>
+        <dep.checkstyle.version>11.0.1</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
-        <dep.spotbugs.version>4.9.4</dep.spotbugs.version>
+        <dep.spotbugs.version>4.9.6</dep.spotbugs.version>
 
         <!-- https://github.com/apache/maven-dependency-analyzer/tags -->
         <dep.dependency-analyzer.version>1.16.0</dep.dependency-analyzer.version>
@@ -261,11 +261,11 @@
         <dep.plugin.install.version>3.1.4</dep.plugin.install.version>
         <dep.plugin.resources.version>3.3.1</dep.plugin.resources.version>
         <dep.plugin.site.version>4.0.0-M16</dep.plugin.site.version>
-        <dep.plugin.surefire.version>3.5.3</dep.plugin.surefire.version>
+        <dep.plugin.surefire.version>3.5.4</dep.plugin.surefire.version>
 
         <!-- packaging -->
         <dep.plugin.jar.version>3.4.2</dep.plugin.jar.version>
-        <dep.plugin.shade.version>3.6.0</dep.plugin.shade.version>
+        <dep.plugin.shade.version>3.6.1</dep.plugin.shade.version>
         <dep.plugin.source.version>3.3.1</dep.plugin.source.version>
 
         <!-- reporting -->
@@ -292,7 +292,7 @@
         <dep.plugin.duplicate-finder.version>2.0.1</dep.plugin.duplicate-finder.version>
 
         <!-- https://github.com/spotbugs/spotbugs-maven-plugin/releases -->
-        <dep.plugin.spotbugs.version>4.9.4.0</dep.plugin.spotbugs.version>
+        <dep.plugin.spotbugs.version>4.9.6.0</dep.plugin.spotbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
         <dep.plugin.jacoco.version>0.8.13</dep.plugin.jacoco.version>

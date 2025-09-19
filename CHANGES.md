@@ -18,11 +18,11 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * Fix wrong release profile for oss.
-* Bump spotbugs to 4.9.4 (from 4.9.3)
-* Bump checkstyle to 11.0.0 (from 10.23.1)
-* Bump pmd to 7.16.0 (from 7.13.0)
+* Bump spotbugs to 4.9.6 (from 4.9.3)
+* Bump checkstyle to 11.0.1 (from 10.23.1)
+* Bump pmd to 7.17.0 (from 7.13.0)
 * Bump asciidoctorj-diagram to 3.0.1 (from 2.3.2)
-* Bump spotbugs plugin to 4.9.4.0 (from 4.9.3.0)
+* Bump spotbugs plugin to 4.9.6.0 (from 4.9.3.0)
 * Bump git-commit-id plugin to 9.0.2 (from 9.0.1)
 * Bump clean plugin to 3.5.0 (from 3.4.1)
 * Bump enforcer plugin to 3.6.1 (from 3.5.0)
@@ -32,6 +32,9 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump build-helper-maven-plugin to 3.6.1 (from 3.6.0)
 * Bump gpg plugin to 3.2.8 (from 3.2.7)
 * Bump central-publishing-maven plugin to 0.8.0 (from 0.7.0)
+* Bump surefire plugin to 3.5.4 (from 3.5.3)
+* Bump failsafe plugin to 3.5.4 (from 3.5.3)
+* Bump shade plugin to 3.6.1 (from 3.6.0)
 
 ## 63 - 2025-05-09
 
