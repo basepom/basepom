@@ -35,7 +35,7 @@
         <!-- a release, this profile gets implicitly deactivated (and the   -->
         <!-- normal release process is used).                               -->
         <profile>
-            <id>basepom.manual-install</id>
+            <id>basepom-install.manual-install</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -87,7 +87,7 @@
             </build>
         </profile>
         <profile>
-            <id>basepom.manual-deploy</id>
+            <id>basepom-install.manual-deploy</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -151,7 +151,7 @@
 
         <profile>
             <!-- this profile is activated for release:perform goal -->
-            <id>oss-release</id>
+            <id>basepom-install.central-release</id>
             <build>
                 <pluginManagement>
                     <plugins>
@@ -165,8 +165,8 @@
                                 <generatePom>false</generatePom>
                                 <packaging>pom</packaging>
                                 <version>${project.version}</version>
-                                <repositoryId>sonatype-nexus-staging</repositoryId>
-                                <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                                <repositoryId>${basepom.central-publishing.repo-id}</repositoryId>
+                                <url>https://repo.maven.apache.org/maven2</url>
                                 <updateReleaseInfo>true</updateReleaseInfo>
                                 <!-- sign-and-deploy-file -->
                             </configuration>

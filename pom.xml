@@ -68,23 +68,48 @@
         <basepom.check.skip-license>false</basepom.check.skip-license>
 
         <basepom.release.tag-name-format>basepom-@{project.version}</basepom.release.tag-name-format>
-        <basepom.release.profiles>release,oss-release,basepom.manual-install</basepom.release.profiles>
-
-        <basepom.deploy.snapshot.repo-id>sonatype-nexus-snapshots</basepom.deploy.snapshot.repo-id>
-        <basepom.deploy.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</basepom.deploy.snapshot.url>
+        <basepom.release.profiles>release,basepom-install.central-release,basepom-install.manual-install</basepom.release.profiles>
 
         <basepom.deploy.skip>true</basepom.deploy.skip>
         <basepom.install.skip>true</basepom.install.skip>
 
+        <dep.njord.version>0.8.4</dep.njord.version>
         <dep.plugin.asciidoctor.version>3.2.0</dep.plugin.asciidoctor.version>
         <dep.asciidoctorj.version>3.0.0</dep.asciidoctorj.version>
         <dep.asciidoctorj-diagram.version>3.0.1</dep.asciidoctorj-diagram.version>
         <dep.asciidoctorj-diagram-ditaamini.version>1.0.3</dep.asciidoctorj-diagram-ditaamini.version>
+
+        <basepom.central-publishing.repo-id>sonatype-central-portal</basepom.central-publishing.repo-id>
     </properties>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <name>My Project Snapshots</name>
+            <id>${basepom.deploy.snapshot.repo-id}</id>
+            <url>${basepom.deploy.snapshot.url}</url>
+        </snapshotRepository>
+        <repository>
+            <name>My Project Releases</name>
+            <id>${basepom.central-publishing.repo-id}</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </distributionManagement>
+
     <build>
+        <extensions>
+            <extension>
+                <groupId>eu.maveniverse.maven.njord</groupId>
+                <artifactId>extension3</artifactId>
+                <version>${dep.njord.version}</version>
+            </extension>
+        </extensions>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>eu.maveniverse.maven.plugins</groupId>
+                    <artifactId>njord</artifactId>
+                    <version>${dep.njord.version}</version>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
