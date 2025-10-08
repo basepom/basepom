@@ -6,7 +6,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
-## 64 - 2025-08-29
+## 64 - 2025-10-08
 
 ### Added
 
