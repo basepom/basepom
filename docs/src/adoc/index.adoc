@@ -421,7 +421,7 @@ Javadoc artifacts are created as part of the build lifecycle. While they are opt
 | basepom.javadoc.exclude-package-names         | ``                                         | sometimes       | foundation | Allows the exclusion of package names from Javadoc generation. See https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html#excludePackageNames[Maven Javadoc plugin] documentation for the exact syntax.
 | basepom.javadoc.show                          | `public`                                   | rarely, policy  | foundation | Controls the access level included in the Javadocs.
 | basepom.javadoc.legacy-mode                   | `false`                                    | often           | foundation | Controls whether Javadoc generation uses the classpath or module path when building post-java 8 projects. Unless a project defines module descriptors, legacy mode should be used.
-| basepom.javadoc.title                         | `${project.name} ${project.version} API`   | sometimes       | foundation | Controls the title for the javadoc API documentation.
+| basepom.javadoc.title                         | `${project.name} ${project.version} API`   | sometimes       | foundation | Controls the title for the Javadoc API documentation.
 |===
 
 ==== Unit Tests
@@ -450,7 +450,7 @@ Apache Maven supports multiple plugins for integration tests. BasePOM supports t
 | basepom.it.arguments                      | ``                                         | sometimes, policy | foundation | Allows additional arguments for the `argLine` plugin configuration parameter when executing integration tests.
 | basepom.it.skip                           | `$\{skipITs}`                              | often, profile    | foundation | If `true`, skip all integration tests. The default is the value of the standard Maven `skipITs` property.
 | basepom.it.skip-install                   | `$\{basepom.it.skip}`                      | often, profile    | foundation | If `true`, skip installation of artifacts for integration tests in the integration test repository. The default is the value of the `basepom.it.skip` property.
-| basepom.it.test-scope                     | `test`                                     | often, profile    | foundation | Sets the maven resolution scope to decide which artifacts to install in the integration test repository. The default is all artifacts in test scope.
+| basepom.it.test-scope                     | `test`                                     | often, profile    | foundation | Sets the maven resolution scope to decide which artifacts are installed in the integration test repository. The default is 'all artifacts' in the test scope.
 | basepom.it.memory                         | `${basepom.test.memory}`                   | sometimes, policy | foundation | Memory allocated for each integration test VM.
 | basepom.it.fork-count                     | `0.5C`                                     | sometimes, policy | foundation | Controls the number of parallel tests to run. Default is 1/2 the number of reported CPU cores.
 | basepom.it.timeout                        | `30`                                       | often, policy     | foundation | Maximum time in seconds that an integration test can run.
@@ -889,7 +889,7 @@ BasePOMs were designed specifically to allow policy enforcement across many proj
 
 A PolicyPOM should define or apply specific rules for
 
-* property settings (e.g., required JDK level, checker settings etc.)
+* property settings (e.g., required JDK level, checker settings, etc.)
 * remote repositories for artifacts and artifact deployment
 * specific checker configuration
 * code packaging
@@ -912,11 +912,11 @@ The `minimal` BasePOM uses a https://github.com/basepom/basepom-policy[policy ja
 
 ====  `duplicate-finder` plugin configuration
 
-The `duplicate-finder` plugin will flag any class that appears multiple times on the class path (in multiple jars). While this is generally desirable, there are some common jars that overlap in a benign way. Almost all of these overlaps are specific to annotation classes.
+The `duplicate-finder` plugin will flag any class that appears multiple times on the class path (in multiple jars). While this is generally desirable, there are some common jars that contain the same classes. Almost all of these overlaps are specific to annotation classes.
 
 [%header, cols="<1, <4", stripe=none]
 |===
-| package | dependencies (jars that may contain these classes)
+| package | related dependencies (jars that may contain these classes)
 | `javax.annotation` | `com.google.code.findbugs:jsr305` `com.google.code.findbugs:annotations`
 | `net.jcip.annotations` | `com.google.code.findbugs:annotations` `net.jcip:jcip-annotations`
 | `edu.umd.cs.findbugs.annotations` | `com.google.code.findbugs:annotations` `com.google.code.findbugs:findbugs-annotations` `com.github.spotbugs:spotbugs-annotations`
@@ -943,7 +943,7 @@ Auto-generated code is usually located in `target/generated-sources/stubs` and `
 
 ==== `dependency` plugin configuration
 
-Similar to the `duplicate-checker`, the `dependency` plugin checks what elements are on the class path and whether these are used. This process is more difficult for elements that need to be present at compile-time but not at runtime and that are not referenced from the build artifacts.
+Similar to the `duplicate-checker`, the `dependency` plugin checks what elements are on the class path and whether these are used. This process is more difficult for elements that need to be present at compile time but not at runtime and that are not referenced from the build artifacts.
 
 For the `minimal` BasePOM, the `dependency` plugin is configured to:
 
