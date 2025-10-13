@@ -6,6 +6,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+## 64 - 2025-10-12
+
 ### Added
 
 * `basepom.javadoc.title` property to set the javadoc title independent from the project name and version.
