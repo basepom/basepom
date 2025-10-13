@@ -18,6 +18,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump checkstyle to 12.0.1 (from 11.1.0)
 * Bump pmd plugin to 3.28.0 (from 3.27.0)
 * Bump jacoco plugin to 0.8.14 (from 0.8.13)
+* All URLs (in SCM and the pom itself) no longer change for submodules.
 
 
 ## 64 - 2025-10-08

@@ -538,6 +538,37 @@ These versions can be overwritten in Policy POMs, project POMs  or the command l
 | `dep.basepom-policy.version` | minimal | BasePOM policy jar version
 |===
 
+== URL inheritance
+
+The BasePOM project is designed to work with the `git` SCM repositories. Unlike other SCMs, `git` has a single URL for the SCM which is valid for all modules within a multi-module build.
+
+BasePOM turns off the "url inheritance" scheme in the poms and the `<scm>` settings to match `git` behavior. If this is not desired, add the following attributes to a policy pom:
+
+[source,xml,indent=0,subs="+attributes"]
+----
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         child.project.url.inherit.append.path="true">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.basepom</groupId>
+        <artifactId>basepom-{flavor}</artifactId>
+        <version>{revnumber}</version>
+    </parent>
+
+    <scm child.scm.connection.inherit.append.path="true"
+         child.scm.developerConnection.inherit.append.path="true"
+         child.scm.url.inherit.append.path="true"
+    ...
+    </scm>
+...
+</project>
+----
+
+This restores the default behavior. These attributes are documented https://maven.apache.org/ref/3-LATEST/maven-model-builder/#inheritance-assembly[as part of the Maven Model Builder] and supported with all current versions of Maven 3.
+
 == Code quality and Build checkers
 
 BasePOM brings a set of preconfigured plugins to check the quality of the code base and ensure that the resulting artifacts are valid. The following plugins are supported:
