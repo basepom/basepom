@@ -420,6 +420,7 @@ Javadoc artifacts are created as part of the build lifecycle. While they are opt
 | basepom.javadoc.exclude-package-names         | ``                                         | sometimes       | foundation | Allows the exclusion of package names from Javadoc generation. See https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html#excludePackageNames[Maven Javadoc plugin] documentation for the exact syntax.
 | basepom.javadoc.show                          | `public`                                   | rarely, policy  | foundation | Controls the access level included in the Javadocs.
 | basepom.javadoc.legacy-mode                   | `false`                                    | often           | foundation | Controls whether Javadoc generation uses the classpath or module path when building post-java 8 projects. Unless a project defines module descriptors, legacy mode should be used.
+| basepom.javadoc.title                         | `${project.name} ${project.version} API`   | sometimes       | foundation | Controls the title for the javadoc API documentation.
 |===
 
 ==== Unit Tests

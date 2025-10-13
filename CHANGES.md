@@ -6,6 +6,10 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Added
+
+* `basepom.javadoc.title` property to set the javadoc title independent from the project name and version.
+
 ### Changed
 
 * revert site plugin to 3.21.0 (from 4.0.0-M16), to support newer site tools and fluido skins

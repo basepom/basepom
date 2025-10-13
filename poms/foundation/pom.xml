@@ -78,6 +78,9 @@
         <!-- Javadoc legacy mode -->
         <basepom.javadoc.legacy-mode>false</basepom.javadoc.legacy-mode>
 
+        <!-- Javadoc window and doc title -->
+        <basepom.javadoc.title>${project.name} ${project.version} API</basepom.javadoc.title>
+
         <!-- set surefire plugin argline arguments here -->
         <basepom.test.arguments />
 
@@ -501,6 +504,8 @@
                         <doclint>${basepom.javadoc.doclint}</doclint>
                         <show>${basepom.javadoc.show}</show>
                         <excludePackageNames>${basepom.javadoc.exclude-package-names}</excludePackageNames>
+                        <windowtitle>${basepom.javadoc.title}</windowtitle>
+                        <doctitle>${basepom.javadoc.title}</doctitle>
                     </configuration>
                 </plugin>
 

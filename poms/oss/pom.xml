@@ -362,6 +362,8 @@
                     <doclint>${basepom.javadoc.doclint}</doclint>
                     <show>${basepom.javadoc.show}</show>
                     <excludePackageNames>${basepom.javadoc.exclude-package-names}</excludePackageNames>
+                    <windowtitle>${basepom.javadoc.title}</windowtitle>
+                    <doctitle>${basepom.javadoc.title}</doctitle>
                 </configuration>
                 <reportSets>
                     <reportSet>
