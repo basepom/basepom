@@ -13,6 +13,9 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * revert site plugin to 3.21.0 (from 4.0.0-M16), to support newer site tools and fluido skins
+* Bump checkstyle to 12.0.1 (from 11.1.0)
+* Bump pmd plugin to 3.28.0 (from 3.27.0)
+* Bump jacoco plugin to 0.8.14 (from 0.8.13)
 
 
 ## 64 - 2025-10-08

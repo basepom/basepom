@@ -246,7 +246,7 @@
         <dep.pmd.version>7.17.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>11.1.0</dep.checkstyle.version>
+        <dep.checkstyle.version>12.0.1</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.9.6</dep.spotbugs.version>
@@ -274,7 +274,7 @@
         <!-- reporting -->
         <dep.plugin.checkstyle.version>3.6.0</dep.plugin.checkstyle.version>
         <dep.plugin.javadoc.version>3.12.0</dep.plugin.javadoc.version>
-        <dep.plugin.pmd.version>3.27.0</dep.plugin.pmd.version>
+        <dep.plugin.pmd.version>3.28.0</dep.plugin.pmd.version>
 
         <!-- tools -->
         <dep.plugin.assembly.version>3.7.1</dep.plugin.assembly.version>
@@ -298,7 +298,7 @@
         <dep.plugin.spotbugs.version>4.9.6.0</dep.plugin.spotbugs.version>
 
         <!-- https://github.com/jacoco/jacoco/releases -->
-        <dep.plugin.jacoco.version>0.8.13</dep.plugin.jacoco.version>
+        <dep.plugin.jacoco.version>0.8.14</dep.plugin.jacoco.version>
 
         <!-- https://github.com/basepom/maven-plugins/releases -->
         <dep.plugin.property-helper.version>4.1.0</dep.plugin.property-helper.version>
