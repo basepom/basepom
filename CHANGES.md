@@ -6,6 +6,11 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Changed
+
+* revert site plugin to 3.21.0 (from 4.0.0-M16), to support newer site tools and fluido skins
+
+
 ## 64 - 2025-10-08
 
 ### Added
