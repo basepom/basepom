@@ -6,7 +6,11 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
-## 64 - 2025-10-12
+### Changed
+
+* update njord to 0.8.5 (from 0.8.4)
+
+## 65 - 2025-10-12
 
 ### Added
 
