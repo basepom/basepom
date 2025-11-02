@@ -11,6 +11,7 @@
 :source-language: asciidoc
 :imagesdir: images
 :docinfo: private
+:attribute-missing: warn
 
 :projecthome: https://github.com/basepom/basepom
 
@@ -554,7 +555,7 @@ BasePOM turns off the "url inheritance" scheme in the poms and the `<scm>` setti
 
     <parent>
         <groupId>org.basepom</groupId>
-        <artifactId>basepom-{flavor}</artifactId>
+        <artifactId>basepom-\{flavor}</artifactId>
         <version>{revnumber}</version>
     </parent>
 
