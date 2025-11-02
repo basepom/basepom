@@ -4,11 +4,25 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number that is incremented with every release.
 
+
 ## Unreleased
+
+### Added
+
+### Removed
+
+### Changed
+
+
+## 66 - 2025-11-02
 
 ### Changed
 
 * update njord to 0.8.5 (from 0.8.4)
+* Bump spotbugs plugin to 4.9.8.1 (from 4.9.6.0)
+* Bump spotbugs to 4.9.8 (from 4.9.6)
+* Bump checkstyle to 12.1.1 (from 12.0.1)
+* Bump pmd to 7.18.0 (from 7.17.0)
 
 ## 65 - 2025-10-12
 
