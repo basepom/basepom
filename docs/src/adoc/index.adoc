@@ -41,6 +41,7 @@ This is the documentation for the current development state of the BasePOM proje
 
 === Release documentation
 
+* https://basepom.org/releases/66[Release 66 — 2025-11-02]
 * https://basepom.org/releases/65[Release 65 — 2025-10-12]
 * https://basepom.org/releases/64[Release 64 — 2025-10-08]
 * https://basepom.org/releases/63[Release 63 — 2025-05-09]
@@ -456,7 +457,7 @@ Apache Maven supports multiple plugins for integration tests. BasePOM supports t
 | basepom.it.fork-count                     | `0.5C`                                     | sometimes, policy | foundation | Controls the number of parallel tests to run. Default is 1/2 the number of reported CPU cores.
 | basepom.it.timeout                        | `30`                                       | often, policy     | foundation | Maximum time in seconds that an integration test can run.
 | basepom.it.groups                         | ``                                         | sometimes         | foundation | Test group selection for integration tests.
-| [#invoker-folder]#basepom.invoker.folder# | `src/it`                                   | rarely            | foundation | Base directory where all integration tests are located.
+| [[invoker-folder]]basepom.invoker.folder  | `src/it`                                   | rarely            | foundation | Base directory where all integration tests are located.
 | basepom.failsafe.reuse-vm                 | `false`                                    | sometimes, policy | foundation | If `true`, reuse existing VM instances, otherwise start a new instance for each test.
 |===
 
@@ -766,7 +767,7 @@ This profile activates if the build module contains a `src/it` directory.
 
 [NOTE]
 ====
-Due to a limitation in Apache Maven is the `src/it` path hardcoded for profile activation. For that reason, changing the xref:invoker-folder[basepom.invoker.folder] property is rarely done. If integration tests are located in a different directory, this profile will not activate automatically.
+Due to a limitation in Apache Maven is the `src/it` path hardcoded for profile activation. For that reason, changing the <<invoker-folder,basepom.invoker.folder>> property is rarely done. If integration tests are located in a different directory, this profile will not activate automatically.
 ====
 
 This profile adds the following goals to the lifecycle:
@@ -867,7 +868,7 @@ This profile activates if the build module contains a `src/it` directory.
 
 [NOTE]
 ====
-Due to a limitation in Apache Maven is the `src/it` path hardcoded for profile activation. For that reason, changing the xref:invoker-folder[basepom.invoker.folder] property is rarely done. If integration tests are located in a different directory, this profile will not activate automatically.
+Due to a limitation in Apache Maven is the `src/it` path hardcoded for profile activation. For that reason, changing the <<invoker-folder,basepom.invoker.folder>> property is rarely done. If integration tests are located in a different directory, this profile will not activate automatically.
 ====
 
 This profile adds the following reports to the site build:
