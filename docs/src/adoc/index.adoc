@@ -120,7 +120,7 @@ https://mycila.carbou.me/license-maven-plugin/[license]
 * tools:
 https://www.mojohaus.org/build-helper-maven-plugin/[build-helper],
 https://basepom.github.io/property-helper-maven-plugin/[property-helper],
-https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md[git-commit-id],
+https://github.com/git-commit-id/git-commit-id-maven-plugin/tree/master#documentation[git-commit-id],
 https://github.com/brianm/really-executable-jars-maven-plugin/[really-executable-jar]
 
 * release and site:
