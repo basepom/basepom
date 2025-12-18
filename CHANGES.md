@@ -22,6 +22,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+* Minimum build JDK is now 21. Baseline (default) JDK is 17.
 * update njord to 0.8.7 (from 0.8.5)
 * Bump asciidoctorj to 3.0.1 (from 3.0.0)
 * Bump asciidoctorj-diagram to 3.1.0 (from 3.0.1)

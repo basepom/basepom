@@ -33,9 +33,9 @@
         <!-- see https://cwiki.apache.org/confluence/display/MAVEN/POM+Element+for+Source+File+Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- The minimum JDK version required to build. -->
-        <project.build.systemJdk>11</project.build.systemJdk>
-        <!-- The default build target. Any value from 7 - current is allowed -->
-        <project.build.targetJdk>11</project.build.targetJdk>
+        <project.build.systemJdk>17</project.build.systemJdk>
+        <!-- The default build target. Any value from 7 - systemJdk is allowed -->
+        <project.build.targetJdk>17</project.build.targetJdk>
         <maven.compiler.release>${project.build.targetJdk}</maven.compiler.release>
         <maven.compiler.source>${project.build.targetJdk}</maven.compiler.source>
         <maven.compiler.target>${project.build.targetJdk}</maven.compiler.target>
