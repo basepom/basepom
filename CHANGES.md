@@ -14,6 +14,27 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 
+## 67 - 2025-12-18
+
+### Added
+
+### Removed
+
+### Changed
+
+* update njord to 0.8.7 (from 0.8.5)
+* Bump asciidoctorj to 3.0.1 (from 3.0.0)
+* Bump asciidoctorj-diagram to 3.1.0 (from 3.0.1)
+* Bump assembly plugin to 3.8.0 (from 3.7.1)
+* Bump jar plugin to 3.5.0 (from 3.4.2)
+* Bump release plugin to 3.3.1  (from 3.1.1)
+* Bump resources plugin to 3.4.0 (from 3.3.1)
+* Bump source plugin to 3.4.0 (from 3.3.1)
+* Bump spotbugs plugin to 4.9.8.2 (from 4.9.8.1)
+* Bump checkstyle to 12.3.0 (from 12.1.1)
+* Bump pmd to 7.19.0 (from 7.18.0)
+
+
 ## 66 - 2025-11-02
 
 ### Changed

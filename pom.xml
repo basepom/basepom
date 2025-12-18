@@ -73,10 +73,10 @@
         <basepom.deploy.skip>true</basepom.deploy.skip>
         <basepom.install.skip>true</basepom.install.skip>
 
-        <dep.njord.version>0.8.5</dep.njord.version>
+        <dep.njord.version>0.8.7</dep.njord.version>
         <dep.plugin.asciidoctor.version>3.2.0</dep.plugin.asciidoctor.version>
-        <dep.asciidoctorj.version>3.0.0</dep.asciidoctorj.version>
-        <dep.asciidoctorj-diagram.version>3.0.1</dep.asciidoctorj-diagram.version>
+        <dep.asciidoctorj.version>3.0.1</dep.asciidoctorj.version>
+        <dep.asciidoctorj-diagram.version>3.1.0</dep.asciidoctorj-diagram.version>
         <dep.asciidoctorj-diagram-ditaamini.version>1.0.3</dep.asciidoctorj-diagram-ditaamini.version>
 
         <basepom.central-publishing.repo-id>sonatype-central-portal</basepom.central-publishing.repo-id>
