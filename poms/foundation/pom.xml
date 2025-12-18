@@ -18,7 +18,7 @@
     <groupId>org.basepom</groupId>
     <artifactId>basepom-foundation</artifactId>
     <packaging>pom</packaging>
-    <version>67</version>
+    <version>68-SNAPSHOT</version>
 
     <!--
         <name>basepom-foundation</name>
@@ -26,7 +26,7 @@
         <url>https://github.com/basepom/basepom/tree/main/foundation</url>
     -->
 
-    <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false">  <tag>basepom-67</tag>
+    <scm child.scm.connection.inherit.append.path="false" child.scm.developerConnection.inherit.append.path="false" child.scm.url.inherit.append.path="false">  <tag>HEAD</tag>
   </scm>
 
     <properties>
