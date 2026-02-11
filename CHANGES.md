@@ -11,6 +11,8 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Removed
 
+* Remove `basepom.deploy-release` profile (legacy OSS Sonatype service is end-of-life)
+
 ### Changed
 
 * Bump compiler plugin to 3.15.0 (from 3.14.1)

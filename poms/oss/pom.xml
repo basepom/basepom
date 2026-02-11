@@ -431,51 +431,6 @@
             </build>
         </profile>
         <profile>
-            <id>basepom.deploy-release</id>
-            <properties>
-                <!-- tests have been run in the preparation step of the release -->
-                <basepom.test.skip>true</basepom.test.skip>
-                <basepom.it.skip>true</basepom.it.skip>
-
-                <!-- checks have been run in the preparation step of the release -->
-                <basepom.check.skip-all>true</basepom.check.skip-all>
-
-                <!-- oss requires a javadoc jar. Build one when releasing. -->
-                <basepom.javadoc.skip>false</basepom.javadoc.skip>
-
-                <!-- switch snapshots back to OSS -->
-                <basepom.deploy.snapshot.repo-id>sonatype-nexus-staging</basepom.deploy.snapshot.repo-id>
-                <basepom.deploy.snapshot.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</basepom.deploy.snapshot.url>
-            </properties>
-
-            <distributionManagement>
-                <repository>
-                    <id>sonatype-nexus-staging</id>
-                    <name>Sonatype Release Repository</name>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
-
-            <build>
-                <plugins>
-                    <!-- Sign artifacts using gpg for oss upload -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>basepom.release.default</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
             <id>basepom.invoker-reporting</id>
             <activation>
                 <file>

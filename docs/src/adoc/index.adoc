@@ -402,11 +402,11 @@ Besides building, Apache Maven can install the resulting artifacts into the loca
 | basepom.central-publishing.wait-until         | `validated` | rarely | oss | `validated` waits until the uploaded artifacts have passed repository validation checks. `uploaded` ends the maven build as soon as the artifacts are uploaded. `published` waits until the artifacts have been published (This requires `basepom.central-publishing.auto-publish` to be `true`).
 | basepom.central-publishing.checksums          | `all` | rarely | oss | Controls the creation of checksums for the uploaded artifacts. `all` creates MD5, SHA1, SHA256 and SHA512 checksums, `none` creates no checksums and `required` only creates MD5 and SHA1.
 | basepom.central-publishing.deployment-name    | `${project.groupId}:${project.artifactId}:${project.version}` | rarely | oss | Name of the deployment on the central dashboards.
-| basepom.deploy.snapshot.repo-id               | `${basepom.central-publishing.repo-id}`                    | sometimes, policy | oss        | Defines the snapshot repository id for deployments. Defaults to `central`. When using the `basepom.deploy-release` profile, this is set to `sonatype-nexus-staging`.
-| basepom.deploy.snapshot.url                   | `https://central.sonatype.com/repository/maven-snapshots/` | sometimes, policy | oss        | Defines the snapshot repository URL for deployments. When using the `basepom.deploy-release` profile, this is set to `https://oss.sonatype.org/service/local/staging/deploy/maven2/`
+| basepom.deploy.snapshot.repo-id               | `${basepom.central-publishing.repo-id}`                    | sometimes, policy | oss        | Defines the snapshot repository id for deployments. Defaults to `central`.
+| basepom.deploy.snapshot.url                   | `https://central.sonatype.com/repository/maven-snapshots/` | sometimes, policy | oss        | Defines the snapshot repository URL for deployments.
 | basepom.deploy.skip                           | `${basepom.install.skip}`                                  | rarely            | foundation | If `true`, skip artifact deployment.
 | basepom.install.skip                          | `false`                                                    | rarely            | foundation | If `true`, skip artifact installation.
-| basepom.release.profiles | `basepom.central-release` | rarely | oss | Sets the name of one or more release profiles. Multiple release profiles must be comma-separated. By default, the `basepom.central-release` profile is used, which uploads to Maven Central using the Sonatype Central Publishing plugin. Alternatively, the `basepom.deployt-release` profile can be used which uses the Apache deploy plugin and the OSS service. The OSS service has been declared end-of-life by June 30th, 2025 and may no longer be supported after that date.
+| basepom.release.profiles | `basepom.central-release` | rarely | oss | Sets the name of one or more release profiles. Multiple release profiles must be comma-separated. By default, the `basepom.central-release` profile is used, which uploads to Maven Central using the Sonatype Central Publishing plugin.
 | basepom.release.push-changes                  | `false`                                                    | sometimes         | foundation | If `true`, then running the Maven `release:prepare` goal will push changes directly to the upstream repository. Defaults to `false`.
 | basepom.release.tag-name-format               | `@{project.artifactId}-@{project.version}`                 | often             | foundation | Name tag format for the release tag. See the https://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#tagNameFormat[Maven Release Plugin Documentation] for details.
 | basepom.release.preparation-goals             | `clean install`                                            | sometimes         | foundation | Defines the goals run by maven when executing `release:prepare`. If e.g., local installation is not desired, use `clean verify`.
@@ -842,27 +842,6 @@ This profile adds the following goals to the lifecycle:
 |===
 
 
-==== `basepom.deploy-release` (oss)
-
-This profile used to be the default release profile before Basepom 63. It must be activated by replacing `basepom.central-release` in the `basepom.release.profiles` property with `basepom.deploy-release`. This profile uses the OSS service to deploy to Maven Central. The OSS service is end-of-life by June 30th, 2025. This profile may no longer work after that date.
-
-The profile is configured as release profile for the `release` plugin if the `oss` BasePOM is used. It gets activated when executing the `release:perform` goal of the `release` plugin.
-
-* skip unit tests (all tests have already passed as part of the release process)
-* skip all checkers that are following the `basepom.check.skip-all` setting (they have already been executed as part of the release process)
-* always create a `javadoc` artifact
-
-This profile uses the `<distributionManagement>` section of a project POM. By default, the snapshot repository is `sonatype-nexus-snapshots` (defined by the `basepom.deploy.snapshot.repo-id` property) and `sonatype-nexus-staging` as defined by the OSS upload rules. The local `settings.xml` file must contain credentials for these ids to authenticate to the repositories for artifact upload.
-
-This profile adds the following goals to the lifecycle:
-
-[%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
-|===
-| Plugin              | Phase  | execution id            | goal(s) | function
-| `maven-gpg-plugin`  | verify | basepom.release.default | sign    | creates the GPG signature for releasing to OSS
-|===
-
-
 ==== `basepom.invoker-reporting` (oss)
 
 This profile activates if the build module contains a `src/it` directory.
@@ -1007,8 +986,6 @@ The `oss` BasePOM is intended for projects that distribute their artifacts throu
 
 * The `license` checker is added to the `extended` set of Build checkers.
 * Configures the OSS repositories for snapshot and release distribution. This differs based on the release profile. See below for a description of the available repositories.
-* Sets the `basepom.deploy-release` profile as release profile for the `maven-release-plugin`, which uses the https://maven.apache.org/plugins/maven-deploy-plugin/[Apache deploy plugin] to upload the project.
-
 The `oss` BasePOM also adds the following goals to the lifecycle:
 
 [%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
