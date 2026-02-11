@@ -48,20 +48,6 @@
         <dep.basepom-policy.version>11</dep.basepom-policy.version>
     </properties>
 
-    <repositories>
-        <!-- Fix for a bad dependency in spring -->
-        <repository>
-            <id>jaspersoft.org</id>
-            <url>dummy-url</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
     <build>
         <pluginManagement>
             <plugins>

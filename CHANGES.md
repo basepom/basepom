@@ -12,6 +12,7 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Removed
 
 * Remove `basepom.deploy-release` profile (legacy OSS Sonatype service is end-of-life)
+* Remove jaspersoft.org dummy repository workaround from minimal pom
 
 ### Changed
 
