@@ -73,7 +73,7 @@
         <basepom.deploy.skip>true</basepom.deploy.skip>
         <basepom.install.skip>true</basepom.install.skip>
 
-        <dep.njord.version>0.8.7</dep.njord.version>
+        <dep.njord.version>0.9.3</dep.njord.version>
         <dep.plugin.asciidoctor.version>3.2.0</dep.plugin.asciidoctor.version>
         <dep.asciidoctorj.version>3.0.1</dep.asciidoctorj.version>
         <dep.asciidoctorj-diagram.version>3.1.0</dep.asciidoctorj-diagram.version>

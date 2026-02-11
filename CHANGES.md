@@ -5,13 +5,18 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number that is incremented with every release.
 
 
-## Unreleased
+## 68 - 2026-02-10
 
 ### Added
 
 ### Removed
 
 ### Changed
+
+* Bump compiler plugin to 3.15.0 (from 3.14.1)
+* Bump dependency plugin to 3.10.0 (from 3.9.0)
+* Bump central-publishing plugin to 0.10.0 (from 0.9.0)
+* Bump njord plugin to 0.9.3 (from 0.8.7)
 
 
 ## 67 - 2025-12-18

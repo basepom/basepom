@@ -261,7 +261,7 @@
 
         <!-- core plugins -->
         <dep.plugin.clean.version>3.5.0</dep.plugin.clean.version>
-        <dep.plugin.compiler.version>3.14.1</dep.plugin.compiler.version>
+        <dep.plugin.compiler.version>3.15.0</dep.plugin.compiler.version>
         <dep.plugin.deploy.version>3.1.4</dep.plugin.deploy.version>
         <dep.plugin.failsafe.version>${dep.plugin.surefire.version}</dep.plugin.failsafe.version>
         <dep.plugin.install.version>3.1.4</dep.plugin.install.version>
@@ -281,7 +281,7 @@
 
         <!-- tools -->
         <dep.plugin.assembly.version>3.8.0</dep.plugin.assembly.version>
-        <dep.plugin.dependency.version>3.9.0</dep.plugin.dependency.version>
+        <dep.plugin.dependency.version>3.10.0</dep.plugin.dependency.version>
         <dep.plugin.enforcer.version>3.6.2</dep.plugin.enforcer.version>
         <dep.plugin.invoker.version>3.9.1</dep.plugin.invoker.version>
         <dep.plugin.release.version>3.3.1</dep.plugin.release.version>
