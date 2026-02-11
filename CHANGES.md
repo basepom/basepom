@@ -17,6 +17,9 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump dependency plugin to 3.10.0 (from 3.9.0)
 * Bump central-publishing plugin to 0.10.0 (from 0.9.0)
 * Bump njord plugin to 0.9.3 (from 0.8.7)
+* Bump checkstyle to 13.2.0 (from 12.3.0)
+* Bump pmd to 7.21.0 (from 7.19.0)
+* Bump maven-dependency-analyzer to 1.17.0 (from 1.16.0)
 
 
 ## 67 - 2025-12-18
