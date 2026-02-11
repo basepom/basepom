@@ -481,7 +481,7 @@
                     <version>${dep.plugin.release.version}</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <mavenExecutorId>forked-path</mavenExecutorId>
+                        <mavenExecutorId>invoker</mavenExecutorId>
                         <pushChanges>${basepom.release.push-changes}</pushChanges>
                         <localCheckout>true</localCheckout>
                         <preparationGoals>${basepom.release.preparation-goals}</preparationGoals>
