@@ -20,6 +20,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump checkstyle to 13.2.0 (from 12.3.0)
 * Bump pmd to 7.21.0 (from 7.19.0)
 * Bump maven-dependency-analyzer to 1.17.0 (from 1.16.0)
+* Bump minimum Maven version to 3.9.0 (from 3.6.3)
 
 
 ## 67 - 2025-12-18

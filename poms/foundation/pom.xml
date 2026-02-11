@@ -243,7 +243,7 @@
         <basepom.site.scm.id />
 
         <!-- the current "minimal" version of maven -->
-        <basepom.maven.version>3.6.3</basepom.maven.version>
+        <basepom.maven.version>3.9.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
         <dep.pmd.version>7.21.0</dep.pmd.version>

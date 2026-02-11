@@ -175,7 +175,7 @@ None of that is a fundamental Maven problem. Setting up Maven is much easier tha
 === Requirements
 
 * Java 17 is the minimal version for building. It is highly recommended to use the latest Java LTS version (Java 21) to execute the build process. Each of those Java versions can build project artifacts that are compatible with JDK version 7 or later.
-* Apache Maven 3.9.0 is the minimal version for building. It is recommended to use the latest Apache Maven 3.x.x. BasePOM will stay compatible with the 3.6.3 version of Maven as long as this constraint does not stop innovating.
+* Apache Maven 3.9.0 is the minimal version for building. It is recommended to use the latest Apache Maven 3.x.x.
 
 [NOTE]
 Apache Maven 4 has reached the RC stage, and there might be a release soon. BasePOM will provide a separate set of POMs for Apache 4 once it has been released. The main branch will stay compatible with Apache Maven 3 until version 4 has reached sufficient adoption within the Java community.
@@ -364,7 +364,7 @@ These properties affect multiple plugins. POMs that add new plugins should evalu
 | basepom.build.maxheap-mb                      | `1024`                                     | sometimes     | foundation | Sets the maximum heap in MB for plugins. This value has no qualifier, so it can be used in plugins that do not take a unit in their configuration value.
 | basepom.build.jvmsize                         | `${basepom.build.maxheap-mb}m` (= `1024m`) | rarely        | foundation | Sets the maximum heap size for plugins that take a qualifier. This value is rarely modified directly, but uses the value set in `basepom.build.maxheap-mb`.
 | basepom.site.skip                             | `false`                                    | often         | foundation | If set to `true`, supports generating the Maven documentation site.
-| basepom.maven.version                         | `3.6.3`                                    | sometimes     | foundation | The minimum required version for Apache Maven.
+| basepom.maven.version                         | `3.9.0`                                    | sometimes     | foundation | The minimum required version for Apache Maven.
 |===
 
 === Plugin customizations
