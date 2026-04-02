@@ -54,7 +54,7 @@ Core features of BasePOM:
 
 The BasePOM code is licensed under the Apache Software License v2 (ASLv2)
 
-(C) 2013-2025 Henning Schmiedehausen
+(C) 2013-2026 Henning Schmiedehausen
 
 ----
 
