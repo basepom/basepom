@@ -246,10 +246,10 @@
         <basepom.maven.version>3.9.0</basepom.maven.version>
 
         <!-- https://github.com/pmd/pmd/releases -->
-        <dep.pmd.version>7.21.0</dep.pmd.version>
+        <dep.pmd.version>7.23.0</dep.pmd.version>
 
         <!-- https://github.com/checkstyle/checkstyle/releases -->
-        <dep.checkstyle.version>13.2.0</dep.checkstyle.version>
+        <dep.checkstyle.version>13.4.0</dep.checkstyle.version>
 
         <!-- https://github.com/spotbugs/spotbugs/releases -->
         <dep.spotbugs.version>4.9.8</dep.spotbugs.version>

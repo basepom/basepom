@@ -21,6 +21,9 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump surefire plugin to 3.5.5 (from 3.5.4)
 * Bump surefire-report plugin to 3.5.5 (from 3.5.4)
 * Bump njord plugin to 0.9.4 (from 0.9.3)
+* Bump checkstyle to 13.4.0 (from 13.2.0)
+* Bump pmd to 7.23.0 (from 7.21.0)
+* Bump asciidoctorj-diagram to 3.2.1 (from 3.1.0)
 
 
 ## 68 - 2026-02-10
