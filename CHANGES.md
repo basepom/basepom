@@ -5,6 +5,24 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number that is incremented with every release.
 
 
+## Unreleased
+
+### Added
+
+### Removed
+
+### Changed
+
+* Bump spotbugs plugin to 4.9.8.3 (from 4.9.8.2)
+* Bump git-commit-id plugin to 9.1.0 (from 9.0.2)
+* Bump failsafe plugin to 3.5.5 (from 3.5.4)
+* Bump resources plugin to 3.5.0 (from 3.4.0)
+* Bump shade plugin to 3.6.2 (from 3.6.1)
+* Bump surefire plugin to 3.5.5 (from 3.5.4)
+* Bump surefire-report plugin to 3.5.5 (from 3.5.4)
+* Bump njord plugin to 0.9.4 (from 0.9.3)
+
+
 ## 68 - 2026-02-10
 
 ### Added
