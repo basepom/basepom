@@ -38,6 +38,9 @@
         <basepom.check.fail-pmd>${basepom.check.fail-extended}</basepom.check.fail-pmd>
         <basepom.check.fail-checkstyle>${basepom.check.fail-extended}</basepom.check.fail-checkstyle>
 
+        <!-- checkstyle ruleset location; override to use a project-specific ruleset instead of the basepom default -->
+        <basepom.check.checkstyle-config-location>checkstyle/checkstyle-basepom.xml</basepom.check.checkstyle-config-location>
+
         <!-- deprecated, do not use any longer -->
         <basepom.shaded.main-class />
 
@@ -245,7 +248,7 @@
                         </dependency>
                     </dependencies>
                     <configuration>
-                        <configLocation>checkstyle/checkstyle-basepom.xml</configLocation>
+                        <configLocation>${basepom.check.checkstyle-config-location}</configLocation>
                     </configuration>
                 </plugin>
 
