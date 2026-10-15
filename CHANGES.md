@@ -10,14 +10,26 @@ Every release of this project is potentially incompatible to the previous one ev
 ### Changed
 
 * Bump build-helper-maven-plugin to 3.6.2 (from 3.6.1)
+* Bump central-publishing plugin to 0.12.0 (from 0.10.0)
+* Bump compiler plugin to 3.16.0 (from 3.15.0)
+* Bump dependency plugin to 3.11.0 (from 3.10.0)
+* Bump deploy plugin to 3.2.0 (from 3.1.4)
 * Bump enforcer plugin to 3.6.3 (from 3.6.2)
-* Bump failsafe plugin to 3.5.6 (from 3.5.5)
+* Bump failsafe plugin to 3.6.0 (from 3.5.5)
+* Bump git-commit-id plugin to 9.2.0 (from 9.1.0)
+* Bump install plugin to 3.2.0 (from 3.1.4)
+* Bump invoker plugin to 3.10.1 (from 3.9.1)
 * Bump jar plugin to 3.5.1 (from 3.5.0)
 * Bump jacoco plugin to 0.8.15 (from 0.8.14)
+* Bump license plugin to 5.1.2 (from 5.0.0)
 * Bump njord plugin to 0.9.10 (from 0.9.4)
-* Bump spotbugs plugin to 4.9.8.5 (from 4.9.8.3)
-* Bump surefire plugin to 3.5.6 (from 3.5.5)
-* Bump surefire-report plugin to 3.5.6 (from 3.5.5)
+* Bump site plugin to 3.22.0 (from 3.21.0)
+* Bump spotbugs plugin to 4.10.5.0 (from 4.9.8.3)
+* Bump spotbugs to 4.10.5 (from 4.9.8)
+* Bump surefire plugin to 3.6.0 (from 3.5.5)
+* Bump surefire-report plugin to 3.6.0 (from 3.5.5)
+* Surefire and Failsafe now run tests through the JUnit Platform. JUnit 4 requires version 4.12 or newer, TestNG requires version 6.14.3 or newer, and TestNG `suiteXmlFiles` is no longer supported.
+* Failsafe no longer honors `skipTests`; use `skipITs` or `basepom.it.skip` to skip integration tests.
 
 
 ## 69 - 2026-04-02
