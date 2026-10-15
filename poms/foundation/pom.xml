@@ -88,6 +88,8 @@
         <basepom.test.arguments />
 
         <!-- surefire skip tests -->
+        <skipTests>false</skipTests>
+        <skipITs>${skipTests}</skipITs>
         <basepom.test.skip>${skipTests}</basepom.test.skip>
 
         <!-- surefire fork control -->
