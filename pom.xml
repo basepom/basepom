@@ -91,7 +91,7 @@
         <repository>
             <name>My Project Releases</name>
             <id>${basepom.central-publishing.repo-id}</id>
-            <url>https://repo.maven.apache.org/maven2</url>
+            <url>https://central.sonatype.com/</url>
         </repository>
     </distributionManagement>
 

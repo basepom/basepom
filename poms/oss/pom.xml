@@ -52,7 +52,7 @@
         <!-- configure the central publishing plugin for deployment -->
         <basepom.central-publishing.skip>true</basepom.central-publishing.skip>
         <basepom.central-publishing.fail-build>true</basepom.central-publishing.fail-build>
-        <basepom.central-publishing.repo-id>central</basepom.central-publishing.repo-id>
+        <basepom.central-publishing.repo-id>sonatype-central-portal</basepom.central-publishing.repo-id>
         <basepom.central-publishing.auto-publish>false</basepom.central-publishing.auto-publish>
         <basepom.central-publishing.wait-until>validated</basepom.central-publishing.wait-until>
         <basepom.central-publishing.checksums>all</basepom.central-publishing.checksums>

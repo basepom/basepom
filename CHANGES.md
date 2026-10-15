@@ -9,6 +9,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+* `basepom.central-publishing.repo-id` was changed from `central` to `sonatype-central-portal`. This is required for the new credential scope rules in Maven 3.10 and avoids leaking sonatype credentials to repo.maven.apache.org
 * Bump build-helper-maven-plugin to 3.6.2 (from 3.6.1)
 * Bump central-publishing plugin to 0.12.0 (from 0.10.0)
 * Bump compiler plugin to 3.16.0 (from 3.15.0)
@@ -29,8 +30,6 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump surefire plugin to 3.6.0 (from 3.5.5)
 * Bump surefire-report plugin to 3.6.0 (from 3.5.5)
 * Surefire and Failsafe now run tests through the JUnit Platform. JUnit 4 requires version 4.12 or newer, TestNG requires version 6.14.3 or newer, and TestNG `suiteXmlFiles` is no longer supported.
-* Failsafe no longer honors `skipTests`; use `skipITs` or `basepom.it.skip` to skip integration tests.
-
 
 ## 69 - 2026-04-02
 
