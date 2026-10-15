@@ -712,6 +712,7 @@ Most checkers are self-contained and need no additional configuration. Others (e
 [%header, cols="<2, ^1, ^1, ^1, <5", stripe=none]
 |===
 | Property Name                                  | Default Value | customization   | defined in | function
+| basepom.check.checkstyle-config-location       | `checkstyle/checkstyle-basepom.xml` | sometimes, policy | foundation | class path location for the default checkstyle config file
 | basepom.check.checkstyle-severity              | `error`       | sometimes, policy     | foundation | Controls which severity levels are considered a violation. Only violations fail the build. Valid values are `info`, `warning` and `error`
 | basepom.dependency-management.allow-versions   | `false`       | sometimes, policy     | foundation | If `true`, dependencies are allowed to specify versions to override the `<dependencyManagement>` section
 | basepom.dependency-management.allow-exclusions | `false`       | sometimes, policy     | foundation | If `true`, dependencies are allowed to contain `<exclusions>` elements to override the `<dependencyManagement>` section
