@@ -9,6 +9,7 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ### Changed
 
+* make checkstyle config file configurable using `basepom.check.checkstyle-config-location`.
 * `basepom.central-publishing.repo-id` was changed from `central` to `sonatype-central-portal`. This is required for the new credential scope rules in Maven 3.10 and avoids leaking sonatype credentials to repo.maven.apache.org
 * Bump build-helper-maven-plugin to 3.6.2 (from 3.6.1)
 * Bump central-publishing plugin to 0.12.0 (from 0.10.0)
