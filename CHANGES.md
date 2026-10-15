@@ -16,7 +16,7 @@ Every release of this project is potentially incompatible to the previous one ev
 * Bump deploy plugin to 3.2.0 (from 3.1.4)
 * Bump enforcer plugin to 3.6.3 (from 3.6.2)
 * Bump failsafe plugin to 3.6.0 (from 3.5.5)
-* Bump git-commit-id plugin to 9.2.0 (from 9.1.0)
+* Bump git-commit-id plugin to 10.0.1 (from 9.1.0)
 * Bump install plugin to 3.2.0 (from 3.1.4)
 * Bump invoker plugin to 3.10.1 (from 3.9.1)
 * Bump jar plugin to 3.5.1 (from 3.5.0)
