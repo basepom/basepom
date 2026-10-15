@@ -7,6 +7,19 @@ Every release of this project is potentially incompatible to the previous one ev
 
 ## Unreleased
 
+### Changed
+
+* Bump build-helper-maven-plugin to 3.6.2 (from 3.6.1)
+* Bump enforcer plugin to 3.6.3 (from 3.6.2)
+* Bump failsafe plugin to 3.5.6 (from 3.5.5)
+* Bump jar plugin to 3.5.1 (from 3.5.0)
+* Bump jacoco plugin to 0.8.15 (from 0.8.14)
+* Bump njord plugin to 0.9.10 (from 0.9.4)
+* Bump spotbugs plugin to 4.9.8.5 (from 4.9.8.3)
+* Bump surefire plugin to 3.5.6 (from 3.5.5)
+* Bump surefire-report plugin to 3.5.6 (from 3.5.5)
+
+
 ## 69 - 2026-04-02
 
 ### Added
