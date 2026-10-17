@@ -5,7 +5,13 @@ This is the changelog for the basepom project. It follows [Keep a Changelog v1.0
 Every release of this project is potentially incompatible to the previous one even though reasonable attempts are made to be drop-in compatible. There is only a major version number that is incremented with every release.
 
 
-## Unreleased
+## 71 - 2026-10-16
+
+### Changed
+
+* bump basepom-policy to 12 to address https://github.com/basepom/basepom-policy/pull/7
+
+## 70 - 2026-10-15
 
 ### Changed
 
