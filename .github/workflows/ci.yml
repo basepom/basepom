@@ -14,15 +14,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-tags: true
           fetch-depth: 0
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v6
         id: build_jdk
         with:
-          java-version: 21
+          java-version: 25
           distribution: temurin
           cache: maven
 
@@ -36,15 +36,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-tags: true
           fetch-depth: 0
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v6
         id: build_jdk
         with:
-          java-version: 21
+          java-version: 25
           distribution: temurin
           cache: maven
 
